@@ -1,0 +1,264 @@
+.bg {
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+  height: calc(100vw * (154 / 375));
+  background-image: url('@/assets/home_top_bg.webp');
+  background-size: cover;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  background-size: cover;
+}
+.header {
+  margin-left: 15px;
+  margin-top: calc(100vw * (114 / 375));
+  display: flex;
+  align-items: center;
+
+  > img:nth-child(1) {
+    width: 90px;
+    height: 90px;
+    padding: 5px;
+    border-radius: 20px;
+    background-color: white;
+    border: 1px solid white;
+  }
+}
+
+.meta_info_container {
+  margin-left: 12px;
+  font-size: 22px;
+  font-weight: 600;
+  div:first-child {
+    span:nth-child(1) {
+      display: inline-block;
+      color: white;
+      margin-bottom: 12px;
+    }
+    span:nth-child(2) {
+      margin-left: 5px;
+      display: inline-block;
+      width: 42px;
+      height: 18px;
+      text-align: center;
+      background-image: url('@/assets/crown_bg.webp');
+      background-size: cover;
+      text-align: right;
+      div:first-child {
+        margin-right: 3px;
+        font-size: 12px;
+        font-weight: 400;
+        color: #ffffff;
+        line-height: 17px;
+      }
+    }
+  }
+  > div:nth-child(n + 2) {
+    font-size: 12px;
+    font-weight: 400;
+    color: #999999;
+    line-height: 17px;
+    span:nth-child(2) {
+      margin-left: 6px;
+    }
+  }
+  > div:nth-child(n + 3) {
+    margin-top: 5px;
+  }
+}
+.tips {
+  padding-left: 15px;
+  flex-direction: column;
+
+  > div:first-child {
+    font-size: 14px;
+    margin-bottom: 11px;
+    font-family: PingFangTC, PingFangTC;
+    font-weight: 500;
+    color: #000000;
+    line-height: 20px;
+  }
+  > div:nth-child(n + 2) {
+    font-size: 13px;
+    font-weight: 400;
+    margin-top: 8px;
+    color: #999999;
+    line-height: 18px;
+  }
+  div > span {
+    font-size: 14px;
+    font-weight: 500;
+    color: #ff38a2;
+    line-height: 20px;
+  }
+}
+.buttons {
+  margin-top: 30px;
+  text-align: center;
+  > span {
+    font-size: 12px;
+    font-family:
+      PingFangSC,
+      PingFang SC;
+    font-weight: 400;
+    color: #333333;
+    line-height: 17px;
+    border-radius: 7px;
+    border: 1px solid #eeeeee;
+    padding: 11px 60px;
+  }
+  > span:first-child {
+    margin-right: 11px;
+  }
+}
+.more-info {
+  margin-top: 30px;
+
+  padding: 15px 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  > span {
+    display: inline-block;
+    font-size: 12px;
+    font-family:
+      PingFangSC,
+      PingFang SC;
+    font-weight: 400;
+    color: #999999;
+    line-height: 17px;
+    div > img {
+      margin-left: 4px;
+      width: 12px;
+      height: 12px;
+    }
+  }
+  > span:first-child > div:first-child {
+    font-size: 18px;
+    font-family:
+      PingFangSC,
+      PingFang SC;
+    font-weight: 600;
+    color: #333333;
+    line-height: 25px;
+  }
+  > span:nth-child(2) {
+    width: 1px;
+    height: 44px;
+    background-color: #f8f5f7;
+  }
+  > span:nth-child(3) > div:first-child {
+    font-size: 18px;
+    font-family:
+      PingFangSC,
+      PingFang SC;
+    font-weight: 600;
+    color: #ff8f16;
+    line-height: 25px;
+    .status {
+      text-align: center;
+      display: inline-block;
+      background: #00d962;
+      border-radius: 9px;
+      font-size: 12px;
+      margin-left: 3px;
+      padding: 0 6px;
+      font-family:
+        PingFangSC,
+        PingFang SC;
+      font-weight: 400;
+      color: #ffffff;
+      line-height: 17px;
+    }
+  }
+}
+.divider {
+  height: 5px;
+  width: 100%;
+  background: #f8f5f7;
+}
+.week_profit {
+  display: flex;
+  flex-direction: column;
+  padding: 0 15px;
+  > div:first-child {
+    //周收益
+    padding-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    > span:first-child {
+      font-size: 16px;
+      font-family:
+        PingFangSC,
+        PingFang SC;
+      font-weight: 600;
+      color: #333333;
+      line-height: 22px;
+    }
+    > span:nth-child(2) {
+      font-size: 12px;
+      font-family:
+        PingFangSC,
+        PingFang SC;
+      font-weight: 400;
+      color: #999999;
+      line-height: 17px;
+    }
+  }
+  > div:nth-child(2) {
+    padding: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 12px;
+    font-weight: 400;
+    color: #999999;
+    line-height: 17px;
+    .coin {
+      width: 19px;
+      height: 19px;
+    }
+  }
+  .vertical-divider {
+    width: 1px;
+    height: 40px;
+    background-color: #f8f5f7;
+  }
+}
+
+.turnover-list-containe {
+  > div > .item_content {
+    padding: 20px 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    > span {
+      > div:first-child {
+        margin-bottom: 10px;
+      }
+      display: inline-block;
+      color: #999999;
+      span {
+        color: black;
+      }
+      .coin {
+        margin-left: 3px;
+        width: 16px;
+        height: 16px;
+      }
+    }
+    .right_arror {
+      width: 6px;
+      height: 14px;
+    }
+  }
+  > div {
+    .divider {
+      height: 1px;
+    }
+  }
+}
