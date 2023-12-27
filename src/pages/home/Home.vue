@@ -86,7 +86,7 @@ onMounted(() => {
           </span>
           <img class="right_arror" src="@/assets/right_arror.webp" />
         </div>
-        <div v-if="index < data.daily_turnover.length - 1" class="divider"></div>
+        <div v-if="data!=nul&&index < data.daily_turnover.length - 1" class="divider"></div>
       </div>
     </div>
   </div>
