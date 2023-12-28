@@ -10,7 +10,7 @@ const router = createRouter({
       path: '/home',
       name: 'home',
       component: () => import('../pages/home/Home.vue')
-       },
+    },
     {
       path: '/login',
       name: 'login',
@@ -41,6 +41,14 @@ const router = createRouter({
       component: () => import('../pages/anchor_list/AnchorList.vue')
     },
     {
+      path: '/withdrawal_details',
+      name: 'withdrawal details',
+      // route level code-splitting
+      // this generates a separate chunk (About.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import('../pages/withdrawal_details/WithDrawalDetails.vue')
+    },
+    {
       path: '/about',
       name: 'about',
       // route level code-splitting
@@ -48,6 +56,7 @@ const router = createRouter({
       // which is lazy-loaded when the route is visited.
       component: () => import('../pages/AboutView.vue')
     }
+
   ]
 })
 
