@@ -2,6 +2,7 @@
 import { ref } from 'vue'
 import showDialog from '@/utils/Dialog.js'
 import { onMounted } from 'vue'
+
 import axios from 'axios'
 var data = ref(null)
 const dialogContent = '1.收益余额= 可结算收益+不可结算收益（未达到结算标准的主播的提成收益）。注意：当你提现成功之后，我们将扣除可结算收益。\n 2.可结算收益：达到提现条件后在下周可提现的收益。\n 3.提款数额因汇率而异。'
@@ -39,8 +40,8 @@ onMounted(() => {
     </div>
     <!-- 提现记录和主播管理按钮 -->
     <div class="buttons">
-      <span>提现记录</span>
-      <span>主播管理</span>
+      <span @click="$router.push('/withdraw_records')">提现记录</span>
+      <span @click="$router.push('/anchor_list')">主播管理</span>
     </div>
     <!-- 余额和结算收益 -->
     <div class="more-info">
@@ -75,7 +76,7 @@ onMounted(() => {
     <div class="divider"></div>
     <div class="turnover-list-containe">
       <div v-if="data != null" v-for="(item, index) in data.daily_turnover">
-        <div class="item_content">
+        <div class="item_content" @click="$router.push('/daily_detail')">
           <span>
             <div>
               日期:<span>{{ item.time }}</span>

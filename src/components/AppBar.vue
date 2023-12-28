@@ -8,7 +8,7 @@ defineProps({
 </script>
 <template>
     <div class="app_bar">
-        <img class="left_arror" src="@/assets/left_arror.webp" />
+        <img class="left_arror" @click="$router.go(-1)" src="@/assets/left_arror.webp" />
         <span>{{title}}</span>
       </div>
 </template>

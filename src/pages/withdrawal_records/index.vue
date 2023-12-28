@@ -23,7 +23,7 @@ onMounted(() => {
     <AppBarVue title="提现记录"></AppBarVue>
   </div>
   <div class="list" v-if="data != null">
-    <div v-for="(item, index) in data.anchor_list">
+    <div v-for="(item, index) in data.anchor_list" @click="$router.push('/withdrawal_details')">
     <div class="row_left_part">
         <div>2021-9-30<span>提现中</span></div>
         <div>正在处理中，请耐心等待</div>

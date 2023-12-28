@@ -23,7 +23,7 @@ onMounted(() => {
   <div class="container">
     <AppBarVue title="主播管理"></AppBarVue>
   </div>
-  <div class="list" v-if="data != null">
+  <div class="list" v-if="data != null" @click="$router.push('/profile')">
     <div v-for="(item, index) in data.anchor_list">
       <span class="avatar_container"
         ><AnchorAvatarVue
