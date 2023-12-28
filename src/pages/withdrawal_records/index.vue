@@ -20,7 +20,7 @@ onMounted(() => {
 </script>
 <template>
   <div class="container">
-    <AppBarVue title="主播管理"></AppBarVue>
+    <AppBarVue title="提现记录"></AppBarVue>
   </div>
   <div class="list" v-if="data != null">
     <div v-for="(item, index) in data.anchor_list">

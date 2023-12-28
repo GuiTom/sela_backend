@@ -1,10 +1,10 @@
 <script setup>
 import { ref } from 'vue'
-
+import showDialog from '@/utils/Dialog.js'
 import { onMounted } from 'vue'
 import axios from 'axios'
 var data = ref(null)
-
+const dialogContent = '1.收益余额= 可结算收益+不可结算收益（未达到结算标准的主播的提成收益）。注意：当你提现成功之后，我们将扣除可结算收益。\n 2.可结算收益：达到提现条件后在下周可提现的收益。\n 3.提款数额因汇率而异。'
 onMounted(() => {
   console.log(`the component is now mounted.`)
   axios
@@ -14,6 +14,7 @@ onMounted(() => {
       // 请求失败处理
       console.log(error)
     })
+    showDialog('弹窗内容内容!',{title:'说明',message:dialogContent})
 })
 </script>
 <template>
