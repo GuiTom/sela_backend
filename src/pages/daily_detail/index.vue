@@ -44,5 +44,5 @@ onMounted(() => {
     </table>
 </template>
 <style scoped lang="less">
-@import 'daily_detail.less';
+@import 'index.less';
 </style>

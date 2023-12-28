@@ -103,5 +103,5 @@ onMounted(() => {
   </div>
 </template>
 <style scoped lang="less">
-@import 'profile.less';
+@import 'index.less';
 </style>

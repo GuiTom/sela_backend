@@ -44,5 +44,5 @@ onMounted(() => {
   </div>
 </template>
 <style scoped lang="less">
-@import 'anchor_list.less';
+@import 'index.less';
 </style>

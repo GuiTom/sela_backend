@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
-import LoginViewVue from '@/pages/LoginView.vue'
+import LoginViewVue from '@/pages/login/index.vue'
 // import FamilyDetailViewVue from '@/pages/FamilyDetailView.vue'
 
 const router = createRouter({
@@ -9,7 +9,7 @@ const router = createRouter({
     {
       path: '/home',
       name: 'home',
-      component: () => import('../pages/home/Home.vue')
+      component: () => import('../pages/home/index.vue')
     },
     // 登录
     {
@@ -24,7 +24,7 @@ const router = createRouter({
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import('../pages/user_profile/Profile.vue')
+      component: () => import('../pages/user_profile/index.vue')
     },
     // 每日数据详情
     {
@@ -33,7 +33,7 @@ const router = createRouter({
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import('../pages/daily_detail/DailyDetail.vue')
+      component: () => import('../pages/daily_detail/index.vue')
     },
     // 主播管理
     {
@@ -42,7 +42,7 @@ const router = createRouter({
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import('../pages/anchor_list/AnchorList.vue')
+      component: () => import('../pages/anchor_list/index.vue')
     },
     //提现详情
     {
