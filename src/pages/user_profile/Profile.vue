@@ -3,6 +3,8 @@ import { ref } from 'vue'
 
 import { onMounted } from 'vue'
 import axios from 'axios'
+import AppBarVue from '@/components/AppBar.vue';
+
 var data = ref(null)
 
 onMounted(() => {
@@ -19,10 +21,7 @@ onMounted(() => {
 <template>
   <div class="container">
     <!-- appBar -->
-    <div class="app_bar">
-      <img class="left_arror" src="@/assets/left_arror.webp" />
-      <span>个人数据</span>
-    </div>
+    <AppBarVue title="个人中心"></AppBarVue>
     <!-- 个人头像这一行 -->
     <div class="base_info">
         <span class="avatar"><span>封禁中</span></span>
