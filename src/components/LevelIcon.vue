@@ -1,7 +1,7 @@
 <script setup>
 defineProps({
   level: {
-    type: String,
+    type: Number,
     required: true
   },
 

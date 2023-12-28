@@ -15,7 +15,7 @@ onMounted(() => {
       // 请求失败处理
       console.log(error)
     })
-    showDialog('弹窗内容内容!',{title:'说明',message:dialogContent})
+    showDialog(dialogContent,{title:'说明'})
 })
 </script>
 <template>
