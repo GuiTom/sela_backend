@@ -11,11 +11,13 @@ const router = createRouter({
       name: 'home',
       component: () => import('../pages/home/Home.vue')
     },
+    // 登录
     {
       path: '/login',
       name: 'login',
       component: LoginViewVue
     },
+    // 个人中心
     {
       path: '/profile',
       name: 'profile',
@@ -24,6 +26,7 @@ const router = createRouter({
       // which is lazy-loaded when the route is visited.
       component: () => import('../pages/user_profile/Profile.vue')
     },
+    // 每日数据详情
     {
       path: '/daily_detail',
       name: 'daily detail',
@@ -32,6 +35,7 @@ const router = createRouter({
       // which is lazy-loaded when the route is visited.
       component: () => import('../pages/daily_detail/DailyDetail.vue')
     },
+    // 主播管理
     {
       path: '/anchor_list',
       name: 'anchor list',
@@ -40,21 +44,20 @@ const router = createRouter({
       // which is lazy-loaded when the route is visited.
       component: () => import('../pages/anchor_list/AnchorList.vue')
     },
+    //提现详情
     {
       path: '/withdrawal_details',
       name: 'withdrawal details',
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import('../pages/withdrawal_details/WithDrawalDetails.vue')
+      component: () => import('../pages/withdrawal_details/index.vue')
     },
+    //提现记录
     {
-      path: '/about',
-      name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import('../pages/AboutView.vue')
+      path: '/withdraw_records',
+      name: 'withdraw records',
+      component: () => import('../pages/withdrawal_records/index.vue')
     }
 
   ]

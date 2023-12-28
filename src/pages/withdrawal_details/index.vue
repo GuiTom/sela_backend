@@ -40,5 +40,5 @@ onMounted(() => {
     </table>
 </template>
 <style scoped lang="less">
-@import 'WithdrawalDetails.less';
+@import 'index.less';
 </style>
