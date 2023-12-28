@@ -4,11 +4,12 @@ import { ref } from 'vue'
 import { onMounted } from 'vue'
 import axios from 'axios'
 import AppBarVue from '@/components/AppBar.vue';
+import LevelIcon from '@/components/LevelIcon.vue';
 
 var data = ref(null)
 
 onMounted(() => {
-  console.log(`the component is now mounted.`)
+ 
   axios
     .get('profile.json')
     .then((response) => (data.value = response.data))
@@ -29,7 +30,7 @@ onMounted(() => {
             <div class="name_and_level">
                 <span>
                   Babila Ebwélé
-                  <span class="level">lv.4</span>
+                  <LevelIcon :level="1.4"></LevelIcon>
                 </span>
               </div>
               <div class="id_and_lateast_call">
