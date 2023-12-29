@@ -1,9 +1,16 @@
 <script setup>
 import LoginForm from '../../components/LoginForm.vue'
+import axios from 'axios'
 
-
-function onSubmit(){
-
+function onSubmit(username,password){
+  console.log(username,password);
+  axios
+    .get('login.json')
+    .then((response) => (data.value = response.data))
+    .catch(function (error) {
+      // 请求失败处理
+      console.log(error)
+    })
 }
 
 
@@ -13,7 +20,7 @@ function onSubmit(){
 <div class="container">
   <img id="logo" src="@/assets/logo.png">
   <div>
-    <LoginForm @click-login="onSubmit"></LoginForm>
+    <LoginForm @submit="onSubmit"></LoginForm>
   </div>
 </div>
 </template>

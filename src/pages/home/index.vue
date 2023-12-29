@@ -7,7 +7,7 @@ import axios from 'axios'
 var data = ref(null)
 const dialogContent = '1.收益余额= 可结算收益+不可结算收益（未达到结算标准的主播的提成收益）。注意：当你提现成功之后，我们将扣除可结算收益。\n 2.可结算收益：达到提现条件后在下周可提现的收益。\n 3.提款数额因汇率而异。'
 onMounted(() => {
-  console.log(`the component is now mounted.`)
+
   axios
     .get('family_detail.json')
     .then((response) => (data.value = response.data))
@@ -62,13 +62,13 @@ onMounted(() => {
       <div>
         <span>
           <div>2021.9.30-2021.10.7</div>
-          <div>9999999<img class="coin" src="@/assets/gold_coin.webp" /></div>
+          <div class="coin">9999999<img src="@/assets/gold_coin.webp" /></div>
           <div>本周主播总流水</div>
         </span>
         <span class="vertical-divider"></span>
         <span>
           <div>2021.9.30-2021.10.7</div>
-          <div>9999999<img class="coin" src="@/assets/gold_coin.webp" /></div>
+          <div class="coin">9999999<img src="@/assets/gold_coin.webp" /></div>
           <div>本周主播总流水</div>
         </span>
       </div>
@@ -81,9 +81,9 @@ onMounted(() => {
             <div>
               日期:<span>{{ item.time }}</span>
             </div>
-            <div>
-              全部主播流水：<span>{{ item.value }}</span
-              ><img class="coin" src="@/assets/gold_coin.webp" />
+            <div class="coin">
+              全部主播流水：{{ item.value }}
+              <img  src="@/assets/gold_coin.webp" />
             </div>
           </span>
           <img class="right_arror" src="@/assets/right_arror.webp" />

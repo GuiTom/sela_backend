@@ -1,15 +1,21 @@
 <script setup>
-
+import { ref } from 'vue';
+const username = ref(null)
+const password = ref(null)
+const emit = defineEmits(['submit'])
+function onClickSubmit(event){
+  event.preventDefault(); emit('submit',username.value.value,password.value.value)
+}
 </script>
 
 <template>
   <div class="login-container">  
     <form action="/login" method="post">  
       <label for="username"><b>用户名</b></label>  
-      <input type="text" placeholder="请输入用户名" name="username" required>  
+      <input ref="username" type="text" placeholder="请输入用户名" name="username" required>  
       <label for="password"><b>密码</b></label>  
-      <input type="password" placeholder="请输入密码" name="password" required>  
-      <button type="submit" @click="this.$emit('click-login')" >登录</button>  
+      <input ref="password" type="password" placeholder="请输入密码" name="password" required>  
+      <button type="submit" @click="onClickSubmit($event)" >登录</button>  
     </form>  
   </div>  
 </template>
