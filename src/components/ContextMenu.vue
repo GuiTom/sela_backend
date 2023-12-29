@@ -25,7 +25,7 @@ const currentIndex  = ref(props.initialIndex)
           src="@/assets/selected.webp"
           style="width: 10px; height: 10px"
         />
-        <div @click="this.$emit('item_selected',index)" :class="index == initialIndex ? 'selected' : 'item'">{{ item }}</div>
+        <div @click="$event.stopPropagation();currentIndex = index; $emit('item_selected',index);" :class="index == initialIndex ? 'selected' : 'item'">{{ item }}</div>
       </div>
     </div>
   </div>
@@ -34,8 +34,8 @@ const currentIndex  = ref(props.initialIndex)
 .menu {
     padding: 10px 15px;
     position: absolute;
-    right: 0;
-    top:0;
+    right: 50%;
+    top:50%;
     background: #FFFFFF;
     box-shadow: 0px 3px 16px 0px rgba(0,0,0,0.5);
     border-radius: 8px;

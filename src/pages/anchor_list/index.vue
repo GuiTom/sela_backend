@@ -7,9 +7,11 @@ import AnchorAvatarVue from '@/components/AnchorAvatar.vue'
 import axios from 'axios'
 
 import ContextMenu from '@/components/ContextMenu.vue'
+
 // import Dialog from '@/components/Dialog.vue'
 var data = ref(null)
-var showMenu = ref(true)
+var showMenu = ref(false)
+var selectedMenuIndex = 0;
 onMounted(() => {
   axios
     .get('anchor_list.json')
@@ -21,22 +23,24 @@ onMounted(() => {
 })
 
 function onClickShowMenu() {
-  showMenu.value = true
+  showMenu.value = !showMenu.value;
+
+}
+function onmenuSelected(index) {
+  showMenu.value = false
+  selectedMenuIndex = index;
 }
 </script>
 <template>
   <div class="container">
     <AppBarVue title="主播管理">
       <template #right_icon>
-        <div
-          style="position: relative"
-          :item_selected="(showMenu = false)"
-          @click="onClickShowMenu"
-        >
+        <div style="position: relative" @click="onClickShowMenu">
           <img src="@/assets/more_icon.webp" style="width: 22px; height: 22px" />
-
+          
             <ContextMenu v-if="showMenu"
-              :initialIndex="1"
+            @item_selected="onmenuSelected"
+              :initialIndex="selectedMenuIndex"
               :options="['在线状态', '通话时间', '当日收入']"
             ></ContextMenu>
           
