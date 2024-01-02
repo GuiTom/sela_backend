@@ -13,7 +13,7 @@ const router = createRouter({
     },
     // 登录
     {
-      path: '/login',
+      path: '/',
       name: 'login',
       component: LoginViewVue
     },
