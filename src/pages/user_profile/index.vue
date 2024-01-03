@@ -2,16 +2,26 @@
 import { ref } from 'vue'
 
 import { onMounted } from 'vue'
-import axios from 'axios'
+import api from '../../controller/request'
 import AppBarVue from '@/components/AppBar.vue';
 import LevelIcon from '@/components/LevelIcon.vue';
-
+import { useRoute } from "vue-router"
 var data = ref(null)
 
 onMounted(() => {
- 
-  axios
-    .get('profile.json')
+    const route = useRoute()
+    let anchorId = route.query.anchorId;
+    let date = route.query.date;
+  api
+  .post('/manager/guildh5/page/anchor/day/incomes', {
+      condition: {
+        // guildId: guildId, // 工会id
+        anchorId: anchorId, // 主播id ps.主播id和工会id互斥
+        date: date // 日期，当天0点时间
+      },
+      pageNum: 1,
+      pageSize: 10
+    })
     .then((response) => (data.value = response.data))
     .catch(function (error) {
       // 请求失败处理

@@ -1,30 +1,27 @@
 <script setup>
 import LoginForm from '../../components/LoginForm.vue'
-import axios from 'axios'
+import api from '../../controller/request'
 import { ref } from 'vue'
-import { useRouter } from 'vue-router'
+import router from '../../router/index'
 const authorization = ref(null)
 function onSubmit(username, password) {
   console.log(username, password)
+  
   const formData = new FormData()
   formData.append('username', username)
   formData.append('password', password)
-  axios
-    .post('https://testapi.selalive.com/manager/login/guild', {
+  api
+    .post('/manager/login/guild', {
       username: username,
       password: password
     })
     .then(function (response) {
       if (response.data.code == 0) {
         authorization.value = response.data.data
-        document.cookie = 'authorization=' + response.data + ';Max-Age=999999999; path=/'
-        const router = useRouter()
-        router.push({
-          path: '/home',
-          query: {
-            msg: 'hello'
-          }
-        })
+        console.log('data:',response.data.data)
+      
+        localStorage.setItem('authorization',authorization.value);
+        router.push('/home');
       } else {
         console.log('auth failed')
       }

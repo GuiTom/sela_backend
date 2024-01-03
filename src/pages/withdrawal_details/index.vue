@@ -2,19 +2,14 @@
 import { ref } from 'vue'
 import { onMounted } from 'vue'
 import AppBarVue from '@/components/AppBar.vue';
-import axios from 'axios'
-
+// import router from '../../router/index'
+import { useRoute } from "vue-router"
 var data = ref(null)
 
 onMounted(() => {
-  console.log(`the component is now mounted.`)
-  axios
-    .get('daily_detail.json')
-    .then((response) => (data.value = response.data))
-    .catch(function (error) {
-      // 请求失败处理
-      console.log(error)
-    })
+    let route = useRoute();
+    data.value = JSON.parse(route.query.data);
+    console.log('data.value',data.value);
 })
 </script>
 <template>
