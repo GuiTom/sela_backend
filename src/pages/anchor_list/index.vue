@@ -52,8 +52,7 @@ function requestData() {
       order: selectedMenuIndex + 1
     })
     .then(function (response) {
-      
-      if(currentPage==0){
+        if(currentPage==0){
         data.value = response.data
         refreshing.value = false;
        
@@ -62,6 +61,7 @@ function requestData() {
         loadingMore.value = false;
       }
       currentPage ++;
+
     })
     .catch(function (error) {
       // 请求失败处理
