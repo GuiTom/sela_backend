@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from 'vue'
-
+import { getCurrentInstance } from 'vue'; 
 import { onMounted } from 'vue'
 import api from '../../controller/request'
 import AppBarVue from '@/components/AppBar.vue'
@@ -15,7 +15,7 @@ var currentPage = 0
 var data = ref(null)
 const pageSize = 20
 onMounted(() => {
-
+    console.log('$routeObjectParam',getCurrentInstance().appContext.config.globalProperties.$routeObjectParam)
     requestData()
 })
 function refresh() {
@@ -37,13 +37,13 @@ function requestData() {
   // path = 'http://localhost:5173/anchor_list.json'
   const route = useRoute()
   let anchorId = route.query.anchorId
-  let date = route.query.date
+  let nowTs = new Date().getTime()
   api
     .post(path, {
         condition: {
         // guildId: guildId, // 工会id
         anchorId: anchorId, // 主播id ps.主播id和工会id互斥
-        date: date // 日期，当天0点时间
+        date: nowTs // 日期，当天0点时间
       },
       pageNum: currentPage + 1,
       pageSize: pageSize
@@ -53,11 +53,11 @@ function requestData() {
         data.value = response.data
         refreshing.value = false
       } else {
-        data.value.daily_datas = [...data.value.daily_datas, ...response.data.daily_datas]
+        data.value.data.list = [...data.value.data.list, ...response.data.data.list]
         loadingMore.value = false
       }
       currentPage++
-      if (data.value.daily_datas == null || data.value.daily_datas.length < pageSize) {
+      if (data.value.data.list == null || data.value.data.list.length < pageSize) {
         noMoreData.value = true
       }
     })
@@ -124,16 +124,16 @@ function requestData() {
     >
       <template #content>
         <div class="daily_data">
-          <div v-if="data != null" v-for="(item, index) in data.daily_datas">
+          <div v-if="data != null" v-for="(item, index) in data.data.list">
             <div>
-              日期：<span>{{ item.time }}</span>
+              日期：<span>{{ $timeToFormatedDate(parseInt(item.date)) }}</span>
             </div>
-            <div>在线时长：<span>23</span></div>
-            <div>平均通话时长：<span>2020-12-11</span></div>
-            <div>通话数：<span>00:32:22</span></div>
-            <div>收到礼物数：<span>33</span></div>
+            <div>在线时长：<span>{{item.onlineDuration}}</span></div>
+            <div>平均通话时长：<span>{{item.avCallDuration}}</span></div>
+            <div>通话数：<span>{{item.callNum}}</span></div>
+            <div>收到礼物数：<span>{{item.giftNum}}</span></div>
             <div class="last_item">流水：<span>9999999999</span></div>
-            <div class="divider" v-if="data != null && index < data.daily_datas.length - 1"></div>
+            <div class="divider" v-if="data != null && index < data.data.list.length - 1"></div>
           </div>
         </div>
       </template>

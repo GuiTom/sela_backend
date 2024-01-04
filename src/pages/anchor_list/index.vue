@@ -8,8 +8,8 @@ import api from '../../controller/request'
 
 import ContextMenu from '@/components/ContextMenu.vue'
 import InfiniteList from '@/components/InfiniteList.vue'
-
-
+import router from '../../router/index'
+import { getCurrentInstance } from 'vue'; 
 const loadingMore = ref(false)
 const refreshing = ref(false)
 const noMoreData = ref(false)
@@ -30,6 +30,10 @@ function onmenuSelected(index) {
   noMoreData.value = false;
   selectedMenuIndex = index
   requestData()
+}
+function onClickItem(item){
+  getCurrentInstance().appContext.config.globalProperties.$routeObjectParam=item;
+  router.push({ path: '/profile', query: { anchorId: item.anchorId } })
 }
 function refresh(){
   currentPage = 0;
@@ -101,7 +105,7 @@ function requestData() {
     v-if="data != null"
   >
   <template #content>
-    <div v-for="item in data.data" @click="$router.push({ path: '/profile', query: { anchorId: item.anchorId } })">
+    <div v-for="item in data.data" @click="onClickItem(item)">
       <span class="avatar_container"
         ><AnchorAvatarVue :onlineStatus="item.isOnline" :isForbidden="true" :img="item.portrait"></AnchorAvatarVue
       ></span>

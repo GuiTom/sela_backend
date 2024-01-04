@@ -10,6 +10,7 @@ const app = createApp(App)
 app.config.globalProperties.$timeToFormatedDate = timeToFormatedDate;
 app.config.globalProperties.$timeToFormatedDateTime = timeToFormatedDateTime;
 app.config.globalProperties.$timeToFormatedTime = timeToFormatedTime;
+app.config.globalProperties.$routeObjectParam = Object()
 app.use(router)
 
 app.mount('#app')

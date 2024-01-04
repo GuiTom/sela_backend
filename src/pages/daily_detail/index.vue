@@ -38,7 +38,7 @@ function requestData() {
   const route = useRoute()
   const guildId = route.query.guildId
   let date = route.query.date;
-  date = 1703606400000;
+  // date = 1703606400000;
   api
     .post(path, {
       condition: {
