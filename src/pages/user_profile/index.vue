@@ -12,6 +12,7 @@ onMounted(() => {
     const route = useRoute()
     let anchorId = route.query.anchorId;
     let date = route.query.date;
+    
   api
   .post('/manager/guildh5/page/anchor/day/incomes', {
       condition: {

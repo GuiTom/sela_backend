@@ -7,10 +7,14 @@ import AnchorAvatarVue from '@/components/AnchorAvatar.vue'
 import api from '../../controller/request'
 
 import ContextMenu from '@/components/ContextMenu.vue'
-
+import InfiniteList from '@/components/InfiniteList.vue'
 // import Dialog from '@/components/Dialog.vue'
 var data = ref(null)
 var showMenu = ref(false)
+const loadingMore = ref(false)
+const refreshing = ref(false)
+const noMoreData = ref(false)
+var currentPage = 0;
 var selectedMenuIndex = 0
 onMounted(() => {
   requestData()
@@ -24,14 +28,41 @@ function onmenuSelected(index) {
   selectedMenuIndex = index
   requestData()
 }
+function refresh(){
+  currentPage = 0;
+  requestData();
+}
 function requestData() {
+  if(noMoreData.value){
+    console.log('没有更多数据了');
+    return;
+  }
+  if(refreshing.value||loadingMore.value) return;
+  if(currentPage==0){
+    refreshing.value = true;
+  }else {
+    loadingMore.value = true;
+  }
+  let path = '/manager/guildh5/page/anchor'
+  path = 'http://localhost:5173/anchor_list.json'
   api
-    .post('/manager/guildh5/page/anchor', {
-      pageNum: 1,
+    .post(path, {
+      pageNum: currentPage+1,
       pageSize: 10,
       order: selectedMenuIndex + 1
     })
-    .then((response) => (data.value = response.data))
+    .then(function (response) {
+      
+      if(currentPage==0){
+        data.value = response.data
+        refreshing.value = false;
+       
+      }else {
+        data.value.data = [...data.value.data,...response.data.data]
+        loadingMore.value = false;
+      }
+      currentPage ++;
+    })
     .catch(function (error) {
       // 请求失败处理
       console.log(error)
@@ -55,14 +86,20 @@ function requestData() {
       </template>
     </AppBarVue>
   </div>
-  <div
+  <InfiniteList
     class="list"
+    style="100%;overflow:auto"
+    @loadMore="requestData"
+    @refresh="refresh"
+    :loadingMore="loadingMore"
+    :refreshing="refreshing"
+    :noMoreData="noMoreData"
     v-if="data != null"
-    @click="$router.push({ path: '/profile', query: { anchorId: item.anchorId } })"
   >
-    <div v-for="item in data.data">
+  <template #content>
+    <div v-for="item in data.data" @click="$router.push({ path: '/profile', query: { anchorId: item.anchorId } })">
       <span class="avatar_container"
-        ><AnchorAvatarVue :onlineStatus="1" :isForbidden="false" img="avatar.jpg"></AnchorAvatarVue
+        ><AnchorAvatarVue :onlineStatus="item.isOnline" :isForbidden="false" :img="item.portrait"></AnchorAvatarVue
       ></span>
       <span class="right_info_container">
         <div>{{ item.nickname }}<LevelIcon :level="1.4"></LevelIcon></div>
@@ -74,7 +111,8 @@ function requestData() {
       <span class="spacer"></span>
       <img class="right_arror" src="@/assets/right_arror.webp" />
     </div>
-  </div>
+  </template>
+  </InfiniteList>
 </template>
 <style scoped lang="less">
 @import 'index.less';
