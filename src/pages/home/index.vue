@@ -4,8 +4,18 @@ import showDialog from '@/utils/Dialog.js'
 import { onMounted } from 'vue'
 // import router from '../../router/index'
 import api from '../../controller/request'
+
+import InfiniteList from '@/components/InfiniteList.vue'
+
+
+const loadingMore = ref(false)
+const refreshing = ref(false)
+const noMoreData = ref(false)
+
 const data = ref(null)
 const weekData = ref(null)
+var currentPage = 0;
+const pageSize = 20;
 const dialogContent =
   '1.收益余额= 可结算收益+不可结算收益（未达到结算标准的主播的提成收益）。注意：当你提现成功之后，我们将扣除可结算收益。\n 2.可结算收益：达到提现条件后在下周可提现的收益。\n 3.提款数额因汇率而异。'
 onMounted(() => {
@@ -21,20 +31,51 @@ onMounted(() => {
       // 请求失败处理
       console.log(error)
     })
+    requestData()
+})
+function refresh(){
+  currentPage = 0;
+  requestData();
+}
+function requestData() {
+  if(noMoreData.value){
+    console.log('没有更多数据了');
+    return;
+  }
+  if(refreshing.value||loadingMore.value) return;
+  if(currentPage==0){
+    refreshing.value = true;
+  }else {
+    loadingMore.value = true;
+  }
+  let path = '/manager/guildh5/page/guild/day/income'
+  // path = 'http://localhost:5173/anchor_list.json'
   api
-    .post('/manager/guildh5/page/guild/day/income', {
-      pageSize: 100,
-      pageNum: 1
+    .post(path, {
+      pageNum: currentPage+1,
+      pageSize: pageSize,
     })
     .then(function (response) {
-      weekData.value = response.data
-      console.log('weekData', response.data)
+        if(currentPage==0){
+          weekData.value = response.data
+          // console.log('weekData1',weekData.value.data)
+        refreshing.value = false;
+       
+      }else {
+        weekData.value.data = [...weekData.value.data,...response.data.data]
+        loadingMore.value = false;
+      }
+      // console.log('weekData2',weekData.value)
+      currentPage ++;
+      if(weekData.value.data==null||weekData.value.data.length<pageSize){
+        noMoreData.value = true;
+      }
     })
     .catch(function (error) {
       // 请求失败处理
       console.log(error)
     })
-})
+}
 </script>
 <template>
   <div class="bg"></div>
@@ -96,9 +137,19 @@ onMounted(() => {
         </span>
       </div>
     </div>
-    <div class="divider"></div>
-    <div class="turnover-list-containe">
-      <div v-if="weekData != null" v-for="(item, index) in weekData.data">
+    <div class="divider" ></div>
+    <InfiniteList 
+    class="turnover-list-container"
+    style="100%;overflow:auto"
+    @loadMore="requestData"
+    @refresh="refresh"
+    :loadingMore="loadingMore"
+    :refreshing="refreshing"
+    :noMoreData="noMoreData"
+    v-if="weekData != null"
+  >
+  <template #content>
+      <div v-for="(item, index) in weekData.data">
         <div
           class="item_content"
           @click="
@@ -118,7 +169,8 @@ onMounted(() => {
         </div>
         <div v-if="weekData != nul && index < weekData.data.length - 1" class="divider"></div>
       </div>
-    </div>
+      </template>
+    </InfiniteList>
   </div>
 </template>
 <style scoped lang="less">

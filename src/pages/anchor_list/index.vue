@@ -2,20 +2,22 @@
 import { ref } from 'vue'
 import { onMounted } from 'vue'
 import AppBarVue from '@/components/AppBar.vue'
-import LevelIcon from '@/components/LevelIcon.vue'
+// import LevelIcon from '@/components/LevelIcon.vue'
 import AnchorAvatarVue from '@/components/AnchorAvatar.vue'
 import api from '../../controller/request'
 
 import ContextMenu from '@/components/ContextMenu.vue'
 import InfiniteList from '@/components/InfiniteList.vue'
-// import Dialog from '@/components/Dialog.vue'
-var data = ref(null)
-var showMenu = ref(false)
+
+
 const loadingMore = ref(false)
 const refreshing = ref(false)
 const noMoreData = ref(false)
 var currentPage = 0;
 var selectedMenuIndex = 0
+const pageSize = 20;
+var data = ref(null)
+var showMenu = ref(false)
 onMounted(() => {
   requestData()
 })
@@ -25,6 +27,7 @@ function onClickShowMenu() {
 }
 function onmenuSelected(index) {
   showMenu.value = false
+  noMoreData.value = false;
   selectedMenuIndex = index
   requestData()
 }
@@ -44,11 +47,11 @@ function requestData() {
     loadingMore.value = true;
   }
   let path = '/manager/guildh5/page/anchor'
-  path = 'http://localhost:5173/anchor_list.json'
+  // path = 'http://localhost:5173/anchor_list.json'
   api
     .post(path, {
       pageNum: currentPage+1,
-      pageSize: 10,
+      pageSize: pageSize,
       order: selectedMenuIndex + 1
     })
     .then(function (response) {
@@ -61,7 +64,9 @@ function requestData() {
         loadingMore.value = false;
       }
       currentPage ++;
-
+      if(data.value.data==null||data.value.data.length<pageSize){
+        noMoreData.value = true;
+      }
     })
     .catch(function (error) {
       // 请求失败处理
@@ -88,7 +93,6 @@ function requestData() {
   </div>
   <InfiniteList
     class="list"
-    style="100%;overflow:auto"
     @loadMore="requestData"
     @refresh="refresh"
     :loadingMore="loadingMore"
@@ -99,10 +103,11 @@ function requestData() {
   <template #content>
     <div v-for="item in data.data" @click="$router.push({ path: '/profile', query: { anchorId: item.anchorId } })">
       <span class="avatar_container"
-        ><AnchorAvatarVue :onlineStatus="item.isOnline" :isForbidden="false" :img="item.portrait"></AnchorAvatarVue
+        ><AnchorAvatarVue :onlineStatus="item.isOnline" :isForbidden="true" :img="item.portrait"></AnchorAvatarVue
       ></span>
       <span class="right_info_container">
-        <div>{{ item.nickname }}<LevelIcon :level="1.4"></LevelIcon></div>
+        <div>
+          {{ item.nickname }}</div>
         <div>
           <span>ID：{{ item.anchorId }}</span
           ><span class="last_call">最近通话:{{ $timeToFormatedDate(item.lastCallAt) }}</span>
