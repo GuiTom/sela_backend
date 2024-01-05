@@ -1,38 +1,106 @@
 <script setup>
 import { ref } from 'vue'
 import { onMounted } from 'vue'
-import AppBarVue from '@/components/AppBar.vue';
+import AppBarVue from '@/components/AppBar.vue'
 // import router from '../../router/index'
-import { useRoute } from "vue-router"
+import { useRoute } from 'vue-router'
+import InfiniteList from '@/components/InfiniteList.vue'
+import api from '../../controller/request'
+const loadingMore = ref(false)
+const refreshing = ref(false)
+const noMoreData = ref(false)
+const pageSize = 20;
+var currentPage = 0
 var data = ref(null)
-
+var endTime = null;
 onMounted(() => {
-    let route = useRoute();
-    data.value = JSON.parse(route.query.data);
-    console.log('data.value',data.value);
+  let route = useRoute()
+  endTime = route.query.endTime
+//   console.log('data.value', data.value)
+  requestData();
 })
+
+function refresh() {
+  currentPage = 0
+  requestData()
+}
+function requestData() {
+  if (noMoreData.value) {
+    console.log('没有更多数据了')
+    return
+  }
+  if (refreshing.value || loadingMore.value) return
+  if (currentPage == 0) {
+    refreshing.value = true
+  } else {
+    loadingMore.value = true
+  }
+  let path = '/manager/guildh5/page/guild/settle/info'
+  // path = 'http://localhost:5173/anchor_list.json'
+  const route = useRoute()
+  let anchorId = route.query.anchorId
+//   let nowTs = new Date().getTime()
+  api
+    .post(path, {
+      condition: {
+        // guildId: guildId, // 工会id
+        anchorId: anchorId, // 主播id ps.主播id和工会id互斥
+        date: endTime // 日期，当天0点时间
+      },
+      pageNum: currentPage + 1,
+      pageSize: pageSize
+    })
+    .then(function (response) {
+      if (currentPage == 0) {
+        data.value = response.data
+        refreshing.value = false
+      } else {
+        data.value.data.list = [...data.value.data.list, ...response.data.data.list]
+        loadingMore.value = false
+      }
+      currentPage++
+      if (data.value.data.list == null || data.value.data.list.length < pageSize) {
+        noMoreData.value = true
+      }
+    })
+    .catch(function (error) {
+      // 请求失败处理
+      console.log(error)
+    })
+}
 </script>
 <template>
-    <div class="container">
-        <AppBarVue title="提现明细"></AppBarVue>
-    </div>
-    <table >
-            <thead border="0">
-                <tr>
-                    <th>主播昵称</th>
-                    <th>流水</th>
-                    <th>你的收益</th>
-                </tr>
-
-            </thead>
+  <div class="container">
+    <AppBarVue title="提现明细"></AppBarVue>
+  </div>
+  <InfiniteList
+    class="list"
+    @loadMore="requestData"
+    @refresh="refresh"
+    :loadingMore="loadingMore"
+    :refreshing="refreshing"
+    :noMoreData="noMoreData"
+    v-if="data != null"
+  >
+    <template #content>
+      <table>
+        <thead border="0">
+          <tr>
+            <th>主播昵称</th>
+            <th>流水</th>
+            <th>你的收益</th>
+          </tr>
+        </thead>
         <tbody>
-        <tr  class="item" v-if="data!=null" v-for="item in data.items">
+          <tr class="item" v-if="data != null" v-for="item in data.data.list">
             <td>美女依依</td>
-            <td>999<img class="coin" src="@/assets/gold_coin.webp"/></td>
-            <td class="profit">+{{item.value}}</td>
-        </tr>
+            <td>{{item.paidCoins}}<img class="coin" src="@/assets/gold_coin.webp" /></td>
+            <td class="profit">+{{ item.usdFee }}</td>
+          </tr>
         </tbody>
-    </table>
+      </table>
+    </template>
+  </InfiniteList>
 </template>
 <style scoped lang="less">
 @import 'index.less';

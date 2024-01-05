@@ -1,5 +1,7 @@
 <script setup>
-defineProps({
+import { onMounted } from 'vue';
+
+const props = defineProps({
   img: {
     type: String,
     required: true
@@ -12,20 +14,21 @@ defineProps({
   isForbidden: {
     type: Boolean,
     required: true,
-    default: false //1在线 0 不在线 2 忙线
+    default: false 
   }
 })
+
 function statusImg() {
-  if (this.online_status == 1) {
+  if (props.onlineStatus == 1) {
     return '/images/status_online.webp'
-  } else if (this.online_status == 0) {
+  } else if (props.onlineStatus == 0) {
     return '/images/status_offline.webp'
   } else return '/images/status_busy.webp'
 }
 </script>
 <template>
   <div class="avatar" :style="{ 'background-image': 'url(' + img + ')' }">
-    <span class="status" :v-if="isForbidden">封禁中</span>
+    <span class="status" v-if="isForbidden">封禁中</span>
     <img class="online_status" :src="statusImg()" />
   </div>
 </template>

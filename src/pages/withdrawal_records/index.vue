@@ -4,64 +4,115 @@ import { onMounted } from 'vue'
 import AppBarVue from '@/components/AppBar.vue'
 
 import api from '../../controller/request'
+import InfiniteList from '@/components/InfiniteList.vue'
 
+const loadingMore = ref(false)
+const refreshing = ref(false)
+const noMoreData = ref(false)
+const pageSize = 20
+var currentPage = 0
 var data = ref(null)
 
 onMounted(() => {
-  console.log(`the component is now mounted.`)
+  requestData()
+})
+function refresh() {
+  currentPage = 0
+  requestData()
+}
+function requestData() {
+  if (noMoreData.value) {
+    console.log('没有更多数据了')
+    return
+  }
+  if (refreshing.value || loadingMore.value) return
+  if (currentPage == 0) {
+    refreshing.value = true
+  } else {
+    loadingMore.value = true
+  }
+  let path = '/manager/guildh5/page/guild/settle'
+
+  let nowTs = new Date().getTime()
   api
-    .post('/manager/guildh5/page/anchor/settle', {
-      pageNum: 1,
-      pageSize: 10
+    .post(path, {
+      condition: {
+        date: nowTs // 日期，当天0点时间
+      },
+      pageNum: currentPage + 1,
+      pageSize: pageSize
     })
-    .then((response) => (data.value = response.data))
+    .then(function (response) {
+      if (currentPage == 0) {
+        data.value = response.data
+        refreshing.value = false
+      } else {
+        data.value.data.list = [...data.value.data.list, ...response.data.data.list]
+        loadingMore.value = false
+      }
+      currentPage++
+      if (data.value.data.list == null || data.value.data.list.length < pageSize) {
+        noMoreData.value = true
+      }
+    })
     .catch(function (error) {
       // 请求失败处理
       console.log(error)
     })
-})
+}
 </script>
 <template>
   <div class="container">
     <AppBarVue title="提现记录"></AppBarVue>
   </div>
-  <div class="list" v-if="data != null">
-    <div
-      v-for="item in data.data.list"
-      @click="$router.push({ name: 'withdrawal details', query:{'data':JSON.stringify(item)}
-    })"
-    >
-      <div class="row_left_part">
-        <div>
-          {{ $timeToFormatedDate(parseInt(item.endTime))
-          }}<span
-            :style="
-              'background-color:' +
-              (item.settleStatus == 0
-                ? '#FF8F16'
+  <InfiniteList
+    class="list"
+    @loadMore="requestData"
+    @refresh="refresh"
+    :loadingMore="loadingMore"
+    :refreshing="refreshing"
+    :noMoreData="noMoreData"
+    v-if="data != null"
+  >
+    <template #content>
+      <div
+        v-for="item in data.data.list"
+        @click="$router.push({ name: 'withdrawal details', query: { endTime: item.endTime } })"
+      >
+        <div class="row_left_part">
+          <div>
+            {{ $timeToFormatedDate(parseInt(item.endTime))
+            }}<span
+              :style="
+                'background-color:' +
+                (item.settleStatus == 0
+                  ? '#FF8F16'
+                  : item.settleStatus == 1
+                    ? '#07E076'
+                    : '#C7CAC9') +
+                ';'
+              "
+              >{{
+                item.settleStatus == 0 ? '提现中' : item.settleStatus == 1 ? '已提现' : '已作废'
+              }}</span
+            >
+          </div>
+          <div>
+            {{
+              item.settleStatus == 0
+                ? '正在处理中，请耐心等待'
                 : item.settleStatus == 1
-                  ? '#07E076'
-                  : '#C7CAC9') +
-              ';'
-            "
-            >提现中</span
-          >
+                  ? '已提现至你的银行账户'
+                  : '提前请求已失效'
+            }}
+          </div>
         </div>
-        <div>
-          {{
-            item.settleStatus == 0
-              ? '正在处理中，请耐心等待'
-              : item.settleStatus == 1
-                ? '已提现至你的银行账户'
-                : '提前请求已失效'
-          }}
-        </div>
+        <span class="spacer"></span>
+        <span class="value">{{ item.usdFee }}$</span>
+        <img class="right_arror" src="@/assets/right_arror.webp" />
       </div>
-      <span class="spacer"></span>
-      <span class="value">{{ item.usdFee }}$</span>
-      <img class="right_arror" src="@/assets/right_arror.webp" />
-    </div>
-  </div>
+    </template>
+  </InfiniteList>
 </template>
 <style scoped lang="less">
 @import 'index.less';

@@ -9,7 +9,7 @@ defineProps({
 
 </script>
 <template>
-    <span class="level">{{level}}</span>
+    <span class="level" style="color:#ffffff;padding-bottom:2px;">{{level}}</span>
 </template>
 <style scoped lang="less">
 .level {
@@ -21,10 +21,9 @@ defineProps({
     background-image: url('@/assets/crown_bg.webp');
     background-size: cover;
     text-align: right;
-    padding-right: 3px;
+    padding-right: 12px;
     font-size: 12px;
     font-weight: 400;
-    color: #ffffff;
     line-height: 17px;
 }
 </style>

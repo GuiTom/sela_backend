@@ -1,5 +1,6 @@
 import axios from 'axios';  
 import router from '../router/index'
+import toast  from '@/utils/toast'
 // 设置 Axios 的默认 URL（如果有的话）  
 const api = axios.create({
   baseURL:'https://testapi.selalive.com',
@@ -12,6 +13,7 @@ api.interceptors.request.use((config) => {
   return config;  
 }, (error) => {  
   // 对请求错误做些什么  
+  toast(error)
   return Promise.reject(error);  
 });  
 
@@ -19,6 +21,7 @@ api.interceptors.request.use((config) => {
 api.interceptors.response.use((response) => {  
   if(response.data.code==1002){
     router.push('/')
+    toast('登录信息过期，请重新登录')
     return Promise.reject();  
   }
   // 对响应数据做些什么，例如处理返回的数据格式等  
