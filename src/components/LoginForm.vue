@@ -1,5 +1,6 @@
 <script setup>
 import { ref } from 'vue';
+import multiLan from '@/utils/lan'
 const username = ref(null)
 const password = ref(null)
 const emit = defineEmits(['submit'])
@@ -11,11 +12,11 @@ function onClickSubmit(event){
 <template>
   <div class="login-container">  
     <form action="/login" method="post">  
-      <label for="username"><b>用户名</b></label>  
-      <input ref="username" type="text" placeholder="请输入用户名" name="username" required>  
-      <label for="password"><b>密码</b></label>  
-      <input ref="password" type="password" placeholder="请输入密码" name="password" required>  
-      <button type="submit" @click="onClickSubmit($event)" >登录</button>  
+      <label for="username"><b>{{multiLan('Account')}}</b></label>  
+      <input ref="username" type="text" :placeholder="multiLan('Enter account')" name="username" required>  
+      <label for="password"><b>{{multiLan('Password')}}</b></label>  
+      <input ref="password" type="password" :placeholder="multiLan('Enter password')" name="password" required>  
+      <button type="submit" @click="onClickSubmit($event)" >{{multiLan('Login')}}</button>  
     </form>  
   </div>  
 </template>

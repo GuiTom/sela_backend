@@ -1,19 +1,39 @@
-import zh_CN from '@/assets/multi_lan/zh_CN.json'
-// import es_ES from '@/assets/multi_lan/es_ES.json'
-// import hi_IN from '@/assets/multi_lan/hi_IN.json'
-// import id_ID from '@/assets/multi_lan/id_ID.json'
-// import pt_PT from '@/assets/multi_lan/pt_PT.json'
-// import th_TH from '@/assets/multi_lan/th_TH.json'
-// import tr_TR from '@/assets/multi_lan/tr_TR.json'
-// import vi_VN from '@/assets/multi_lan/vi_VN.json'
-// const lans = {
-//     'zh_CN':zh_CN,
-//     // 'es-ES':es_ES,
-//     // 'hi_IN':hi_IN,
+import zh from '@/assets/multi_lan/zh.json'
+import en from '@/assets/multi_lan/en.json'
+import es from '@/assets/multi_lan/es.json'
+import ar from '@/assets/multi_lan/ar.json'
+import hi from '@/assets/multi_lan/hi.json'
+import id from '@/assets/multi_lan/id.json'
+import pt from '@/assets/multi_lan/pt.json'
+import th from '@/assets/multi_lan/th.json'
+import tr from '@/assets/multi_lan/tr.json'
+import vi from '@/assets/multi_lan/vi.json'
+const lans = {
+    'zh':zh,
+    'en':en,
+    'es':es,
+    'ar':ar,
+    'hi':hi,
+    'id':id,
+    'pt':pt,
+    'th':th,
+    'tr':tr,
+    'vi':vi,
+}
+window.lan = 'en'
+console.log('lang')
+const multiLan = function(str,...args){
 
-// }
-const multiLan = function(str){
-   console.log(zh_CN[str]);
-
+//    var primaryLanguage = navigator.language || navigator.userLanguage
+//   let lan = primaryLanguage.split('-')[0];
+   let value = lans[window.lan][str];
+   if(args.length==1){
+      value = value.replaceAll('xx',args[0]);
+   }else if(args.length>1){
+      for(let i=0;i<args.length;i++){
+         value = value.replaceAll('xx'+(i+1),args[i]);
+      }
+   }
+  return value;
 }
 export default multiLan;

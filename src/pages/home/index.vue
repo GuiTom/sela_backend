@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from 'vue'
-import showDialog from '@/utils/Dialog.js'
+import showDialog from '../../utils/dialog.js'
 import { onMounted } from 'vue'
 // import router from '../../router/index'
 import api from '../../controller/request'
@@ -22,7 +22,7 @@ onMounted(() => {
   multiLan('login in')
   if (localStorage.getItem('home_tip_dialog_shown') == null) {
     localStorage.setItem('home_tip_dialog_shown', true)
-    showDialog(dialogContent, { title: '说明' })
+    showDialog(dialogContent, { title: multiLan('Instructions') })
   }
 
   api
@@ -87,53 +87,79 @@ function requestData() {
           <span>{{ data.guildName }}</span>
         </div>
         <div>
-          <span>创建时间:{{ $timeToFormatedDate(parseInt(data.createdAt)) }}</span
-          ><span>创建天数{{ data.createdDay }}天</span>
+          <span
+            >{{ multiLan('Date of creation') }}:{{
+              $timeToFormatedDate(parseInt(data.createdAt))
+            }}</span
+          ><span>{{ multiLan('Days since creation: xx days', data.createdDay) }}</span>
         </div>
         <div>
-          <span>主播数量：{{ data.anchorNum }}</span
-          ><span>昨日新增主播:{{ data.yesterdayNewAnchorNum }}</span>
+          <span>{{ multiLan('Number of hosts') }}：{{ data.anchorNum }}</span
+          ><span
+            >{{ multiLan('Newly registered hosts yesterday') }}:{{
+              data.yesterdayNewAnchorNum
+            }}</span
+          >
         </div>
       </div>
     </div>
 
     <div class="tips">
-      <div>提现要求：</div>
-      <div>
-        1：流水达到<span>{{ data.settleCoinsLimit }}</span
-        >的主播不少于<span>{{ data.yesterdayNewAnchorNum + '/' + data.settleCountLimit }}</span
-        >名
-      </div>
-      <div>
-        2：代理佣金可结算收益达到<span>${{ data.settleCoinsLimit }}</span
-        >才可触发自动提现功能。
-      </div>
-      <div>注：完成以上条件后将在下周的三个工作日内自动提现可结算收益</div>
+      <div>{{ multiLan('Withdrawal requirements') }}：</div>
+      <div
+        v-html="
+          multiLan(
+            'Withdrawal requirements 1',
+            '<span style=\'font-size: 14px;font-weight:500;color: #ff38a2;line-height: 20px;\'>' +
+              data.settleCoinsLimit +
+              '</span>',
+            '<span style=\'font-size: 14px;font-weight:500;color: #ff38a2;line-height: 20px;\'>' +
+              data.yesterdayNewAnchorNum +
+              '/' +
+              data.settleCountLimit +
+              '</span>'
+          )
+        "
+      ></div>
+      <div
+        v-html="
+          multiLan(
+            'Withdrawal requirements 2',
+            '<span style=\'font-size: 14px;font-weight:500;color: #ff38a2;line-height: 20px;\'>' +
+              data.settleCoinsLimit +
+              '</span>'
+          )
+        "
+      ></div>
+      <div>{{ multiLan('Withdrawal requirements tip') }}</div>
     </div>
     <!-- 提现记录和主播管理按钮 -->
     <div class="buttons">
-      <span @click="$router.push('/withdraw_records')">提现记录</span>
-      <span @click="$router.push('/anchor_list')">主播管理</span>
+      <span @click="$router.push('/withdraw_records')">{{ multiLan('Withdrawal history') }}</span>
+      <span @click="$router.push('/anchor_list')">{{ multiLan('Host management') }}</span>
     </div>
     <!-- 余额和结算收益 -->
     <div class="more-info">
       <span>
         <div>≈{{ data.usdFee / 100 }}$</div>
-        <div>收益余额<img src="@/assets/ask_symbol.webp" /></div>
+        <div>{{ multiLan('Balance') }}<img src="@/assets/ask_symbol.webp" /></div>
       </span>
       <span></span>
       <span>
         <div>≈{{ data.genSettleUsdFee / 100 }}$<span class="status">结算中</span></div>
-        <div>可结算收益<img src="@/assets/ask_symbol.webp" /></div>
+        <div>{{ multiLan('Withdrawable income') }}<img src="@/assets/ask_symbol.webp" /></div>
       </span>
     </div>
     <div class="divider"></div>
     <!-- 周收益 -->
     <div class="week_profit">
-      <div><span>周收益(金币)</span><span>100金币≈1$</span></div>
+      <div>
+        <span>{{ multiLan('Weekly earnings(coins)') }}</span
+        ><span>100金币≈1$</span>
+      </div>
       <div>
         <span>
-          <div style="font-size: 10px;">
+          <div style="font-size: 10px">
             {{
               $timeToFormatedDateHour(parseInt(data.weekStatBeginAt)) +
               '-' +
@@ -141,13 +167,13 @@ function requestData() {
             }}
           </div>
           <div class="coin">{{ data.weekIncome }}<img src="@/assets/gold_coin.webp" /></div>
-          <div style="text-align: center;">本周主播总流水</div>
+          <div style="text-align: center">{{ multiLan('Overall host earnings this week') }}</div>
         </span>
-  
+
         <span class="vertical-divider"></span>
- 
+
         <span>
-          <div style="font-size: 10px;">
+          <div style="font-size: 10px">
             {{
               $timeToFormatedDateHour(parseInt(data.lastWeekStatBeginAt)) +
               '-' +
@@ -155,7 +181,7 @@ function requestData() {
             }}
           </div>
           <div class="coin">{{ data.lastWeekIncome }}<img src="@/assets/gold_coin.webp" /></div>
-          <div style="text-align: center;">上周主播总流水</div>
+          <div style="text-align: center">{{ multiLan('Overall host earnings last week') }}</div>
         </span>
       </div>
     </div>
@@ -180,10 +206,10 @@ function requestData() {
           >
             <span>
               <div>
-                日期:<span>{{ item.date }}</span>
+                {{ multiLan('Date') }}:<span>{{ item.date }}</span>
               </div>
               <div class="coin">
-                全部主播流水：{{ item.coins }}
+                {{ multiLan('Overall host earnings') }}：{{ item.coins }}
                 <img src="@/assets/gold_coin.webp" />
               </div>
             </span>

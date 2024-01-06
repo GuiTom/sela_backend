@@ -5,7 +5,7 @@ import { ref } from 'vue'
 import router from '../../router/index'
 const authorization = ref(null)
 function onSubmit(username, password) {
-  console.log(username, password)
+ 
   
   const formData = new FormData()
   formData.append('username', username)
@@ -18,8 +18,7 @@ function onSubmit(username, password) {
     .then(function (response) {
       if (response.data.code == 0) {
         authorization.value = response.data.data
-        console.log('data:',response.data.data)
-      
+        // console.log('data:',response.data.data)
         localStorage.setItem('authorization',authorization.value);
         router.push('/home');
       } else {

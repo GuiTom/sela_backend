@@ -23,6 +23,8 @@ api.interceptors.response.use((response) => {
     router.push('/')
     toast('登录信息过期，请重新登录')
     return Promise.reject();  
+  }else if(response.data.code!=0){
+    toast(response.data.message)
   }
   // 对响应数据做些什么，例如处理返回的数据格式等  
   return response;  
