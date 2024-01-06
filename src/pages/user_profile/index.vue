@@ -10,6 +10,7 @@ import InfiniteList from '@/components/InfiniteList.vue'
 import AnchorAvatarVue from '@/components/AnchorAvatar.vue'
 import LevelIcon from '@/components/LevelIcon.vue'
 import multiLan from '@/utils/lan'
+import coin_amount from '@/utils/mony_amount'
 const loadingMore = ref(false)
 const refreshing = ref(false)
 const noMoreData = ref(false)
@@ -94,7 +95,7 @@ function requestData() {
         </div>
         <div class="id_and_lateast_call">
           <span>ID:{{ userData.anchorId }}</span>
-          <span>最近通话:{{ $timeToFormatedDate(userData.lastCallAt) }}</span>
+          <span>{{multiLan('Recent call')}}:{{ $timeToFormatedDate(userData.lastCallAt) }}</span>
         </div>
       </span>
     </div>
@@ -102,22 +103,26 @@ function requestData() {
     <!-- 注册时间这几行 -->
     <div class="register_and_more_info" v-if="userData != null">
       <div>
-        注册时间：<span>{{ $timeToFormatedDate(parseInt(userData.authTime)) }}</span>
+        {{multiLan('Registration date')}}：<span>{{ $timeToFormatedDate(parseInt(userData.authTime)) }}</span>
       </div>
       <div>
-        累计违规次数：<span>{{ userData.banCount }}</span>
+        {{multiLan('Overall violation times')}}：<span>{{ userData.banCount }}</span>
       </div>
       <div>
-        解封时间：<span>{{ $timeToFormatedDate(userData.banTime) }}</span>
+       {{multiLan('Unbanned on')}}：<span>{{ $timeToFormatedDate(userData.banTime) }}</span>
       </div>
       <div>
-        封禁原因：<span>{{ userData.banReason }}</span>
+        {{multiLan('Ban reason')}}：<span>{{ userData.banReason }}</span>
       </div>
     </div>
     <div class="divider"></div>
     <!-- 周数据 -->
     <div class="week_data" v-if="userData != null">
-      <div>周数据<span style="font-size: 12px;font-weight:400;color:#999999">-每周{{ 24-(8-$timeZoneOfffsetHours())}}点更新</span></div>
+      <div>
+        {{multiLan('Weekly statistics')}}<span style="font-size: 12px; font-weight: 400; color: #999999"
+          >-每周{{ 24 - (8 - $timeZoneOfffsetHours()) }}点更新</span
+        >
+      </div>
       <span class="week_data_container">
         <span>
           <div>
@@ -127,8 +132,10 @@ function requestData() {
               $timeToFormatedDateHour(parseInt(userData.weekStatEndAt))
             }}
           </div>
-          <div>{{ userData.weekCoins }}<img class="coin" src="@/assets/gold_coin.webp" /></div>
-          <div>本周主播流水</div>
+          <div>
+            {{ coin_amount(userData.weekCoins) }}<img class="coin" src="@/assets/gold_coin.webp" />
+          </div>
+          <div>{{ multiLan('Host earnings this week') }}</div>
         </span>
         <span>
           <div>
@@ -138,8 +145,11 @@ function requestData() {
               $timeToFormatedDateHour(parseInt(userData.lastWeekStatEndAt))
             }}
           </div>
-          <div>{{ userData.lastWeekCoins }}<img class="coin" src="@/assets/gold_coin.webp" /></div>
-          <div>{{multiLan('Host earnings last week')}}</div>
+          <div>
+            {{ coin_amount(userData.lastWeekCoins)
+            }}<img class="coin" src="@/assets/gold_coin.webp" />
+          </div>
+          <div>{{ multiLan('Host earnings last week') }}</div>
         </span>
       </span>
     </div>
@@ -157,22 +167,22 @@ function requestData() {
         <div class="daily_data">
           <div v-if="data != null" v-for="(item, index) in data.data.list">
             <div>
-              {{multiLan('Date')}}：<span>{{ $timeToFormatedDate(parseInt(item.date)) }}</span>
+              {{ multiLan('Date') }}：<span>{{ $timeToFormatedDate(parseInt(item.date)) }}</span>
             </div>
             <div>
-              {{multiLan('Online duration')}}：<span>{{ item.onlineDuration }}</span>
+              {{ multiLan('Online duration') }}：<span>{{ item.onlineDuration }}</span>
             </div>
             <div>
-              {{multiLan('Average call duration')}}：<span>{{ item.avCallDuration }}</span>
+              {{ multiLan('Average call duration') }}：<span>{{ item.avCallDuration }}</span>
             </div>
             <div>
-              {{multiLan('Number of calls')}}：<span>{{ item.callNum }}</span>
+              {{ multiLan('Number of calls') }}：<span>{{ item.callNum }}</span>
             </div>
             <div>
-              {{multiLan('Number of received gifts')}}：<span>{{ item.giftNum }}</span>
+              {{ multiLan('Number of received gifts') }}：<span>{{ item.giftNum }}</span>
             </div>
             <div class="last_item">
-              {{multiLan('Earnings')}}：<span>{{ item.coins }}</span>
+              {{ multiLan('Earnings') }}：<span>{{ item.coins }}</span>
             </div>
             <div class="divider" v-if="data != null && index < data.data.list.length - 1"></div>
           </div>

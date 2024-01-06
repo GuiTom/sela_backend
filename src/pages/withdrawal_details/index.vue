@@ -7,6 +7,7 @@ import { useRoute } from 'vue-router'
 import InfiniteList from '@/components/InfiniteList.vue'
 import api from '../../controller/request'
 import multiLan from '@/utils/lan'
+import coin_amount from '@/utils/mony_amount'
 const loadingMore = ref(false)
 const refreshing = ref(false)
 const noMoreData = ref(false)
@@ -95,8 +96,8 @@ function requestData() {
         <tbody>
           <tr class="item" v-if="data != null" v-for="item in data.data.list">
             <td>{{ item.nickname }}</td>
-            <td>{{ item.paidCoins }}<img class="coin" src="@/assets/gold_coin.webp" /></td>
-            <td class="profit">+{{ item.usdFee / 100 }}$</td>
+            <td>{{ coin_amount(item.paidCoins) }}<img class="coin" src="@/assets/gold_coin.webp" /></td>
+            <td class="profit">+{{ coin_amount(item.usdFee) }}$</td>
           </tr>
         </tbody>
       </table>
