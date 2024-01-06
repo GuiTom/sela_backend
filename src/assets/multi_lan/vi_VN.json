@@ -15,7 +15,6 @@
     "Withdrawal requirements 1":"1: Có không ít hơn (xx2) Chủ phòng có doanh thu đạt [xx1 tiền vàng]",
     "Withdrawal requirements 2":"2: Chức năng rút tiền tự động chỉ có thể được kích hoạt khi thu nhập quyết toán hoa hồng của đại lý đạt [$xx].",
     "Withdrawal requirements tip":"Lưu ý: Sau khi hoàn thành các điều kiện trên, thu nhập có thể quyết toán sẽ được tự động rút trong vòng 3 ngày làm việc vào tuần tiếp theo",
-
     "Withdrawal history": "Lịch sử rút tiền",
     "Host management": "Quản lý Chủ phòng",
     "Weekly earnings(coins)": "Thu nhập hàng tuần (tiền vàng)",
@@ -46,7 +45,5 @@
     "Already withdrawn into your bank account": "Đã rút về tài khoản ngân hàng của bạn",
     "Online status": "Trạng thái trực tuyến",
     "Time of the last call": "Thời gian gọi",
-    "Daily earnings": "Thu nhập trong ngày",
-    "Withdrawal in progress":"Đang rút tiền",
-    "Got it":"Tôi biết rồi"
+    "Daily earnings": "Thu nhập trong ngày"
 }

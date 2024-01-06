@@ -2,9 +2,9 @@
   "Login": "लॉग इन करें",
   "Account": "खाता",
   "Instructions": "निर्देश",
-  "Balance= withdrawable income+ non-withdrawable income(commission from girls who fail to reach the minimum goal). Attention! We will clear the withdrawable income once you successfully withdraw.": "1. बैलेंस = निकासी योग्य आय + गैर-निकासी योग्य आय (न्यूनतम लक्ष्य तक पहुंचने में विफल रहने वाली लड़कियों से कमीशन)। ध्यान दें! आपके सफलतापूर्वक निकासी करने पर हम निकासी योग्य आय का भुगतान कर देंगे।",
-  "Withdrawable income: The amount you can withdraw next week from earnings this week": "निकासी योग्य आय: वह राशि जो आप इस सप्ताह की कमाई से अगले सप्ताह निकाल सकते हैं",
-  "The withdrawal amount varies by exchange rate": "निकासी राशि एक्सचेंज रेट के अनुसार अलग अलग होती है",
+  "explain 1": "1. बैलेंस = निकासी योग्य आय + गैर-निकासी योग्य आय (न्यूनतम लक्ष्य तक पहुंचने में विफल रहने वाली लड़कियों से कमीशन)। ध्यान दें! आपके सफलतापूर्वक निकासी करने पर हम निकासी योग्य आय का भुगतान कर देंगे।",
+  "explain 2": "निकासी योग्य आय: वह राशि जो आप इस सप्ताह की कमाई से अगले सप्ताह निकाल सकते हैं",
+  "explain 3": "निकासी राशि एक्सचेंज रेट के अनुसार अलग अलग होती है",
   "Enter account": "खाता दर्ज करें",
   "Enter password": "पासवर्ड दर्ज करें",
   "Date of creation": "बनाने की तारीख",
@@ -45,5 +45,7 @@
   "Already withdrawn into your bank account": "आपके बैंक खाते से पहले ही निकाल लिया गया है",
   "Online status": "ऑनलाइन स्थिति",
   "Time of the last call": "आखिरी कॉल का समय",
-  "Daily earnings": "दैनिक कमाई"
+  "Daily earnings": "दैनिक कमाई",
+  "Withdrawal in progress":"निकासी जारी है",
+  "Got it":"समझ गया"
 }

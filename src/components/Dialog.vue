@@ -1,4 +1,6 @@
 <script setup>
+import multiLan from '@/utils/lan';
+
 defineProps({
   show: {
     type: Boolean,
@@ -32,7 +34,7 @@ const handleClose = () => {
         ><p class="dialog-content">{{ message }}</p></slot
       >
       <div class="dialog-footer">
-        <button class="button dialog-confirm" @click="close(handleClose)">我知道了</button>
+        <button class="button dialog-confirm" @click="close(handleClose)">{{multiLan('Got it')}}</button>
       </div>
     </div>
   </div>

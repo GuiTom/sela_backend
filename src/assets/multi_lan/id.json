@@ -2,9 +2,9 @@
   "Login": "Login",
   "Account": "Akun",
   "Instructions": "Keterangan",
-  "Balance= withdrawable income+ non-withdrawable income(commission from girls who fail to reach the minimum goal). Attention! We will clear the withdrawable income once you successfully withdraw.": "Saldo pendapatan = pendapatan yang dapat direset + pendapatan yang tidak dapat direset (pendapatan komisi dari host yang belum memenuhi standar reset). Catatan: Ketika Anda berhasil melakukan penarikan, kami akan potong pendapatan yang dapat direst.",
-  "Withdrawable income: The amount you can withdraw next week from earnings this week": "Penghasilan yang dapat direset: Penghasilan yang dapat ditarik minggu depan setelah memenuhi ketentuan penarikan.",
-  "The withdrawal amount varies by exchange rate": "Jumlah penarikan bervariasi tergantung pada nilai tukar",
+  "explain 1": "Saldo pendapatan = pendapatan yang dapat direset + pendapatan yang tidak dapat direset (pendapatan komisi dari host yang belum memenuhi standar reset). Catatan: Ketika Anda berhasil melakukan penarikan, kami akan potong pendapatan yang dapat direst.",
+  "explain 2": "Penghasilan yang dapat direset: Penghasilan yang dapat ditarik minggu depan setelah memenuhi ketentuan penarikan.",
+  "explain 3": "Jumlah penarikan bervariasi tergantung pada nilai tukar",
   "Enter account": "Masukkan akun",
   "Enter password": "Masukkan kata sandi",
   "Date of creation": "Waktu penciptaan",
@@ -46,5 +46,6 @@
   "Online status": "Status daring",
   "Time of the last call": "Waktu panggilan",
   "Daily earnings": "Pendapatan hari ini",
-  "Withdrawal in progress":"Sedang ditarik"
+  "Withdrawal in progress":"Sedang ditarik",
+  "Got it":"Mengerti"
 }

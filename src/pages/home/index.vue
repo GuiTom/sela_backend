@@ -17,7 +17,7 @@ const weekData = ref(null)
 var currentPage = 0
 const pageSize = 20
 const dialogContent =
-  '1.收益余额= 可结算收益+不可结算收益（未达到结算标准的主播的提成收益）。注意：当你提现成功之后，我们将扣除可结算收益。\n 2.可结算收益：达到提现条件后在下周可提现的收益。\n 3.提款数额因汇率而异。'
+  '1.'+multiLan('explain 1')+'\n 2.'+multiLan('explain 2')+'\n 3.'+multiLan('explain 2');
 onMounted(() => {
   multiLan('login in')
   if (localStorage.getItem('home_tip_dialog_shown') == null) {

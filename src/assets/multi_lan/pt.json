@@ -2,9 +2,9 @@
   "Login": "Login",
   "Account": "Conta",
   "Instructions": "Instruções",
-  "Balance= withdrawable income+ non-withdrawable income(commission from girls who fail to reach the minimum goal). Attention! We will clear the withdrawable income once you successfully withdraw.": "Saldo de receitas = receitas liquidáveis ​​+ receitas não liquidáveis ​​(receitas de comissões de âncoras que não atenderam aos padrões de liquidação). Nota: Quando você retirar com sucesso, deduziremos a receita liquidável.",
-  "Withdrawable income: The amount you can withdraw next week from earnings this week": "Receitas liquidáveis: Os ganhos que podem ser retirados na próxima semana após o cumprimento das condições de saque.",
-  "The withdrawal amount varies by exchange rate": "Os valores de retirada variam dependendo das taxas de câmbio",
+  "explain 1": "Saldo de receitas = receitas liquidáveis ​​+ receitas não liquidáveis ​​(receitas de comissões de âncoras que não atenderam aos padrões de liquidação). Nota: Quando você retirar com sucesso, deduziremos a receita liquidável.",
+  "explain 2": "Receitas liquidáveis: Os ganhos que podem ser retirados na próxima semana após o cumprimento das condições de saque.",
+  "explain 3": "Os valores de retirada variam dependendo das taxas de câmbio",
   "Enter account": "Digite o número da conta",
   "Enter password": "Digite a senha",
   "Date of creation": "Data de criação",
@@ -45,5 +45,7 @@
   "Already withdrawn into your bank account": "Retirado para sua conta bancária",
   "Online status": "Status online",
   "Time of the last call": "Duração da chamada",
-  "Daily earnings": "Renda do dia"
+  "Daily earnings": "Renda do dia",
+  "Withdrawal in progress":"Retirando",
+  "Got it":"Entendi"
 }

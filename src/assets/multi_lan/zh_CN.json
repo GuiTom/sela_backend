@@ -1,7 +1,6 @@
 {
     "Login":"登录",
     "Account":"账号",
-    "Password":"密码",
     "Instructions":"说明",
     "explain 1":"收益余额= 可结算收益+不可结算收益（未达到结算标准的主播的提成收益）。注意：当你提现成功之后，我们将扣除可结算收益。",
     "explain 2":"可结算收益：达到提现条件后在下周可提现的收益。",
@@ -13,7 +12,7 @@
     "Newly registered hosts yesterday":"昨日新增主播",
     "Days since creation: xx days":"创建天数：[xx]天",
     "Withdrawal requirements":"提现要求",
-    "Withdrawal requirements 1":"1：流水达到 xx金币 的主播不少于（xx）名",
+    "Withdrawal requirements 1":"1：流水达到【xx金币】的主播不少于（xx）名",
     "Withdrawal requirements 2":"2：代理佣金可结算收益达到【$xx】才可触发自动提现功能。",
     "Withdrawal requirements tip":"注：完成以上条件后将在下周的三个工作日内自动提现可结算收益",
     "Withdrawal history":"提现记录",
@@ -46,9 +45,5 @@
     "Already withdrawn into your bank account":"已提现至你的银行账户",
     "Online status":"在线状态",
     "Time of the last call":"通话时间",
-    "Daily earnings":"当日收入",
-    "Withdrawal details":"提现明细",
-    "Withdrawal in progress":"提现中",
-    "Withdrawal request has expired":"提现请求已失效",
-    "Got it":"我知道了"
+    "Daily earnings":"当日收入"
 }

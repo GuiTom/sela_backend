@@ -2,9 +2,9 @@
   "Login": "Iniciar sesión",
   "Account": "Cuenta",
   "Instructions": "Instrucciones",
-  "Balance= withdrawable income+ non-withdrawable income(commission from girls who fail to reach the minimum goal). Attention! We will clear the withdrawable income once you successfully withdraw.": "Saldo de ganancias = ganancias liquidables +ganancias no liquidables (ganancias por comisiones de hosts que no cumplieron con los estándares de liquidación). Nota: Cuando realice un retiro exitoso, deduciremos el ganancias liquidables.",
-  "Withdrawable income: The amount you can withdraw next week from earnings this week": "Ganancias retirables:Las ganancias que se pueden retirar la próxima semana después de cumplir las condiciones de retiro.",
-  "The withdrawal amount varies by exchange rate": "Los montos de retiro varían según los tipos de cambio",
+  "explain 1": "Saldo de ganancias = ganancias liquidables +ganancias no liquidables (ganancias por comisiones de hosts que no cumplieron con los estándares de liquidación). Nota: Cuando realice un retiro exitoso, deduciremos el ganancias liquidables.",
+  "explain 2": "Ganancias retirables:Las ganancias que se pueden retirar la próxima semana después de cumplir las condiciones de retiro.",
+  "explain 3": "Los montos de retiro varían según los tipos de cambio",
   "Enter account": "Ingrese el número de cuenta",
   "Enter password": "Ingrese la contraseña",
   "Date of creation": "Tiempo de creación",
@@ -46,5 +46,6 @@
   "Online status": "Estado en línea",
   "Time of the last call": "Duración de llamada",
   "Daily earnings": "Ganancia del día",
-  "Withdrawal in progress":"Retiro en curso"
+  "Withdrawal in progress":"Retiro en curso",
+  "Got it":"Entiendo"
 }

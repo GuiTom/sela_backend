@@ -2,9 +2,9 @@
   "Login": "เข้าสู่ระบบ",
   "Account": "บัญชี",
   "Instructions": "แสดงให้เห็น",
-  "Balance= withdrawable income+ non-withdrawable income(commission from girls who fail to reach the minimum goal). Attention! We will clear the withdrawable income once you successfully withdraw.": "ยอดรายได้ = รายได้ที่สามารถชำระได้ + รายได้ที่ไม่สามารถชำระได้ (รายได้ค่าคอมมิชชั่นจากจุดยึดที่ไม่เป็นไปตามมาตรฐานการชำระบัญชี) หมายเหตุ: เมื่อคุณถอนเงินสำเร็จเราจะหักรายได้ที่สามารถเคลียร์ได้",
-  "Withdrawable income: The amount you can withdraw next week from earnings this week": "รายได้ที่สามารถชำระได้: รายได้ที่สามารถถอนออกได้ในสัปดาห์หน้าหลังจากตรงตามเงื่อนไขการถอน",
-  "The withdrawal amount varies by exchange rate": "จำนวนเงินที่ถอนจะแตกต่างกันไปขึ้นอยู่กับอัตราแลกเปลี่ยน",
+  "explain 1": "ยอดรายได้ = รายได้ที่สามารถชำระได้ + รายได้ที่ไม่สามารถชำระได้ (รายได้ค่าคอมมิชชั่นจากจุดยึดที่ไม่เป็นไปตามมาตรฐานการชำระบัญชี) หมายเหตุ: เมื่อคุณถอนเงินสำเร็จเราจะหักรายได้ที่สามารถเคลียร์ได้",
+  "explain 2": "รายได้ที่สามารถชำระได้: รายได้ที่สามารถถอนออกได้ในสัปดาห์หน้าหลังจากตรงตามเงื่อนไขการถอน",
+  "explain 3": "จำนวนเงินที่ถอนจะแตกต่างกันไปขึ้นอยู่กับอัตราแลกเปลี่ยน",
   "Enter account": "กรอกหมายเลขบัญชี",
   "Enter password": "กรอกรหัสผ่าน",
   "Date of creation": "เวลาสร้าง",
@@ -45,5 +45,7 @@
   "Already withdrawn into your bank account": "ถอนเข้าบัญชีธนาคารของคุณแล้ว",
   "Online status": "สถานะออนไลน์",
   "Time of the last call": "เวลาการโทร",
-  "Daily earnings": "รายได้ของวันนี้"
+  "Daily earnings": "รายได้ของวันนี้",
+  "Withdrawal in progress":"กำลังถอนเงิน",
+  "Got it":"รับทราบ"
 }

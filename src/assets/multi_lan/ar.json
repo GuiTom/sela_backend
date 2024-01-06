@@ -2,9 +2,9 @@
     "Login": "تسجيل الدخول",
     "Account": "الحساب",
     "Instructions": "ملاحظة",
-    "Balance= withdrawable income+ non-withdrawable income(commission from girls who fail to reach the minimum goal). Attention! We will clear the withdrawable income once you successfully withdraw.": "ارباح= سحب ارباح لتسوية+لا يمكن سحب ارباح لتسوية(لا يبلغ كونز ادني).الملاحظة:سيتم خصم ارباح سحب لتسوية بعد اسحب ارباح بناجح",
-    "Withdrawable income: The amount you can withdraw next week from earnings this week": "سحب ارباح لتسوية:الأرباح التي يمكن سحبها الأسبوع القادم بعد استيفاء شروط السحب",
-    "The withdrawal amount varies by exchange rate": "سحب مبلغ حسب الصرف",
+    "explain 1": "ارباح= سحب ارباح لتسوية+لا يمكن سحب ارباح لتسوية(لا يبلغ كونز ادني).الملاحظة:سيتم خصم ارباح سحب لتسوية بعد اسحب ارباح بناجح",
+    "explain 2": "سحب ارباح لتسوية:الأرباح التي يمكن سحبها الأسبوع القادم بعد استيفاء شروط السحب",
+    "explain 3": "سحب مبلغ حسب الصرف",
     "Enter account": "ادخل الحساب",
     "Enter password": "ادخل كلمة المرور",
     "Date of creation": "وقت الانشاء",
@@ -45,5 +45,7 @@
     "Already withdrawn into your bank account": "تم وصل راتبك  الي حسابك البنك",
     "Online status": "حالة أونيلان",
     "Time of the last call": "مدة المكالمة",
-    "Daily earnings": "دخل اليوم"
+    "Daily earnings": "دخل اليوم",
+    "Withdrawal in progress":"قيد السحب الراتب",
+    "Got it":"عرفت"
 }

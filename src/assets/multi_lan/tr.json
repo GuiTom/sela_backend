@@ -2,9 +2,9 @@
   "Login": "Giriş",
   "Account": "Hesap",
   "Instructions": "Talimatlar",
-  "Balance= withdrawable income+ non-withdrawable income(commission from girls who fail to reach the minimum goal). Attention! We will clear the withdrawable income once you successfully withdraw.": "1.Bakiye= çekilebilir gelir + çekilemeyen gelir (asgari hedefe ulaşamayan kızlardan alınan komisyon). Dikkat! Başarılı bir şekilde para çektiğinizde çekilebilir geliri temizleyeceğiz.",
-  "Withdrawable income: The amount you can withdraw next week from earnings this week": "Çekilebilir gelir: Bu hafta elde ettiğiniz kazançlardan gelecek hafta çekebileceğiniz tutar",
-  "The withdrawal amount varies by exchange rate": "Para çekme tutarı döviz kuruna göre değişir",
+  "explain 1": "1.Bakiye= çekilebilir gelir + çekilemeyen gelir (asgari hedefe ulaşamayan kızlardan alınan komisyon). Dikkat! Başarılı bir şekilde para çektiğinizde çekilebilir geliri temizleyeceğiz.",
+  "explain 2": "Çekilebilir gelir: Bu hafta elde ettiğiniz kazançlardan gelecek hafta çekebileceğiniz tutar",
+  "explain 3": "Para çekme tutarı döviz kuruna göre değişir",
   "Enter account": "Hesabı girin",
   "Enter password": "Parolanı Gir",
   "Date of creation": "Oluşturulma tarihi",
@@ -45,5 +45,7 @@
   "Already withdrawn into your bank account": "Zaten banka hesabınıza çekilmiş",
   "Online status": "Çevrimiçi durum",
   "Time of the last call": "Son aramanın zamanı",
-  "Daily earnings": "Günlük kazanç"
+  "Daily earnings": "Günlük kazanç",
+  "Withdrawal in progress":"Para çekme işlemi devam ediyor",
+  "Got it":"Anladım"
 }
