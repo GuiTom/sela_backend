@@ -63,7 +63,8 @@ const currentIndex  = ref(props.initialIndex)
       display: inline-block;
     }
     >div{
-      word-wrap: nowrap;
+    word-break: keep-all;
+    white-space: nowrap;
       display: inline-block;
     }
     .selected {
