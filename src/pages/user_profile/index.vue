@@ -19,10 +19,12 @@ var data = ref(null)
 var userData = ref(null)
 const pageSize = 20
 onMounted(() => {
-  userData.value = window.param
+  const route = useRoute()
+  userData.value = JSON.parse(route.query.data)
   console.log(userData.value.authTime)
   requestData()
   // window.param = null
+  
 })
 function refresh() {
   currentPage = 0
@@ -76,7 +78,7 @@ function requestData() {
 <template>
   <div class="container">
     <!-- appBar -->
-    <AppBarVue title="个人中心"></AppBarVue>
+    <AppBarVue :title="multiLan('Personal statistics')"></AppBarVue>
     <!-- 个人头像这一行 -->
     <div class="base_info" v-if="userData != null">
       <span class="avatar"
@@ -95,7 +97,7 @@ function requestData() {
         </div>
         <div class="id_and_lateast_call">
           <span>ID:{{ userData.anchorId }}</span>
-          <span>{{multiLan('Recent call')}}:{{ $timeToFormatedDate(userData.lastCallAt) }}</span>
+          <span v-if="parseInt(userData.lastCallAt)>0">{{multiLan('Recent call')}}:{{ $timeToFormatedDate(userData.lastCallAt) }}</span>
         </div>
       </span>
     </div>
@@ -105,13 +107,13 @@ function requestData() {
       <div>
         {{multiLan('Registration date')}}：<span>{{ $timeToFormatedDate(parseInt(userData.authTime)) }}</span>
       </div>
-      <div>
+      <div v-if="userData.banCount">
         {{multiLan('Overall violation times')}}：<span>{{ userData.banCount }}</span>
       </div>
-      <div>
+      <div v-if="userData.banTime">
        {{multiLan('Unbanned on')}}：<span>{{ $timeToFormatedDate(userData.banTime) }}</span>
       </div>
-      <div>
+      <div v-if="userData.banReason">
         {{multiLan('Ban reason')}}：<span>{{ userData.banReason }}</span>
       </div>
     </div>

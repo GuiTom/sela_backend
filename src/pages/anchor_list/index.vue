@@ -33,9 +33,9 @@ function onmenuSelected(index) {
   requestData()
 }
 function onClickItem(item) {
-  // getCurrentInstance().appContext.config.globalProperties.$routeObjectParam=item;
-  window.param = item
-  router.push({ path: '/profile', query: { anchorId: item.anchorId } })
+
+  localStorage.setItem('param',item);
+  router.push({ path: '/profile', query: { anchorId: item.anchorId,data:JSON.stringify(item) } })
 }
 function refresh() {
   currentPage = 0
