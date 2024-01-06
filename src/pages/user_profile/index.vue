@@ -9,6 +9,7 @@ import { useRoute } from 'vue-router'
 import InfiniteList from '@/components/InfiniteList.vue'
 import AnchorAvatarVue from '@/components/AnchorAvatar.vue'
 import LevelIcon from '@/components/LevelIcon.vue'
+import multiLan from '@/utils/lan'
 const loadingMore = ref(false)
 const refreshing = ref(false)
 const noMoreData = ref(false)
@@ -138,7 +139,7 @@ function requestData() {
             }}
           </div>
           <div>{{ userData.lastWeekCoins }}<img class="coin" src="@/assets/gold_coin.webp" /></div>
-          <div>上周主播流水</div>
+          <div>{{multiLan('Host earnings last week')}}</div>
         </span>
       </span>
     </div>
@@ -156,22 +157,22 @@ function requestData() {
         <div class="daily_data">
           <div v-if="data != null" v-for="(item, index) in data.data.list">
             <div>
-              日期：<span>{{ $timeToFormatedDate(parseInt(item.date)) }}</span>
+              {{multiLan('Date')}}：<span>{{ $timeToFormatedDate(parseInt(item.date)) }}</span>
             </div>
             <div>
-              在线时长：<span>{{ item.onlineDuration }}</span>
+              {{multiLan('Online duration')}}：<span>{{ item.onlineDuration }}</span>
             </div>
             <div>
-              平均通话时长：<span>{{ item.avCallDuration }}</span>
+              {{multiLan('Average call duration')}}：<span>{{ item.avCallDuration }}</span>
             </div>
             <div>
-              通话数：<span>{{ item.callNum }}</span>
+              {{multiLan('Number of calls')}}：<span>{{ item.callNum }}</span>
             </div>
             <div>
-              收到礼物数：<span>{{ item.giftNum }}</span>
+              {{multiLan('Number of received gifts')}}：<span>{{ item.giftNum }}</span>
             </div>
             <div class="last_item">
-              流水：<span>{{ item.coins }}</span>
+              {{multiLan('Earnings')}}：<span>{{ item.coins }}</span>
             </div>
             <div class="divider" v-if="data != null && index < data.data.list.length - 1"></div>
           </div>

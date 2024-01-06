@@ -10,6 +10,7 @@ import ContextMenu from '@/components/ContextMenu.vue'
 import InfiniteList from '@/components/InfiniteList.vue'
 import router from '../../router/index'
 import LevelIcon from '@/components/LevelIcon.vue'
+import multiLan from '@/utils/lan'
 const loadingMore = ref(false)
 const refreshing = ref(false)
 const noMoreData = ref(false)
@@ -80,7 +81,7 @@ function requestData() {
 </script>
 <template>
   <div class="container">
-    <AppBarVue title="主播管理">
+    <AppBarVue :title="multiLan('Host management')">
       <template #right_icon>
         <div style="position: relative" @click="onClickShowMenu">
           <img src="@/assets/more_icon.webp" style="width: 22px; height: 22px" />
@@ -89,7 +90,11 @@ function requestData() {
             v-if="showMenu"
             @item_selected="onmenuSelected"
             :initialIndex="selectedMenuIndex"
-            :options="['在线状态', '通话时间', '当日收入']"
+            :options="[
+              multiLan('Online status'),
+              multiLan('Time of the last call'),
+              multiLan('Daily earnings')
+            ]"
           ></ContextMenu>
         </div>
       </template>
@@ -109,12 +114,10 @@ function requestData() {
         <span class="avatar_container"
           ><AnchorAvatarVue
             :onlineStatus="item.isOnline"
-            :isForbidden="item.userStatus==2"
+            :isForbidden="item.userStatus == 2"
             :img="item.portrait"
-          ></AnchorAvatarVue
-        >
-       
-      </span>
+          ></AnchorAvatarVue>
+        </span>
         <span class="right_info_container">
           <div>
             {{ item.nickname }}
@@ -122,7 +125,9 @@ function requestData() {
           </div>
           <div>
             <span>ID：{{ item.anchorId }}</span
-            ><span class="last_call">最近通话:{{ $timeToFormatedDate(item.lastCallAt) }}</span>
+            ><span class="last_call"
+              >{{ multiLan('Recent call') }}:{{ $timeToFormatedDate(item.lastCallAt) }}</span
+            >
           </div>
         </span>
         <span class="spacer"></span>

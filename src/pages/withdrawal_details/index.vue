@@ -6,6 +6,7 @@ import AppBarVue from '@/components/AppBar.vue'
 import { useRoute } from 'vue-router'
 import InfiniteList from '@/components/InfiniteList.vue'
 import api from '../../controller/request'
+import multiLan from '@/utils/lan'
 const loadingMore = ref(false)
 const refreshing = ref(false)
 const noMoreData = ref(false)
@@ -71,7 +72,7 @@ function requestData() {
 </script>
 <template>
   <div class="container">
-    <AppBarVue title="提现明细"></AppBarVue>
+    <AppBarVue :title="multiLan('Withdrawal details')"></AppBarVue>
   </div>
   <InfiniteList
     class="list"

@@ -46,5 +46,8 @@
     "Already withdrawn into your bank account":"已提现至你的银行账户",
     "Online status":"在线状态",
     "Time of the last call":"通话时间",
-    "Daily earnings":"当日收入"
+    "Daily earnings":"当日收入",
+    "Withdrawal details":"提现明细",
+    "Withdrawal in progress":"提现中",
+    "Withdrawal request has expired":"提现请求已失效"
 }

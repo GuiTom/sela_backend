@@ -46,5 +46,7 @@
     "Already withdrawn into your bank account": "Đã rút về tài khoản ngân hàng của bạn",
     "Online status": "Trạng thái trực tuyến",
     "Time of the last call": "Thời gian gọi",
-    "Daily earnings": "Thu nhập trong ngày"
+    "Daily earnings": "Thu nhập trong ngày",
+    "Withdrawal in progress":"Đang rút tiền"
+  
 }

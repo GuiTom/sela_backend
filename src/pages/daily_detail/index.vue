@@ -5,6 +5,7 @@ import AppBarVue from '@/components/AppBar.vue'
 import api from '../../controller/request'
 import { useRoute } from "vue-router"
 import InfiniteList from '@/components/InfiniteList.vue'
+import multiLan from '@/utils/lan'
 
 
 const loadingMore = ref(false)
@@ -71,7 +72,7 @@ function requestData() {
 </script>
 <template>
   <div class="container">
-    <AppBarVue title="每日数据详情"></AppBarVue>
+    <AppBarVue :title="multiLan('Daily statistics')"></AppBarVue>
   </div>
   <InfiniteList
   class="list"
@@ -86,11 +87,11 @@ function requestData() {
   <table>
     <thead border="0">
       <tr>
-        <th>主播昵称</th>
-        <th>在线时长</th>
-        <th>主播通话数</th>
-        <th>收到礼物数</th>
-        <th>流水</th>
+        <th>{{multiLan('Host nickname')}}</th>
+        <th>{{multiLan('Online duration')}}</th>
+        <th>{{multiLan('Number of calls')}}</th>
+        <th>{{multiLan('Number of received gifts')}}</th>
+        <th>{{multiLan('Earnings')}}</th>
       </tr>
     </thead>
     <tbody v-if="data != null">

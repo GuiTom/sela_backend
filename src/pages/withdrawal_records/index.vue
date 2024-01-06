@@ -5,6 +5,7 @@ import AppBarVue from '@/components/AppBar.vue'
 
 import api from '../../controller/request'
 import InfiniteList from '@/components/InfiniteList.vue'
+import multiLan from '@/utils/lan'
 
 const loadingMore = ref(false)
 const refreshing = ref(false)
@@ -63,7 +64,7 @@ function requestData() {
 </script>
 <template>
   <div class="container">
-    <AppBarVue title="提现记录"></AppBarVue>
+    <AppBarVue :title="multiLan('Withdrawal history')"></AppBarVue>
   </div>
   <InfiniteList
     class="list"
@@ -93,17 +94,17 @@ function requestData() {
                 ';'
               "
               >{{
-                item.settleStatus == 0 ? '提现中' : item.settleStatus == 1 ? '已提现' : '已作废'
+                item.settleStatus == 0 ? multiLan('Withdrawal in progress') : item.settleStatus == 1 ? '已提现' : '已作废'
               }}</span
             >
           </div>
           <div>
             {{
               item.settleStatus == 0
-                ? '正在处理中，请耐心等待'
+                ? multiLan('Processing, please wait patiently')
                 : item.settleStatus == 1
-                  ? '已提现至你的银行账户'
-                  : '提前请求已失效'
+                  ? multiLan('Already withdrawn into your bank account')
+                  : multiLan('Withdrawal request has expired')
             }}
           </div>
         </div>
