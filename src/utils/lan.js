@@ -20,7 +20,7 @@ const lans = {
     'tr':tr,
     'vi':vi,
 }
-window.lan = 'en'
+window.lan = 'zh'
 console.log('lang')
 const multiLan = function(str,...args){
 

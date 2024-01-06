@@ -23,7 +23,7 @@ const currentIndex  = ref(props.initialIndex)
         <img
           v-if="index == currentIndex"
           src="@/assets/selected.webp"
-          style="width: 10px; height: 10px"
+          style="width: 10px; height: 10px;margin-right:2px;"
         />
         <div @click="$event.stopPropagation();currentIndex = index; $emit('item_selected',index);" :class="index == initialIndex ? 'selected' : 'item'">{{ item }}</div>
       </div>
@@ -59,6 +59,13 @@ const currentIndex  = ref(props.initialIndex)
     color: #333333;
     line-height: 17px;
     padding: 10px 20px;
+    >img{
+      display: inline-block;
+    }
+    >div{
+      word-wrap: nowrap;
+      display: inline-block;
+    }
     .selected {
       color: #ff55ac;
     }

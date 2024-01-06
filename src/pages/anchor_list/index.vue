@@ -43,7 +43,7 @@ function refresh() {
 }
 function requestData() {
   if (noMoreData.value) {
-    console.log('没有更多数据了')
+    // console.log('没有更多数据了')
     return
   }
   if (refreshing.value || loadingMore.value) return
@@ -125,8 +125,8 @@ function requestData() {
           </div>
           <div>
             <span>ID：{{ item.anchorId }}</span
-            ><span class="last_call"
-              >{{ multiLan('Recent call') }}:{{ $timeToFormatedDate(item.lastCallAt) }}</span
+            ><span v-if="parseInt(item.lastCallAt)>0" class="last_call"
+              >{{ multiLan('Recent call') }}:{{ $timeToFormatedDate(parseInt(item.lastCallAt)) }}</span
             >
           </div>
         </span>
