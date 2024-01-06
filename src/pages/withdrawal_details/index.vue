@@ -10,15 +10,15 @@ import multiLan from '@/utils/lan'
 const loadingMore = ref(false)
 const refreshing = ref(false)
 const noMoreData = ref(false)
-const pageSize = 20;
+const pageSize = 20
 var currentPage = 0
 var data = ref(null)
-var endTime = null;
+var endTime = null
 onMounted(() => {
   let route = useRoute()
   endTime = route.query.endTime
-//   console.log('data.value', data.value)
-  requestData();
+  //   console.log('data.value', data.value)
+  requestData()
 })
 
 function refresh() {
@@ -40,7 +40,7 @@ function requestData() {
   // path = 'http://localhost:5173/anchor_list.json'
   const route = useRoute()
   let anchorId = route.query.anchorId
-//   let nowTs = new Date().getTime()
+  //   let nowTs = new Date().getTime()
   api
     .post(path, {
       condition: {
@@ -87,16 +87,16 @@ function requestData() {
       <table>
         <thead border="0">
           <tr>
-            <th>主播昵称</th>
-            <th>流水</th>
-            <th>你的收益</th>
+            <th>{{ multiLan('Host nickname') }}</th>
+            <th>{{ multiLan('Earnings') }}</th>
+            <th>{{ multiLan('Your earnings') }}</th>
           </tr>
         </thead>
         <tbody>
           <tr class="item" v-if="data != null" v-for="item in data.data.list">
-            <td>美女依依</td>
-            <td>{{item.paidCoins}}<img class="coin" src="@/assets/gold_coin.webp" /></td>
-            <td class="profit">+{{ item.usdFee }}</td>
+            <td>{{ item.nickname }}</td>
+            <td>{{ item.paidCoins }}<img class="coin" src="@/assets/gold_coin.webp" /></td>
+            <td class="profit">+{{ item.usdFee / 100 }}$</td>
           </tr>
         </tbody>
       </table>

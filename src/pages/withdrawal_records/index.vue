@@ -109,7 +109,7 @@ function requestData() {
           </div>
         </div>
         <span class="spacer"></span>
-        <span class="value">{{ item.usdFee }}$</span>
+        <span class="value">{{ item.usdFee/100 }}$</span>
         <img class="right_arror" src="@/assets/right_arror.webp" />
       </div>
     </template>

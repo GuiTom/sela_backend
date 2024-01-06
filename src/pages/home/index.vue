@@ -19,11 +19,6 @@ const pageSize = 20
 const dialogContent =
   '1.'+multiLan('explain 1')+'\n 2.'+multiLan('explain 2')+'\n 3.'+multiLan('explain 2');
 onMounted(() => {
-  multiLan('login in')
-  if (localStorage.getItem('home_tip_dialog_shown') == null) {
-    localStorage.setItem('home_tip_dialog_shown', true)
-    showDialog(dialogContent, { title: multiLan('Instructions') })
-  }
 
   api
     .get('/manager/guildh5/dashboard')
@@ -34,6 +29,9 @@ onMounted(() => {
     })
   requestData()
 })
+function onShowInstrustion(){
+  showDialog(dialogContent, { title: multiLan('Instructions') })
+}
 function refresh() {
   currentPage = 0
   requestData()
@@ -142,12 +140,12 @@ function requestData() {
     <div class="more-info">
       <span>
         <div>≈{{ data.usdFee / 100 }}$</div>
-        <div>{{ multiLan('Balance') }}<img src="@/assets/ask_symbol.webp" /></div>
+        <div>{{ multiLan('Balance') }}<img @click="onShowInstrustion" src="@/assets/ask_symbol.webp" /></div>
       </span>
       <span></span>
       <span>
         <div>≈{{ data.genSettleUsdFee / 100 }}$<span class="status">结算中</span></div>
-        <div>{{ multiLan('Withdrawable income') }}<img src="@/assets/ask_symbol.webp" /></div>
+        <div>{{ multiLan('Withdrawable income') }}<img @click="onShowInstrustion" src="@/assets/ask_symbol.webp" /></div>
       </span>
     </div>
     <div class="divider"></div>
