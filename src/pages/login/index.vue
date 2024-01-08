@@ -68,6 +68,11 @@ const lanValues = [
 function onLanguageSelected(index) {
   showSwitchLanguageMenu.value = false
   localStorage.setItem('currentLanguage', lanKeys[index])
+  if (lanKeys[index] == 'ar') {
+    document.documentElement.setAttribute('dir', 'rtl')
+  } else {
+    document.documentElement.setAttribute('dir', 'ltl')
+  }
   currentLanguageIndex.value = index
 }
 </script>
