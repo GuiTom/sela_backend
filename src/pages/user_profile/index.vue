@@ -10,7 +10,7 @@ import InfiniteList from '@/components/InfiniteList.vue'
 import AnchorAvatarVue from '@/components/AnchorAvatar.vue'
 import LevelIcon from '@/components/LevelIcon.vue'
 import {multiLan}from '@/utils/lan'
-import coin_amount from '@/utils/mony_amount'
+import money_amount from '@/utils/mony_amount'
 const loadingMore = ref(false)
 const refreshing = ref(false)
 const noMoreData = ref(false)
@@ -135,7 +135,7 @@ function requestData() {
             }}
           </div>
           <div>
-            {{ coin_amount(userData.weekCoins) }}<img class="coin" src="@/assets/gold_coin.webp" />
+            {{ money_amount(userData.weekCoins) }}<img class="coin" src="@/assets/gold_coin.webp" />
           </div>
           <div>{{ multiLan('Host earnings this week') }}</div>
         </span>
@@ -148,7 +148,7 @@ function requestData() {
             }}
           </div>
           <div>
-            {{ coin_amount(userData.lastWeekCoins)
+            {{ money_amount(userData.lastWeekCoins)
             }}<img class="coin" src="@/assets/gold_coin.webp" />
           </div>
           <div>{{ multiLan('Host earnings last week') }}</div>

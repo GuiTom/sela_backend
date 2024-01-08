@@ -8,7 +8,7 @@ import api from '../../controller/request'
 import InfiniteList from '@/components/InfiniteList.vue'
 
 import { multiLan } from '@/utils/lan'
-import coin_amount from '@/utils/mony_amount'
+import money_amount from '@/utils/mony_amount'
 const loadingMore = ref(false)
 const refreshing = ref(false)
 const noMoreData = ref(false)
@@ -109,7 +109,7 @@ function requestData() {
           multiLan(
             'Withdrawal requirements 1',
             '<span style=\'font-size: 14px;font-weight:500;color: #ff38a2;line-height: 20px;\'>' +
-              data.settleCoinsLimit +
+              money_amount(data.settleCoinsLimit) +
               '</span>',
             '<span style=\'font-size: 14px;font-weight:500;color: #ff38a2;line-height: 20px;\'>' +
               data.yesterdayNewAnchorNum +
@@ -124,7 +124,7 @@ function requestData() {
           multiLan(
             'Withdrawal requirements 2',
             '<span style=\'font-size: 14px;font-weight:500;color: #ff38a2;line-height: 20px;\'>' +
-              data.settleCoinsLimit +
+              money_amount(data.settleCoinsLimit) +
               '</span>'
           )
         "
@@ -139,7 +139,7 @@ function requestData() {
     <!-- 余额和结算收益 -->
     <div class="more-info">
       <span>
-        <div>≈{{ data.usdFee / 100 }}$</div>
+        <div>≈{{ money_amount(data.usdFee )}}$</div>
         <div>
           {{ multiLan('Balance') }}<img @click="onShowInstrustion" src="@/assets/ask_symbol.webp" />
         </div>
@@ -147,7 +147,7 @@ function requestData() {
       <span></span>
       <span>
         <div>
-          ≈{{ data.genSettleUsdFee / 100 }}$<span class="status">{{
+          ≈{{ money_amount(data.genSettleUsdFee) }}$<span class="status">{{
             multiLan('In settlement')
           }}</span>
         </div>
@@ -162,7 +162,7 @@ function requestData() {
     <div class="week_profit">
       <div>
         <span>{{ multiLan('Weekly earnings(coins)') }}</span
-        ><span>100{{ multiLan('Gold coin') }}≈{{ data.usd2Coins }}$</span>
+        ><span>{{ data.usd2Coins }}{{ multiLan('Gold coin') }}≈1$</span>
       </div>
       <div>
         <span>
@@ -174,7 +174,7 @@ function requestData() {
             }}
           </div>
           <div class="coin">
-            {{ coin_amount(data.weekIncome) }}<img src="@/assets/gold_coin.webp" />
+            {{ money_amount(data.weekIncome) }}<img src="@/assets/gold_coin.webp" />
           </div>
           <div style="text-align: center">{{ multiLan('Overall host earnings this week') }}</div>
         </span>
@@ -190,7 +190,7 @@ function requestData() {
             }}
           </div>
           <div class="coin">
-            {{ coin_amount(data.lastWeekIncome) }}<img src="@/assets/gold_coin.webp" />
+            {{ money_amount(data.lastWeekIncome) }}<img src="@/assets/gold_coin.webp" />
           </div>
           <div style="text-align: center">{{ multiLan('Overall host earnings last week') }}</div>
         </span>
@@ -220,7 +220,7 @@ function requestData() {
                 {{ multiLan('Date') }}:<span>{{ $timeToFormatedDate(parseInt(item.date)) }}</span>
               </div>
               <div class="coin">
-                {{ multiLan('Overall host earnings') }}：{{ coin_amount(item.coins) }}
+                {{ multiLan('Overall host earnings') }}：{{ money_amount(item.coins) }}
                 <img src="@/assets/gold_coin.webp" />
               </div>
             </span>

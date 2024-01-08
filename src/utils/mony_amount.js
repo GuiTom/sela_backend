@@ -1,4 +1,4 @@
-const coin_amount = function (value){
+const money_amount = function (value){
     if (typeof value === 'string') { 
         value = parseInt(value)
     } 
@@ -7,4 +7,4 @@ const coin_amount = function (value){
     }
     return (value/100).toFixed(2)
 }
-export default coin_amount
+export default money_amount
