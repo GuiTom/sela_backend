@@ -5,7 +5,7 @@ import AppBarVue from '@/components/AppBar.vue'
 import api from '../../controller/request'
 import { useRoute } from "vue-router"
 import InfiniteList from '@/components/InfiniteList.vue'
-import multiLan from '@/utils/lan'
+import {multiLan}from '@/utils/lan'
 
 
 const loadingMore = ref(false)

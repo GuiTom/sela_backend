@@ -1,10 +1,10 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHashHistory } from 'vue-router'
 
-import LoginViewVue from '@/pages/login/index.vue'
+
 // import FamilyDetailViewVue from '@/pages/FamilyDetailView.vue'
 
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
+  history: createWebHashHistory(),
   routes: [
     {
       path: '/home',
@@ -15,7 +15,7 @@ const router = createRouter({
     {
       path: '/',
       name: 'login',
-      component: LoginViewVue
+      component: ()=>import('@/pages/login/index.vue')
     },
     // 个人中心
     {

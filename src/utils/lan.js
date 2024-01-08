@@ -20,13 +20,18 @@ const lans = {
     'tr':tr,
     'vi':vi,
 }
-window.lan = 'zh'
-console.log('lang')
+
+const currentLanguage = function(){
+   if(localStorage.getItem('currentLanguage')==null){
+      localStorage.setItem('currentLanguage','zh');
+   }
+   return localStorage.getItem('currentLanguage');
+}
 const multiLan = function(str,...args){
 
 //    var primaryLanguage = navigator.language || navigator.userLanguage
 //   let lan = primaryLanguage.split('-')[0];
-   let value = lans[window.lan][str];
+   let value = lans[currentLanguage()][str];
    if(args.length==1){
       value = value.replaceAll('xx',args[0]);
    }else if(args.length>1){
@@ -36,4 +41,4 @@ const multiLan = function(str,...args){
    }
   return value;
 }
-export default multiLan;
+export{ multiLan,currentLanguage};

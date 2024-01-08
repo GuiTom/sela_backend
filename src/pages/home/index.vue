@@ -7,7 +7,7 @@ import api from '../../controller/request'
 
 import InfiniteList from '@/components/InfiniteList.vue'
 
-import multiLan from '@/utils/lan'
+import {multiLan}from '@/utils/lan'
 import coin_amount from '@/utils/mony_amount'
 const loadingMore = ref(false)
 const refreshing = ref(false)

@@ -1,5 +1,5 @@
 <script setup>
-import multiLan from '@/utils/lan';
+import {multiLan}from '@/utils/lan';
 
 defineProps({
   show: {

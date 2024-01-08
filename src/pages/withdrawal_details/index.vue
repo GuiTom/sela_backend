@@ -6,7 +6,7 @@ import AppBarVue from '@/components/AppBar.vue'
 import { useRoute } from 'vue-router'
 import InfiniteList from '@/components/InfiniteList.vue'
 import api from '../../controller/request'
-import multiLan from '@/utils/lan'
+import {multiLan}from '@/utils/lan'
 import coin_amount from '@/utils/mony_amount'
 const loadingMore = ref(false)
 const refreshing = ref(false)

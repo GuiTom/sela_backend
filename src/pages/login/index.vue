@@ -4,6 +4,7 @@ import api from '../../controller/request'
 import { onMounted, ref } from 'vue'
 import router from '../../router/index'
 import LanguageSwitchMenu from './LanguageSwitchMenu.vue'
+// import {currentLanguage} from '@/utils/lan'
 const authorization = ref(null)
 
 const showSwitchLanguageMenu = ref(false)
@@ -11,7 +12,7 @@ const currentLanguageIndex = ref(null)
 onMounted(() => {
   let keys =lanKeys
   for (let i = 0; i < keys.length; i++) {
-    if (keys[i] == window.lan) {
+    if (keys[i] == currentLanguageIndex.value) {
       currentLanguageIndex.value = i
       break
     }
@@ -59,7 +60,7 @@ const lanValues = [
 
 function onLanguageSelected(index) {
   showSwitchLanguageMenu.value = false
-  window.lan = lanKeys[index]
+  localStorage.setItem('currentLanguage',lanKeys[index]);
   currentLanguageIndex.value = index
 
 }

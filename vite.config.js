@@ -12,7 +12,11 @@ import { VantResolver } from '@vant/auto-import-resolver';
 // const __dirname = path.dirname(__filename);
 // https://vitejs.dev/config/
 export default defineConfig({
-
+  server: {  
+    host: '0.0.0.0', // 或者你的具体 IP 地址，比如 '192.168.1.100'  
+    port: 3000, // 你可以更改为你想要的端口号  
+    // 其他服务器配置...  
+  },  
   plugins: [
     vue(),
     vueJsx(),

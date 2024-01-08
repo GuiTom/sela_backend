@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from 'vue';
-import multiLan from '@/utils/lan'
+import {multiLan}from '@/utils/lan'
 const username = ref(null)
 const password = ref(null)
 const emit = defineEmits(['submit'])

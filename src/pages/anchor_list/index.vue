@@ -10,7 +10,7 @@ import ContextMenu from '@/components/ContextMenu.vue'
 import InfiniteList from '@/components/InfiniteList.vue'
 import router from '../../router/index'
 import LevelIcon from '@/components/LevelIcon.vue'
-import multiLan from '@/utils/lan'
+import {multiLan}from '@/utils/lan'
 const loadingMore = ref(false)
 const refreshing = ref(false)
 const noMoreData = ref(false)
