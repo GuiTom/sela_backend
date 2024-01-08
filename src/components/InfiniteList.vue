@@ -1,4 +1,5 @@
 <script setup>
+import { multiLan } from '@/utils/lan';
 import { ref } from 'vue'
 defineProps({
   loadingMore: {
@@ -37,10 +38,10 @@ const vListenScroll = {
 </script>
 <template>
     <div class="list_container" ref="listContainer" v-ListenScroll>
-        <div v-if="refreshing" class="refreshIndicator">正在刷新...</div>
+        <div v-if="refreshing" class="refreshIndicator">{{ multiLan('Refreshing') }}...</div>
         <slot name="content"></slot>
-        <div  v-if="loadingMore" class="loadMoreIndicator">正在拉取更多数据...</div>
-        <div v-if="noMoreData" class="noreMoreIndicator">没有更多数据了...</div>
+        <div  v-if="loadingMore" class="loadMoreIndicator">{{ multiLan('Loading') }}...</div>
+        <div v-if="noMoreData" class="noreMoreIndicator">{{ multiLan('No more data') }}...</div>
     </div>
 </template>
 <style scoped lang="less">

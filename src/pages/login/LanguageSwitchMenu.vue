@@ -1,4 +1,5 @@
 <script setup>
+import { multiLan } from '@/utils/lan';
 import {ref } from 'vue';
 
  const props= defineProps({
@@ -17,7 +18,7 @@ const currentIndex  = ref(props.initialIndex)
 </script>
 <template>
   <div class="menu">
-    <div class="title">排序</div>
+    <div class="title">{{multiLan('Language')}}</div>
     <div v-if="options != null">
       <div class="item_container" v-for="(item, index) in options">
 

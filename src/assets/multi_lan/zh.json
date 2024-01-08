@@ -51,5 +51,10 @@
     "Withdrawal in progress":"提现中",
     "Withdrawal request has expired":"提现请求已失效",
     "Got it":"我知道了",
-    "In settlement":"结算中"
+    "In settlement":"结算中",
+    "Gold coin":"金币",
+    "Language":"语言",
+    "Refreshing":"正在刷新",
+    "Loading":"正在加载",
+    "No more data":"没有更多数据了"
 }

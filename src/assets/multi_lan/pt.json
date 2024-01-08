@@ -47,5 +47,11 @@
   "Time of the last call": "Duração da chamada",
   "Daily earnings": "Renda do dia",
   "Withdrawal in progress":"Retirando",
-  "Got it":"Entendi"
+  "Got it":"Entendi",
+  "In settlement":"Liquidando",
+  "Gold coin":"Moeda",
+  "Language":"Linguagem",
+  "Refreshing":"atualizando",
+  "Loading":"carregando",
+  "No more data":"Não há mais dados"
 }

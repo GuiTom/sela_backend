@@ -119,12 +119,12 @@ function requestData() {
           ></AnchorAvatarVue>
         </span>
         <span class="right_info_container">
-          <div>
+          <div style="color:#333333">
             {{ item.nickname }}
             <LevelIcon :level="item.level"></LevelIcon>
           </div>
           <div>
-            <span>ID：{{ item.anchorId }}</span
+            <span style="color:#999999">ID：{{ item.anchorId }}</span
             ><span v-if="parseInt(item.lastCallAt)>0" class="last_call"
               >{{ multiLan('Recent call') }}:{{ $timeToFormatedDate(parseInt(item.lastCallAt)) }}</span
             >

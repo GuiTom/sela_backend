@@ -47,5 +47,12 @@
   "Time of the last call": "Time of the last call",
   "Daily earnings": "Daily earnings",
   "Withdrawal in progress":"Withdrawal in progress",
-  "Got it":"Got it"
+  "Got it":"Got it",
+  "In settlement":"In settlement",
+  "Gold coin":"Coin",
+  "Language":"language",
+  "Refreshing":"refreshing",
+  "Loading":"loading",
+  "No more data":"no more data"
+
 }

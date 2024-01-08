@@ -7,7 +7,7 @@ import api from '../../controller/request'
 
 import InfiniteList from '@/components/InfiniteList.vue'
 
-import {multiLan}from '@/utils/lan'
+import { multiLan } from '@/utils/lan'
 import coin_amount from '@/utils/mony_amount'
 const loadingMore = ref(false)
 const refreshing = ref(false)
@@ -162,7 +162,7 @@ function requestData() {
     <div class="week_profit">
       <div>
         <span>{{ multiLan('Weekly earnings(coins)') }}</span
-        ><span>100金币≈1$</span>
+        ><span>100{{ multiLan('Gold coin') }}≈{{ data.usd2Coins }}$</span>
       </div>
       <div>
         <span>

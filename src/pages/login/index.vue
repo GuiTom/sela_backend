@@ -3,17 +3,25 @@ import LoginForm from '../../components/LoginForm.vue'
 import api from '../../controller/request'
 import { onMounted, ref } from 'vue'
 import router from '../../router/index'
+import { currentLanguage } from '@/utils/lan'
 import LanguageSwitchMenu from './LanguageSwitchMenu.vue'
 // import {currentLanguage} from '@/utils/lan'
 const authorization = ref(null)
 
 const showSwitchLanguageMenu = ref(false)
-const currentLanguageIndex = ref(null)
+const currentLanguageIndex = ref(0)
 onMounted(() => {
-  let keys =lanKeys
+  let keys = lanKeys
+  let curLan = currentLanguage()
+  if (curLan == 'ar') {
+    document.documentElement.setAttribute('dir', 'rtl')
+  } else {
+    document.documentElement.setAttribute('dir', 'ltl')
+  }
   for (let i = 0; i < keys.length; i++) {
-    if (keys[i] == currentLanguageIndex.value) {
+    if (keys[i] == curLan) {
       currentLanguageIndex.value = i
+
       break
     }
   }
@@ -43,9 +51,7 @@ function onSubmit(username, password) {
     })
 }
 
-const lanKeys = [
-  'zh','en','tr','vi','id','hi','es','pt','th'
-]
+const lanKeys = ['zh', 'en', 'tr', 'vi', 'id', 'hi', 'es', 'pt', 'th', 'ar']
 const lanValues = [
   '中文',
   'english',
@@ -55,14 +61,14 @@ const lanValues = [
   'हिंदीName',
   'Español',
   'Português',
-  'ภาษาไทย'
+  'ภาษาไทย',
+  'بالعربية'
 ]
 
 function onLanguageSelected(index) {
   showSwitchLanguageMenu.value = false
-  localStorage.setItem('currentLanguage',lanKeys[index]);
+  localStorage.setItem('currentLanguage', lanKeys[index])
   currentLanguageIndex.value = index
-
 }
 </script>
 

@@ -48,5 +48,9 @@
     "Daily earnings": "دخل اليوم",
     "Withdrawal in progress":"قيد السحب الراتب",
     "Got it":"عرفت",
-    "In settlement":"قيد سحب  كوينزات"
+    "In settlement":"قيد سحب  كوينزات",
+    "Gold coin":"كوينزات",
+    "Refreshing":"جار تحديث",
+    "Loading":"جار تحميل",
+    "No more data":"لا يوجد مزيد من بينات"
 }
