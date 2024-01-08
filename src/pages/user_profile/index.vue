@@ -111,7 +111,7 @@ function requestData() {
         {{multiLan('Overall violation times')}}：<span>{{ userData.banCount }}</span>
       </div>
       <div v-if="userData.banTime">
-       {{multiLan('Unbanned on')}}：<span>{{ $timeToFormatedDate(userData.banTime) }}</span>
+       {{multiLan('Unbanned on')}}：<span>{{ $timeToFormatedDate(parseInt(userData.banTime)) }}</span>
       </div>
       <div v-if="userData.banReason">
         {{multiLan('Ban reason')}}：<span>{{ userData.banReason }}</span>
