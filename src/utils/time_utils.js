@@ -14,7 +14,7 @@ const timeToFormatedDateTime = function (timestamp) {
     const hour = date.getHours(); // 获取小时
     const minute = date.getMinutes(); // 获取分钟
     const second = date.getSeconds(); // 获取秒
-    const formattedDate = `${year}-${month}-${day} ${hour}:${minute}:${second}`;
+    const formattedDate = `${year}-${month}-${day} ${hour.toString().padStart(2,'0')}:${minute.toString().padStart(2,'0')}:${second.toString().padStart(2,'0')}`;
     return formattedDate;
 }
 const timeToFormatedDateHour = function (timestamp) {

@@ -105,13 +105,13 @@ function requestData() {
     <!-- 注册时间这几行 -->
     <div class="register_and_more_info" v-if="userData != null">
       <div>
-        {{multiLan('Registration date')}}：<span>{{ $timeToFormatedDate(parseInt(userData.authTime)) }}</span>
+        {{multiLan('Registration date')}}：<span>{{ $timeToFormatedDateTime(parseInt(userData.authTime)) }}</span>
       </div>
       <div v-if="userData.banCount">
         {{multiLan('Overall violation times')}}：<span>{{ userData.banCount }}</span>
       </div>
       <div v-if="userData.banTime">
-       {{multiLan('Unbanned on')}}：<span>{{ $timeToFormatedDate(parseInt(userData.banTime)) }}</span>
+       {{multiLan('Unbanned on')}}：<span>{{ $timeToFormatedDateTime(parseInt(userData.banTime)) }}</span>
       </div>
       <div v-if="userData.banReason">
         {{multiLan('Ban reason')}}：<span>{{ userData.banReason }}</span>
