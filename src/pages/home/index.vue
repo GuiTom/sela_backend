@@ -187,7 +187,7 @@ function requestData() {
             {{
               $timeToFormatedDateHour(parseInt(data.lastWeekStatBeginAt)) +
               '-' +
-              $timeToFormatedDateHour(parseInt(data.lastWeekStatEndAt))
+              $timeToFormatedDateHour(parseInt(data.lastWeekStatEndAt)+1)
             }}
           </div>
           <div class="coin">

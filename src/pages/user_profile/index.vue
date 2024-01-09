@@ -107,7 +107,7 @@ function requestData() {
         </div>
         <div class="id_and_lateast_call">
           <span>ID:{{ userData.anchorId }}</span>
-          <span v-if="parseInt(userData.lastCallAt)>0">{{multiLan('Recent call')}}:{{ $timeToFormatedDateTime(parseInt(userData.lastCallAt)) }}</span>
+          <span style="margin-left: 10px;" v-if="parseInt(userData.lastCallAt)>0">{{multiLan('Recent call')}}:{{ $timeToFormatedDateTime(parseInt(userData.lastCallAt)) }}</span>
         </div>
       </span>
     </div>
@@ -154,7 +154,7 @@ function requestData() {
             {{
               $timeToFormatedDateHour(parseInt(userData.lastWeekStatBeginAt)) +
               '-' +
-              $timeToFormatedDateHour(parseInt(userData.lastWeekStatEndAt))
+              $timeToFormatedDateHour(parseInt(userData.lastWeekStatEndAt)+1)
             }}
           </div>
           <div>

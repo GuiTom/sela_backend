@@ -53,6 +53,7 @@
   "Language":"language",
   "Refreshing":"refreshing",
   "Loading":"loading",
-  "No more data":"no more data"
-
+  "No more data":"no more data",
+  "In ban":"In ban",
+  "Update every week":"Statistics update at 3 pm. every day"
 }

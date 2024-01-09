@@ -50,8 +50,9 @@
   "Got it":"Anladım",
   "In settlement":"Yerleşimde",
   "Gold coin":"Madeni Para",
-  "language":"Dil",
+  "Language":"Dil",
   "Refreshing":"Canlandırıcı",
   "Loading":"Yükleniyor",
-  "No more data":"Daha fazla veri yok"
+  "No more data":"Daha fazla veri yok",
+  "In ban":"Yasaklanmış"
 }

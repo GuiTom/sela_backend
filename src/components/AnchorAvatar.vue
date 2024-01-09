@@ -1,4 +1,6 @@
 <script setup>
+import { multiLan } from '@/utils/lan';
+
 
 const props = defineProps({
   img: {
@@ -27,7 +29,7 @@ function statusImg() {
 </script>
 <template>
   <div class="avatar" :style="{ 'background-image': 'url(' + img + ')' }">
-    <span class="status" v-if="isForbidden">封禁中</span>
+    <span class="status" v-if="isForbidden">{{multiLan('In ban')}}</span>
     <img class="online_status" :src="statusImg()" />
   </div>
 </template>

@@ -6,6 +6,7 @@ import api from '../../controller/request'
 import { useRoute } from "vue-router"
 import InfiniteList from '@/components/InfiniteList.vue'
 import {multiLan}from '@/utils/lan'
+import money_amount from '@/utils/mony_amount'
 
 
 const loadingMore = ref(false)
@@ -100,7 +101,7 @@ function requestData() {
         <td>{{ $timeToFormatedTime(item.onlineDuration) }}</td>
         <td>{{item.callNum}}</td>
         <td>{{item.giftNum}}</td>
-        <td>{{item.coins}}<img class="coin" src="@/assets/gold_coin.webp" /></td>
+        <td>{{money_amount(item.coins)}}<img class="coin" src="@/assets/gold_coin.webp" /></td>
       </tr>
     </tbody>
   </table>
