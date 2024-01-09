@@ -16,6 +16,7 @@ var currentPage = 0
 var data = ref(null)
 var endTime = null
 onMounted(() => {
+  document.documentElement.scrollTop = 0
   let route = useRoute()
   endTime = route.query.endTime
   //   console.log('data.value', data.value)

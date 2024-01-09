@@ -11,6 +11,7 @@ const authorization = ref(null)
 const showSwitchLanguageMenu = ref(false)
 const currentLanguageIndex = ref(0)
 onMounted(() => {
+  document.documentElement.scrollTop = 0
   let keys = lanKeys
   let curLan = currentLanguage()
   if (curLan == 'ar') {

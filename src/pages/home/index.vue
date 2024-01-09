@@ -27,6 +27,7 @@ onMounted(() => {
       // 请求失败处理
       console.log(error)
     })
+    document.documentElement.scrollTop = 0
   requestData()
 })
 function onShowInstrustion() {

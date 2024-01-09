@@ -15,6 +15,7 @@ var currentPage = 0
 var data = ref(null)
 
 onMounted(() => {
+  document.documentElement.scrollTop = 0
   requestData()
 })
 function refresh() {

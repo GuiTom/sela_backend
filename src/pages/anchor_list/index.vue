@@ -20,6 +20,7 @@ const pageSize = 20
 var data = ref(null)
 var showMenu = ref(false)
 onMounted(() => {
+  document.documentElement.scrollTop = 0
   requestData()
 })
 
@@ -29,6 +30,7 @@ function onClickShowMenu() {
 function onmenuSelected(index) {
   showMenu.value = false
   noMoreData.value = false
+  currentPage = 0
   selectedMenuIndex = index
   requestData()
 }

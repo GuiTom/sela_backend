@@ -39,7 +39,7 @@ const multiLan = function(str,...args){
          value = value.replaceAll('xx'+(i+1),args[i]);
       }
    }
-   console.log(str,value)
+
   return value;
 }
 export{ multiLan,currentLanguage};

@@ -21,15 +21,25 @@ const pageSize = 20
 onMounted(() => {
   const route = useRoute()
   userData.value = JSON.parse(route.query.data)
-  console.log(userData.value.authTime)
+  // console.log(userData.value.authTime)
   requestData()
   // window.param = null
-  
+  document.documentElement.scrollTop = 0
 })
 function refresh() {
   currentPage = 0
   requestData()
 }
+function getBeijingMidnightTimestamp() {  
+    // 创建一个Date对象表示当前UTC时刻的午夜  
+    let now = new Date();  
+    let utcMidnight = Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate());  
+  
+    // 北京时区是UTC+8，所以要加上8小时的时间偏移  
+    let beijingMidnightTimestamp = utcMidnight - 8 * 60 * 60 * 1000;  
+  
+    return beijingMidnightTimestamp;  
+} 
 function requestData() {
   if (noMoreData.value) {
     console.log('没有更多数据了')
@@ -45,13 +55,13 @@ function requestData() {
   // path = 'http://localhost:5173/anchor_list.json'
   const route = useRoute()
   let anchorId = route.query.anchorId
-  let nowTs = new Date().getTime()
+  let ts = getBeijingMidnightTimestamp()
   api
     .post(path, {
       condition: {
         // guildId: guildId, // 工会id
         anchorId: anchorId, // 主播id ps.主播id和工会id互斥
-        date: nowTs // 日期，当天0点时间
+        date: ts // 日期，当天0点时间
       },
       pageNum: currentPage + 1,
       pageSize: pageSize
