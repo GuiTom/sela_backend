@@ -22,7 +22,7 @@ defineProps({
     background-image: url('@/assets/crown_bg.webp');
     background-size: cover;
     text-align: right;
-    padding-right: 12px;
+    padding-right: 10px;
     font-size: 12px;
     font-weight: 400;
 }

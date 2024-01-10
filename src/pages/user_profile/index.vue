@@ -89,6 +89,7 @@ function requestData() {
   <div class="container">
     <!-- appBar -->
     <AppBarVue :title="multiLan('Personal statistics')"></AppBarVue>
+    
     <!-- 个人头像这一行 -->
     <div class="base_info" v-if="userData != null">
       <span class="avatar"
@@ -201,6 +202,12 @@ function requestData() {
         </div>
       </template>
     </InfiniteList>
+    <div v-else style="width:100%;height:100%;position:fixed;">
+      <img
+        src="@/assets/loading.webp"
+        style="width:81px;height:50px;position:absolute;left:50%;top:50%;transform:translate(-50%, -50%)"
+      />
+    </div>
   </div>
 </template>
 <style scoped lang="less">

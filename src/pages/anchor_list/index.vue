@@ -137,6 +137,12 @@ function requestData() {
       </div>
     </template>
   </InfiniteList>
+  <div v-else style="width:100%;height:100%;position:fixed;">
+    <img
+      src="@/assets/loading.webp"
+      style="width:81px;height:50px;position:absolute;left:50%;top:50%;transform:translate(-50%, -50%)"
+    />
+  </div>
 </template>
 <style scoped lang="less">
 @import 'index.less';

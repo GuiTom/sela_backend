@@ -27,7 +27,7 @@ onMounted(() => {
       // 请求失败处理
       console.log(error)
     })
-    document.documentElement.scrollTop = 0
+  document.documentElement.scrollTop = 0
   requestData()
 })
 function onShowInstrustion() {
@@ -113,10 +113,9 @@ function requestData() {
               money_amount(data.settleCoinsLimit) +
               '</span>',
             '<span style=\'font-size: 14px;font-weight:500;color: #ff38a2;line-height: 20px;\'>' +
-              data.yesterdayNewAnchorNum +
+              (data.yesterdayNewAnchorNum || 0) +
               '/' +
-              data.settleCountLimit +
-              '</span>'
+              data.settleCountLimit || 0 + '</span>'
           )
         "
       ></div>
@@ -140,7 +139,7 @@ function requestData() {
     <!-- 余额和结算收益 -->
     <div class="more-info">
       <span>
-        <div>≈{{ money_amount(data.usdFee )}}$</div>
+        <div>≈{{ money_amount(data.usdFee) }}$</div>
         <div>
           {{ multiLan('Balance') }}<img @click="onShowInstrustion" src="@/assets/ask_symbol.webp" />
         </div>
@@ -167,7 +166,7 @@ function requestData() {
       </div>
       <div>
         <span>
-          <div style="font-size: 10px">
+          <div style="font-size: 10px" v-if="data.weekStatBeginAt != null && data.weekStatEndAt">
             {{
               $timeToFormatedDateHour(parseInt(data.weekStatBeginAt)) +
               '-' +
@@ -183,11 +182,14 @@ function requestData() {
         <span class="vertical-divider"></span>
 
         <span>
-          <div style="font-size: 10px">
+          <div
+            style="font-size: 10px"
+            v-if="data.lastWeekStatBeginAt != null && data.lastWeekStatEndAt != null"
+          >
             {{
               $timeToFormatedDateHour(parseInt(data.lastWeekStatBeginAt)) +
               '-' +
-              $timeToFormatedDateHour(parseInt(data.lastWeekStatEndAt)+1)
+              $timeToFormatedDateHour(parseInt(data.lastWeekStatEndAt) + 1)
             }}
           </div>
           <div class="coin">
@@ -231,6 +233,12 @@ function requestData() {
         </div>
       </template>
     </InfiniteList>
+  </div>
+  <div v-else style="width:100%;height:100%;position:fixed;">
+    <img
+      src="@/assets/loading.webp"
+      style="width:81px;height:50px;position:absolute;left:50%;top:50%;transform:translate(-50%, -50%)"
+    />
   </div>
 </template>
 <style scoped lang="less">
