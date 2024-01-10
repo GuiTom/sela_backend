@@ -15,10 +15,12 @@ const pageSize = 20
 var currentPage = 0
 var data = ref(null)
 var endTime = null
+var settleId = null
 onMounted(() => {
   document.documentElement.scrollTop = 0
   let route = useRoute()
   endTime = route.query.endTime
+  settleId = route.query.settleId
   //   console.log('data.value', data.value)
   requestData()
 })
@@ -40,15 +42,15 @@ function requestData() {
   }
   let path = '/manager/guildh5/page/guild/settle/info'
   // path = 'http://localhost:5173/anchor_list.json'
-  const route = useRoute()
-  let anchorId = route.query.anchorId
+  // const route = useRoute()
+  // let anchorId = route.query.anchorId
   //   let nowTs = new Date().getTime()
   api
     .post(path, {
       condition: {
         // guildId: guildId, // 工会id
-        anchorId: anchorId, // 主播id ps.主播id和工会id互斥
-        date: endTime // 日期，当天0点时间
+        settleId: settleId, // 主播id ps.主播id和工会id互斥
+        settleTime: endTime // 日期，当天0点时间
       },
       pageNum: currentPage + 1,
       pageSize: pageSize

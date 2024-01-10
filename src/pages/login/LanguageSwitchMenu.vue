@@ -55,12 +55,12 @@ const currentIndex  = ref(props.initialIndex)
   .item_container {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
     font-size: 12px;
     color: #333333;
     line-height: 17px;
-    padding: 10px 20px;
+    padding: 10px 2px;
     >img{
       display: inline-block;
     }

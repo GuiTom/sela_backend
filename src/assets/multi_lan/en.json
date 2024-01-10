@@ -50,10 +50,13 @@
   "Got it":"Got it",
   "In settlement":"In settlement",
   "Gold coin":"Coin",
-  "Language":"language",
+  "Language":"Language",
   "Refreshing":"refreshing",
   "Loading":"loading",
   "No more data":"no more data",
   "In ban":"In ban",
-  "Update every week":"Statistics update at 3 pm. every day"
+  "Update every week":"Statistics update at xx. every day",
+  "Sort":"Arranging",
+  "Change password":"Change password",
+  "Log out":"Log out"
 }

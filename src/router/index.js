@@ -15,7 +15,7 @@ const router = createRouter({
     {
       path: '/',
       name: 'login',
-      component: ()=>import('@/pages/login/index.vue')
+      component: () => import('@/pages/login/index.vue')
     },
     // 个人中心
     {
@@ -25,6 +25,15 @@ const router = createRouter({
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () => import('../pages/user_profile/index.vue')
+    },
+    // 个人中心
+    {
+      path: '/setting',
+      name: 'setting',
+      // route level code-splitting
+      // this generates a separate chunk (About.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import('../pages/setting/index.vue')
     },
     // 每日数据详情
     {

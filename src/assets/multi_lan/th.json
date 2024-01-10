@@ -46,14 +46,16 @@
   "Online status": "สถานะออนไลน์",
   "Time of the last call": "เวลาการโทร",
   "Daily earnings": "รายได้ของวันนี้",
-  "Withdrawal in progress":"กำลังถอนเงิน",
-  "Got it":"รับทราบ",
-  "In settlement":"กำลังตัดยอด",
-  "Gold coin":"เหรียญทอง",
-  "Language":"ภาษา",
-  "Refreshing":"กำลังรีเฟรช",
-  "Loading":"กำลังโหลด",
-  "No more data":"ไม่มีข้อมูลอีกต่อไป",
-  "In ban":"Banido"
-
+  "Withdrawal in progress": "กำลังถอนเงิน",
+  "Got it": "รับทราบ",
+  "In settlement": "กำลังตัดยอด",
+  "Gold coin": "เหรียญทอง",
+  "Language": "ภาษา",
+  "Refreshing": "กำลังรีเฟรช",
+  "Loading": "กำลังโหลด",
+  "No more data": "ไม่มีข้อมูลอีกต่อไป",
+  "In ban": "Banido",
+  "Sort": "เรียงลำดับ",
+  "Change password":"เปลี่ยนรหัสผ่าน",
+  "Log out":"ออกจากระบบ"
 }

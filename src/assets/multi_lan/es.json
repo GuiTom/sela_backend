@@ -54,5 +54,8 @@
   "Refreshing":"Refrescar",
   "Loading":"Cargando",
   "No more data":"No más datos",
-  "In ban":"Prohibido"
+  "In ban":"Prohibido",
+  "Sort":"Clasificar",
+  "Change password":"Cambiar la contraseña",
+  "Log out":"Cerrar sesión"
 }

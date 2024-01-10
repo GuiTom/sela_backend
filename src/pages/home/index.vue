@@ -2,7 +2,7 @@
 import { ref } from 'vue'
 import showDialog from '../../utils/dialog.js'
 import { onMounted } from 'vue'
-// import router from '../../router/index'
+import router from '../../router/index'
 import api from '../../controller/request'
 
 import InfiniteList from '@/components/InfiniteList.vue'
@@ -75,9 +75,13 @@ function requestData() {
       console.log(error)
     })
 }
+function onClickSetting(){
+  router.push('/setting')
+}
 </script>
 <template>
   <div class="bg"></div>
+  <div class="setting"> <img src="@/assets/setting.webp" @click="onClickSetting"/> </div>
   <div v-if="data != null" class="container">
     <div class="header">
       <img src="@/assets/logo.png" />
@@ -113,7 +117,7 @@ function requestData() {
               money_amount(data.settleCoinsLimit) +
               '</span>',
             '<span style=\'font-size: 14px;font-weight:500;color: #ff38a2;line-height: 20px;\'>' +
-              (data.yesterdayNewAnchorNum || 0) +
+              (data.settleCompliantCount || 0) +
               '/' +
               data.settleCountLimit || 0 + '</span>'
           )

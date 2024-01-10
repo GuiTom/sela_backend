@@ -55,7 +55,7 @@ function onSubmit(username, password) {
 const lanKeys = ['zh', 'en', 'tr', 'vi', 'id', 'hi', 'es', 'pt', 'th', 'ar']
 const lanValues = [
   '中文',
-  'english',
+  'English',
   'Türkçe',
   'Tiếng Việt',
   'IndonesiaName',

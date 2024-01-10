@@ -57,5 +57,9 @@
     "Refreshing":"正在刷新",
     "Loading":"正在加载",
     "No more data":"没有更多数据了",
-    "In ban":"封禁中"
+    "In ban":"封禁中",
+    "Update every week":"每日xx点更新数据",
+    "Sort":"排序",
+    "Change password":"修改密码",
+    "Log out":"退出登陆"
 }

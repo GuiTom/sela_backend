@@ -37,7 +37,7 @@ function onClickSubmit(event){
   margin: 15px 0 10px 0;  
   display: inline-block;  
   border-radius: 14px;  
-  border: 0.5px solid #D5D1DC;
+  border: 1px solid #D5D1DC;
   background: white;  
   color:#47454B;
   font-size: 16px;
@@ -53,7 +53,7 @@ function onClickSubmit(event){
   background-color: #825af9;  
   color: white;  
   padding: 10px 20px;  
-  margin: 60px 0px;  
+  margin: 50px 0px;  
   width: 100%;  
   border-radius: 30px;
   border: none;
