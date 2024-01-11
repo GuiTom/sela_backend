@@ -62,6 +62,9 @@
     "Sort":"排序",
     "Change password":"修改密码",
     "Log out":"退出登陆",
+    "Please enter the original password":"请输入原密码",
     "Please enter the new password":"请输入新密码",
-    "Please confirm the new password":"请确认新密码"
+    "Please confirm the new password":"请确认新密码",
+    "System settings":"系统设置",
+    "Confirm":"确定"
 }

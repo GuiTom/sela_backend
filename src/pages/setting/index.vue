@@ -1,34 +1,41 @@
 <script setup>
-import {ref} from 'vue'
+import { ref } from 'vue'
 import AppBarVue from '@/components/AppBar.vue'
-import BottomSheet from './BottomSheet.vue';
+import BottomSheet from './BottomSheet.vue'
+import Confirm from './Confirm.vue'
 import router from '../../router/index'
+import { multiLan } from '@/utils/lan'
 const showBottomSheet = ref(false)
-function onClickChangePassword(){
-  showBottomSheet.value = true;
-
+const showConfirm = ref(false)
+function onClickChangePassword() {
+  showBottomSheet.value = true
 }
-function onClickLogout(){
-  let ok = confirm('确认退出吗');
-  if(ok){
-    localStorage.clear();
-    router.push('/')
-  }
+function onClickLogout() {
+  showConfirm.value = true
+}
+function onCancel() {
+  showConfirm.value = false
+}
+function onConfirm() {
+  localStorage.clear()
+  showConfirm.value = false
+  router.push('/')
 }
 </script>
 <template>
   <div class="container">
-    <AppBarVue title="设置"></AppBarVue>
+    <AppBarVue :title="multiLan('System settings')"></AppBarVue>
     <div class="item" @click="onClickChangePassword">
-      <span>修改密码</span>
+      <span>{{multiLan('Change password')}}</span>
       <span><img class="right_arror" src="@/assets/right_arror.webp" /></span>
     </div>
     <div class="item" @click="onClickLogout">
-      <span>退出账号</span>
+      <span>{{multiLan('Log out')}}</span>
       <span><img class="right_arror" src="@/assets/right_arror.webp" /></span>
     </div>
   </div>
   <BottomSheet v-if="showBottomSheet" @close="showBottomSheet = false"></BottomSheet>
+  <Confirm v-if="showConfirm" @cancel="onCancel" @confirm="onConfirm"></Confirm>
 </template>
 <style scoped lang="less">
 .item {

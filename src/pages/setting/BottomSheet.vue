@@ -2,6 +2,8 @@
 import {ref} from 'vue'
 import toast from '@/utils/toast'
 import api from '@/controller/request'
+import router from '../../router/index'
+import { multiLan } from '@/utils/lan';
 const emit = defineEmits(['close'])
 const primaryPassword = ref(null)
 const newPassword = ref(null)
@@ -19,8 +21,10 @@ function onConfirm() {
         newPassword: newPassword.value.value
     })
     .then(function (response) {
-        if(response.code==0){
+        if(response.data.code==0){
             emit('close')
+          localStorage.clear()
+          router.push('/')
         }
     })
     .catch(function (error) {
@@ -34,11 +38,11 @@ function onConfirm() {
 <template>
  <div class="bg" @click="emit('close')"></div>
   <div class="container">
-    <div class="title">修改密码</div>
-    <input type="password" ref="primaryPassword" placeholder="请输入原密码" />
-    <input type="password" ref="newPassword" placeholder="请输入新密码" />
-    <input type="password" ref="confirmNewPassword" placeholder="请确认新密码" />
-    <button type="submit" @click="onConfirm">确定</button>
+    <div class="title">{{multiLan('Change password')}}</div>
+    <input type="password" ref="primaryPassword" :placeholder="multiLan('Please enter the original password')" />
+    <input type="password" ref="newPassword" :placeholder="multiLan('Please enter the new password')" />
+    <input type="password" ref="confirmNewPassword" :placeholder="multiLan('Please confirm the new password')" />
+    <button type="submit" @click="onConfirm">{{multiLan('Confirm')}}</button>
   </div>
 </template>
 <style scoped lang="less">
@@ -57,13 +61,12 @@ function onConfirm() {
   display: flex;
   padding: 0 20px;
   background-color: white;
-  border-radius: 12px;
+  border-radius: 30px 30px;
   flex-direction: column;
   .title{
     text-align: center;
     font-size: 18px;
     margin-top: 20px;
-    font-family: PingFangSC, PingFang SC;
     font-weight: 600;
     color: #333333;
     line-height: 25px
