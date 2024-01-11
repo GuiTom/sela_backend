@@ -6,6 +6,7 @@ import AppBarVue from '@/components/AppBar.vue'
 import api from '../../controller/request'
 import InfiniteList from '@/components/InfiniteList.vue'
 import {multiLan}from '@/utils/lan'
+import money_amount from '@/utils/mony_amount'
 
 const loadingMore = ref(false)
 const refreshing = ref(false)
@@ -95,7 +96,7 @@ function requestData() {
                 ';'
               "
               >{{
-                item.settleStatus == 0 ? multiLan('Withdrawal in progress') : item.settleStatus == 1 ? '已提现' : '已作废'
+                item.settleStatus == 0 ? multiLan('Withdrawal in progress') : item.settleStatus == 1 ? multiLan('Withdrawn') : multiLan('Abolished')
               }}</span
             >
           </div>
@@ -110,7 +111,7 @@ function requestData() {
           </div>
         </div>
         <span class="spacer"></span>
-        <span class="value">{{ item.usdFee/100 }}$</span>
+        <span class="value">{{ money_amount(item.usdFee) }}$</span>
         <img class="right_arror" src="@/assets/right_arror.webp" />
       </div>
     </template>

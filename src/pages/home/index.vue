@@ -18,7 +18,7 @@ const weekData = ref(null)
 var currentPage = 0
 const pageSize = 20
 const dialogContent =
-  '1.' + multiLan('explain 1') + '\n 2.' + multiLan('explain 2') + '\n 3.' + multiLan('explain 2')
+  '1.' + multiLan('explain 1') + '\n 2.' + multiLan('explain 2') + '\n 3.' + multiLan('explain 3')
 onMounted(() => {
   api
     .get('/manager/guildh5/dashboard')

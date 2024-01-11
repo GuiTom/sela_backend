@@ -32,6 +32,10 @@ const multiLan = function(str,...args){
 //    var primaryLanguage = navigator.language || navigator.userLanguage
 //   let lan = primaryLanguage.split('-')[0];
    let value = lans[currentLanguage()][str];
+   if(value==null){
+      console.log('value null');
+      return '';
+   }
    if(args.length==1){
       value = value.replaceAll('xx',args[0]);
    }else if(args.length>1){

@@ -12,7 +12,7 @@ function confirm(){
 <template>
   <div class="bg">
     <div class="container">
-      <div class="title">{{multiLan('Confirm to logout')}}?</div>
+      <div class="title">{{multiLan('Are you sure to log out of the account?')}}</div>
       <div class="horizontal_divider"></div>
       <div class="buttons"><span @click="cancel">{{multiLan('Cancel')}}</span><span class="divider"></span><span @click="confirm">{{multiLan('Confirm')}}</span></div>
     </div>

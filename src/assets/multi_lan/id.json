@@ -63,5 +63,13 @@
     "Withdrawal details": "Detail penarikan",
     "Withdrawal request has expired": "Permintaan penarikan telah kedaluwarsa",
     "Please enter the new password": "Silakan masukkan password  baru",
-    "Please confirm the new password": "Konfirmasi kata sandi baru"
+    "Please confirm the new password": "Konfirmasi kata sandi baru",
+    "Please enter the original password": "Silakan masukkan passwordasli",
+    "System settings": "Pengaturan sistem",
+    "Confirm": "Konfirmasi",
+    "Cancel": "Membatalkan",
+    "Are you sure to log out of the account?": "Apakah Anda yakin ingin keluar dari akun ini?",
+    "Withdrawn": "Ditarik",
+    "Abolished": "Kadaluwarsa",
+    "Statistics update at xx:00 every day": "Data diperbarui setiap hari xx:00"
 }

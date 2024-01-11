@@ -62,5 +62,13 @@
     "Withdrawal details": "",
     "Withdrawal request has expired": "",
     "Please enter the new password": "कृपया एक नया पासवर्ड दर्ज करें",
-    "Please confirm the new password": "कृपया नये पासवर्ड की पुष्टि करें"
+    "Please confirm the new password": "कृपया नये पासवर्ड की पुष्टि करें",
+    "Please enter the original password": "कृपया मूल पासवर्ड दर्ज करें",
+    "System settings": "सिस्टम सेटिंग",
+    "Confirm": "पुष्टि करें",
+    "Cancel": "रद्द करें",
+    "Are you sure to log out of the account?": "क्या आप निश्चित रूप से खाते से लॉग आउट हो गए हैं?",
+    "Withdrawn": "",
+    "Abolished": "",
+    "Statistics update at xx:00 every day": ""
 }

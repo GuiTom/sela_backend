@@ -133,7 +133,7 @@ function requestData() {
     <div class="week_data" v-if="userData != null">
       <div>
         {{multiLan('Weekly statistics')}}<span style="font-size: 12px; font-weight: 400; color: #999999"
-          >-每周{{ 24 - (8 - $timeZoneOfffsetHours()) }}点更新</span
+          >-{{multiLan('Statistics update at xx:00 every day',24 - (8 - $timeZoneOfffsetHours()))}}</span
         >
       </div>
       <span class="week_data_container">
@@ -195,7 +195,7 @@ function requestData() {
               {{ multiLan('Number of received gifts') }}：<span>{{ item.giftNum }}</span>
             </div>
             <div class="last_item">
-              {{ multiLan('Earnings') }}：<span>{{ item.coins }}</span>
+              {{ multiLan('Earnings') }}：<span>{{ money_amount(item.coins) }}</span>
             </div>
             <div class="divider" v-if="data != null && index < data.data.list.length - 1"></div>
           </div>

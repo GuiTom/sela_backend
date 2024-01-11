@@ -62,5 +62,13 @@
     "Withdrawal details": "",
     "Withdrawal request has expired": "",
     "Please enter the new password": "Lütfen yeni şifreyi girin",
-    "Please confirm the new password": "Lütfen yeni şifreyi onaylayın"
+    "Please confirm the new password": "Lütfen yeni şifreyi onaylayın",
+    "Please enter the original password": "Lütfen orijinal şifreyi girin",
+    "System settings": "Sistem ayarları",
+    "Confirm": "Onaylayın",
+    "Cancel": "İptal",
+    "Are you sure to log out of the account?": "Bu hesaptan çıkış yapmak istediğinizden emin misiniz?",
+    "Withdrawn": "",
+    "Abolished": "",
+    "Statistics update at xx:00 every day": ""
 }

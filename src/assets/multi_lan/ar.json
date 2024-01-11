@@ -55,6 +55,13 @@
     "In ban": "قيد الحظر",
     "Sort": "ترتيب",
     "Change password": "تحرير",
+    "Please enter the original password": "يرجى ادخال كلمة المرور القديمة",
     "Please enter the new password": "يرجى ادخال كلمة المرور الجديدة",
-    "Please confirm the new password": "يرجى متأكد فى كلمة المرور الجديدة"
+    "Please confirm the new password": "يرجى متأكد فى كلمة المرور الجديدة",
+    "System settings": "اعدادات النظام",
+    "Confirm": "التأكيد",
+    "Cancel": "الغاء",
+    "Are you sure to log out of the account?": "هل أنت متأكد أنك تريد تسجيل الخروج من الحساب؟",
+    "Withdrawn": "تم اسحب ",
+    "Abolished": "تم ابطال"
 }

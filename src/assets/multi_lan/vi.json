@@ -62,5 +62,13 @@
     "Withdrawal details": "",
     "Withdrawal request has expired": "",
     "Please enter the new password": "Vui lòng nhập mật khẩu mới",
-    "Please confirm the new password": "Vui lòng xác nhận mật khẩu mới"
+    "Please confirm the new password": "Vui lòng xác nhận mật khẩu mới",
+    "Please enter the original password": "Vui lòng nhập mật khẩu ban đầu",
+    "System settings": "Cài đặt hệ thống",
+    "Confirm": "Chắc chắn",
+    "Cancel": "Xóa",
+    "Are you sure to log out of the account?": "Bạn có chắc chắn muốn đăng xuất khỏi tài khoản này không?",
+    "Withdrawn": "",
+    "Abolished": "",
+    "Statistics update at xx:00 every day": ""
 }

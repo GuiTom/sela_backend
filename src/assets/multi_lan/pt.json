@@ -62,5 +62,13 @@
     "Withdrawal details": "",
     "Withdrawal request has expired": "",
     "Please enter the new password": "Por favor insira uma nova senha",
-    "Please confirm the new password": "Por favor confirme a nova senha"
+    "Please confirm the new password": "Por favor confirme a nova senha",
+    "Please enter the original password": "Por favor insira a senha original",
+    "System settings": "Configurações de sistema",
+    "Confirm": "Confirmar",
+    "Cancel": "Cancelar",
+    "Are you sure to log out of the account?": "Tem certeza de que deseja sair desta conta?",
+    "Withdrawn": "",
+    "Abolished": "",
+    "Statistics update at xx:00 every day": ""
 }
