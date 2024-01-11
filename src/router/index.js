@@ -24,7 +24,8 @@ const router = createRouter({
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import('../pages/user_profile/index.vue')
+      component: () => import('../pages/user_profile/index.vue'),
+      meta: { requiresAuth: true },
     },
     // 个人中心
     {
@@ -33,7 +34,8 @@ const router = createRouter({
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import('../pages/setting/index.vue')
+      component: () => import('../pages/setting/index.vue'),
+      meta: { requiresAuth: true },
     },
     // 每日数据详情
     {
@@ -42,7 +44,8 @@ const router = createRouter({
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import('../pages/daily_detail/index.vue')
+      component: () => import('../pages/daily_detail/index.vue'),
+      meta: { requiresAuth: true }
     },
     // 主播管理
     {
@@ -51,7 +54,8 @@ const router = createRouter({
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import('../pages/anchor_list/index.vue')
+      component: () => import('../pages/anchor_list/index.vue'),
+      meta: { requiresAuth: true },
     },
     //提现详情
     {
@@ -60,16 +64,37 @@ const router = createRouter({
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import('../pages/withdrawal_details/index.vue')
+      component: () => import('../pages/withdrawal_details/index.vue'),
+      meta: { requiresAuth: true },
     },
     //提现记录
     {
       path: '/withdraw_records',
       name: 'withdraw records',
-      component: () => import('../pages/withdrawal_records/index.vue')
+      component: () => import('../pages/withdrawal_records/index.vue'),
+      meta: { requiresAuth: true },
     }
 
   ]
 })
-
+// 全局前置守卫  
+router.beforeEach((to, from, next) => {  
+  // 检查用户是否登录，这里只是一个示例，你需要根据你的应用来实现具体的逻辑  
+  const isAuthenticated = !!localStorage.getItem('authorization'); // 假设我们将用户令牌存储在 localStorage 中  
+  
+  // 检查要访问的路由是否需要认证  
+  if (to.matched.some(record => record.meta.requiresAuth)) {  
+    // 这个路由需要认证，检查是否已登录  
+    if (!isAuthenticated) {  
+      // 未登录，跳转到登录页面  
+      next({ name: 'login' });  
+    } else {  
+      // 已登录，正常进入  
+      next();  
+    }  
+  } else {  
+    // 这个路由不需要认证，直接进入  
+    next();  
+  }  
+}); 
 export default router

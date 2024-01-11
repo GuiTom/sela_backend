@@ -1,10 +1,19 @@
 <script setup>
+import {ref} from 'vue'
 import AppBarVue from '@/components/AppBar.vue'
+import BottomSheet from './BottomSheet.vue';
+import router from '../../router/index'
+const showBottomSheet = ref(false)
 function onClickChangePassword(){
+  showBottomSheet.value = true;
 
 }
 function onClickLogout(){
-
+  let ok = confirm('确认退出吗');
+  if(ok){
+    localStorage.clear();
+    router.push('/')
+  }
 }
 </script>
 <template>
@@ -19,6 +28,7 @@ function onClickLogout(){
       <span><img class="right_arror" src="@/assets/right_arror.webp" /></span>
     </div>
   </div>
+  <BottomSheet v-if="showBottomSheet" @close="showBottomSheet = false"></BottomSheet>
 </template>
 <style scoped lang="less">
 .item {
