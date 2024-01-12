@@ -59,8 +59,8 @@
     "Change password": "Cambiar la contraseña",
     "Log out": "Cerrar sesión",
     "Password": "Contraseña",
-    "Withdrawal details": "",
-    "Withdrawal request has expired": "",
+    "Withdrawal details": "Detalles de retiro",
+    "Withdrawal request has expired": "La solicitud de retiro ha expirado",
     "Please enter the new password": "Por favor ingrese una nueva contraseña",
     "Please confirm the new password": "Por favor confirme la nueva contraseña",
     "Please enter the original password": "Por favor ingrese la contraseña original",
@@ -68,7 +68,7 @@
     "Confirm": "Confirmar",
     "Cancel": "Cancelar",
     "Are you sure to log out of the account?": "¿Está seguro de que desea cerrar sesión en esta cuenta?",
-    "Withdrawn": "",
-    "Abolished": "",
-    "Statistics update at xx:00 every day": ""
+    "Withdrawn": "Retirado",
+    "Abolished": "Abolido",
+    "Statistics update at xx:00 every day": "Datos actualizados diariamente [15:00]"
 }

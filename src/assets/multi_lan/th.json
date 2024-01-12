@@ -59,8 +59,8 @@
     "Change password": "เปลี่ยนรหัสผ่าน",
     "Log out": "ออกจากระบบ",
     "Password": "รหัสผ่าน",
-    "Withdrawal details": "",
-    "Withdrawal request has expired": "",
+    "Withdrawal details": "รายละเอียดการถอนเงิน",
+    "Withdrawal request has expired": "คำขอถอนเงินหมดอายุแล้ว",
     "Please enter the new password": "กรุณากรอกรหัสผ่านใหม่",
     "Please confirm the new password": "กรุณายืนยันรหัสผ่านใหม่",
     "Please enter the original password": "กรุณากรอกรหัสผ่านเดิม",
@@ -68,7 +68,7 @@
     "Confirm": "แน่นอน",
     "Cancel": "ยกเลิก",
     "Are you sure to log out of the account?": "คุณแน่ใจหรือไม่ว่าต้องการออกจากระบบบัญชีนี้",
-    "Withdrawn": "",
-    "Abolished": "",
-    "Statistics update at xx:00 every day": ""
+    "Withdrawn": "เงินถอนออกแล้ว",
+    "Abolished": "ถูกยกเลิก",
+    "Statistics update at xx:00 every day": "ข้อมูลอัพเดททุกวัน [15:00]"
 }

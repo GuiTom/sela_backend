@@ -59,8 +59,8 @@
     "Change password": "Sửa đổi mật khẩu",
     "Log out": "Đăng xuất",
     "Password": "Mật khẩu",
-    "Withdrawal details": "",
-    "Withdrawal request has expired": "",
+    "Withdrawal details": "Chi tiết rút tiền",
+    "Withdrawal request has expired": "Yêu cầu rút tiền đã hết hạn",
     "Please enter the new password": "Vui lòng nhập mật khẩu mới",
     "Please confirm the new password": "Vui lòng xác nhận mật khẩu mới",
     "Please enter the original password": "Vui lòng nhập mật khẩu ban đầu",
@@ -68,7 +68,7 @@
     "Confirm": "Chắc chắn",
     "Cancel": "Xóa",
     "Are you sure to log out of the account?": "Bạn có chắc chắn muốn đăng xuất khỏi tài khoản này không?",
-    "Withdrawn": "",
-    "Abolished": "",
-    "Statistics update at xx:00 every day": ""
+    "Withdrawn": "Đã rút",
+    "Abolished": "Đã bỏ",
+    "Statistics update at xx:00 every day": "Dữ liệu được cập nhật [15:00] hàng ngày"
 }
