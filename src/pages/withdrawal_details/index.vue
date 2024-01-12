@@ -100,7 +100,7 @@ function requestData() {
           <tr class="item" v-if="data != null" v-for="item in data.data.list">
             <td>{{ item.nickname }}</td>
             <td>{{ money_amount(item.paidCoins) }}<img class="coin" src="@/assets/gold_coin.webp" /></td>
-            <td class="profit">+{{ money_amount(item.usdFee) }}$</td>
+            <td class="profit">+{{ money_amount(item.guildUsdFee) }}$</td>
           </tr>
         </tbody>
       </table>
