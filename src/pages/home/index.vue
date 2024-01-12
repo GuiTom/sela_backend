@@ -128,7 +128,7 @@ function onClickSetting(){
           multiLan(
             'Withdrawal requirements 2',
             '<span style=\'font-size: 14px;font-weight:500;color: #ff38a2;line-height: 20px;\'>' +
-              money_amount(data.settleCoinsLimit) +
+              money_amount(data.guildGenUsdLimit) +
               '</span>'
           )
         "
