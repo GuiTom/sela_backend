@@ -4,6 +4,7 @@ import toast from '@/utils/toast'
 import api from '@/controller/request'
 import router from '../../router/index'
 import { multiLan } from '@/utils/lan';
+import CoustomInput from './CoustomInput.vue';
 const emit = defineEmits(['close'])
 const primaryPassword = ref(null)
 const newPassword = ref(null)
@@ -11,7 +12,7 @@ const confirmNewPassword = ref(null)
 function onConfirm() {
     console.log(primaryPassword.value.value,newPassword.value.value,confirmNewPassword.value.value)
     if(newPassword.value.value!=confirmNewPassword.value.value){
-        toast('两次输入的新密码不一致');
+        toast(multiLan('Twice password diff'));
         return;
     }
     const path = '/manager/guildh5/change/password';
@@ -39,9 +40,9 @@ function onConfirm() {
  <div class="bg" @click="emit('close')"></div>
   <div class="container">
     <div class="title">{{multiLan('Change password')}}</div>
-    <input type="password" ref="primaryPassword" :placeholder="multiLan('Please enter the original password')" />
-    <input type="password" ref="newPassword" :placeholder="multiLan('Please enter the new password')" />
-    <input type="password" ref="confirmNewPassword" :placeholder="multiLan('Please confirm the new password')" />
+    <CoustomInput type="password" ref="primaryPassword" :placeholder="multiLan('Please enter the original password')"></CoustomInput>
+    <CoustomInput type="password" ref="newPassword" :placeholder="multiLan('Please enter the new password')" ></CoustomInput>
+    <CoustomInput type="password" ref="confirmNewPassword" :placeholder="multiLan('Please confirm the new password')" ></CoustomInput>
     <button type="submit" @click="onConfirm">{{multiLan('Confirm')}}</button>
   </div>
 </template>
@@ -71,16 +72,7 @@ function onConfirm() {
     color: #333333;
     line-height: 25px
   }
-  input {
-    margin: 15px 0;
-    height: 54px;
-    display: block;
-    background: #f5f5f5;
-    border-radius: 12px;
-    padding: 0 12px;
-    color: #999999;
-    border: 0;
-  }
+
   button {
     margin: 12px 0;
     height: 54px;
@@ -90,6 +82,15 @@ function onConfirm() {
     font-weight: 600;
     color: #ffffff;
     line-height: 22px;
+    border: 0;
+  }
+  .password {
+    margin: 15px 0;
+    height: 54px;
+    display: block;
+    background: #f5f5f5;
+    border-radius: 12px;
+    color: #999999;
     border: 0;
   }
 }

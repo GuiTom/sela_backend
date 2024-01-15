@@ -83,9 +83,18 @@ function changeHideValue(){
 .label {
   font-size: 12px;
 }
+
+.login-container button {
+  background-color: #825af9;
+  color: white;
+  padding: 10px 20px;
+  margin: 50px 0px;
+  width: 100%;
+  border-radius: 30px;
+  border: none;
+}
 .password {
   position: relative;
-  
 }
 .password img {
   right: 10px;
@@ -96,15 +105,6 @@ function changeHideValue(){
   width: 22px;
   height: 22px;
   position: absolute;
-}
-.login-container button {
-  background-color: #825af9;
-  color: white;
-  padding: 10px 20px;
-  margin: 50px 0px;
-  width: 100%;
-  border-radius: 30px;
-  border: none;
 }
 ::-ms-reveal {
   width: 0;

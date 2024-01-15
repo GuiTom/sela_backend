@@ -72,5 +72,6 @@
     "Statistics update at xx:00 every day":"每日xx:00更新数据",
     "Withdrawn":"已提现",
     "Abolished":"已作废",
-    "Violation":"违规"
+    "Violation":"违规",
+    "Twice password diff":"两次密码相同，请重新输入"
 }

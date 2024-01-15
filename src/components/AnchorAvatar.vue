@@ -1,6 +1,6 @@
 <script setup>
 import { multiLan } from '@/utils/lan';
-
+import PlaceHolderImage from './PlaceHolderImage.vue';
 
 const props = defineProps({
   img: {
@@ -33,23 +33,22 @@ function statusImg() {
 }
 </script>
 <template>
-  <div class="avatar" :style=" 'background-image:'+'url(' + img + ');' ">
-    <div class="bg" v-if="isForbidden||violated"></div>
-    <span class="userStatus" v-if="violated">{{multiLan('Violation')}}</span>
-    <span class="status" v-if="isForbidden">{{multiLan('In ban')}}</span>
-    <img class="online_status" :src="statusImg()" />
-  </div>
+  <PlaceHolderImage class="avatar" :src="img">
+    <template #content>
+      <div class="bg" v-if="isForbidden||violated"></div>
+      <span class="userStatus" v-if="violated">{{multiLan('Violation')}}</span>
+      <span class="status" v-if="isForbidden">{{multiLan('In ban')}}</span>
+      <img class="online_status" :src="statusImg()" />
+    </template>
+  </PlaceHolderImage>
 </template>
 <style scoped lang="less">
 .avatar {
   width: 100%;
   height: 100%;
-  border-radius: 50%;
-  background-size: cover;
-  position: relative;
   .bg{
     border-radius: 50%;
-    width: 100%;height: 100%;background-color:#A1A1A1AA;
+    width: 100%;height: 100%;background-color:rgba(0,0,0,0.5);
   }
   .status,.userStatus{
     position: absolute;

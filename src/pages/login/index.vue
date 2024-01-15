@@ -4,7 +4,7 @@ import api from '../../controller/request'
 import { onMounted, ref } from 'vue'
 import router from '../../router/index'
 import { currentLanguage } from '@/utils/lan'
-import LanguageSwitchMenu from './LanguageSwitchMenu.vue'
+import LanguageSwitchMenu from '@/components/LanguageSwitchMenu.vue'
 // import {currentLanguage} from '@/utils/lan'
 const authorization = ref(null)
 

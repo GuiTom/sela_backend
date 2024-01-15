@@ -6,9 +6,12 @@ import router from '../../router/index'
 import api from '../../controller/request'
 
 import InfiniteList from '@/components/InfiniteList.vue'
-
+import LanguageSwitchMenu from '@/components/LanguageSwitchMenu.vue'
 import { multiLan } from '@/utils/lan'
 import money_amount from '@/utils/mony_amount'
+import { currentLanguage } from '@/utils/lan'
+const showSwitchLanguageMenu = ref(false)
+const currentLanguageIndex = ref(0)
 const loadingMore = ref(false)
 const refreshing = ref(false)
 const noMoreData = ref(false)
@@ -17,9 +20,22 @@ const data = ref(null)
 const weekData = ref(null)
 var currentPage = 0
 const pageSize = 20
-const dialogContent =
-  '1.' + multiLan('explain 1') + '\n 2.' + multiLan('explain 2') + '\n 3.' + multiLan('explain 3')
+
 onMounted(() => {
+  document.documentElement.scrollTop = 0
+  let keys = lanKeys
+  let curLan = currentLanguage()
+  if (curLan == 'ar') {
+    document.documentElement.setAttribute('dir', 'rtl')
+  } else {
+    document.documentElement.setAttribute('dir', 'ltl')
+  }
+  for (let i = 0; i < keys.length; i++) {
+    if (keys[i] == curLan) {
+      currentLanguageIndex.value = i
+      break
+    }
+  }
   api
     .get('/manager/guildh5/dashboard')
     .then((response) => (data.value = response.data.data))
@@ -31,6 +47,8 @@ onMounted(() => {
   requestData()
 })
 function onShowInstrustion() {
+  const dialogContent =
+  '1.' + multiLan('explain 1') + '\n 2.' + multiLan('explain 2') + '\n 3.' + multiLan('explain 3')
   showDialog(dialogContent, { title: multiLan('Instructions') })
 }
 function refresh() {
@@ -78,11 +96,45 @@ function requestData() {
 function onClickSetting(){
   router.push('/setting')
 }
+const lanKeys = ['zh', 'en', 'tr', 'vi', 'id', 'hi', 'es', 'pt', 'th', 'ar']
+const lanValues = [
+  '中文',
+  'English',
+  'Türkçe',
+  'Tiếng Việt',
+  'IndonesiaName',
+  'हिंदीName',
+  'Español',
+  'Português',
+  'ภาษาไทย',
+  'بالعربية'
+]
+
+function onLanguageSelected(index) {
+  showSwitchLanguageMenu.value = false
+  localStorage.setItem('currentLanguage', lanKeys[index])
+  if (lanKeys[index] == 'ar') {
+    document.documentElement.setAttribute('dir', 'rtl')
+  } else {
+    document.documentElement.setAttribute('dir', 'ltl')
+  }
+  currentLanguageIndex.value = index
+}
 </script>
 <template>
   <div class="bg"></div>
   <div class="setting"> <img src="@/assets/setting.webp" @click="onClickSetting"/> </div>
-  <div v-if="data != null" class="container">
+  <div class="lan_button" @click="showSwitchLanguageMenu = true">
+    <span>{{ lanValues[currentLanguageIndex] }}</span
+    ><img src="@/assets/login/arror_down.webp" />
+  </div>
+  <LanguageSwitchMenu
+    :initialIndex="currentLanguageIndex"
+    :options="lanValues"
+    v-if="showSwitchLanguageMenu"
+    @item_selected="onLanguageSelected"
+  ></LanguageSwitchMenu>
+  <div :key="currentLanguageIndex" v-if="data != null" class="container">
     <div class="header">
       <img src="@/assets/logo.png" />
       <div class="meta_info_container">
