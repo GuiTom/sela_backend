@@ -1,6 +1,6 @@
 <script setup>
 import { ref,computed } from 'vue'
-
+import { currentLanguage } from '@/utils/lan'
 defineProps({
   placeholder: {
     type: String,
@@ -46,11 +46,13 @@ defineExpose({value})
     />
     <img
       v-if="showEyeIcon && passwordInputTypeIsText"
+      :class="currentLanguage()!='ar'?'imgLtr':'imgRtl'"
       src="@/assets/login/eye_open.png"
       @click="changeHideValue"
     />
     <img
       v-if="showEyeIcon && !passwordInputTypeIsText"
+      :class="currentLanguage()!='ar'?'imgLtr':'imgRtl'"
       src="@/assets/login/eye_closed.png"
       @click="changeHideValue"
     />
@@ -61,7 +63,7 @@ defineExpose({value})
   position: relative;
 }
 .password img {
-  right: 10px;
+
   top: 0;
   bottom: 0;
   margin-top: auto;
@@ -82,5 +84,11 @@ input {
 ::-ms-reveal {
   width: 0;
   height: 0;
+}
+.imgRtl{
+  left:10px;
+}
+.imgLtr{
+  right: 10px;
 }
 </style>

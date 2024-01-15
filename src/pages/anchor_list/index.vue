@@ -11,6 +11,9 @@ import InfiniteList from '@/components/InfiniteList.vue'
 import router from '../../router/index'
 import LevelIcon from '@/components/LevelIcon.vue'
 import {multiLan}from '@/utils/lan'
+import AutoRTLImg from '@/components/AutoRTLImg.vue'
+import loadingImg from '@/assets/loading.webp'
+import rightArrorImg from '@/assets/right_arror.webp'
 const loadingMore = ref(false)
 const refreshing = ref(false)
 const noMoreData = ref(false)
@@ -116,7 +119,7 @@ function requestData() {
         <span class="avatar_container"
           ><AnchorAvatarVue
             :onlineStatus="item.isOnline"
-            :isForbidden="item.userStatus == 2" :violated="item.userStatus==3"
+            :isForbidden="item.userStatus == 2" :violated="item.userAuth==4"
             :img="item.portrait"
           ></AnchorAvatarVue>
         </span>
@@ -133,15 +136,15 @@ function requestData() {
           </div>
         </span>
         <span class="spacer"></span>
-        <img class="right_arror" src="@/assets/right_arror.webp" />
+        <AutoRTLImg class="right_arror" :src="rightArrorImg" ></AutoRTLImg>
       </div>
     </template>
   </InfiniteList>
   <div v-else style="width:100%;height:100%;position:fixed;">
-    <img
-      src="@/assets/loading.webp"
+    <AutoRTLImg
+      :src="loadingImg"
       style="width:81px;height:50px;position:absolute;left:50%;top:50%;transform:translate(-50%, -50%)"
-    />
+    ></AutoRTLImg>
   </div>
 </template>
 <style scoped lang="less">

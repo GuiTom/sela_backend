@@ -14,11 +14,7 @@ onMounted(() => {
   document.documentElement.scrollTop = 0
   let keys = lanKeys
   let curLan = currentLanguage()
-  if (curLan == 'ar') {
-    document.documentElement.setAttribute('dir', 'rtl')
-  } else {
-    document.documentElement.setAttribute('dir', 'ltl')
-  }
+
   for (let i = 0; i < keys.length; i++) {
     if (keys[i] == curLan) {
       currentLanguageIndex.value = i
@@ -88,6 +84,7 @@ function onLanguageSelected(index) {
       :initialIndex="currentLanguageIndex"
       :options="lanValues"
       v-if="showSwitchLanguageMenu"
+      class="switch_menu"
       @item_selected="onLanguageSelected"
     ></LanguageSwitchMenu>
     <div class="container">
@@ -104,6 +101,9 @@ function onLanguageSelected(index) {
   text-align: center;
   background-image: url('@/assets/login/login_bg.jpg');
   margin: 0;
+}
+.switch_menu{
+  z-index: 100;
 }
 .container div {
   text-align: left;

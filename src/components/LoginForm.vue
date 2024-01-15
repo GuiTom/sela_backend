@@ -1,6 +1,7 @@
 <script setup>
 import { ref } from 'vue'
-import { multiLan } from '@/utils/lan'
+import { multiLan } from '@/utils/lan';
+import { currentLanguage } from '@/utils/lan'
 const username = ref(null)
 const password = ref(null)
 const showEyeIcon = ref(false)
@@ -49,8 +50,8 @@ function changeHideValue(){
         
           @input="showEyeIcon=password.value.length>0"
         />
-        <img v-if="showEyeIcon&&passwordInputTypeIsText" src="@/assets/login/eye_open.png" @click="changeHideValue"/>
-        <img v-if="showEyeIcon&&!passwordInputTypeIsText" src="@/assets/login/eye_closed.png" @click="changeHideValue"/>
+        <img  v-if="showEyeIcon&&passwordInputTypeIsText"  :class="currentLanguage()!='ar'?'imgLtr':'imgRtl'" src="@/assets/login/eye_open.png" @click="changeHideValue"/>
+        <img v-if="showEyeIcon&&!passwordInputTypeIsText" :class="currentLanguage()!='ar'?'imgLtr':'imgRtl'"  src="@/assets/login/eye_closed.png" @click="changeHideValue"/>
       </div>
       <button type="submit" @click="onClickSubmit($event)">{{ multiLan('Login') }}</button>
     </form>
@@ -99,7 +100,6 @@ function changeHideValue(){
   position: relative;
 }
 .password img {
-  right: 10px;
   top: 0;
   bottom: 0;
   margin-top: auto;
@@ -107,6 +107,12 @@ function changeHideValue(){
   width: 22px;
   height: 22px;
   position: absolute;
+}
+.imgRtl{
+  left:10px;
+}
+.imgLtr{
+  right: 10px;
 }
 ::-ms-reveal {
   width: 0;

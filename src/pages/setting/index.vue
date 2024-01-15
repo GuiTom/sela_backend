@@ -5,6 +5,8 @@ import BottomSheet from './BottomSheet.vue'
 import Confirm from './Confirm.vue'
 import router from '../../router/index'
 import { multiLan } from '@/utils/lan'
+import AutoRTLImg from '@/components/AutoRTLImg.vue'
+import rightArrorImg from '@/assets/right_arror.webp'
 const showBottomSheet = ref(false)
 const showConfirm = ref(false)
 function onClickChangePassword() {
@@ -27,11 +29,11 @@ function onConfirm() {
     <AppBarVue :title="multiLan('System settings')"></AppBarVue>
     <div class="item" @click="onClickChangePassword">
       <span>{{multiLan('Change password')}}</span>
-      <span><img class="right_arror" src="@/assets/right_arror.webp" /></span>
+      <span><AutoRTLImg class="right_arror" :src="rightArrorImg" ></AutoRTLImg></span>
     </div>
     <div class="item" @click="onClickLogout">
       <span>{{multiLan('Log out')}}</span>
-      <span><img class="right_arror" src="@/assets/right_arror.webp" /></span>
+      <span><AutoRTLImg class="right_arror" :src="rightArrorImg" ></AutoRTLImg></span>
     </div>
   </div>
   <BottomSheet v-if="showBottomSheet" @close="showBottomSheet = false"></BottomSheet>

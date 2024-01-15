@@ -7,7 +7,9 @@ import api from '../../controller/request'
 import InfiniteList from '@/components/InfiniteList.vue'
 import {multiLan}from '@/utils/lan'
 import money_amount from '@/utils/mony_amount'
-
+import AutoRTLImg from '@/components/AutoRTLImg.vue'
+import loadingImg from '@/assets/loading.webp'
+import rightArrorImg from '@/assets/right_arror.webp'
 const loadingMore = ref(false)
 const refreshing = ref(false)
 const noMoreData = ref(false)
@@ -80,7 +82,7 @@ function requestData() {
     <template #content>
       <div
         v-for="item in data.data.list"
-        @click="$router.push({ name: 'withdrawal details', query: { endTime: item.endTime,settleId:item.settleId } })"
+        @click="item.settleStatus!=2&&$router.push({ name: 'withdrawal details', query: { endTime: item.endTime,settleId:item.settleId } })"
       >
         <div class="row_left_part">
           <div>
@@ -112,15 +114,16 @@ function requestData() {
         </div>
         <span class="spacer"></span>
         <span class="value">{{ money_amount(item.usdFee) }}$</span>
-        <img class="right_arror" src="@/assets/right_arror.webp" />
+        <span class="spacer_10px"></span>
+        <AutoRTLImg class="right_arror" :src="rightArrorImg" ></AutoRTLImg>
       </div>
     </template>
   </InfiniteList>
   <div v-else style="width:100%;height:100%;position:fixed;">
-    <img
-      src="@/assets/loading.webp"
+    <AutoRTLImg
+      :src="loadingImg"
       style="width:81px;height:50px;position:absolute;left:50%;top:50%;transform:translate(-50%, -50%)"
-    />
+    ></AutoRTLImg>
   </div>
   
 </template>

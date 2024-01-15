@@ -4,12 +4,14 @@ import showDialog from '../../utils/dialog.js'
 import { onMounted } from 'vue'
 import router from '../../router/index'
 import api from '../../controller/request'
-
+import loadingImg from '@/assets/loading.webp'
 import InfiniteList from '@/components/InfiniteList.vue'
 import LanguageSwitchMenu from '@/components/LanguageSwitchMenu.vue'
 import { multiLan } from '@/utils/lan'
 import money_amount from '@/utils/mony_amount'
 import { currentLanguage } from '@/utils/lan'
+import AutoRTLImg from '@/components/AutoRTLImg.vue'
+import rightArrorImg from '@/assets/right_arror.webp'
 const showSwitchLanguageMenu = ref(false)
 const currentLanguageIndex = ref(0)
 const loadingMore = ref(false)
@@ -25,11 +27,7 @@ onMounted(() => {
   document.documentElement.scrollTop = 0
   let keys = lanKeys
   let curLan = currentLanguage()
-  if (curLan == 'ar') {
-    document.documentElement.setAttribute('dir', 'rtl')
-  } else {
-    document.documentElement.setAttribute('dir', 'ltl')
-  }
+
   for (let i = 0; i < keys.length; i++) {
     if (keys[i] == curLan) {
       currentLanguageIndex.value = i
@@ -44,6 +42,7 @@ onMounted(() => {
       console.log(error)
     })
   document.documentElement.scrollTop = 0
+
   requestData()
 })
 function onShowInstrustion() {
@@ -146,7 +145,7 @@ function onLanguageSelected(index) {
             >{{ multiLan('Date of creation') }}:{{
               $timeToFormatedDate(parseInt(data.createdAt))
             }}</span
-          ><span>{{ multiLan('Days since creation: xx days', data.createdDay) }}</span>
+          >
         </div>
         <div>
           <span>{{ multiLan('Number of hosts') }}：{{ data.anchorNum }}</span
@@ -283,7 +282,7 @@ function onLanguageSelected(index) {
                 <img src="@/assets/gold_coin.webp" />
               </div>
             </span>
-            <img class="right_arror" src="@/assets/right_arror.webp" />
+            <AutoRTLImg class="right_arror" :src="rightArrorImg"></AutoRTLImg>
           </div>
           <div v-if="weekData != null && index < weekData.data.length - 1" class="divider"></div>
         </div>
@@ -291,10 +290,10 @@ function onLanguageSelected(index) {
     </InfiniteList>
   </div>
   <div v-else style="width:100%;height:100%;position:fixed;">
-    <img
-      src="@/assets/loading.webp"
+    <AutoRTLImg
+      :src="loadingImg"
       style="width:81px;height:50px;position:absolute;left:50%;top:50%;transform:translate(-50%, -50%)"
-    />
+    ></AutoRTLImg>
   </div>
 </template>
 <style scoped lang="less">
