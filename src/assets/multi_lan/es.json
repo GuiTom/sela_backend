@@ -71,5 +71,6 @@
     "Withdrawn": "Retirado",
     "Abolished": "Abolido",
     "Statistics update at xx:00 every day": "Datos actualizados diariamente [15:00]",
-    "Violation": "Violación"
+    "Violation": "Violación",
+    "Twice password diff": "Las contraseñas son las mismas, ingrésalas nuevamente."
 }

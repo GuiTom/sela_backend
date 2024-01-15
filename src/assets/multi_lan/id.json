@@ -72,5 +72,6 @@
     "Withdrawn": "Ditarik",
     "Abolished": "Kadaluwarsa",
     "Statistics update at xx:00 every day": "Data diperbarui setiap hari xx:00",
-    "Violation": "Pelanggaran"
+    "Violation": "Pelanggaran",
+    "Twice password diff": "Kata sandinya sama dua kali, silakan masukkan kembali."
 }

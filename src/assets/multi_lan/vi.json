@@ -71,5 +71,6 @@
     "Withdrawn": "Đã rút",
     "Abolished": "Đã bỏ",
     "Statistics update at xx:00 every day": "Dữ liệu được cập nhật [15:00] hàng ngày",
-    "Violation": "Vi phạm"
+    "Violation": "Vi phạm",
+    "Twice password diff": "Hai lần mật khẩu giống nhau, vui lòng nhập lại."
 }

@@ -64,5 +64,7 @@
     "Are you sure to log out of the account?": "هل أنت متأكد أنك تريد تسجيل الخروج من الحساب؟",
     "Statistics update at xx:00 every day": "تحديث بيناxx:00[يوميا ",
     "Withdrawn": "تم اسحب ",
-    "Abolished": "تم ابطال"
+    "Abolished": "تم ابطال",
+    "Violation": "مخالفة",
+    "Twice password diff": ""
 }

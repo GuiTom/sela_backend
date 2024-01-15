@@ -2,7 +2,7 @@
     "Login": "Giriş",
     "Account": " ",
     "Instructions": "Talimatlar",
-    "explain 1": "Bakiye= çekilebilir gelir + çekilemeyen gelir (asgari hedefe ulaşamayan kızlardan alınan komisyon). Dikkat! Başarılı bir şekilde para çektiğinizde çekilebilir geliri temizleyeceğiz.",
+    "explain 1": "1.Bakiye= çekilebilir gelir + çekilemeyen gelir (asgari hedefe ulaşamayan kızlardan alınan komisyon). Dikkat! Başarılı bir şekilde para çektiğinizde çekilebilir geliri temizleyeceğiz.",
     "explain 2": "Çekilebilir gelir: Bu hafta elde ettiğiniz kazançlardan gelecek hafta çekebileceğiniz tutar",
     "explain 3": "Para çekme tutarı döviz kuruna göre değişir",
     "Enter account": "Hesabı girin",
@@ -71,5 +71,6 @@
     "Withdrawn": "Geri çekildi",
     "Abolished": "Kaldırıldı",
     "Statistics update at xx:00 every day": "İstatistikler saat xx:00'te güncellenir. Her gün",
-    "Violation": "İhlal"
+    "Violation": "İhlal",
+    "Twice password diff": "Şifreler aynı tekrar girin"
 }

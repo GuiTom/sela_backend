@@ -72,5 +72,6 @@
     "Withdrawn": "Withdrawn",
     "Abolished": "Abolished",
     "Statistics update at xx:00 every day": "Statistics update at  xx:00 every day",
-    "Violation": "Violation"
+    "Violation": "Violation",
+    "Twice password diff": "The passwords are the same, enter it again"
 }
