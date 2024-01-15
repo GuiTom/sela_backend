@@ -70,5 +70,6 @@
     "Are you sure to log out of the account?": "คุณแน่ใจหรือไม่ว่าต้องการออกจากระบบบัญชีนี้",
     "Withdrawn": "เงินถอนออกแล้ว",
     "Abolished": "ถูกยกเลิก",
-    "Statistics update at xx:00 every day": "ข้อมูลอัพเดททุกวัน [15:00]"
+    "Statistics update at xx:00 every day": "ข้อมูลอัพเดททุกวัน [15:00]",
+    "Violation": "การละเมิด"
 }

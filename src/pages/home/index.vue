@@ -114,7 +114,7 @@ function onClickSetting(){
           multiLan(
             'Withdrawal requirements 1',
             '<span style=\'font-size: 14px;font-weight:500;color: #ff38a2;line-height: 20px;\'>' +
-              money_amount(data.settleCoinsLimit) +
+              data.settleCoinsLimit +
               '</span>',
             '<span style=\'font-size: 14px;font-weight:500;color: #ff38a2;line-height: 20px;\'>' +
               (data.settleCompliantCount || 0) +
@@ -128,7 +128,7 @@ function onClickSetting(){
           multiLan(
             'Withdrawal requirements 2',
             '<span style=\'font-size: 14px;font-weight:500;color: #ff38a2;line-height: 20px;\'>' +
-              money_amount(data.guildGenUsdLimit) +
+              data.guildGenUsdLimit +
               '</span>'
           )
         "

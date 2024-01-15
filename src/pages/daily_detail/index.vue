@@ -7,7 +7,7 @@ import { useRoute } from "vue-router"
 import InfiniteList from '@/components/InfiniteList.vue'
 import {multiLan}from '@/utils/lan'
 import money_amount from '@/utils/mony_amount'
-
+import {formatDuration} from '@/utils/time_utils'
 
 const loadingMore = ref(false)
 const refreshing = ref(false)
@@ -98,7 +98,7 @@ function requestData() {
     <tbody v-if="data != null">
       <tr class="item" v-for="item in data.data.list">
         <td>{{item.nickname}}</td>
-        <td>{{ $timeToFormatedTime(item.onlineDuration) }}</td>
+        <td>{{ formatDuration(item.onlineDuration) }}</td>
         <td>{{item.callNum}}</td>
         <td>{{item.giftNum}}</td>
         <td>{{money_amount(item.coins)}}<img class="coin" src="@/assets/gold_coin.webp" /></td>
