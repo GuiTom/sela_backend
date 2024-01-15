@@ -159,7 +159,7 @@ function onLanguageSelected(index) {
     </div>
 
     <div class="tips">
-      <div>{{ multiLan('Withdrawal requirements') }}：</div>
+      <div>{{ multiLan('Withdrawal requirements') }}</div>
       <div
         v-html="
           multiLan(
