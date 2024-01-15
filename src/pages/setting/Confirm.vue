@@ -27,7 +27,6 @@ function confirm(){
   position: fixed;
   text-align: center;
   .container {
-    height: 200px;
     border-radius: 30px;
     top: 0;
     bottom: 0;
@@ -53,16 +52,16 @@ function confirm(){
       background-color: #eeeeee;
     }
     .buttons {
+      padding: 12px 0;
       display: flex;
       flex-direction: row;
       justify-content: space-evenly;
-      padding: 30px 0;
+      align-items: center;
       font-size: 16px;
       font-family:
         PingFangSC,
         PingFang SC;
       font-weight: 600;
-
       line-height: 22px;
       > span:nth-child(1) {
         color: #999999;
