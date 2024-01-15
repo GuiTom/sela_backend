@@ -37,10 +37,10 @@ const multiLan = function(str,...args){
       return '';
    }
    if(args.length==1){
-      value = value.replaceAll('xx',args[0]);
+      value = value.replace('xx',args[0]);
    }else if(args.length>1){
       for(let i=0;i<args.length;i++){
-         value = value.replaceAll('xx'+(i+1),args[i]);
+         value = value.replace('xx'+(i+1),args[i]);
       }
    }
    if(value==''||value==null) value = '未翻译';

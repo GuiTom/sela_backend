@@ -85,16 +85,17 @@ function changeHideValue(){
 }
 .password {
   position: relative;
-  > img {
-    right: 10px;
-    top: 0;
-    bottom: 0;
-    margin-top: auto;
-    margin-bottom: auto;
-    width: 22px;
-    height: 22px;
-    position: absolute;
-  }
+  
+}
+.password img {
+  right: 10px;
+  top: 0;
+  bottom: 0;
+  margin-top: auto;
+  margin-bottom: auto;
+  width: 22px;
+  height: 22px;
+  position: absolute;
 }
 .login-container button {
   background-color: #825af9;

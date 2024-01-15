@@ -5,6 +5,7 @@ import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import Components from 'unplugin-vue-components/vite';
 import { VantResolver } from '@vant/auto-import-resolver';
+import legacy from '@vitejs/plugin-legacy';
 // import fs from 'fs';
 // import path from 'path';
 
@@ -17,11 +18,17 @@ export default defineConfig({
     port: 3000, // 你可以更改为你想要的端口号  
     // 其他服务器配置...  
   },  
+  build: {
+    target: 'es2015', // 或者根据需要选择 'es5'
+  },
   plugins: [
     vue(),
     vueJsx(),
     Components({
       resolvers: [VantResolver()],
+    }),
+    legacy({
+      targets: ['ie >= 11'], // 根据实际需求配置目标浏览器
     }),
   ],
   resolve: {
