@@ -25,9 +25,8 @@ function changeHideValue() {
   }
 }
 function onInput(){
-    showEyeIcon.value = password.value.length > 0;
+    showEyeIcon.value = password.value.value.length > 0;
     inputValue = password.value.value
-        console.log('value'+inputValue)
 }
 
 const value = computed(() => inputValue); 
@@ -79,5 +78,9 @@ input {
   padding: 0 12px;
   color: #999999;
   border: 0;
+}
+::-ms-reveal {
+  width: 0;
+  height: 0;
 }
 </style>

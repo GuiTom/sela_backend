@@ -20,6 +20,7 @@ function changeHideValue(){
     passwordInputTypeIsText.value = false;
   }
 }
+
 </script>
 
 <template>
@@ -45,6 +46,7 @@ function changeHideValue(){
           :placeholder="multiLan('Enter password')"
           name="password"
           required
+        
           @input="showEyeIcon=password.value.length>0"
         />
         <img v-if="showEyeIcon&&passwordInputTypeIsText" src="@/assets/login/eye_open.png" @click="changeHideValue"/>

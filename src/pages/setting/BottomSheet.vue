@@ -10,7 +10,7 @@ const primaryPassword = ref(null)
 const newPassword = ref(null)
 const confirmNewPassword = ref(null)
 function onConfirm() {
-    console.log(primaryPassword.value.value,newPassword.value.value,confirmNewPassword.value.value)
+    // console.log(primaryPassword.value.value,newPassword.value.value,confirmNewPassword.value.value)
     if(newPassword.value.value!=confirmNewPassword.value.value){
         toast(multiLan('Twice password diff'));
         return;
@@ -37,14 +37,17 @@ function onConfirm() {
 
 </script>
 <template>
- <div class="bg" @click="emit('close')"></div>
-  <div class="container">
+ <div class="bg" @click="emit('close')">
+  <div class="container" @click="$event.stopPropagation()">
     <div class="title">{{multiLan('Change password')}}</div>
     <CoustomInput type="password" ref="primaryPassword" :placeholder="multiLan('Please enter the original password')"></CoustomInput>
     <CoustomInput type="password" ref="newPassword" :placeholder="multiLan('Please enter the new password')" ></CoustomInput>
     <CoustomInput type="password" ref="confirmNewPassword" :placeholder="multiLan('Please confirm the new password')" ></CoustomInput>
     <button type="submit" @click="onConfirm">{{multiLan('Confirm')}}</button>
+    
   </div>
+ </div>
+
 </template>
 <style scoped lang="less">
 .bg{
@@ -52,17 +55,18 @@ function onConfirm() {
     width:100%;
     height: 100%;
     top:0;
+    bottom: 0;
     background-color: #000000B3;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
 }
 .container {
-  position: fixed;
   width: 100%;
-  bottom:0;
-  height: 600px;
   display: flex;
-  padding: 0 20px;
+  padding: 0 20px 30px 20px;
   background-color: white;
-  border-radius: 30px 30px;
+  border-radius: 30px 30px 0 0;
   flex-direction: column;
   .title{
     text-align: center;
@@ -74,7 +78,7 @@ function onConfirm() {
   }
 
   button {
-    margin: 12px 0;
+    margin: 12px 0 0 0;
     height: 54px;
     background: #8d5dff;
     border-radius: 27px;
@@ -83,6 +87,7 @@ function onConfirm() {
     color: #ffffff;
     line-height: 22px;
     border: 0;
+    display: block;
   }
   .password {
     margin: 15px 0;
