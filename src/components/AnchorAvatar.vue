@@ -34,7 +34,7 @@ function statusImg() {
 </script>
 <template>
   <div class="avatar" :style=" 'background-image:'+'url(' + img + ');' ">
-    <div class="bg" v-if="isForbidden"></div>
+    <div class="bg" v-if="isForbidden||violated"></div>
     <span class="userStatus" v-if="violated">{{multiLan('Violation')}}</span>
     <span class="status" v-if="isForbidden">{{multiLan('In ban')}}</span>
     <img class="online_status" :src="statusImg()" />
@@ -51,7 +51,7 @@ function statusImg() {
     border-radius: 50%;
     width: 100%;height: 100%;background-color:#A1A1A1AA;
   }
-  .status,0.userStatus{
+  .status,.userStatus{
     position: absolute;
     top: 50%;
     left: 50%;

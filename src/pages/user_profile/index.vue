@@ -22,6 +22,7 @@ const pageSize = 20
 onMounted(() => {
   const route = useRoute()
   userData.value = JSON.parse(route.query.data)
+  // userData.value.userStatus = 3;
   // console.log(userData.value.authTime)
   requestData()
   // window.param = null
