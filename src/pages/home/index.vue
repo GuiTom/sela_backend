@@ -102,7 +102,7 @@ const lanValues = [
   'Türkçe',
   'Tiếng Việt',
   'IndonesiaName',
-  'हिंदीName',
+  'हिंदी',
   'Español',
   'Português',
   'ภาษาไทย',
