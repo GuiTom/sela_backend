@@ -11,6 +11,7 @@ import AnchorAvatarVue from '@/components/AnchorAvatar.vue'
 import LevelIcon from '@/components/LevelIcon.vue'
 import {multiLan}from '@/utils/lan'
 import money_amount from '@/utils/mony_amount'
+import {formatDuration} from '@/utils/time_utils'
 const loadingMore = ref(false)
 const refreshing = ref(false)
 const noMoreData = ref(false)
@@ -95,7 +96,7 @@ function requestData() {
       <span class="avatar"
         ><AnchorAvatarVue
           :onlineStatus="userData.isOnline"
-          :isForbidden="userData.userStatus == 2"
+          :isForbidden="userData.userStatus == 2" :violated="userData.userStatus==3"
           :img="userData.portrait"
         ></AnchorAvatarVue>
       </span>
@@ -183,10 +184,10 @@ function requestData() {
               {{ multiLan('Date') }}：<span>{{ $timeToFormatedDate(parseInt(item.date)) }}</span>
             </div>
             <div>
-              {{ multiLan('Online duration') }}：<span>{{ item.onlineDuration }}</span>
+              {{ multiLan('Online duration') }}：<span>{{formatDuration(item.onlineDuration) }}</span>
             </div>
             <div>
-              {{ multiLan('Average call duration') }}：<span>{{ item.avCallDuration }}</span>
+              {{ multiLan('Average call duration') }}：<span>{{ formatDuration(item.avCallDuration) }}</span>
             </div>
             <div>
               {{ multiLan('Number of calls') }}：<span>{{ item.callNum }}</span>

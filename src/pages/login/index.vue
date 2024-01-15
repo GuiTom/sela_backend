@@ -130,4 +130,5 @@ function onLanguageSelected(index) {
   justify-content: center;
   align-items: center;
 }
+
 </style>

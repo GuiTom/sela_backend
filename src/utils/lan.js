@@ -43,7 +43,7 @@ const multiLan = function(str,...args){
          value = value.replaceAll('xx'+(i+1),args[i]);
       }
    }
-
+   if(value==''||value==null) value = '未翻译';
   return value;
 }
 export{ multiLan,currentLanguage};

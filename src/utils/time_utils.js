@@ -43,4 +43,15 @@ const timeZoneOfffsetHours = function () {
 
     return offsetHours;
 }
-export { timeToFormatedDateTime, timeToFormatedTime, timeToFormatedDateHour, timeToFormatedDate, timeZoneOfffsetHours };
+function formatDuration(milliseconds) {  
+    if(milliseconds==null) return '00:00:00';
+    let seconds = Math.floor(milliseconds / 1000);  
+    let minutes = Math.floor(seconds / 60);  
+    let hours = Math.floor(minutes / 60);  
+    
+    
+    return hours.toString().padStart(2,'0')+':'+(minutes%60).toString().padStart(2,'0')+':'+(seconds%60).toString().padStart(2,'0');  
+}  
+  
+
+export { timeToFormatedDateTime, timeToFormatedTime, timeToFormatedDateHour, timeToFormatedDate, timeZoneOfffsetHours,formatDuration };

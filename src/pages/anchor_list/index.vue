@@ -116,14 +116,14 @@ function requestData() {
         <span class="avatar_container"
           ><AnchorAvatarVue
             :onlineStatus="item.isOnline"
-            :isForbidden="item.userStatus == 2"
+            :isForbidden="item.userStatus == 2" :violated="item.userStatus==3"
             :img="item.portrait"
           ></AnchorAvatarVue>
         </span>
         <span class="right_info_container">
           <div style="color:#333333">
             {{ item.nickname }}
-            <LevelIcon :level="item.level"></LevelIcon>
+            <LevelIcon :level="item.level==null?0:item.level"></LevelIcon>
           </div>
           <div>
             <span style="color:#999999">ID：{{ item.anchorId }}</span
