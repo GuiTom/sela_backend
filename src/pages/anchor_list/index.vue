@@ -93,6 +93,7 @@ function requestData() {
 
           <ContextMenu
             v-if="showMenu"
+            style="z-index: 100;"
             @item_selected="onmenuSelected"
             :initialIndex="selectedMenuIndex"
             :options="[
@@ -123,6 +124,7 @@ function requestData() {
             :img="item.portrait"
           ></AnchorAvatarVue>
         </span>
+        <span class="spacer_10px"></span>
         <span class="right_info_container">
           <div style="color:#333333">
             {{ item.nickname }}
