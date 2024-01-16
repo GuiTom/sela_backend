@@ -73,5 +73,6 @@
     "Abolished": "Abolished",
     "Statistics update at xx:00 every day": "Statistics update at  xx:00 every day",
     "Violation": "Violation",
-    "Twice password diff": "The passwords are the same, enter it again"
+    "Twice password diff": "Inconsistent password, please reenter",
+    "Reenter new password": "Reenter new password"
 }

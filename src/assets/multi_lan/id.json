@@ -73,5 +73,6 @@
     "Abolished": "Kadaluwarsa",
     "Statistics update at xx:00 every day": "Data diperbarui setiap hari xx:00",
     "Violation": "Pelanggaran",
-    "Twice password diff": "Kata sandinya sama dua kali, silakan masukkan kembali."
+    "Twice password diff": "Kedua password berbeda, masukkan lagi",
+    "Reenter new password": "Masukkan kata sandi baru lagi"
 }

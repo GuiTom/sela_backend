@@ -72,5 +72,6 @@
     "Abolished": "समाप्त कर दिया",
     "Statistics update at xx:00 every day": "आँकड़े हर दिन xx:00 पर अपडेट होते हैं",
     "Violation": "उल्लंघन",
-    "Twice password diff": "पासवर्ड वही हैं, इसे दोबारा दर्ज करें"
+    "Twice password diff": "दोनों पासवर्ड अलग अलग है, कृपया पुनः दर्ज करें",
+    "Reenter new password": "नया पासवर्ड पुनः दर्ज करें"
 }

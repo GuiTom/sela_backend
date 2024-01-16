@@ -72,5 +72,6 @@
     "Abolished": "ถูกยกเลิก",
     "Statistics update at xx:00 every day": "ข้อมูลอัพเดททุกวัน [15:00]",
     "Violation": "การละเมิด",
-    "Twice password diff": "รหัสผ่านเหมือนกันทางสองครั้ง กรุณาป้อนใหม่อีกครั้ง"
+    "Twice password diff": "รหัสผ่านทั้งสองแตกต่างกัน โปรดป้อนใหม่",
+    "Reenter new password": "ป้อนรหัสผ่านใหม่อีกครั้ง"
 }

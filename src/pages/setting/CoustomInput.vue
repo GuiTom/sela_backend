@@ -29,7 +29,10 @@ function onInput(){
     inputValue = password.value.value
 }
 
-const value = computed(() => inputValue); 
+function value(){
+  
+  return inputValue;
+}
 defineExpose({value})
 </script>
 <template>

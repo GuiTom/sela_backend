@@ -11,16 +11,29 @@ const primaryPassword = ref(null)
 const newPassword = ref(null)
 const confirmNewPassword = ref(null)
 function onConfirm() {
-  // console.log(primaryPassword.value.value,newPassword.value.value,confirmNewPassword.value.value)
-  if (newPassword.value.value != confirmNewPassword.value.value) {
+  console.log(primaryPassword.value.value(),newPassword.value.value(),confirmNewPassword.value.value())
+  if(primaryPassword.value.value()==''||primaryPassword.value.value()==null){
+    toast(multiLan('Please enter the original password'))
+    return
+  }
+  if(newPassword.value.value()==''||newPassword.value.value()==null){
+    toast(multiLan('Please enter the new password'))
+    return
+  }
+  if(confirmNewPassword.value.value()==''||confirmNewPassword.value.value()==null){
+    toast(multiLan('Reenter new password'))
+    return
+  }
+  if (newPassword.value.value() != confirmNewPassword.value.value()) {
     toast(multiLan('Twice password diff'))
     return
   }
+
   const path = '/manager/guildh5/change/password'
   api
     .post(path, {
-      oldPassword: primaryPassword.value.value,
-      newPassword: newPassword.value.value
+      oldPassword: primaryPassword.value.value(),
+      newPassword: newPassword.value.value()
     })
     .then(function (response) {
       if (response.data.code == 0) {
