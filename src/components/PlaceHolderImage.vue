@@ -24,7 +24,8 @@ defineProps({
 }
 img {
   position: absolute;
-  background-size: cover;
+  object-fit: cover;
+  overflow: hidden;
   border-radius: 50%;
   width: 100%;
   height: 100%;
