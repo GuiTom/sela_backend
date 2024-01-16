@@ -45,8 +45,8 @@ function statusImg() {
 </template>
 <style scoped lang="less">
 .avatar {
-  width: 100%;
-  height: 100%;
+  height: 54px;
+  width: 54px;
   .bg{
     border-radius: 50%;
     position: absolute;

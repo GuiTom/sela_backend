@@ -25,7 +25,6 @@ var currentPage = 0
 const pageSize = 20
 
 onMounted(() => {
-  document.documentElement.scrollTop = 0
   let keys = lanKeys
   let curLan = currentLanguage()
 
@@ -56,6 +55,7 @@ function refresh() {
   requestData()
 }
 function requestData() {
+
   if (noMoreData.value) {
     console.log('没有更多数据了')
     return
@@ -116,20 +116,19 @@ function onLanguageSelected(index) {
     <div style="width: 12px;"></div>
     <div class="setting"> <img src="@/assets/setting.webp" @click="onClickSetting"/> </div>
     <div style="flex: auto;"></div>
-    <div class="lan_button" ref="lanButton" @click="showSwitchLanguageMenu = true;$event.stopPropagation()">
+    <div class="lan_button" @click="showSwitchLanguageMenu = true;$event.stopPropagation()">
       <span>{{ lanValues[currentLanguageIndex] }}</span
       ><img src="@/assets/login/arror_down.webp" />
     </div>
     <div style="width: 12px;"></div>
   </div>
-  <div>
     <LanguageSwitchMenu
     :initialIndex="currentLanguageIndex"
     :options="lanValues"
     v-if="showSwitchLanguageMenu"
     @item_selected="onLanguageSelected"
   ></LanguageSwitchMenu>
-  </div>
+ 
   <div :key="currentLanguageIndex" v-if="data != null" class="container">
     <div class="header">
       <img src="@/assets/logo.png" />
@@ -287,7 +286,8 @@ function onLanguageSelected(index) {
       </template>
     </InfiniteList>
   </div>
-  <div v-else style="width:100%;height:100%;position:fixed;">
+  <!-- 这里用v-else 会报错，原因未明 -->
+  <div v-if="data == null" style="width:100%;height:100%;position:fixed;">
     <AutoRTLImg
       :src="loadingImg"
       style="width:81px;height:50px;position:absolute;left:50%;top:50%;transform:translate(-50%, -50%)"
