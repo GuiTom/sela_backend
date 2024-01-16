@@ -6,10 +6,6 @@ const container = ref(null)
     type: String,
     required: true
   },
-  padding: {
-    type: Number,
-    required: true
-  }
 })
 onMounted(() => {
   adjustFontSize(container)

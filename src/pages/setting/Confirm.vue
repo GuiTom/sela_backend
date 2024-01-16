@@ -31,6 +31,7 @@ function confirm(){
     top: 0;
     bottom: 0;
     margin: auto;
+    padding: 5px;
     background-color: white;
     margin: calc(50vh - 100px) 36px;
     .title {
