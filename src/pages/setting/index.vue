@@ -20,6 +20,14 @@ function onCancel() {
 }
 function onConfirm() {
   localStorage.clear()
+  let lan = navigator.language.split('-')[0];
+
+localStorage.setItem('currentLanguage',lan);
+if(lan!='ar'){
+   document.documentElement.setAttribute('dir', 'ltl')
+}else {
+  document.documentElement.setAttribute('dir', 'rtl')
+}
   showConfirm.value = false
   router.push('/')
 }

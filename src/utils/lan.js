@@ -23,7 +23,9 @@ const lans = {
 
 const currentLanguage = function(){
    if(localStorage.getItem('currentLanguage')==null){
-      localStorage.setItem('currentLanguage','zh');
+      let lan = navigator.language.split('-')[0];
+
+      localStorage.setItem('currentLanguage',lan);    
    }
    return localStorage.getItem('currentLanguage');
 }
