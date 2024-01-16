@@ -7,7 +7,6 @@
   background-size: cover;
 }
 .setting{
-  position: fixed;
   left:12px;
   top:58px;
   > img{
@@ -281,14 +280,19 @@
     }
   }
 }
+.lan_button_container{
+  top: 56px;
+  position: fixed;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+
 .lan_button {
   padding: 4px 8px;
   background-color: white;
   border-radius: 15px;
-  position: fixed;
   height: 28px;
-  right: 12px;
-  top: 34px;
   line-height: 20px;
   img {
     display: inline-block;
@@ -299,4 +303,5 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
+}
 }

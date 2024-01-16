@@ -12,6 +12,7 @@ import money_amount from '@/utils/mony_amount'
 import { currentLanguage } from '@/utils/lan'
 import AutoRTLImg from '@/components/AutoRTLImg.vue'
 import rightArrorImg from '@/assets/right_arror.webp'
+import {lanKeys,lanValues} from '@/utils/lan'
 const showSwitchLanguageMenu = ref(false)
 const currentLanguageIndex = ref(0)
 const loadingMore = ref(false)
@@ -95,19 +96,6 @@ function requestData() {
 function onClickSetting(){
   router.push('/setting')
 }
-const lanKeys = ['zh', 'en', 'tr', 'vi', 'id', 'hi', 'es', 'pt', 'th', 'ar']
-const lanValues = [
-  '中文',
-  'English',
-  'Türkçe',
-  'Tiếng Việt',
-  'IndonesiaName',
-  'हिंदी',
-  'Español',
-  'Português',
-  'ภาษาไทย',
-  'بالعربية'
-]
 
 function onLanguageSelected(index) {
   showSwitchLanguageMenu.value = false
@@ -121,11 +109,18 @@ function onLanguageSelected(index) {
 }
 </script>
 <template>
+  <div @click="showSwitchLanguageMenu = false">
   <div class="bg"></div>
-  <div class="setting"> <img src="@/assets/setting.webp" @click="onClickSetting"/> </div>
-  <div class="lan_button" @click="showSwitchLanguageMenu = true">
-    <span>{{ lanValues[currentLanguageIndex] }}</span
-    ><img src="@/assets/login/arror_down.webp" />
+ 
+  <div class="lan_button_container">
+    <div style="width: 12px;"></div>
+    <div class="setting"> <img src="@/assets/setting.webp" @click="onClickSetting"/> </div>
+    <div style="flex: auto;"></div>
+    <div class="lan_button" ref="lanButton" @click="showSwitchLanguageMenu = true;$event.stopPropagation()">
+      <span>{{ lanValues[currentLanguageIndex] }}</span
+      ><img src="@/assets/login/arror_down.webp" />
+    </div>
+    <div style="width: 12px;"></div>
   </div>
   <LanguageSwitchMenu
     :initialIndex="currentLanguageIndex"
@@ -295,6 +290,7 @@ function onLanguageSelected(index) {
       style="width:81px;height:50px;position:absolute;left:50%;top:50%;transform:translate(-50%, -50%)"
     ></AutoRTLImg>
   </div>
+</div>
 </template>
 <style scoped lang="less">
 @import 'index.less';

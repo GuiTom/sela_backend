@@ -27,7 +27,7 @@ const router = createRouter({
       component: () => import('../pages/user_profile/index.vue'),
       meta: { requiresAuth: true },
     },
-    // 个人中心
+    // 设置
     {
       path: '/setting',
       name: 'setting',
@@ -35,6 +35,16 @@ const router = createRouter({
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () => import('../pages/setting/index.vue'),
+      meta: { requiresAuth: true },
+    },
+    // 修改密码
+    {
+      path: '/changePassword',
+      name: 'change password',
+      // route level code-splitting
+      // this generates a separate chunk (About.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import('../pages/setting/changePassword/index.vue'),
       meta: { requiresAuth: true },
     },
     // 每日数据详情
@@ -78,23 +88,23 @@ const router = createRouter({
   ]
 })
 // 全局前置守卫  
-router.beforeEach((to, from, next) => {  
+router.beforeEach((to, from, next) => {
   // 检查用户是否登录，这里只是一个示例，你需要根据你的应用来实现具体的逻辑  
   const isAuthenticated = !!localStorage.getItem('authorization'); // 假设我们将用户令牌存储在 localStorage 中  
-  
+
   // 检查要访问的路由是否需要认证  
-  if (to.matched.some(record => record.meta.requiresAuth)) {  
+  if (to.matched.some(record => record.meta.requiresAuth)) {
     // 这个路由需要认证，检查是否已登录  
-    if (!isAuthenticated) {  
+    if (!isAuthenticated) {
       // 未登录，跳转到登录页面  
-      next({ name: 'login' });  
-    } else {  
+      next({ name: 'login' });
+    } else {
       // 已登录，正常进入  
-      next();  
-    }  
-  } else {  
+      next();
+    }
+  } else {
     // 这个路由不需要认证，直接进入  
-    next();  
-  }  
-}); 
+    next();
+  }
+});
 export default router

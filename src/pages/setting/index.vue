@@ -1,16 +1,16 @@
 <script setup>
 import { ref } from 'vue'
 import AppBarVue from '@/components/AppBar.vue'
-import BottomSheet from './BottomSheet.vue'
+
 import Confirm from './Confirm.vue'
 import router from '../../router/index'
 import { multiLan } from '@/utils/lan'
 import AutoRTLImg from '@/components/AutoRTLImg.vue'
 import rightArrorImg from '@/assets/right_arror.webp'
-const showBottomSheet = ref(false)
+
 const showConfirm = ref(false)
 function onClickChangePassword() {
-  showBottomSheet.value = true
+  router.push('/changePassword')
 }
 function onClickLogout() {
   showConfirm.value = true
@@ -20,14 +20,14 @@ function onCancel() {
 }
 function onConfirm() {
   localStorage.clear()
-  let lan = navigator.language.split('-')[0];
+  let lan = navigator.language.split('-')[0]
 
-localStorage.setItem('currentLanguage',lan);
-if(lan!='ar'){
-   document.documentElement.setAttribute('dir', 'ltl')
-}else {
-  document.documentElement.setAttribute('dir', 'rtl')
-}
+  localStorage.setItem('currentLanguage', lan)
+  if (lan != 'ar') {
+    document.documentElement.setAttribute('dir', 'ltl')
+  } else {
+    document.documentElement.setAttribute('dir', 'rtl')
+  }
   showConfirm.value = false
   router.push('/')
 }
@@ -36,15 +36,15 @@ if(lan!='ar'){
   <div class="container">
     <AppBarVue :title="multiLan('System settings')"></AppBarVue>
     <div class="item" @click="onClickChangePassword">
-      <span>{{multiLan('Change password')}}</span>
-      <span><AutoRTLImg class="right_arror" :src="rightArrorImg" ></AutoRTLImg></span>
+      <span>{{ multiLan('Change password') }}</span>
+      <span><AutoRTLImg class="right_arror" :src="rightArrorImg"></AutoRTLImg></span>
     </div>
     <div class="item" @click="onClickLogout">
-      <span>{{multiLan('Log out')}}</span>
-      <span><AutoRTLImg class="right_arror" :src="rightArrorImg" ></AutoRTLImg></span>
+      <span>{{ multiLan('Log out') }}</span>
+      <span><AutoRTLImg class="right_arror" :src="rightArrorImg"></AutoRTLImg></span>
     </div>
   </div>
-  <BottomSheet v-if="showBottomSheet" @close="showBottomSheet = false"></BottomSheet>
+
   <Confirm v-if="showConfirm" @cancel="onCancel" @confirm="onConfirm"></Confirm>
 </template>
 <style scoped lang="less">

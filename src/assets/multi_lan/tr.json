@@ -1,6 +1,6 @@
 {
     "Login": "Giriş",
-    "Account": " ",
+    "de": " ",
     "Instructions": "Talimatlar",
     "explain 1": "Bakiye= çekilebilir gelir + çekilemeyen gelir (asgari hedefe ulaşamayan kızlardan alınan komisyon). Dikkat! Başarılı bir şekilde para çektiğinizde çekilebilir geliri temizleyeceğiz.",
     "explain 2": "Çekilebilir gelir: Bu hafta elde ettiğiniz kazançlardan gelecek hafta çekebileceğiniz tutar",

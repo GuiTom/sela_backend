@@ -20,7 +20,19 @@ const lans = {
     'tr':tr,
     'vi':vi,
 }
-
+const lanKeys = ['zh', 'en', 'tr', 'vi', 'id', 'hi', 'es', 'pt', 'th', 'ar']
+const lanValues = [
+  '中文',
+  'English',
+  'Türkçe',
+  'Tiếng Việt',
+  'Indonesia',
+  'हिंदी',
+  'Español',
+  'Português',
+  'ภาษาไทย',
+  'بالعربية'
+]
 const currentLanguage = function(){
    if(localStorage.getItem('currentLanguage')==null){
       let lan = navigator.language.split('-')[0];
@@ -48,4 +60,4 @@ const multiLan = function(str,...args){
    if(value==''||value==null) value = '未翻译';
   return value;
 }
-export{ multiLan,currentLanguage};
+export{ multiLan,currentLanguage,lanKeys,lanValues};

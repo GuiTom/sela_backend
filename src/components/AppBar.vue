@@ -1,14 +1,24 @@
 <script setup>
+import { onMounted,ref } from 'vue';
+const arror = ref(null)
 defineProps({
   title: {
     type: String,
     required: true
   },
 })
+onMounted(()=>{
+  if(document.documentElement.getAttribute('dir')=='rtl'){
+    arror.value.style.right = '15px'
+    arror.value.style.transform = 'scaleX(-1)';
+  }else {
+    arror.value.style.left = '15px'
+  }
+})
 </script>
 <template>
     <div class="app_bar">
-        <img class="left_arror" @click="$router.go(-1)" src="@/assets/left_arror.webp" />
+        <img class="left_arror" ref="arror" @click="$router.go(-1)" src="@/assets/left_arror.webp" />
         <span class="title">{{title}}</span>
         <span class="actions"><slot name="right_icon"></slot></span>
       </div>
@@ -18,7 +28,6 @@ defineProps({
     margin-top: 20px;
   .left_arror {
     position: absolute;
-    left: 15px;
     width: 23px;
     height: 22px;
   }

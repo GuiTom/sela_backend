@@ -5,7 +5,9 @@ import { onMounted, ref } from 'vue'
 import router from '../../router/index'
 import { currentLanguage } from '@/utils/lan'
 import LanguageSwitchMenu from '@/components/LanguageSwitchMenu.vue'
+import {lanKeys,lanValues} from '@/utils/lan'
 // import {currentLanguage} from '@/utils/lan'
+const lanButton = ref(null)
 const authorization = ref(null)
 
 const showSwitchLanguageMenu = ref(false)
@@ -22,6 +24,9 @@ onMounted(() => {
       break
     }
   }
+
+
+
 })
 function onSubmit(username, password) {
   const formData = new FormData()
@@ -48,19 +53,7 @@ function onSubmit(username, password) {
     })
 }
 
-const lanKeys = ['zh', 'en', 'tr', 'vi', 'id', 'hi', 'es', 'pt', 'th', 'ar']
-const lanValues = [
-  '中文',
-  'English',
-  'Türkçe',
-  'Tiếng Việt',
-  'Indonesia',
-  'हिंदी',
-  'Español',
-  'Português',
-  'ภาษาไทย',
-  'بالعربية'
-]
+
 
 function onLanguageSelected(index) {
   showSwitchLanguageMenu.value = false
@@ -72,13 +65,18 @@ function onLanguageSelected(index) {
   }
   currentLanguageIndex.value = index
 }
+
 </script>
 
 <template>
-  <div :key="currentLanguageIndex">
-    <div class="lan_button" @click="showSwitchLanguageMenu = true">
-      <span>{{ lanValues[currentLanguageIndex] }}</span
-      ><img src="@/assets/login/arror_down.webp" />
+  <div :key="currentLanguageIndex" @click="showSwitchLanguageMenu = false">
+    <div class="lan_button_container">
+      <div style="width: 12px;"></div>
+      <div class="lan_button" ref="lanButton" @click="showSwitchLanguageMenu = true;$event.stopPropagation()">
+        <span>{{ lanValues[currentLanguageIndex] }}</span
+        ><img src="@/assets/login/arror_down.webp" />
+      </div>
+      <div style="width: 12px;"></div>
     </div>
     <LanguageSwitchMenu
       :initialIndex="currentLanguageIndex"
@@ -93,6 +91,7 @@ function onLanguageSelected(index) {
         <LoginForm @submit="onSubmit"></LoginForm>
       </div>
     </div>
+    <div style="height: 100px;"></div>
   </div>
 </template>
 <style scoped lang="less">
@@ -111,14 +110,19 @@ function onLanguageSelected(index) {
 .container img {
   margin-top: 120px;
 }
+.lan_button_container{
+  top: 56px;
+  position: fixed;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+
 .lan_button {
   padding: 4px 8px;
   background-color: white;
   border-radius: 15px;
-  position: fixed;
   height: 28px;
-  right: 12px;
-  top: 34px;
   line-height: 20px;
   img {
     display: inline-block;
@@ -130,5 +134,7 @@ function onLanguageSelected(index) {
   justify-content: center;
   align-items: center;
 }
+}
+
 
 </style>

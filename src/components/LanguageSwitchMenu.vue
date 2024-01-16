@@ -17,6 +17,8 @@ const currentIndex  = ref(props.initialIndex)
 
 </script>
 <template>
+<div class="menu_container">
+  
   <div class="menu">
     <div class="title">{{multiLan('Language')}}</div>
     <div v-if="options != null">
@@ -31,13 +33,23 @@ const currentIndex  = ref(props.initialIndex)
       </div>
     </div>
   </div>
+  <div style="width: 20px;"></div>
+</div>
 </template>
 <style scoped lang="less">
+.menu_container{
+  position: absolute;
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: flex-end;
+  background-color: rgba(0,0,0,0);
+}
 .menu {
     padding: 10px 15px;
-    position: absolute;
+ 
     right: 20px;
-    top:80px;
+    margin-top:95px;
     background: #FFFFFF;
     box-shadow: 0px 3px 16px 0px rgba(0,0,0,0.5);
     border-radius: 8px;
