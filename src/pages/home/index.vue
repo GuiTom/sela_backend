@@ -122,12 +122,14 @@ function onLanguageSelected(index) {
     </div>
     <div style="width: 12px;"></div>
   </div>
-  <LanguageSwitchMenu
+  <div>
+    <LanguageSwitchMenu
     :initialIndex="currentLanguageIndex"
     :options="lanValues"
     v-if="showSwitchLanguageMenu"
     @item_selected="onLanguageSelected"
   ></LanguageSwitchMenu>
+  </div>
   <div :key="currentLanguageIndex" v-if="data != null" class="container">
     <div class="header">
       <img src="@/assets/logo.png" />
