@@ -133,6 +133,7 @@ function onLanguageSelected(index) {
   <div :key="currentLanguageIndex" v-if="data != null" class="container">
     <div class="header">
       <img src="@/assets/logo.png" />
+      <div style="width: 12px;"></div>
       <div class="meta_info_container">
         <div>
           <span>{{ data.guildName }}</span>
