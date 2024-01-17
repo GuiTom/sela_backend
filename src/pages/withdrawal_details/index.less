@@ -1,7 +1,7 @@
 table {
   width: 100%;
   border-spacing: 0;
-
+  table-layout: fixed;
   thead {
     width: 100%;
     margin: 0;
@@ -17,12 +17,16 @@ table {
   }
   tbody {
     font-size: 14px;
+    td:nth-child(1){
+      text-overflow: ellipsis;
+      overflow: hidden;
+      padding: 15px 5px;
+    }
     td {
       color: #333333;
       text-align: center;
-      padding: 15px 0;
+      padding: 15px 3px;
       line-height: 20px;
-
       .coin {
         margin-left: 3px;
         width: 16px;
