@@ -185,8 +185,11 @@ function onLanguageSelected(index) {
     </div>
     <!-- 提现记录和主播管理按钮 -->
     <div class="buttons">
-      <span @click="$router.push('/withdraw_records')">{{ multiLan('Withdrawal history') }}</span>
-      <span @click="$router.push('/anchor_list')">{{ multiLan('Host management') }}</span>
+      <span style="width: 15px;"></span>
+      <span class="button" @click="$router.push('/withdraw_records')">{{ multiLan('Withdrawal history') }}</span>
+      <span style="width: 10px;"></span>
+      <span class="button" @click="$router.push('/anchor_list')">{{ multiLan('Host management') }}</span>
+      <span style="width: 15px;"></span>
     </div>
     <!-- 余额和结算收益 -->
     <div class="more-info">
