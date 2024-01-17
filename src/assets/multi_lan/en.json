@@ -12,7 +12,7 @@
     "Newly registered hosts yesterday": "Newly registered hosts yesterday",
     "Days since creation: xx days": "Days since creation: xx days",
     "Withdrawal requirements": "Withdrawal requirements:",
-    "Withdrawal requirements 1": "1:At least xx2 hosts earn over xx1 coins",
+    "Withdrawal requirements 1": "1:At least xx2 hosts each earns over xx1 coins",
     "Withdrawal requirements 2": "2:Withdrawable income of Agency commission reaches【$xx】,then automatic withdrawal function is triggered.",
     "Withdrawal requirements tip": "Note:The withdrawable income will be automatically withdrawn within 3 working days next week after you meet the requirements above.",
     "Withdrawal history": "Withdrawal history",
@@ -75,5 +75,6 @@
     "Violation": "Violation",
     "Twice password diff": "Inconsistent password, please reenter",
     "Reenter new password": "Reenter new password",
-    "Statistics over the past 30 days": "Statistics over the past 30 days"
+    "Statistics over the past 30 days": "Statistics over the past 30 days",
+    "Invitation code": "Invitation code"
 }

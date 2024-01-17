@@ -28,7 +28,7 @@ function changeHideValue(){
   <div class="login-container">
     <form action="/login" method="post">
       <label for="username"
-        ><b>{{ multiLan('Account') }}</b></label
+        ><b>{{ multiLan('Invitation code') }}</b></label
       >
       <input
         ref="username"

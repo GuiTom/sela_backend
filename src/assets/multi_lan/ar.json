@@ -69,5 +69,6 @@
     "Violation": "مخالفة",
     "Twice password diff": "كلمتا المرور مختلفتان، يرجى إعادة الإدخال",
     "Reenter new password": "ادخل كلمة المرور  الجديدة مرة اخري",
-    "Statistics over the past 30 days": "بيانات آخر 30 يومًا"
+    "Statistics over the past 30 days": "بيانات آخر 30 يومًا",
+    "Invitation code": "كود الدعوة"
 }

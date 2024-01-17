@@ -74,5 +74,6 @@
     "Violation": "การละเมิด",
     "Twice password diff": "รหัสผ่านทั้งสองแตกต่างกัน โปรดป้อนใหม่",
     "Reenter new password": "ป้อนรหัสผ่านใหม่อีกครั้ง",
-    "Statistics over the past 30 days": "ข้อมูลในช่วง 30 วันที่ผ่านมา"
+    "Statistics over the past 30 days": "ข้อมูลในช่วง 30 วันที่ผ่านมา",
+    "Invitation code": "รหัสการเชิญ"
 }

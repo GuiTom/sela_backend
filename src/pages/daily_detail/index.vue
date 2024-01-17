@@ -101,7 +101,7 @@ function requestData() {
         <td>{{ formatDuration(item.onlineDuration) }}</td>
         <td>{{item.callNum}}</td>
         <td>{{item.giftNum}}</td>
-        <td>{{money_amount(item.coins)}}<img class="coin" src="@/assets/gold_coin.webp" /></td>
+        <td class="money">{{money_amount(item.coins)}}<img class="coin" src="@/assets/gold_coin.webp" /></td>
       </tr>
     </tbody>
   </table>
