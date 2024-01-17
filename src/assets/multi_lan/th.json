@@ -73,5 +73,6 @@
     "Statistics update at xx:00 every day": "ข้อมูลอัพเดททุกวัน [15:00]",
     "Violation": "การละเมิด",
     "Twice password diff": "รหัสผ่านทั้งสองแตกต่างกัน โปรดป้อนใหม่",
-    "Reenter new password": "ป้อนรหัสผ่านใหม่อีกครั้ง"
+    "Reenter new password": "ป้อนรหัสผ่านใหม่อีกครั้ง",
+    "Statistics over the past 30 days": "ข้อมูลในช่วง 30 วันที่ผ่านมา"
 }

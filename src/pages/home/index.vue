@@ -252,6 +252,13 @@ function onLanguageSelected(index) {
       </div>
     </div>
     <div class="divider"></div>
+    <div class="weekly_data_title">
+      <span>{{multiLan('Weekly statistics')}}</span><span style="font-size: 12px; font-weight: 400; color: #999999"
+        >-{{multiLan('Statistics update at xx:00 every day',24 - (8 - $timeZoneOfffsetHours()))}}</span
+      >
+      <div style="flex:auto;"></div>
+      <span class="right_tip">{{multiLan('Statistics over the past 30 days')}}</span>
+    </div>
     <InfiniteList
       class="turnover-list-container"
       style="100%;overflow:auto"

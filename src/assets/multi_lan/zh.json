@@ -74,5 +74,6 @@
     "Abolished":"已作废",
     "Violation":"违规",
     "Twice password diff":"两次密码不同，请重新输入",
-    "Reenter new password":"再次输入新密码"
+    "Reenter new password":"再次输入新密码",
+    "Statistics over the past 30 days":"近30天数据"
 }

@@ -73,5 +73,6 @@
     "Statistics update at xx:00 every day": "Dữ liệu được cập nhật [15:00] hàng ngày",
     "Violation": "Vi phạm",
     "Twice password diff": "Hai lần mật khẩu khác nhau, vui lòng nhập lại",
-    "Reenter new password": "Nhập lại mật khẩu mới"
+    "Reenter new password": "Nhập lại mật khẩu mới",
+    "Statistics over the past 30 days": "Dữ liệu trong 30 ngày gần đây"
 }

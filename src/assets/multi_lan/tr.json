@@ -75,5 +75,6 @@
     "Twice password diff": "İki şifre farklı, lütfen tekrar girin",
     "Log out": "Oturumu kapat",
     "Account": " Hesap",
-    "Reenter new password": "Yeni şifreyi tekrar giriniz"
+    "Reenter new password": "Yeni şifreyi tekrar giriniz",
+    "Statistics over the past 30 days": "Son 30 güne ait istatistikler"
 }

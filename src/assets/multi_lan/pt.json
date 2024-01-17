@@ -73,5 +73,6 @@
     "Statistics update at xx:00 every day": "Dados atualizados diariamente às [15:00]",
     "Violation": "Violação",
     "Twice password diff": "As duas senhas são diferentes, digite novamente",
-    "Reenter new password": "Insira a nova senha novamente"
+    "Reenter new password": "Insira a nova senha novamente",
+    "Statistics over the past 30 days": "Dados dos últimos 30 dias"
 }
