@@ -30,10 +30,15 @@ function refresh() {
   requestData()
 }
 function requestData() {
-  if (noMoreData.value) {
+  if(endTime==null||endTime==''){
+    console.log('结束时间为空')
+    return;
+  }
+  if (noMoreData.value) { 
     console.log('没有更多数据了')
     return
   }
+
   if (refreshing.value || loadingMore.value) return
   if (currentPage == 0) {
     refreshing.value = true
