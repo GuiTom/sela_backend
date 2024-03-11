@@ -10,7 +10,7 @@ const imgs = [headImg1, headImg2, headImg2]
         <AppBarVue :title="multiLan('Activity center')" />
         <div style="height: 20px;"></div>
         <div class="activity_list">
-            <div class="list_item" v-for="item in imgs">
+            <div class="list_item" v-for="item in imgs" @click="$router.push('/activity_detail')">
                 <img class="headimg" :src="item" />
                 <div class="footer">
                     <div>
