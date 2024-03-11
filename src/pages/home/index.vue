@@ -187,7 +187,7 @@ function onLanguageSelected(index) {
       <div>{{ multiLan('Withdrawal requirements tip') }}</div>
     </div>
 
-    <ActivitySwiper></ActivitySwiper>
+    <ActivitySwiper @click="$router.push('/activity_list')"></ActivitySwiper>
     <AnchorManage></AnchorManage>
     <div class="divider"></div>
     <!-- 余额和结算收益 -->
