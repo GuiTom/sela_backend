@@ -13,6 +13,9 @@ import { currentLanguage } from '@/utils/lan'
 import AutoRTLImg from '@/components/AutoRTLImg.vue'
 import rightArrorImg from '@/assets/right_arror.webp'
 import {lanKeys,lanValues} from '@/utils/lan'
+import ActivitySwiper from '@/components/ActivitySwiper.vue'
+
+
 const showSwitchLanguageMenu = ref(false)
 const currentLanguageIndex = ref(0)
 const loadingMore = ref(false)
@@ -183,14 +186,10 @@ function onLanguageSelected(index) {
       ></div>
       <div>{{ multiLan('Withdrawal requirements tip') }}</div>
     </div>
-    <!-- 提现记录和主播管理按钮 -->
-    <div class="buttons">
-      <span style="width: 15px;"></span>
-      <span class="button" @click="$router.push('/withdraw_records')">{{ multiLan('Withdrawal history') }}</span>
-      <span style="width: 10px;"></span>
-      <span class="button" @click="$router.push('/anchor_list')">{{ multiLan('Host management') }}</span>
-      <span style="width: 15px;"></span>
-    </div>
+
+    <ActivitySwiper></ActivitySwiper>
+    <AnchorManage></AnchorManage>
+    <div class="divider"></div>
     <!-- 余额和结算收益 -->
     <div class="more-info">
       <span>
@@ -211,6 +210,13 @@ function onLanguageSelected(index) {
           }}<img @click="onShowInstrustion" src="@/assets/ask_symbol.webp" />
         </div>
       </span>
+    </div>
+   
+        <!-- 提现记录和主播管理按钮 -->
+    <div class="buttons">
+      
+      <span class="button" @click="$router.push('/withdraw_records')">{{ multiLan('Withdrawal history') }}</span>
+
     </div>
     <div class="divider"></div>
     <!-- 周收益 -->
