@@ -67,6 +67,16 @@ const router = createRouter({
       component: () => import('../pages/anchor_list/index.vue'),
       meta: { requiresAuth: true },
     },
+        // 主播管理
+        {
+          path: '/anchor_invite',
+          name: 'anchor invite',
+          // route level code-splitting
+          // this generates a separate chunk (About.[hash].js) for this route
+          // which is lazy-loaded when the route is visited.
+          component: () => import('../pages/anchor_invite/index.vue'),
+          meta: { requiresAuth: true },
+        },
     //提现详情
     {
       path: '/withdrawal_details',

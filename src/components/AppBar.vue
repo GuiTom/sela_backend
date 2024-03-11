@@ -25,7 +25,8 @@ onMounted(()=>{
 </template>
 <style scoped lang="less">
 .app_bar {
-    margin-top: 20px;
+    padding-top: 20px;
+    position: relative;
   .left_arror {
     position: absolute;
     width: 23px;

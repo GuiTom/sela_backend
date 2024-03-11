@@ -48,19 +48,15 @@ function requestData() {
                 </AnchorAvatarVue>
                 <div class="nickname">{{ item.nickname }}</div>
             </div>
-            <div class="invite_button">
+            <div class="invite_button" @click="$router.push('/anchor_invite')">
                 <img src="@/assets/invite_button.webp"/>
                 <div class="title">邀请主播</div>
             </div>
         </div>
     </div>
-
-
-
 </template>
 <style scoped lang="less">
 .root_container {
-
     .header {
         font-weight: 600;
         font-size: 16px;
@@ -95,14 +91,12 @@ function requestData() {
           
             padding: 6px;
 
-
             .nickname {
                 top: 5px;
                 overflow: hidden;
                 width: 43px;
                 text-overflow: ellipsis;
             }
-
         }
         .invite_button{
             margin-top: 8px;
