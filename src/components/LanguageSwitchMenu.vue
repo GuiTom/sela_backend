@@ -38,6 +38,7 @@ const currentIndex  = ref(props.initialIndex)
 </template>
 <style scoped lang="less">
 .menu_container{
+  z-index: 10000;
   position: absolute;
   display: flex;
   width: 100%;

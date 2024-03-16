@@ -17,6 +17,7 @@ const imgs = [banner_1,banner_2,banner_3]
 </template>
 <style scoped lang="less">
 .swiper{
+
   border-radius: 12px;
  
     div img{

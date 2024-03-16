@@ -24,6 +24,7 @@ const noMoreData = ref(false)
 
 const data = ref(null)
 const weekData = ref(null)
+const activityImgs = ref(null)
 var currentPage = 0
 const pageSize = 20
 
@@ -39,7 +40,12 @@ onMounted(() => {
   }
   api
     .get('/manager/guildh5/dashboard')
-    .then((response) => (data.value = response.data.data))
+    .then((response) => {
+      data.value = response.data.data;
+      data.value.id  = '1749404375389888513'
+      data.value.countryCode = 76
+      requestActivityList(data.value.id)
+    })
     .catch(function (error) {
       // 请求失败处理
       console.log(error)
@@ -99,7 +105,44 @@ function requestData() {
 function onClickSetting(){
   router.push('/setting')
 }
+function requestActivityList(id) {
+ 
+  let path = '/manager/guild/activity/page'
+  // path = 'http://localhost:5173/anchor_list.json'
+  api
+    .post(path, {
+      "condition": {
+        "guildId": id,
+        "status": 0//0 全部 1 我参与的
+      },
+      pageNum: 1,
+      pageSize: 3
+    })
+    .then(function (response) {
 
+
+      console.log('activityData:', response.data.data.list);
+      const imgs = [];
+      for (let i = 0; i < response.data.data.list.length; i++) {
+        let item = response.data.data.list[i];
+        let scope = JSON.parse(item.scope)
+        for (let j = 0; j < scope.length; j++) {
+          if (data.value.countryCode+'' == scope[j].country) {
+              imgs.push(scope[j].icon);
+          }
+        }
+      }
+      console.log(imgs)
+
+      activityImgs.value = imgs;
+      console.log('activityImgs:',activityImgs.value)
+
+    })
+    .catch(function (error) {
+      // 请求失败处理
+      console.log(error)
+    })
+}
 function onLanguageSelected(index) {
   showSwitchLanguageMenu.value = false
   localStorage.setItem('currentLanguage', lanKeys[index])
