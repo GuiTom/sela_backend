@@ -14,7 +14,7 @@ import AutoRTLImg from '@/components/AutoRTLImg.vue'
 import rightArrorImg from '@/assets/right_arror.webp'
 import {lanKeys,lanValues} from '@/utils/lan'
 import ActivitySwiper from '@/components/ActivitySwiper.vue'
-
+import { guildData } from '@/global.js'
 
 const showSwitchLanguageMenu = ref(false)
 const currentLanguageIndex = ref(0)
@@ -22,7 +22,7 @@ const loadingMore = ref(false)
 const refreshing = ref(false)
 const noMoreData = ref(false)
 
-const data = ref(null)
+
 const weekData = ref(null)
 const activityImgs = ref(null)
 var currentPage = 0
@@ -41,10 +41,12 @@ onMounted(() => {
   api
     .get('/manager/guildh5/dashboard')
     .then((response) => {
-      data.value = response.data.data;
-      data.value.id  = '1749404375389888513'
-      data.value.countryCode = 76
-      requestActivityList(data.value.id)
+   
+      guildData.value = response.data.data;
+      // guildData.value.id  = '1749404375389888513'
+      // guildData.value.countryCode = 76
+      localStorage.setItem('guildData',JSON.stringify(guildData.value))
+      requestActivityList(guildData.value.id)
     })
     .catch(function (error) {
       // 请求失败处理
@@ -127,7 +129,7 @@ function requestActivityList(id) {
         let item = response.data.data.list[i];
         let scope = JSON.parse(item.scope)
         for (let j = 0; j < scope.length; j++) {
-          if (data.value.countryCode+'' == scope[j].country) {
+          if (guildData.value.countryCode+'' == scope[j].country) {
               imgs.push(scope[j].icon);
           }
         }
@@ -135,7 +137,7 @@ function requestActivityList(id) {
       console.log(imgs)
 
       activityImgs.value = imgs;
-      console.log('activityImgs:',activityImgs.value)
+      // console.log('activityImgs:',activityImgs.value)
 
     })
     .catch(function (error) {
@@ -175,26 +177,26 @@ function onLanguageSelected(index) {
     @item_selected="onLanguageSelected"
   ></LanguageSwitchMenu>
  
-  <div :key="currentLanguageIndex" v-if="data != null" class="container">
+  <div :key="currentLanguageIndex" v-if="guildData != null" class="container">
     <div class="header">
       <img src="@/assets/logo.png" />
       <div style="width: 12px;"></div>
       <div class="meta_info_container">
         <div>
-          <span>{{ data.guildName }}</span>
+          <span>{{ guildData.guildName }}</span>
         </div>
         <div>
           <span
             >{{ multiLan('Date of creation') }}:{{
-              $timeToFormatedDate(parseInt(data.createdAt))
+              $timeToFormatedDate(parseInt(guildData.createdAt))
             }}</span
           >
         </div>
         <div>
-          <span>{{ multiLan('Number of hosts') }}：{{ data.anchorNum }}</span
+          <span>{{ multiLan('Number of hosts') }}：{{ guildData.anchorNum }}</span
           ><span
             >{{ multiLan('Newly registered hosts yesterday') }}:{{
-              data.yesterdayNewAnchorNum
+              guildData.yesterdayNewAnchorNum
             }}</span
           >
         </div>
@@ -208,12 +210,12 @@ function onLanguageSelected(index) {
           multiLan(
             'Withdrawal requirements 1',
             '<span style=\'font-size: 14px;font-weight:500;color: #ff38a2;line-height: 20px;\'>' +
-              data.settleCoinsLimit +
+              guildData.settleCoinsLimit +
               '</span>',
             '<span style=\'font-size: 14px;font-weight:500;color: #ff38a2;line-height: 20px;\'>' +
-              (data.settleCompliantCount || 0) +
+              (guildData.settleCompliantCount || 0) +
               '/' +
-              data.settleCountLimit || 0 + '</span>'
+              guildData.settleCountLimit || 0 + '</span>'
           )
         "
       ></div>
@@ -222,7 +224,7 @@ function onLanguageSelected(index) {
           multiLan(
             'Withdrawal requirements 2',
             '<span style=\'font-size: 14px;font-weight:500;color: #ff38a2;line-height: 20px;\'>' +
-              data.guildGenUsdLimit +
+              guildData.guildGenUsdLimit +
               '</span>'
           )
         "
@@ -230,13 +232,13 @@ function onLanguageSelected(index) {
       <div>{{ multiLan('Withdrawal requirements tip') }}</div>
     </div>
 
-    <ActivitySwiper @click="$router.push('/activity_list')"></ActivitySwiper>
+    <ActivitySwiper :images="activityImgs" @click="$router.push('/activity_list')"></ActivitySwiper>
     <AnchorManage></AnchorManage>
     <div class="divider"></div>
     <!-- 余额和结算收益 -->
     <div class="more-info">
       <span>
-        <div>≈{{ money_amount(data.usdFee) }}$</div>
+        <div>≈{{ money_amount(guildData.usdFee) }}$</div>
         <div>
           {{ multiLan('Balance') }}<img @click="onShowInstrustion" src="@/assets/ask_symbol.webp" />
         </div>
@@ -244,7 +246,7 @@ function onLanguageSelected(index) {
       <span></span>
       <span>
         <div>
-          ≈{{ money_amount(data.genSettleUsdFee) }}$<span class="status">{{
+          ≈{{ money_amount(guildData.genSettleUsdFee) }}$<span class="status">{{
             multiLan('In settlement')
           }}</span>
         </div>
@@ -266,19 +268,19 @@ function onLanguageSelected(index) {
     <div class="week_profit">
       <div>
         <span>{{ multiLan('Weekly earnings(coins)') }}</span
-        ><span>{{ data.usd2Coins }}{{ multiLan('Gold coin') }}≈1$</span>
+        ><span>{{ guildData.usd2Coins }}{{ multiLan('Gold coin') }}≈1$</span>
       </div>
       <div>
         <span>
-          <div style="font-size: 10px" v-if="data.weekStatBeginAt != null && data.weekStatEndAt">
+          <div style="font-size: 10px" v-if="guildData.weekStatBeginAt != null && guildData.weekStatEndAt">
             {{
-              $timeToFormatedDateHour(parseInt(data.weekStatBeginAt)) +
+              $timeToFormatedDateHour(parseInt(guildData.weekStatBeginAt)) +
               '-' +
-              $timeToFormatedDateHour(parseInt(data.weekStatEndAt))
+              $timeToFormatedDateHour(parseInt(guildData.weekStatEndAt))
             }}
           </div>
           <div class="coin">
-            {{ money_amount(data.weekIncome) }}<img src="@/assets/gold_coin.webp" />
+            {{ money_amount(guildData.weekIncome) }}<img src="@/assets/gold_coin.webp" />
           </div>
           <div style="text-align: center">{{ multiLan('Overall host earnings this week') }}</div>
         </span>
@@ -288,16 +290,16 @@ function onLanguageSelected(index) {
         <span>
           <div
             style="font-size: 10px"
-            v-if="data.lastWeekStatBeginAt != null && data.lastWeekStatEndAt != null"
+            v-if="guildData.lastWeekStatBeginAt != null && guildData.lastWeekStatEndAt != null"
           >
             {{
-              $timeToFormatedDateHour(parseInt(data.lastWeekStatBeginAt)) +
+              $timeToFormatedDateHour(parseInt(guildData.lastWeekStatBeginAt)) +
               '-' +
-              $timeToFormatedDateHour(parseInt(data.lastWeekStatEndAt) + 1)
+              $timeToFormatedDateHour(parseInt(guildData.lastWeekStatEndAt) + 1)
             }}
           </div>
           <div class="coin">
-            {{ money_amount(data.lastWeekIncome) }}<img src="@/assets/gold_coin.webp" />
+            {{ money_amount(guildData.lastWeekIncome) }}<img src="@/assets/gold_coin.webp" />
           </div>
           <div style="text-align: center">{{ multiLan('Overall host earnings last week') }}</div>
         </span>
@@ -326,7 +328,7 @@ function onLanguageSelected(index) {
           <div
             class="item_content"
             @click="
-              $router.push({ path: '/daily_detail', query: { guildId: data.id, date: item.date } })
+              $router.push({ path: '/daily_detail', query: { guildId: guildData.id, date: item.date } })
             "
           >
             <span>
@@ -346,7 +348,7 @@ function onLanguageSelected(index) {
     </InfiniteList>
   </div>
   <!-- 这里用v-else 会报错，原因未明 -->
-  <div v-if="data == null" style="width:100%;height:100%;position:fixed;">
+  <div v-if="guildData == null" style="width:100%;height:100%;position:fixed;">
     <AutoRTLImg
       :src="loadingImg"
       style="width:81px;height:50px;position:absolute;left:50%;top:50%;transform:translate(-50%, -50%)"

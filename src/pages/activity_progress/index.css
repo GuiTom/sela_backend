@@ -98,11 +98,16 @@
                 }
             }
 
-            .status {
+            .status_completed {
                 font-weight: 500;
                 font-size: 13px;
                 color: #FFFFFF;
                 line-height: 18px;
+            }
+            .status_uncompleted{
+                font-weight: 500;
+                font-size: 13px;
+                color: #FF5CC4;
             }
         }
     }
