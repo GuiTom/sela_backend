@@ -9,7 +9,7 @@
     background-image: url('@/assets/activity_detail_header_bg.webp');
     background-size: 100% 100%;
     width: 93.6vw;
-    height: 92.3vw;
+    height: 52.8vw;
     margin: 20px 12px 12px 12px;
     display: flex;
     flex-direction: column;
@@ -31,9 +31,9 @@
     }
 
     .time_count {
-        margin-top: 15px;
+        padding-top: 15px;
         display: flex;
-
+      
         >.number {
             background-color: #dad6fa;
             font-size: 30px;
@@ -57,89 +57,60 @@
             line-height: 49px;
         }
     }
-    .param_list{
-        width: calc(100% - 44px);
-        margin: 50px 22px;
-        .param_item {
-            margin-top: 20px;
-            width: 100%;
-            display: flex;
-            /* justify-content: space-between; */
-            align-items: center;
 
-            >img {
-                width: 42px;
-                height: 42px;
-
-            }
-
-            .content {
-                margin-left: 11px;
-
-                .ratio {
-                    font-weight: 600;
-                    font-size: 12px;
-                    color: rgba(255, 255, 255, 0.5);
-                    line-height: 17px;
-
-                    >span:first-child {
-                        font-weight: 600;
-                        font-size: 18px;
-                        color: #FFFFFF;
-                        line-height: 25px;
-                    }
-                }
-
-                .field_name {
-                    font-weight: 400;
-                    font-size: 12px;
-                    color: #FFFFFF;
-                    line-height: 17px;
-                }
-            }
-
-            .status_completed {
-                font-weight: 500;
-                font-size: 13px;
-                color: #FFFFFF;
-                line-height: 18px;
-            }
-            .status_uncompleted{
-                font-weight: 500;
-                font-size: 13px;
-                color: #FF5CC4;
-            }
-        }
-    }
 }
-.member_list{
-    margin: 5px 12px 0 12px;
-    height: calc(100vh - 92.6vw);
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+.param_list{
+    width: calc(100% - 44px);
+    margin: 50px 22px;
     padding: 12px;
-    border-radius: 20px 20px 0 0;
     background-color: white;
-    >div{
-        height: 50px;
+    border-radius: 12px;
+    .param_item {
+        /* background-color: red; */
+       
+        width: 100%;
         display: flex;
-        justify-content: space-between;
+        /* justify-content: space-between; */
         align-items: center;
-        .nickname{
-            font-weight: 500;
-            font-size: 14px;
-            color: #A5A5A5;
-    
-            line-height: 20px;
+      
+        padding: 12px;
+        >img {
+            width: 42px;
+            height: 42px;
         }
-        >div:nth-child(3){
-            display: flex;
-            align-items: center;
-            .coin{
-                width: 16px;
-                height: 16px;
+        .content {
+            margin-left: 11px;
+
+            .ratio {
+                font-weight: 600;
+                font-size: 12px;
+                color: rgba(255, 255, 255, 0.5);
+                line-height: 20px;
+                font-weight: 500;
+                font-size: 12px;
+                color: #9C9C9C;
+                >span:first-child {
+                    font-weight: 500;
+                    font-size: 14px;
+                    color: #3B3B3B;
+                }
+      
             }
-        }   
+
+            .field_name {
+                font-weight: 400;
+                font-size: 12px;
+
+                line-height: 17px;
+            }
+        }
+
+        .status {
+            font-weight: 500;
+            font-size: 13px;
+            color: #FFFFFF;
+            line-height: 18px;
+        }
+
     }
 }

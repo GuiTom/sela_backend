@@ -1,0 +1,104 @@
+.container {
+    height: 100vh;
+    background-image: url('@/assets/anchor_bg.webp');
+    background-size: 100% 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.list {
+    background-color: white;
+    border-radius: 12px;
+    margin: 20px 12px 0 12px;
+    height: calc(100vh - 12px - 45px);
+}
+
+.param_item {
+    width: 100%;
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+
+    padding: 12px;
+
+    >img {
+        width: 42px;
+        height: 42px;
+
+    }
+
+    .content {
+        margin-left: 11px;
+
+        .ratio {
+            font-weight: 600;
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.5);
+            line-height: 20px;
+            font-weight: 500;
+            font-size: 12px;
+            color: #9C9C9C;
+
+            >span:first-child {
+                font-weight: 500;
+                font-size: 14px;
+                color: #3B3B3B;
+            }
+
+        }
+
+        .field_name {
+            font-weight: 400;
+            line-height: 17px;
+            font-size: 12px;
+            color: #737373;
+        }
+    }
+
+    .status {
+        font-weight: 500;
+        font-size: 13px;
+        color: #FFFFFF;
+        line-height: 18px;
+    }
+
+}
+
+.record {
+    padding: 10px 14px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .avatar {
+        width: 36px;
+        height: 36px;
+    }
+
+    .completed {
+        font-weight: 500;
+        font-size: 13px;
+        color: #FF5CC4;
+    }
+
+    .uncompleted {
+        font-weight: 500;
+        font-size: 13px;
+        color: #A5A5A5;
+    }
+
+    .money {
+        display: flex;
+        align-items: center;
+        font-weight: 500;
+        font-size: 16px;
+        color: #333333;
+        line-height: 22px;
+
+        .coin {
+            margin-left: 4px;
+            width: 16px;
+            height: 16px;
+        }
+    }
+}

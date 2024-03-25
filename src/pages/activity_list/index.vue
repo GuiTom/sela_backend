@@ -2,34 +2,53 @@
 import AppBarVue from '@/components/AppBar.vue'
 import api from '../../controller/request'
 import { multiLan } from '@/utils/lan';
-
+import InfiniteList from '@/components/InfiniteList.vue'
 import { onMounted,ref } from 'vue';
 import { guildData } from '@/global';
 import {timeToFormatedDate} from '@/utils/time_utils'
 import { useRouter } from 'vue-router';
 onMounted(()=>{
-    requestActivityList(guildData.value.id)
+    requestData(guildData.value.id)
     
 })
 const router = useRouter()
-const listData = ref(null)
-function requestActivityList(id) {
+const loadingMore = ref(false)
+const refreshing = ref(false)
+const noMoreData = ref(false)
+const pageSize = 20
+var currentPage = 0
+const listData = ref([])
+function refresh() {
+  currentPage = 0
+  requestData()
+}
+function requestData(id) {
  
  let path = '/manager/guild/activity/page'
 console.log('requestActivityList')
+if(currentPage>0) loadingMore.value = true
+if(currentPage==0) refreshing.value = true
  api
    .post(path, {
      condition: {
         guildId:guildData.value.id,
         status:0
      },
-     pageNum: 1,
-     pageSize: 10
+     pageNum: currentPage+1,
+     pageSize: pageSize
    })
    .then(function (response) {
-    listData.value = response.data.data.list;
+     // 请求成功的处理
+     if(response.data.code==0){
+        if(currentPage==0){
+            refreshing.value = false
+        }else{
+            loadingMore.value = false
+        }
+        currentPage++
+    
      console.log('activityData:', listData.value,guildData.value.countryCode);
-     const imgs = [];
+
      for (let i = 0; i < response.data.data.list.length; i++) {
        let item = response.data.data.list[i];
        let scope = JSON.parse(item.scope)
@@ -40,6 +59,8 @@ console.log('requestActivityList')
          }
        }
      }
+     listData.value = listData.value.concat(response.data.data.list);
+    }
 
    })
    .catch(function (error) {
@@ -48,20 +69,28 @@ console.log('requestActivityList')
    })
 }
 function onClickItem(item) {
-    localStorage.setItem('param',JSON.stringify(item)) ; router.push({ name: 'activity detail'})
+    router.push({ name: 'activity detail',query:{'activity_id':item.id}})
 }
 </script>
 <template>
     <div class="container">
         <AppBarVue :title="multiLan('Activity list')" />
         <div style="height: 20px;"></div>
-        <div class="activity_list">
-       
+        <InfiniteList
+        class="activity_list"
+        @loadMore="requestData"
+        @refresh="refresh"
+        :loadingMore="loadingMore"
+        :refreshing="refreshing"
+        :noMoreData="noMoreData"
+        v-if="listData != null"
+      >
+      <template #content>    
             <div class="list_item" v-for="item in listData" @click="onClickItem(item)">
                 <img class="headimg" :src="item.icon" />
                 <div class="footer">
                     <div>
-                        <div>新主播快速进阶</div>
+                        <div>{{item.activityName}}</div>
                         <div>活动时间：{{ timeToFormatedDate(parseInt(item.startAt)) }} - {{timeToFormatedDate(parseInt(item.endAt))}}</div>
                     </div>
                     <div style="flex:auto;"></div>
@@ -69,7 +98,8 @@ function onClickItem(item) {
                     <div v-else class="button">已结束</div>
                 </div>
             </div>
-        </div>
+        </template>
+        </InfiniteList>
     </div>
 </template>
 <style scoped lang="less">

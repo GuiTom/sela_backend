@@ -1,5 +1,5 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
-import {ref} from 'vue'
+import { ref } from 'vue'
 
 // import FamilyDetailViewVue from '@/pages/FamilyDetailView.vue'
 
@@ -87,27 +87,37 @@ const router = createRouter({
       component: () => import('../pages/activity_list/index.vue'),
       meta: { requiresAuth: true },
     },
-            // 活动详情
-            {
-              path: '/activity_detail',
-              name: 'activity detail',
-              // route level code-splitting
-              // this generates a separate chunk (About.[hash].js) for this route
-              // which is lazy-loaded when the route is visited.
-              component: () => import('../pages/activity_detail/index.vue'),
-              props:true,
-              meta: { requiresAuth: true },
-            },
-        // 活动进度
-        {
-          path: '/activity_progress',
-          name: 'activity progress',
-          // route level code-splitting
-          // this generates a separate chunk (About.[hash].js) for this route
-          // which is lazy-loaded when the route is visited.
-          component: () => import('../pages/activity_progress/index.vue'),
-          meta: { requiresAuth: true },
-        },
+    // 活动详情
+    {
+      path: '/activity_detail',
+      name: 'activity detail',
+      // route level code-splitting
+      // this generates a separate chunk (About.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import('../pages/activity_detail/index.vue'),
+      props: true,
+      meta: { requiresAuth: true },
+    },
+    // 活动进度
+    {
+      path: '/activity_progress',
+      name: 'activity progress',
+      // route level code-splitting
+      // this generates a separate chunk (About.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import('../pages/activity_progress/index.vue'),
+      meta: { requiresAuth: true },
+    },
+    // 活动进度
+    {
+      path: '/activity_progress_detail',
+      name: 'activity progress_detail',
+      // route level code-splitting
+      // this generates a separate chunk (About.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import('../pages/activity_progress_detail/index.vue'),
+      meta: { requiresAuth: true },
+    },
     //提现详情
     {
       path: '/withdrawal_details',

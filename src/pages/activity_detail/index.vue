@@ -1,18 +1,41 @@
 <script setup>
 import AppBarVue from '@/components/AppBar.vue'
 import { multiLan } from '@/utils/lan';
-import { ref } from 'vue';
+import { onMounted, ref } from 'vue';
 import { timeToFormatedDate } from '@/utils/time_utils'
 import { guildData, activityNeeds, joinLimits } from '@/global'
 import api from '../../controller/request'
 import toast from '@/utils/toast';
-const data = ref(JSON.parse(localStorage.getItem('param')))
+import { useRoute } from 'vue-router'
+import router from '@/router/index'
+const data = ref(null)
 const importedNeeds = activityNeeds;
 const importedJoinLimits = joinLimits;
-console.log(data.value)
+onMounted(()=>{
+    requestData()
+})
+function requestData() {
+let activityId = useRoute().query.activity_id;
+let path = '/manager/guild/activity/info'
+api
+    .post(path, {
+        guildId: guildData.value.id,
+        activityId: activityId,
+    })
+    .then(function (response) {
+        if (response.data.code == 0) {
+            data.value = response.data.data
+        }
+
+    })
+    .catch(function (error) {
+        // 请求失败处理
+        console.log(error)
+    })
+}
 
 function onJoin() {
-    console.log('join')
+
     let path = '/manager/guild/activity/join'
     api
         .post(path, {
@@ -30,12 +53,17 @@ function onJoin() {
             console.log(error)
         })
 }
+function onViewDetail() {
+
+    localStorage.setItem('param',JSON.stringify(data.value));
+    router.push('/activity_progress')
+}
 </script>
 <template>
     <div class="container">
         <AppBarVue :title="multiLan('Activity center')" />
         <div class="logo">Anchors <br /> advance quickly</div>
-        <div class="info_list">
+        <div v-if="data" class="info_list">
             <div class="header">
                 Event Details
             </div>
@@ -43,8 +71,13 @@ function onJoin() {
                 <img src="@/assets/reward_icon.webp" />
                 <div class="content">
                     <div class="requirement">活动要求</div>
-                    <div class="content" v-for="(item, index) in data.conditions" :key="index">
-                        活动期间，公会{{ importedNeeds[item.conditionType - 1] }}超过{{ item.val }}个</div>
+                    <div v-if="data.conditionRecords" class="content" v-for="(item, index) in data.conditionRecords" :key="index">
+                       
+                        <span v-if="item!=null&&item.conditionType==1"> 活动期间，公会{{ multiLan('Activity need New anchor count',item.val) }}</span>
+                        <span v-if="item!=null&&item.conditionType==2"> 活动期间，公会{{multiLan('Activity need New anchor count meet settlement',item.val)}}</span>
+                        <span v-if="item!=null&&item.conditionType==3"> 活动期间，公会{{ multiLan('Activity need New anchor online time',item.val) }}</span>
+                        <span v-if="item!=null&&item.conditionType==4"> 活动期间，公会{{multiLan('Activity need guild total income',item.val) }}</span>
+                    </div>
                 </div>
             </div>
             <div style="height:2px;background-color:#ededed;"></div>
@@ -61,7 +94,13 @@ function onJoin() {
                 <div class="content">
                     <div class="requirement">参与要求</div>
                     <div class="content" v-for="(item, index) in data.joinLimits">
-                        活动期间，公会{{ importedJoinLimits[item.limitType - 1] }}超过（{{ item.val }}）个</div>
+                        活动期间，
+                        <span v-if="item.limitType==1">{{multiLan('Joint limit Guild level',item.val)}}</span>
+                        <span v-if="item.limitType==2">{{multiLan('Joint limit Guild population',item.val)}}</span>
+                        <span v-if="item.limitType==3">{{multiLan('Joint limit Activie anchor portion',item.val)}}</span>
+                        <span v-if="item.limitType==4">{{multiLan('Joint limit xx level Anchor portion',item.val)}}</span>
+                        <span v-if="item.limitType==5">{{multiLan('Joint limit Last xx day score',item.val)}}</span>
+                    </div>
                 </div>
             </div>
             <div style="height:2px;background-color:#ededed;"></div>
@@ -74,7 +113,7 @@ function onJoin() {
                 </div>
             </div>
             <div class="join_button" @click="onJoin">报名参与</div>
-            <div class="view_button" @click="$router.push('/activity_progress')">查看进度</div>
+            <div class="view_button" @click="onViewDetail">查看进度</div>
         </div>
     </div>
 </template>
