@@ -3,7 +3,9 @@ import AnchorAvatarVue from '@/components/AnchorAvatar.vue'
 import { onMounted, ref } from 'vue'
 import api from '../controller/request'
 import rightArrorImg from '@/assets/right_arror.webp'
+import { multiLan } from '@/utils/lan';
 const responseData = ref(null)
+let onlineCount = 0;
 onMounted(() => {
     requestData()
 })
@@ -13,16 +15,23 @@ function requestData() {
 
     let path = '/manager/guildh5/page/anchor'
     // path = 'http://localhost:5173/anchor_list.json'
+ 
     api
         .post(path, {
             pageNum: 1,
-            pageSize: 5,
+            pageSize: 10,
             order: 1
         })
         .then(function (response) {
+           
+            
+            
+            response.data.data.forEach(item => {
+                if(item.isOnline == 1){
+                    onlineCount++
+                }
+            })
             responseData.value = response.data
-            console.log(responseData.value)
-
         })
         .catch(function (error) {
             // 请求失败处理
@@ -31,13 +40,13 @@ function requestData() {
 }
 </script>
 <template>
-    <div class="root_container">
+    <div class="root_container" v-if="responseData">
         <div class="header">
-            <span>主播管理</span>
-            <span class="count">111/200</span>
+            <span>{{multiLan('Anchor manage')}}</span>
+            <!-- <span class="count">{{onlineCount}}/{{responseData.data.length}}</span> -->
             <span style="flex: auto;"></span>
             <span @click="$router.push('/anchor_list')">
-                <span >更多</span>
+                <span >{{multiLan('More')}}</span>
                 <AutoRTLImg class="right_arror" :src="rightArrorImg" ></AutoRTLImg>
             </span>
         </div>
@@ -48,10 +57,10 @@ function requestData() {
                 </AnchorAvatarVue>
                 <div class="nickname">{{ item.nickname }}</div>
             </div>
-            <div class="invite_button" @click="$router.push('/anchor_invite')">
+            <!-- <div class="invite_button" @click="$router.push('/anchor_invite')">
                 <img src="@/assets/invite_button.webp"/>
-                <div class="title">邀请主播</div>
-            </div>
+                <div class="title">{{multiLan('Invite anchor')}}</div>
+            </div> -->
         </div>
     </div>
 </template>
@@ -86,11 +95,11 @@ function requestData() {
         margin:0 12px;
 
         justify-content: flex-start;
-        overflow: scroll;
+        overflow: hidden;
         .avatar_container {
           
-            padding: 6px;
-
+            margin: 0 6px 12px 6px;
+            
             .nickname {
                 top: 5px;
                 overflow: hidden;

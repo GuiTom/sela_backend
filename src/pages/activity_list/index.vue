@@ -91,11 +91,11 @@ function onClickItem(item) {
                 <div class="footer">
                     <div>
                         <div>{{item.activityName}}</div>
-                        <div>活动时间：{{ timeToFormatedDate(parseInt(item.startAt)) }} - {{timeToFormatedDate(parseInt(item.endAt))}}</div>
+                        <div>{{ multiLan('Event time') }}:{{ timeToFormatedDate(parseInt(item.startAt)) }} - {{timeToFormatedDate(parseInt(item.endAt))}}</div>
                     </div>
                     <div style="flex:auto;"></div>
-                    <div v-if="item.status==1" class="button">进行中</div>
-                    <div v-else class="button">已结束</div>
+                    <div v-if="item.status==1" class="button">{{multiLan('Is Running')}}</div>
+                    <div v-else class="button">{{multiLan('Fininished')}}</div>
                 </div>
             </div>
         </template>

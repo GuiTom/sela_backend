@@ -22,8 +22,8 @@ const data = JSON.parse(localStorage.getItem('currentCondition'))
                     </div>
                 </div>
                 <div style="flex: auto;"></div>
-                <div class="status" v-if="data!=null&&data.completeNum>=data.val" style="color:#D367FE">已完成</div>
-                <div class="status" v-else style="color:#FF5CC4">未完成</div>
+                <div class="status" v-if="data!=null&&data.completeNum>=data.val" style="color:#D367FE">{{multiLan('Completed')}}</div>
+                <div class="status" v-else style="color:#FF5CC4">{{multiLan('Fininished')}}</div>
             </div>
             <div style="margin:0 12px;height: 1px;background-color:#eaeaea;"></div>
             <div class="record" v-for="item in data.records">
@@ -31,8 +31,8 @@ const data = JSON.parse(localStorage.getItem('currentCondition'))
                   </PlaceHolderImage>
                   <div>{{item.nickname}}</div>
                   <div class="money">{{item.val}}<img class="coin" src="@/assets/gold_coin.webp" /></div>
-                  <div v-if="item.status==1" class="completed">已完成</div>
-                  <div v-else class="uncompleted">未完成</div>
+                  <div v-if="item.status==1" class="completed">{{multiLan('Completed')}}</div>
+                  <div v-else class="uncompleted">{{multiLan('Not completed')}}</div>
             </div>
         </div>
         

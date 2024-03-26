@@ -29,7 +29,7 @@ function onClickConditionRecord(item){
         <AppBarVue :title="multiLan('Activity progress')" />
         <div class="header">
          
-            <div class="title">剩余时间<span>{{Math.floor(leftSeconds/(3600*24))}}</span>天</div>
+            <div class="title" v-html="multiLan('Time left', `<span style='color:#763DF0;font-size: 20px'>${Math.floor(leftSeconds/(3600*24))}</span>`)"></div>
             <div class="time_count">
                 <div class="number">{{Math.floor((leftSeconds%(3600*24))/36000)}}</div>
                 <div class="number">{{Math.floor(leftSeconds%(3600*24)/3600)%10}}</div>
@@ -54,8 +54,8 @@ function onClickConditionRecord(item){
                         </div>
                     </div>
                     <div style="flex: auto;"></div>
-                    <div class="status" v-if="item!=null&&item.completeNum>=item.val" style="color:#D367FE">已完成</div>
-                    <div class="status" v-else style="color:#FF5CC4">未完成</div>
+                    <div class="status" v-if="item!=null&&item.completeNum>=item.val" style="color:#D367FE">{{multiLan('Fininished')}}</div>
+                    <div class="status" v-else style="color:#FF5CC4">{{multiLan('Not completed')}}</div>
                 </div>
                 <div v-if="index<progressData.conditionRecords.length-1" style="height: 1px;background-color:#eaeaea"></div>
             </div>
