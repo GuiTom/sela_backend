@@ -1,0 +1,105 @@
+.container {
+    height: 100vh;
+    background-image: url('@/assets/activity_detail_bg.webp');
+    background-size: 100% 100%;
+
+    .logo {
+        position: relative;
+        margin-top: 44px;
+        margin-bottom: 34px;
+        top: 20px;
+        left:-20px;
+        margin-left: 20px;
+        width: 178px;
+        height: 53px;
+        font-size: 16px;
+        color: #FFFFFF;
+        line-height: 20px;
+        text-shadow: 0px 2px 0px rgba(250, 100, 238, 0.44);
+        text-align: center;
+
+    }
+
+    .info_list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0 12px 0 12px;
+        border-radius: 20px;
+        border: 2px solid #FFFFD7;
+        background-color: white;
+        padding: 14px;
+
+        .header {
+            width: 254px;
+            height: 46px;
+            background-image: url("@/assets/activity_list_header.webp");
+            background-size: 100% 100%;
+            font-weight: 600;
+            font-size: 15px;
+            color: #FFFFFF;
+            text-align: center;
+            line-height: 40px;
+        }
+
+        .list_item {
+            width: 100%;
+            padding: 20px 0;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+
+            >img {
+                width: 40px;
+                height: 40px;
+            }
+
+            
+                .requirement {
+                    font-weight: 600;
+                    font-size: 16px;
+                    color: #170423;
+                }
+
+                .content {
+                    font-size: 13px;
+                    color: #4A444D;
+                }
+            
+
+
+        }
+
+        .join_button{
+            margin-top: 36px;
+            height: 62px;
+            width: 100%;
+            border-radius: 31px;
+   
+            background-size: 100% 100%;
+            text-align: center;
+            line-height: 62px;
+            font-weight: 600;
+            font-size: 17px;
+            color: #FFFFFF;
+        }
+        .join_status_0{
+            background: linear-gradient(to right, #F29A34 0%, #E338F3 50%, #9325F2 100%); 
+        }
+        .join_status_1{
+            background: linear-gradient(to right, #F29A34 0%, #E338F3 50%, #9325F2 100%); 
+        }
+        .join_status_2{
+            background-color: #BFBFBF; 
+        }
+
+        .view_button {
+            height: 62px;
+            border-radius: 31px;
+            font-weight: 600;
+            font-size: 17px;
+            color: #F051E9;
+            line-height: 62px;
+        }
+    }
+}

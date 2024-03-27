@@ -14,6 +14,7 @@ const data = ref(null)
 const importedNeeds = activityNeeds;
 const importedJoinLimits = joinLimits;
 onMounted(()=>{
+    
     requestData()
 })
 function requestData() {
@@ -27,6 +28,7 @@ api
     .then(function (response) {
         if (response.data.code == 0) {
             data.value = response.data.data
+       
         }
 
     })
@@ -46,7 +48,11 @@ function onJoin() {
         })
         .then(function (response) {
             if (response.data.code == 0) {
-                toast('Joined')
+                if(response.data.data==true){
+                    data.value.recordStatus = 2
+                    toast(multiLan('Joined'))
+                }
+              
             }
 
         })
@@ -64,7 +70,7 @@ function onViewDetail() {
 <template>
     <div class="container">
         <AppBarVue :title="multiLan('Activity center')" />
-        <div class="logo">Anchors <br /> advance quickly</div>
+        <div class="logo">ANCHORS <br /> ADVANCE QUICKLY</div>
         <div v-if="data" class="info_list">
             <div class="header">
                 Event Details
@@ -114,13 +120,13 @@ function onViewDetail() {
                         {{ timeToFormatedDate(parseInt(data.endAt)) }}</div>
                 </div>
             </div>
-            <div class="join_button" v-if="data.recordStatus==0"  @click="onJoin">{{multiLan('Apply to join')}}</div>
-            <div class="join_button_gray" v-if="data.recordStatus==1"   @click="onJoin">{{multiLan('Under join limit')}}</div>
-            <div class="join_button_gray" v-if="data.recordStatus==2"  @click="onJoin">{{multiLan('Joined')}}</div>
-            <div class="join_button_gray" v-if="data.recordStatus==3"   @click="onJoin">{{multiLan('Completed')}}</div>
-            <div class="join_button_gray" v-if="data.recordStatus==4"   @click="onJoin">{{multiLan('Received')}}</div>
-            <div class="join_button_gray" v-if="data.recordStatus==5"   @click="onJoin">{{multiLan('Received')}}</div>
-            <div class="join_button_gray" v-if="data.recordStatus==6"   @click="onJoin">{{multiLan('Apply to join')}}</div>
+            <div class="join_button join_status_0" v-if="data.recordStatus==0"  @click="onJoin">{{multiLan('Apply to join')}}</div>
+            <div class="join_button join_status_2" v-if="data.recordStatus==1">{{multiLan('Under join limit')}}</div>
+            <div class="join_button join_status_1" v-if="data.recordStatus==2">{{multiLan('Joined')}}</div>
+            <div class="join_button join_status_1" v-if="data.recordStatus==3">{{multiLan('Completed')}}</div>
+            <div class="join_button join_status_1" v-if="data.recordStatus==4">{{multiLan('Received')}}</div>
+            <div class="join_button join_status_2" v-if="data.recordStatus==5">{{multiLan('Ended')}}</div>
+            <div class="join_button join_status_2" v-if="data.recordStatus==6">{{multiLan('Closed')}}</div>
             <div class="view_button" @click="onViewDetail">{{multiLan('View progress')}}</div>
         </div>
         <div v-else style="width:100%;height:100%;position:fixed;">
@@ -132,109 +138,5 @@ function onViewDetail() {
     </div>
 </template>
 <style scoped lang="less">
-.container {
-    height: 100vh;
-    background-image: url('@/assets/activity_detail_bg.webp');
-    background-size: 100% 100%;
-
-    .logo {
-        margin-top: 44px;
-        margin-bottom: 34px;
-        margin-left: 20px;
-        width: 178px;
-        height: 53px;
-        font-size: 16px;
-        color: #FFFFFF;
-        line-height: 20px;
-        text-shadow: 0px 2px 0px rgba(250, 100, 238, 0.44);
-        text-align: center;
-
-    }
-
-    .info_list {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin: 0 12px 0 12px;
-        border-radius: 20px;
-        border: 2px solid #FFFFD7;
-        background-color: white;
-        padding: 14px;
-
-        .header {
-            width: 254px;
-            height: 46px;
-            background-image: url("@/assets/activity_list_header.webp");
-            background-size: 100% 100%;
-            font-weight: 600;
-            font-size: 15px;
-            color: #FFFFFF;
-            text-align: center;
-            line-height: 40px;
-        }
-
-        .list_item {
-            width: 100%;
-            padding: 20px;
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-
-            >img {
-                width: 40px;
-                height: 40px;
-            }
-
-            .content {
-                .requirement {
-                    font-weight: 600;
-                    font-size: 16px;
-                    color: #170423;
-                }
-
-                .content {
-                    font-size: 13px;
-                    color: #4A444D;
-                }
-            }
-
-
-        }
-
-        .join_button {
-            margin-top: 36px;
-            height: 62px;
-            width: 100%;
-            border-radius: 31px;
-            background-image: url('@/assets/join_button_bg.webp');
-            background-size: 100% 100%;
-            text-align: center;
-            line-height: 62px;
-            font-weight: 600;
-            font-size: 17px;
-            color: #FFFFFF;
-        }
-        .join_button_gray{
-            margin-top: 36px;
-            height: 62px;
-            width: 100%;
-            border-radius: 31px;
-            background-color: grey;
-            text-align: center;
-            line-height: 62px;
-            font-weight: 600;
-            font-size: 17px;
-            color: #FFFFFF; 
-        }
-
-        .view_button {
-            height: 62px;
-            border-radius: 31px;
-            font-weight: 600;
-            font-size: 17px;
-            color: #F051E9;
-            line-height: 62px;
-        }
-    }
-}
+@import './index.css';
 </style>

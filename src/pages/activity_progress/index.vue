@@ -15,7 +15,8 @@ onMounted(()=>{
         leftSeconds.value = Math.floor((parseInt(data.value.endAt)- Date.now())/1000)
     
     ),1000);
-
+    // progressData.value.conditionRecords = [...progressData.value.conditionRecords,...progressData.value.conditionRecords]
+    // console.log(progressData.value)
 })
 
 function onClickConditionRecord(item){
@@ -27,7 +28,7 @@ function onClickConditionRecord(item){
 <template>
     <div class="container">
         <AppBarVue :title="multiLan('Activity progress')" />
-        <div class="header">
+        <div class="header" v-if="leftSeconds>0">
          
             <div class="title" v-html="multiLan('Time left', `<span style='color:#763DF0;font-size: 20px'>${Math.floor(leftSeconds/(3600*24))}</span>`)"></div>
             <div class="time_count">
@@ -42,11 +43,10 @@ function onClickConditionRecord(item){
         <div class="param_list">
             <div v-for="(item,index) in progressData.conditionRecords" @click="onClickConditionRecord(item)">
                 <div class="param_item">
-                    <img src="@/assets/activity_icon2.webp" />
+                    <img src="@/assets/reward_icon.webp" />
                     <div class="content" v-if="item!=null">
                         <div class="ratio"><span>{{item.completeNum}}</span>/<span>{{item.val}}</span></div>
                         <div class="field_name">
-                          
                             <span v-if="item.conditionType==1">{{ multiLan('Activity need New anchor count',item.val) }}</span>
                             <span v-if="item.conditionType==2">{{multiLan('Activity need New anchor count meet settlement',item.val)}}</span>
                             <span v-if="item.conditionType==3">{{ multiLan('Activity need New anchor online time',item.val) }}</span>
@@ -54,8 +54,8 @@ function onClickConditionRecord(item){
                         </div>
                     </div>
                     <div style="flex: auto;"></div>
-                    <div class="status" v-if="item!=null&&item.completeNum>=item.val" style="color:#D367FE">{{multiLan('Fininished')}}</div>
-                    <div class="status" v-else style="color:#FF5CC4">{{multiLan('Not completed')}}</div>
+                    <div class="status" v-if="item!=null&&item.completeNum>=item.val" style="color:#D367FE">{{multiLan('Completed')}}&nbsp;></div>
+                    <div class="status" v-else style="color:#FF5CC4">{{multiLan('Not completed')}}&nbsp;></div>
                 </div>
                 <div v-if="index<progressData.conditionRecords.length-1" style="height: 1px;background-color:#eaeaea"></div>
             </div>

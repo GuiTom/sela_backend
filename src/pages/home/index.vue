@@ -315,7 +315,7 @@ function onLanguageSelected(index) {
     </div>
     <InfiniteList
       class="turnover-list-container"
-      style="100%;overflow:auto"
+      style="overflow:auto"
       @loadMore="requestData"
       @refresh="refresh"
       :loadingMore="loadingMore"

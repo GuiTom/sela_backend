@@ -48,6 +48,7 @@
             line-height: 55px;
             margin: 0 5px;
             border-radius: 9px;
+            font-weight: 800;
         }
 
         .comma {
@@ -56,6 +57,7 @@
             line-height: 42px;
             width: 20px;
             height: 57px;
+            font-weight: 800;
             text-align: center;
             line-height: 49px;
         }
@@ -64,9 +66,9 @@
 }
 
 .param_list {
-    width: calc(100% - 44px);
-    margin: 50px 22px;
-    padding: 12px;
+    /* width: calc(100% - 24px); */
+    margin: 10px 12px; 
+    padding: 6px 12px;
     background-color: white;
     border-radius: 12px;
 
@@ -78,7 +80,7 @@
         /* justify-content: space-between; */
         align-items: center;
 
-        padding: 12px;
+        padding: 12px 0;
 
         >img {
             width: 42px;
@@ -108,7 +110,7 @@
             .field_name {
                 font-weight: 400;
                 font-size: 12px;
-
+                color:#737373;
                 line-height: 17px;
             }
         }

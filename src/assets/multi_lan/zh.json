@@ -90,7 +90,7 @@
     "Threshold to join":"参与门槛",
     "Activity needs":"活动要求",
     "Is Running":"进行中",
-    "Fininished":"已结束",
+    "Ended":"已结束",
     "Received":"已领取",
     "Not completed":"未完成",
     "Time left":"剩余时间xx天",
@@ -108,5 +108,8 @@
     "Coin":"金币",
     "More":"更多",
     "Claimed":"已领取",
-    "Under join limit": "不符合参与条件"
+    "Closed":"已关闭",
+    "Under join limit": "不符合参与条件",
+    "Duration":"xx1小时xx2分xx2秒",
+    "People count":"xx人"
 }

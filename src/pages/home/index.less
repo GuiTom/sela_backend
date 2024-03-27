@@ -6,34 +6,39 @@
   background-image: url('@/assets/home_top_bg.webp');
   background-size: cover;
 }
+
 .setting {
   left: 12px;
   top: 58px;
-  > img {
+
+  >img {
     width: 24px;
     height: 24px;
   }
 }
+
 .container {
   display: flex;
   flex-direction: column;
   background-size: cover;
 }
+
 .header {
   margin-left: 15px;
   margin-top: calc(100vw * (114 / 375));
   display: flex;
   align-items: center;
 
-  > img:nth-child(1) {
+  >img:nth-child(1) {
     width: 90px;
     height: 90px;
-    padding: 5px;
+    padding: 0;
     border-radius: 20px;
     background-color: white;
     border: 1px solid white;
   }
 }
+
 .weekly_data_title {
   margin-left: 15px;
   margin-right: 15px;
@@ -44,6 +49,7 @@
   line-height: 22px;
   display: flex;
   flex-direction: row;
+
   .right_tip {
     font-size: 12px;
     font-weight: 400;
@@ -51,15 +57,18 @@
     line-height: 17px;
   }
 }
+
 .meta_info_container {
   font-size: 22px;
   font-weight: 600;
+
   div:first-child {
     span:nth-child(1) {
       display: inline-block;
       color: white;
       margin-bottom: 12px;
     }
+
     span:nth-child(2) {
       margin-left: 5px;
       display: inline-block;
@@ -68,6 +77,7 @@
       text-align: center;
       background-size: cover;
       text-align: right;
+
       div:first-child {
         margin-right: 3px;
         font-size: 12px;
@@ -77,25 +87,29 @@
       }
     }
   }
-  > div:nth-child(n + 2) {
+
+  >div:nth-child(n + 2) {
     font-size: 12px;
     font-weight: 400;
     color: #999999;
     line-height: 17px;
+
     span:nth-child(2) {
       margin-left: 6px;
     }
   }
-  > div:nth-child(n + 3) {
+
+  >div:nth-child(n + 3) {
     margin-top: 5px;
   }
 }
+
 .tips {
   padding-left: 15px;
   padding-right: 15px;
   flex-direction: column;
 
-  > div:first-child {
+  >div:first-child {
     font-size: 14px;
     margin-bottom: 11px;
     font-family: PingFangTC, PingFangTC;
@@ -103,7 +117,8 @@
     color: #000000;
     line-height: 20px;
   }
-  > div:nth-child(n + 2) {
+
+  >div:nth-child(n + 2) {
     font-size: 13px;
     font-weight: 400;
     margin-top: 8px;
@@ -111,15 +126,17 @@
     line-height: 18px;
   }
 }
+
 .buttons {
   text-align: center;
   display: flex;
   justify-content: center;
-  > .button {
+
+  >.button {
     margin-top: 10px;
     margin-bottom: 10px;
-    margin-left:30px;
-    margin-right:30px;
+    margin-left: 30px;
+    margin-right: 30px;
     font-size: 12px;
     font-weight: 400;
     color: #333333;
@@ -127,9 +144,10 @@
     border-radius: 7px;
     border: 1px solid #eeeeee;
     padding: 11px 12px;
-    flex:auto;
+    flex: auto;
   }
 }
+
 .more-info {
   margin-top: 30px;
 
@@ -137,7 +155,8 @@
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  > span {
+
+  >span {
     display: inline-block;
     font-size: 12px;
     font-family:
@@ -146,13 +165,15 @@
     font-weight: 400;
     color: #999999;
     line-height: 17px;
-    div > img {
+
+    div>img {
       margin-left: 4px;
       width: 12px;
       height: 12px;
     }
   }
-  > span:first-child > div:first-child {
+
+  >span:first-child>div:first-child {
     font-size: 18px;
     font-family:
       PingFangSC,
@@ -161,12 +182,14 @@
     color: #333333;
     line-height: 25px;
   }
-  > span:nth-child(2) {
+
+  >span:nth-child(2) {
     width: 1px;
     height: 44px;
     background-color: #f8f5f7;
   }
-  > span:nth-child(3) > div:first-child {
+
+  >span:nth-child(3)>div:first-child {
     font-size: 18px;
     font-family:
       PingFangSC,
@@ -174,6 +197,7 @@
     font-weight: 600;
     color: #ff8f16;
     line-height: 25px;
+
     .status {
       text-align: center;
       display: inline-block;
@@ -191,22 +215,26 @@
     }
   }
 }
+
 .divider {
   height: 5px;
   width: 100%;
   background: #f8f5f7;
 }
+
 .week_profit {
   display: flex;
   flex-direction: column;
   padding: 0 15px;
-  > div:first-child {
+
+  >div:first-child {
     //周收益
     padding-top: 20px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    > span:first-child {
+
+    >span:first-child {
       font-size: 16px;
       font-family:
         PingFangSC,
@@ -215,7 +243,8 @@
       color: #333333;
       line-height: 22px;
     }
-    > span:nth-child(2) {
+
+    >span:nth-child(2) {
       font-size: 12px;
       font-family:
         PingFangSC,
@@ -225,7 +254,8 @@
       line-height: 17px;
     }
   }
-  > div:nth-child(2) {
+
+  >div:nth-child(2) {
     padding: 15px;
     display: flex;
     flex-direction: row;
@@ -234,6 +264,7 @@
     font-weight: 400;
     color: #999999;
     line-height: 17px;
+
     .coin {
       display: flex;
       align-items: center;
@@ -242,12 +273,14 @@
       font-weight: 600;
       color: #333333;
       line-height: 25px;
+
       img {
         width: 19px;
         height: 19px;
       }
     }
   }
+
   .vertical-divider {
     width: 1px;
     height: 40px;
@@ -262,6 +295,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+
     .coin {
       display: flex;
       align-items: center;
@@ -272,27 +306,33 @@
         height: 19px;
       }
     }
-    > span {
-      > div:first-child {
+
+    >span {
+      >div:first-child {
         margin-bottom: 10px;
       }
+
       display: inline-block;
       color: #999999;
+
       span {
         color: black;
       }
     }
+
     .right_arror {
       width: 6px;
       height: 14px;
     }
   }
-  > div {
+
+  >div {
     .divider {
       height: 1px;
     }
   }
 }
+
 .lan_button_container {
   top: 56px;
   position: fixed;
@@ -307,11 +347,13 @@
     border-radius: 15px;
     height: 28px;
     line-height: 20px;
+
     img {
       display: inline-block;
       width: 16px;
       height: 16px;
     }
+
     display: flex;
     flex-direction: row;
     justify-content: center;

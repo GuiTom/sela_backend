@@ -1,3 +1,5 @@
+import { multiLan } from "./lan";
+
 const timeToFormatedDate = function (timestamp) {
     const date = new Date(timestamp); // 创建Date对象
     const year = date.getFullYear(); // 获取年份
@@ -49,9 +51,16 @@ function formatDuration(milliseconds) {
     let minutes = Math.floor(seconds / 60);  
     let hours = Math.floor(minutes / 60);  
     
-    
     return hours.toString().padStart(2,'0')+':'+(minutes%60).toString().padStart(2,'0')+':'+(seconds%60).toString().padStart(2,'0');  
 }  
+
+function formatDuration2(milliseconds){
+    if(milliseconds==null) return '0';
+    let seconds = Math.floor(milliseconds / 1000);  
+    let minutes = Math.floor(seconds / 60);  
+    let hours = Math.floor(minutes / 60);  
+    return multiLan('Duration',hours,minutes,hours);
+}
   
 
-export { timeToFormatedDateTime, timeToFormatedTime, timeToFormatedDateHour, timeToFormatedDate, timeZoneOfffsetHours,formatDuration };
+export { formatDuration2,timeToFormatedDateTime, timeToFormatedTime, timeToFormatedDateHour, timeToFormatedDate, timeZoneOfffsetHours,formatDuration };

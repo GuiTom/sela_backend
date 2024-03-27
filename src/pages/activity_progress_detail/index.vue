@@ -3,6 +3,7 @@ import { onMounted } from 'vue';
 import { multiLan } from '@/utils/lan';
 import PlaceHolderImage from '@/components/PlaceHolderImage.vue';
 import AppBarVue from '@/components/AppBar.vue'
+import {formatDuration2} from '@/utils/time_utils'
 const data = JSON.parse(localStorage.getItem('currentCondition'))
 </script>
 <template>
@@ -14,7 +15,6 @@ const data = JSON.parse(localStorage.getItem('currentCondition'))
                 <div class="content" v-if="data!=null">
                     <div class="ratio"><span>{{data.completeNum}}</span>/<span>{{data.val}}</span></div>
                     <div class="field_name">
-                      
                         <span v-if="data.conditionType==1">{{ multiLan('Activity need New anchor count',data.val) }}</span>
                         <span v-if="data.conditionType==2">{{multiLan('Activity need New anchor count meet settlement',data.val)}}</span>
                         <span v-if="data.conditionType==3">{{ multiLan('Activity need New anchor online time',data.val) }}</span>
@@ -29,8 +29,14 @@ const data = JSON.parse(localStorage.getItem('currentCondition'))
             <div class="record" v-for="item in data.records">
                 <PlaceHolderImage class="avatar" :src="item.portrait">
                   </PlaceHolderImage>
+                  <div style="width: 12px;"></div>
                   <div>{{item.nickname}}</div>
-                  <div class="money">{{item.val}}<img class="coin" src="@/assets/gold_coin.webp" /></div>
+                  <div style="flex: auto;"></div>
+                  <div class="count" v-if="data.conditionType==1">{{multiLan('People count',item.val)}}</div>
+                  <div class="count" v-if="data.conditionType==2">{{multiLan('People count',item.val)}}</div>
+                  <div class="count" v-if="data.conditionType==3">{{formatDuration2(item.val)}}</div>
+                  <div class="money" v-if="data.conditionType==4">{{item.val}}<img class="coin" src="@/assets/gold_coin.webp" /></div>
+                  <div style="flex: auto;"></div>
                   <div v-if="item.status==1" class="completed">{{multiLan('Completed')}}</div>
                   <div v-else class="uncompleted">{{multiLan('Not completed')}}</div>
             </div>
