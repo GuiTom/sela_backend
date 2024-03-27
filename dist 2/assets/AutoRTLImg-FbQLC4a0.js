@@ -1,1 +1,0 @@
-import{r,o as s,a as c,c as n}from"./index-lL9sqtyl.js";const o=["src"],m={__name:"AutoRTLImg",props:{src:{type:String,required:!0,default:""}},setup(t){const e=r(null);return s(()=>{document.documentElement.getAttribute("dir")=="rtl"&&(e.value.style.transform="scaleX(-1)")}),(a,l)=>(c(),n("img",{src:t.src,ref_key:"img",ref:e,class:"rtl"},null,8,o))}};export{m as _};
