@@ -102,12 +102,11 @@ function onViewDetail() {
                 <div class="content">
                     <div class="requirement">{{multiLan('Threshold to join')}}</div>
                     <div class="content" v-for="(item, index) in data.joinLimits">
-                    
                         <span v-if="item.limitType==1">{{multiLan('Joint limit Guild level',item.val)}}</span>
                         <span v-if="item.limitType==2">{{multiLan('Joint limit Guild population',item.val)}}</span>
-                        <span v-if="item.limitType==3">{{multiLan('Joint limit Activie anchor portion',item.val)}}</span>
-                        <span v-if="item.limitType==4">{{multiLan('Joint limit xx level Anchor portion',item.val)}}</span>
-                        <span v-if="item.limitType==5">{{multiLan('Joint limit Last xx day score',item.val)}}</span>
+                        <span v-if="item.limitType==3">{{multiLan('Joint limit xx level Anchor portion',item.val,item.val2)}}</span>
+                        <span v-if="item.limitType==4">{{multiLan('Joint limit Activie anchor portion',item.val)}}</span>
+                        <span v-if="item.limitType==5">{{multiLan('Joint limit Last xx day score',item.val,item.val2)}}</span>
                     </div>
                 </div>
             </div>

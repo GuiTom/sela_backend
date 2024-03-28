@@ -16,7 +16,8 @@ onMounted(()=>{
     
     ),1000);
     // progressData.value.conditionRecords = [...progressData.value.conditionRecords,...progressData.value.conditionRecords]
-    // console.log(progressData.value)
+    // leftSeconds.value = 7500
+    // console.log(leftSeconds.value)
 })
 
 function onClickConditionRecord(item){
@@ -35,8 +36,8 @@ function onClickConditionRecord(item){
                 <div class="number">{{Math.floor((leftSeconds%(3600*24))/36000)}}</div>
                 <div class="number">{{Math.floor(leftSeconds%(3600*24)/3600)%10}}</div>
                 <div class="comma">:</div>
-                <div class="number">{{Math.floor(leftSeconds%60/10)}}</div>
-                <div class="number">{{Math.floor(leftSeconds%10)}}</div>
+                <div class="number">{{Math.floor(Math.floor(leftSeconds/60)%60/10)}}</div>
+                <div class="number">{{Math.floor(leftSeconds/60)%10}}</div>
             </div>
 
         </div>
@@ -45,7 +46,7 @@ function onClickConditionRecord(item){
                 <div class="param_item">
                     <img src="@/assets/reward_icon.webp" />
                     <div class="content" v-if="item!=null">
-                        <div class="ratio"><span>{{item.completeNum}}</span>/<span>{{item.val}}</span></div>
+                        <div class="ratio"><span>{{item.completeNum}}</span><span v-if="item.conditionType!=3">/{{item.val}}</span></div>
                         <div class="field_name">
                             <span v-if="item.conditionType==1">{{ multiLan('Activity need New anchor count',item.val) }}</span>
                             <span v-if="item.conditionType==2">{{multiLan('Activity need New anchor count meet settlement',item.val)}}</span>

@@ -73,7 +73,11 @@
         width: 36px;
         height: 36px;
     }
-
+    .nickname{
+        width: 100px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
     .completed {
         font-weight: 500;
         font-size: 13px;

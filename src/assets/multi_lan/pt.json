@@ -10,7 +10,7 @@
     "Date of creation": "Data de criação",
     "Number of hosts": "Número de hosts",
     "Newly registered hosts yesterday": "Novos hosts adicionados ontem",
-    "Days since creation: xx days": "Dias deste a criação: [xx] dias",
+    "Days since creation: xx days": "Dias deste a criação: xx dias",
     "Withdrawal requirements": "Requisitos de retirada:",
     "Withdrawal requirements 1": "1: Existem pelo menos (xx2) hosts cujo volume de negócios atinge [xx1 moedas de ouro]",
     "Withdrawal requirements 2": "2: A função de saque automático só pode ser acionada quando a receita de liquidação da comissão do agente atingir [$xx].",
@@ -106,5 +106,10 @@
     "More": "Mais",
     "Ended": "Terminado",
     "Received": "Recebido",
-    "Claimed": "Recebido"
+    "Claimed": "Recebido",
+    "Joined": "Já participou",
+    "Closed": "Fechado",
+    "Under join limit": "Não elegível para participar",
+    "People count": "xx pessoas",
+    "Duration": "xx1 horas xx2 minutos xx3 segundos"
 }

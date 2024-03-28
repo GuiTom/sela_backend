@@ -4,20 +4,21 @@ import banner_2 from "@/assets/activity/banner_2.webp"
 import banner_3 from "@/assets/activity/banner_3.webp"
 const props = defineProps({
   images: {
-    type: String,
+    type: Array,
     required: true
   },
 })
 
 // const imgs = images;
-const imgs = [banner_1, banner_2, banner_3];
+// const imgs = [banner_1, banner_2, banner_3];
+console.log(props.images)
 </script>
 <template>
         <!-- 主播管理 -->
           <div class="root_container">
 
           <van-swipe class="swiper" :autoplay="2000" style="height: 16vw;width:93.6vw;margin:3.2vw;" vertical>
-            <van-swipe-item v-for="(item,index) in imgs" :key="index">
+            <van-swipe-item v-for="(item,index) in images" :key="index">
                 <img :src="item"/>
             </van-swipe-item>
             <template #indicator="{ active, total }">
@@ -39,6 +40,10 @@ const imgs = [banner_1, banner_2, banner_3];
     div img{
         width: 100%;
         height: 100%;
+
+    }
+    img{
+      object-fit: cover;
     }
 }
 .flag{

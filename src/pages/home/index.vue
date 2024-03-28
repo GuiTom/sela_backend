@@ -121,9 +121,9 @@ function requestActivityList(id) {
       pageSize: 3
     })
     .then(function (response) {
+      if(response.data.code==0){
 
-
-      console.log('activityData:', response.data.data.list);
+      // console.log('activityData:', response.data.data.list);
       const imgs = [];
       for (let i = 0; i < response.data.data.list.length; i++) {
         let item = response.data.data.list[i];
@@ -134,9 +134,10 @@ function requestActivityList(id) {
           }
         }
       }
+      activityImgs.value = imgs;
       console.log(imgs)
 
-      activityImgs.value = imgs;
+    }
       // console.log('activityImgs:',activityImgs.value)
 
     })
@@ -232,7 +233,7 @@ function onLanguageSelected(index) {
       <div>{{ multiLan('Withdrawal requirements tip') }}</div>
     </div>
 
-    <ActivitySwiper :images="activityImgs" @click="$router.push('/activity_list')"></ActivitySwiper>
+    <ActivitySwiper v-if="activityImgs" :images="activityImgs" @click="$router.push('/activity_list')"></ActivitySwiper>
     <AnchorManage></AnchorManage>
     <div class="divider"></div>
     <!-- 余额和结算收益 -->
@@ -257,7 +258,7 @@ function onLanguageSelected(index) {
       </span>
     </div>
    
-        <!-- 提现记录和主播管理按钮 -->
+        <!-- 提现记录按钮 -->
     <div class="buttons">
       
       <span class="button" @click="$router.push('/withdraw_records')">{{ multiLan('Withdrawal history') }}</span>

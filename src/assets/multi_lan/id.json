@@ -10,7 +10,7 @@
     "Date of creation": "Waktu penciptaan",
     "Number of hosts": "Jumlah host",
     "Newly registered hosts yesterday": "Host baru ditambahkan kemarin",
-    "Days since creation: xx days": "Hari pembuatan: [xx] hari",
+    "Days since creation: xx days": "Hari pembuatan: xx hari",
     "Withdrawal requirements": "Requisitos de retiro:",
     "Withdrawal requirements 1": "1: Minimal (xx2) host yang pendapatannya mencapai [xx1 koin ]",
     "Withdrawal requirements 2": "2: Fungsi penarikan otomatis hanya dapat dipicu ketika pendapatan diredet komisi agen mencapai [$xx].",
@@ -107,5 +107,10 @@
     "More": "Lebih",
     "Ended": "Berakhir",
     "Received": "Diterima",
-    "Claimed": "Diterima"
+    "Claimed": "Diterima",
+    "Joined": "Sudah berpartisipasi",
+    "Closed": "Tertutup",
+    "Under join limit": "Tidak memenuhi syarat untuk berpartisipasi",
+    "People count": "",
+    "Duration": "xx1 jam xx2 menit xx3 detik"
 }

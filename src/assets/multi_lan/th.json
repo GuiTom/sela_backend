@@ -10,7 +10,7 @@
     "Date of creation": "เวลาสร้าง",
     "Number of hosts": "จำนวนของวีเจ",
     "Newly registered hosts yesterday": "วีเจใหม่ของเมื่อวานนี้",
-    "Days since creation: xx days": "วันที่สร้าง: [xx] วัน",
+    "Days since creation: xx days": "วันที่สร้าง: xx วัน",
     "Withdrawal requirements": "ข้อกำหนดในการถอนเงิน:",
     "Withdrawal requirements 1": "1: มีวีเจไม่น้อยกว่า (xx2)คน แห่งที่มีมูลค่าถึง [xx1 เหรียญทอง]",
     "Withdrawal requirements 2": "2: เมื่อรายได้การชำระบัญชีของค่าสังกัดถึง [$xx] ฟังก์ชั่นการถอนเงินอัตโนมัติสามารถใช้ได้",
@@ -106,5 +106,10 @@
     "More": "มากขึ้น",
     "Ended": "จบแล้ว",
     "Received": "ได้รับ",
-    "Claimed": "ได้รับ"
+    "Claimed": "ได้รับ",
+    "Joined": "เข้าร่วมแล้ว",
+    "Closed": "ปิดแล้ว",
+    "Under join limit": "ไม่ตรงตามเงื่อนไขในการเข้าร่วม",
+    "People count": "xx คน",
+    "Duration": "xx1 ชั่วโมง xx2 นาที xx3 วินาที"
 }

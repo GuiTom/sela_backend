@@ -106,5 +106,10 @@
     "More": "Más",
     "Ended": "Terminado",
     "Received": "Recibido",
-    "Claimed": "Recibido"
+    "Claimed": "Recibido",
+    "Joined": "Ya participé",
+    "Closed": "Cerrado",
+    "Under join limit": "No elegible para participar",
+    "People count": "xx personas",
+    "Duration": "xx1 horas xx2 minutos xx3 segundos"
 }

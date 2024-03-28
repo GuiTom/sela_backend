@@ -41,6 +41,19 @@ const currentLanguage = function(){
    }
    return localStorage.getItem('currentLanguage');
 }
+function check(){
+   for(let k in zh){
+      for(let key in lans){
+         if(lans[key][k]==null){
+            console.log(`${zh[k]} miss in ${key}`)
+         }
+      } 
+   }
+
+}
+if(process.env.NODE_ENV === 'development'){
+   check()
+}
 const multiLan = function(str,...args){
 
 //    var primaryLanguage = navigator.language || navigator.userLanguage

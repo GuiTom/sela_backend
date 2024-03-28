@@ -10,7 +10,7 @@
     "Date of creation": "Thời gian khởi tạo",
     "Number of hosts": "Số lượng Chủ phòng",
     "Newly registered hosts yesterday": "Chủ phòng mới được thêm vào ngày hôm qua",
-    "Days since creation: xx days": "Ngày khởi tạo: [xx] ngày",
+    "Days since creation: xx days": "Ngày khởi tạo: xx ngày",
     "Withdrawal requirements": "Yêu cầu rút tiền:",
     "Withdrawal requirements 1": "1: Có không ít hơn (xx2) Chủ phòng có doanh thu đạt [xx1 tiền vàng]",
     "Withdrawal requirements 2": "2: Chức năng rút tiền tự động chỉ có thể được kích hoạt khi thu nhập quyết toán hoa hồng của đại lý đạt [$xx].",
@@ -106,5 +106,10 @@
     "More": "Nhiều hơn",
     "Ended": "Đã kết thúc",
     "Received": "Đã nhận",
-    "Claimed": "Đã nhận"
+    "Claimed": "Đã nhận",
+    "Joined": "Đã tham gia",
+    "Closed": "Đã đóng",
+    "Under join limit": "Không đủ điều kiện để tham gia",
+    "People count": "xx người",
+    "Duration": "xx1 giờ xx2 phút xx3 giây"
 }

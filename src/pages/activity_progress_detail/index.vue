@@ -30,7 +30,7 @@ const data = JSON.parse(localStorage.getItem('currentCondition'))
                 <PlaceHolderImage class="avatar" :src="item.portrait">
                   </PlaceHolderImage>
                   <div style="width: 12px;"></div>
-                  <div>{{item.nickname}}</div>
+                  <div class="nickname">{{item.nickname}}</div>
                   <div style="flex: auto;"></div>
                   <div class="count" v-if="data.conditionType==1">{{multiLan('People count',item.val)}}</div>
                   <div class="count" v-if="data.conditionType==2">{{multiLan('People count',item.val)}}</div>

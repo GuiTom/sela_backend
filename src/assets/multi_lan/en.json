@@ -107,5 +107,10 @@
     "More": "More",
     "Ended": "Ended",
     "Received": "Claimed",
-    "Claimed": "Claimed"
+    "Claimed": "Claimed",
+    "Joined": "Already participated",
+    "Closed": "closed",
+    "Under join limit": "Not eligible to participate",
+    "People count": "xx people",
+    "Duration": "xx1 hours xx2 minutes xx3 seconds"
 }

@@ -55,7 +55,6 @@
     "Loading": "Yükleniyor",
     "No more data": "Daha fazla veri yok",
     "In ban": "Yasaklanmış",
-    "Update every week": "",
     "Sort": "Düzenleme",
     "Change password": "Şifre değiştirme",
     "Password": "Şifre",
@@ -108,5 +107,10 @@
     "More": "Daha fazla",
     "Ended": "Bitti",
     "Received": "Aldınız",
-    "Claimed": "Aldınız"
+    "Claimed": "Aldınız",
+    "Joined": "katıldınız",
+    "Closed": "kapalı",
+    "Under join limit": "Katılmaya uygun değil",
+    "People count": "xx kişi",
+    "Duration": "xx1 saat xx2 dakika xx3 saniye"
 }

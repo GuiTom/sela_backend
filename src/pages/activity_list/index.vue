@@ -42,12 +42,13 @@ function requestData(id) {
             if (response.data.code == 0) {
                 if (currentPage == 0) {
                     refreshing.value = false
+                    
                 } else {
                     loadingMore.value = false
                 }
                 currentPage++
 
-                console.log('activityData:', listData.value, guildData.value.countryCode);
+                // console.log('activityData:', listData.value, guildData.value.countryCode);
 
                 for (let i = 0; i < response.data.data.list.length; i++) {
                     let item = response.data.data.list[i];
@@ -59,7 +60,12 @@ function requestData(id) {
                         }
                     }
                 }
-                listData.value = listData.value.concat(response.data.data.list);
+                if(currentPage == 1) {
+                    listData.value = response.data.data.list;
+                }else {
+                    listData.value = listData.value.concat(response.data.data.list);
+                }
+              
             }
 
         })
@@ -99,6 +105,8 @@ function onClickItem(item) {
 <style scoped lang="less">
 .container {
     height: 100%;
+    width: 100%;
+    position: absolute;
     background-image: url('@/assets/anchor_bg.webp');
     background-size: 100% 100%;
 

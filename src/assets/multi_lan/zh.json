@@ -11,7 +11,6 @@
     "Date of creation":"创建时间",
     "Number of hosts":"主播数量",
     "Newly registered hosts yesterday":"昨日新增主播",
-    "Days since creation: xx days":"创建天数：xx天",
     "Withdrawal requirements":"提现要求:",
     "Withdrawal requirements 1":"1：流水达到 xx1金币 的主播不少于xx2名",
     "Withdrawal requirements 2":"2：代理佣金可结算收益达到【$xx】才可触发自动提现功能。",
@@ -58,7 +57,7 @@
     "Loading":"正在加载",
     "No more data":"没有更多数据了",
     "In ban":"封禁中",
-    "Update every week":"每日xx点更新数据",
+
     "Sort":"排序",
     "Change password":"修改密码",
     "Log out":"退出登录",
@@ -104,12 +103,14 @@
     "Activity need New anchor count":"活动期间,公会新主播数量达到xx人",
     "Activity need New anchor count meet settlement":"活动期间,公会结算达标新主播数量达到xx人",
     "Activity need New anchor online time":"活动期间,公会新主播在线时长达到xx小时",
+    "Activity need New anchor online time in minute":"活动期间,公会新主播在线时长达到xx分钟",
     "Activity need guild total income":"活动期间,公会总收入达到xx金币",
     "Coin":"金币",
     "More":"更多",
     "Claimed":"已领取",
     "Closed":"已关闭",
     "Under join limit": "不符合参与条件",
-    "Duration":"xx1小时xx2分xx2秒",
-    "People count":"xx人"
+    "Duration":"xx1小时xx2分xx3秒",
+    "People count":"xx人",
+    "People fulfilled count":"xx人已完成"
 }
