@@ -76,6 +76,7 @@
     "Activity list": "جميع الأنشطة",
     "Activity progress": "تقدم النشاط",
     "Activity progress detail": "تفاصيل التقدم",
+    "Joined": "تم مشاركة",
     "Reward": "مكافآت",
     "Event time": "وقت النشاط",
     "Apply to join": "سجل للمشاركة",
@@ -83,7 +84,8 @@
     "Threshold to join": " عتبة المشاركة",
     "Activity needs": "شروط النشاط",
     "Is Running": "الجاريه",
-    "Fininished": "تم انتهاء",
+    "Ended": "تم انتهاء",
+    "Received": "تم الحصول",
     "Not completed": "لم اكتمال",
     "Time left": "الوقت المتبقي xx أيام",
     "Completed": "تم اكمال",
@@ -98,5 +100,9 @@
     "Activity need New anchor online time": "يصل مدة أونلاين للمضيفة الجديدة  للوكالة إلى xx ساعة خلال النشاط",
     "Activity need guild total income": "سيصل إجمالي دخل للوكالة  إلى xx كوينزات خلال النشاط",
     "Coin": "كوينزات",
-    "More": "المزيد"
+    "More": "المزيد",
+    "Claimed": "تم الحصول",
+    "Closed": "تم اغلاق",
+    "Under join limit": "عدم استيفاء شروط المشاركة",
+    "People count": "xx أشخاص"
 }
