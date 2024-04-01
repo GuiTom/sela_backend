@@ -111,5 +111,7 @@
     "Closed": "Fechado",
     "Under join limit": "Não elegível para participar",
     "People count": "xx pessoas",
-    "Duration": "xx1 horas xx2 minutos xx3 segundos"
+    "Duration": "xx1 horas xx2 minutos xx3 segundos",
+    "Activity need New anchor online time in minute": "Durante o evento, o novo âncora da guilda ficará online por xx minutos",
+    "Activity square": ""
 }

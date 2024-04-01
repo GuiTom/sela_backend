@@ -11,10 +11,6 @@
     "Date of creation": "وقت الانشاء",
     "Number of hosts": "عدد المضيفة",
     "Newly registered hosts yesterday": "مضيفات جدد أمس",
-    "Withdrawal requirements":"طلب لسحب مبلغ:",
-    "Withdrawal requirements 1":"1: لا يقل عن（xx2） مضيفات اللتين يبلغ ارباح الي 【xx1كوينزات】",
-    "Withdrawal requirements 2":"2:سحب ارباح لتسوية  لعمولة يبلغ الي 【$xx】,هكاذا يمكن تفعيل وظيفة السحب التلقائي",
-    "Withdrawal requirements tip":"الملاحظة:بعد استيفاء الشروط، سيتم سحب الدخل القابل للتسوية تلقائيًا خلال ثلاثة أيام في الأسبوع  المقدم",
     "Withdrawal history": "سجل اسحب أموال",
     "Host management": "اشراف على المضيفة",
     "Weekly earnings(coins)": "دخل الاسبوع(كونز)",
@@ -102,6 +98,7 @@
     "Activity need New anchor count": "يصل عدد المضيفة الجديدة للوكالةإلى xxخلال النشاط",
     "Activity need New anchor count meet settlement": "يصل عدد  المضيفة الجديدة التي تستوفي متطلبات التسوية الخاصة إلى (X)خلال االنشاط",
     "Activity need New anchor online time": "يصل مدة أونلاين للمضيفة الجديدة  للوكالة إلى xx ساعة خلال النشاط",
+    "Activity need New anchor online time in minute": "خلال  النشاط ، سيكون ان وقت أونلاين لمضيفة جديدة للوكالة تبلغ الي xx دقيقة",
     "Activity need guild total income": "سيصل إجمالي دخل للوكالة  إلى xx كوينزات خلال النشاط",
     "Coin": "كوينزات",
     "More": "المزيد",
@@ -109,5 +106,7 @@
     "Closed": "تم اغلاق",
     "Under join limit": "عدم استيفاء شروط المشاركة",
     "Duration": "xx1ساعة واحدة xx2 دقيقة xx3 ثواني",
-    "People count": "xx أشخاص"
+    "People count": "xx أشخاص",
+    "People fulfilled count": "أكمل xx شخصا",
+    "Activity square": ""
 }

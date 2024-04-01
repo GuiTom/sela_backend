@@ -24,6 +24,7 @@ const noMoreData = ref(false)
 
 
 const weekData = ref(null)
+const activityList =ref(null)
 const activityImgs = ref(null)
 var currentPage = 0
 const pageSize = 20
@@ -93,7 +94,7 @@ function requestData() {
         weekData.value.data = [...weekData.value.data, ...response.data.data]
         loadingMore.value = false
       }
-      // console.log('weekData2',weekData.value)
+  
       currentPage++
       if (weekData.value.data == null || weekData.value.data.length < pageSize) {
         noMoreData.value = true
@@ -122,9 +123,10 @@ function requestActivityList(id) {
     })
     .then(function (response) {
       if(response.data.code==0){
-
+        activityList.value = response.data.data.list;
       // console.log('activityData:', response.data.data.list);
       const imgs = [];
+      
       for (let i = 0; i < response.data.data.list.length; i++) {
         let item = response.data.data.list[i];
         let scope = JSON.parse(item.scope)
@@ -135,7 +137,7 @@ function requestActivityList(id) {
         }
       }
       activityImgs.value = imgs;
-      console.log(imgs)
+
 
     }
       // console.log('activityImgs:',activityImgs.value)
@@ -233,7 +235,7 @@ function onLanguageSelected(index) {
       <div>{{ multiLan('Withdrawal requirements tip') }}</div>
     </div>
 
-    <ActivitySwiper v-if="activityImgs" :images="activityImgs" @click="$router.push('/activity_list')"></ActivitySwiper>
+    <ActivitySwiper v-if="activityImgs" :data="activityList" @click="$router.push('/activity_list')"></ActivitySwiper>
     <AnchorManage></AnchorManage>
     <div class="divider"></div>
     <!-- 余额和结算收益 -->

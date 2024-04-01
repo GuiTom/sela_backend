@@ -112,5 +112,7 @@
     "Closed": "kapalı",
     "Under join limit": "Katılmaya uygun değil",
     "People count": "xx kişi",
-    "Duration": "xx1 saat xx2 dakika xx3 saniye"
+    "Duration": "xx1 saat xx2 dakika xx3 saniye",
+    "Activity need New anchor online time in minute": "Etkinlik sırasında loncanın yeni yayıncısı xx dakika boyunca çevrimiçi olacak",
+    "Activity square": ""
 }

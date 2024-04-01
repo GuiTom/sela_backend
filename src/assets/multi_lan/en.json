@@ -112,5 +112,7 @@
     "Closed": "closed",
     "Under join limit": "Not eligible to participate",
     "People count": "xx people",
-    "Duration": "xx1 hours xx2 minutes xx3 seconds"
+    "Duration": "xx1 hours xx2 minutes xx3 seconds",
+    "Activity need New anchor online time in minute": "The online duration of newly registered hosts reaches xx minutes during the event",
+    "Activity square": ""
 }

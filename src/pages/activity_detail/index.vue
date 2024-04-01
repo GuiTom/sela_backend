@@ -37,9 +37,10 @@ api
         console.log(error)
     })
 }
-
+let allowJoin = true;
 function onJoin() {
-
+    if(!allowJoin) return
+    allowJoin = false
     let path = '/manager/guild/activity/join'
     api
         .post(path, {
@@ -53,12 +54,15 @@ function onJoin() {
                     toast(multiLan('Joined'))
                 }
               
+            }else {
+                allowJoin = true
             }
 
         })
         .catch(function (error) {
             // 请求失败处理
             console.log(error)
+            allowJoin = false
         })
 }
 function onViewDetail() {

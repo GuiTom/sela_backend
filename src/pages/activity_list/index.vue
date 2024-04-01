@@ -25,7 +25,7 @@ function refresh() {
 function requestData(id) {
 
     let path = '/manager/guild/activity/page'
-    console.log('requestActivityList')
+ 
     if (currentPage > 0) loadingMore.value = true
     if (currentPage == 0) refreshing.value = true
     api
@@ -95,7 +95,7 @@ function onClickItem(item) {
                         </div>
                         <div style="flex:auto;"></div>
                         <div v-if="item.status == 1" class="button running">{{ multiLan('Is Running') }}</div>
-                        <div v-else class="button">{{ multiLan('Completed') }}</div>
+                        <div v-else class="button">{{ multiLan('Ended') }}</div>
                     </div>
                 </div>
             </template>

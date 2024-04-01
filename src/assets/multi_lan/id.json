@@ -112,5 +112,7 @@
     "Closed": "Tertutup",
     "Under join limit": "Tidak memenuhi syarat untuk berpartisipasi",
     "People count": "",
-    "Duration": "xx1 jam xx2 menit xx3 detik"
+    "Duration": "xx1 jam xx2 menit xx3 detik",
+    "Activity need New anchor online time in minute": "Selama acara, waktu online host yang baru didaftarkan mencapai xx menit",
+    "Activity square": ""
 }

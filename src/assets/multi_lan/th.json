@@ -111,5 +111,7 @@
     "Closed": "ปิดแล้ว",
     "Under join limit": "ไม่ตรงตามเงื่อนไขในการเข้าร่วม",
     "People count": "xx คน",
-    "Duration": "xx1 ชั่วโมง xx2 นาที xx3 วินาที"
+    "Duration": "xx1 ชั่วโมง xx2 นาที xx3 วินาที",
+    "Activity need New anchor online time in minute": "ในช่วงกิจกรรม วีเจใหม่ของสังกัดจะออนไลน์เป็นเวลา xx นาที",
+    "Activity square": ""
 }

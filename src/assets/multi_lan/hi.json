@@ -111,5 +111,7 @@
     "Closed": "बंद हो गया",
     "Under join limit": "भाग लेने की शर्तों को पूरा नहीं किया",
     "People count": "xx लोग",
-    "Duration": "xx1 घंटा xx2 मिनट xx3 सेकंड"
+    "Duration": "xx1 घंटा xx2 मिनट xx3 सेकंड",
+    "Activity need New anchor online time in minute": "",
+    "Activity square": ""
 }
