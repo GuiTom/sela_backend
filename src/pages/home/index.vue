@@ -25,11 +25,12 @@ const noMoreData = ref(false)
 
 const weekData = ref(null)
 const activityList =ref(null)
-const activityImgs = ref(null)
+
 var currentPage = 0
 const pageSize = 20
 
 onMounted(() => {
+
   let keys = lanKeys
   let curLan = currentLanguage()
 
@@ -124,20 +125,7 @@ function requestActivityList(id) {
     .then(function (response) {
       if(response.data.code==0){
         activityList.value = response.data.data.list;
-      // console.log('activityData:', response.data.data.list);
-      const imgs = [];
-      
-      for (let i = 0; i < response.data.data.list.length; i++) {
-        let item = response.data.data.list[i];
-        let scope = JSON.parse(item.scope)
-        for (let j = 0; j < scope.length; j++) {
-          if (guildData.value.countryCode+'' == scope[j].country) {
-              imgs.push(scope[j].icon);
-          }
-        }
-      }
-      activityImgs.value = imgs;
-
+      // console.log('activityData:', response.data.data.list)
 
     }
       // console.log('activityImgs:',activityImgs.value)
@@ -235,7 +223,7 @@ function onLanguageSelected(index) {
       <div>{{ multiLan('Withdrawal requirements tip') }}</div>
     </div>
 
-    <ActivitySwiper v-if="activityImgs" :data="activityList" @click="$router.push('/activity_list')"></ActivitySwiper>
+    <ActivitySwiper v-if="activityList&&activityList.length>0" :data="activityList" @click="$router.push('/activity_list')"></ActivitySwiper>
     <AnchorManage></AnchorManage>
     <div class="divider"></div>
     <!-- 余额和结算收益 -->

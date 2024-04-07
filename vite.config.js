@@ -21,6 +21,9 @@ export default defineConfig({
   build: {
     target: 'es2015', // 或者根据需要选择 'es5'
   },
+  dev:{
+    target: 'es2015', // 或者根据需要选择 'es5'
+  },
   plugins: [
     vue(),
     vueJsx(),

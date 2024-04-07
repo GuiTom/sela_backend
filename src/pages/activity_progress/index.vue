@@ -46,16 +46,18 @@ function onClickConditionRecord(item){
                 <div class="param_item">
                     <img src="@/assets/reward_icon.webp" />
                     <div class="content" v-if="item!=null">
-                        <div class="ratio"><span>{{item.completeNum}}</span><span v-if="item.conditionType!=3">/{{item.val}}</span></div>
+                        <div class="ratio" v-if="item.conditionType!=3"><span>{{item.completeNum}}</span><span>/{{item.val}}</span></div>
+                        <div class="ratio" v-else><span>{{multiLan('People fulfilled count',item.completeNum)}}</span></div>
+                        
                         <div class="field_name">
                             <span v-if="item.conditionType==1">{{ multiLan('Activity need New anchor count',item.val) }}</span>
                             <span v-if="item.conditionType==2">{{multiLan('Activity need New anchor count meet settlement',item.val)}}</span>
-                            <span v-if="item.conditionType==3">{{ multiLan('Activity need New anchor online time',item.val) }}</span>
+                            <span v-if="item.conditionType==3">{{ multiLan('Activity need New anchor online time in minute',item.val) }}</span>
                             <span v-if="item.conditionType==4">{{multiLan('Activity need guild total income',item.val) }}</span>
                         </div>
                     </div>
                     <div style="flex: auto;"></div>
-                    <div class="status" v-if="item!=null&&item.completeNum>=item.val" style="color:#D367FE">{{multiLan('Completed')}}&nbsp;></div>
+                    <div class="status" v-if="item.status==1" style="color:#D367FE">{{multiLan('Completed')}}&nbsp;></div>
                     <div class="status" v-else style="color:#FF5CC4">{{multiLan('Not completed')}}&nbsp;></div>
                 </div>
                 <div v-if="index<progressData.conditionRecords.length-1" style="height: 1px;background-color:#eaeaea"></div>

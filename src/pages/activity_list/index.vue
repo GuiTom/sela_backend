@@ -25,7 +25,7 @@ function refresh() {
 function requestData(id) {
 
     let path = '/manager/guild/activity/page'
- 
+
     if (currentPage > 0) loadingMore.value = true
     if (currentPage == 0) refreshing.value = true
     api
@@ -42,30 +42,35 @@ function requestData(id) {
             if (response.data.code == 0) {
                 if (currentPage == 0) {
                     refreshing.value = false
-                    
+
                 } else {
+
                     loadingMore.value = false
+                    console.log(`load more ${loadingMore.value}`)
                 }
+                noMoreData.value = !response.data.data.hasNextPage
                 currentPage++
 
                 // console.log('activityData:', listData.value, guildData.value.countryCode);
-
-                for (let i = 0; i < response.data.data.list.length; i++) {
-                    let item = response.data.data.list[i];
-                    let scope = JSON.parse(item.scope)
-                    for (let j = 0; j < scope.length; j++) {
-                        if (guildData.value.countryCode + '' == scope[j].country) {
-                            item.icon = scope[j].icon;
-                            console.log(i, scope[j].icon)
+                if (response.data.data.list) {
+                    for (let i = 0; i < response.data.data.list.length; i++) {
+                        let item = response.data.data.list[i];
+                        let scope = JSON.parse(item.scope)
+                        for (let j = 0; j < scope.length; j++) {
+                            if (guildData.value.countryCode + '' == scope[j].country) {
+                                item.icon = scope[j].icon;
+                                console.log(i, scope[j].icon)
+                            }
                         }
                     }
+                    if (currentPage == 1) {
+                        listData.value = response.data.data.list;
+                    } else {
+                        listData.value = listData.value.concat(response.data.data.list);
+                    }
+
                 }
-                if(currentPage == 1) {
-                    listData.value = response.data.data.list;
-                }else {
-                    listData.value = listData.value.concat(response.data.data.list);
-                }
-              
+
             }
 
         })
@@ -79,6 +84,7 @@ function onClickItem(item) {
 }
 </script>
 <template>
+    <div class="bg"></div>
     <div class="container">
         <AppBarVue :title="multiLan('Activity list')" />
         <div style="height: 20px;"></div>
@@ -95,25 +101,36 @@ function onClickItem(item) {
                         </div>
                         <div style="flex:auto;"></div>
                         <div v-if="item.status == 1" class="button running">{{ multiLan('Is Running') }}</div>
-                        <div v-else class="button">{{ multiLan('Ended') }}</div>
+                        <div v-if="item.status == 0" class="button">{{ multiLan('Closed') }}</div>
+                        <div v-if="item.status == 2" class="button">{{ multiLan('Ended') }}</div>
+                        <div v-if="item.status == 3" class="button">{{ multiLan('Unopen') }}</div>
                     </div>
                 </div>
             </template>
         </InfiniteList>
     </div>
+
 </template>
 <style scoped lang="less">
+.bg {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('@/assets/anchor_bg.webp');
+    background-size: 100% 100%;
+
+}
+
 .container {
     height: 100%;
     width: 100%;
     position: absolute;
-    background-image: url('@/assets/anchor_bg.webp');
-    background-size: 100% 100%;
-
+    overflow: hidden;
     .activity_list {
         display: flex;
         flex-direction: column;
-
+        height: calc(100vh - 45px - 20px);
         .list_item {
             border-radius: 12px;
             background-color: white;
@@ -122,6 +139,7 @@ function onClickItem(item) {
             >.headimg {
                 width: 100%;
                 height: 31.5vw;
+                border-radius: 12px;
             }
 
             >.footer {
@@ -131,7 +149,7 @@ function onClickItem(item) {
 
                 .button {
                     border-radius: 14.5px;
-                    
+
                     border: 1px solid #BCBCBC;
                     padding: 6px 12px;
                     font-weight: 500;
@@ -142,7 +160,7 @@ function onClickItem(item) {
                 .running {
                     color: #B839F8;
                     border: 1px solid #DC5DFF;
-        
+
                 }
             }
         }

@@ -56,10 +56,10 @@ function formatDuration(milliseconds) {
 
 function formatDuration2(milliseconds){
     if(milliseconds==null) return '0';
-    let seconds = Math.floor(milliseconds / 1000);  
+    let seconds = Math.floor(milliseconds/1000);  
     let minutes = Math.floor(seconds / 60);  
     let hours = Math.floor(minutes / 60);  
-    return multiLan('Duration',hours,minutes,hours);
+    return multiLan('Duration',hours,minutes%60,seconds%60);
 }
   
 

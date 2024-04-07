@@ -1,12 +1,14 @@
 <script setup>
-import { ref } from 'vue'
+import { onMounted, ref } from 'vue'
 const imgLoaded = ref(false)
 defineProps({
   src: {
     type: String,
     required: true
-  }
+  },
+
 })
+
 </script>
 <template>
   <div class="container">
@@ -19,8 +21,7 @@ defineProps({
 .container {
   position: relative;
   border-radius: 50%;
-  background-size: cover;
-  position: relative;
+
 }
 img {
   position: absolute;
