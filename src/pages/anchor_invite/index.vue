@@ -1,35 +1,62 @@
 <script setup>
 import AppBarVue from '@/components/AppBar.vue'
 import { multiLan } from '@/utils/lan';
+import { onMounted, ref } from 'vue';
+import { useRoute } from 'vue-router';
+import {guildData} from '@/global'
+import api from '../../controller/request'
+onMounted(() => {
+    requestData()
+}
+)
+const data = ref(null)
+function requestData() {
+    let activityId = useRoute().query.activity_id;
+    let path = '/manager/guildh5/page/taskList?lang=' + navigator.language.split('-')[1]
+    api
+        .get(path)
+        .then(function (response) {
+            if (response.data.code == 0) {
+                data.value = response.data.data
+                console.log(data.value)
+            }
+
+        })
+        .catch(function (error) {
+            // 请求失败处理
+            console.log(error)
+        })
+}
 </script>
 <template>
     <div class="container">
         <AppBarVue :title="multiLan('Invite anchor')" />
         <div style="height: 27px;"></div>
         <div class="header">
-            <div>我的专属邀请链接</div>
-            <div class="">https://djdwhdjshdsh</div>
-            <div class="share_button">分享</div>
+            <div>{{ multiLan('My specical invite link') }}</div>
+            <div class="link">https://djdwhdjshdsh?code={{guildData.guildCode}}</div>
+            <div class="share_button">{{ multiLan('Share') }}</div>
         </div>
         <div style="height:12px;"></div>
         <div class="reward_card">
-            <div class="header">邀请奖励</div>
-            <div class="list">
-                <div v-for="index in 3">
+            <div class="header">{{ multiLan('Invite rewarded') }}</div>
+            <div class="list" v-if="data">
+                <div v-for="(item, index) in data">
                     <div class="list_item">
                         <img class="icon" src="@/assets/reward_icon.webp">
+                        <div style="width:10px;"></div>
                         <div class="middle">
-                            <div class="desc">累计邀请5个主播</div>
-                            <div class="progress">1/5</div>
+                            <div class="desc">{{ item.title }}</div>
+
                         </div>
                         <div style="flex:auto;"></div>
-                        <div class="status_complete">已完成</div>
+                        <div class="status_complete" v-if="item.taskStatus != -1">{{ multiLan('Completed') }}</div>
                     </div>
                     <div style="height: 1px;background-color:#EAEAEA;"></div>
                 </div>
             </div>
             <div style="flex: auto;"></div>
-            <div class="tips">Tips:现金任务完成后，请耐心等候平台打款</div>
+            <div class="tips">{{ multiLan('Withdraw tips') }}</div>
             <div style="height: 60px;"></div>
         </div>
     </div>
@@ -45,6 +72,8 @@ import { multiLan } from '@/utils/lan';
     >.header {
         height: 46.4vw;
         margin: 0 12px;
+        padding-left: 20px;
+        padding-right: 20px;
         background-image: url('@/assets/invite_anchor_header_bg.webp');
         background-size: 100% 100%;
         display: flex;
@@ -58,15 +87,17 @@ import { multiLan } from '@/utils/lan';
             line-height: 20px;
         }
 
-        >div:nth-child(2) {
+        .link {
+           
             margin-top: 11px;
             font-weight: 600;
             font-size: 16px;
             color: #FFFFFF;
             background: #FFFFFF2F;
-
+           
             border-radius: 22px;
-            padding: 11px 62px;
+            width: calc(100% - 40px);
+            padding: 0 20px;
         }
 
         >div:nth-child(3) {
@@ -90,7 +121,7 @@ import { multiLan } from '@/utils/lan';
         background-color: white;
         height: calc(100vh - 46.4vw - 20px - 12px);
         padding: 12px;
-        
+
         .header {
             font-weight: 600;
             font-size: 16px;
@@ -98,43 +129,45 @@ import { multiLan } from '@/utils/lan';
             line-height: 22px;
         }
 
-    .list{
+        .list {
+            .list_item {
+                padding: 12px 6px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                .icon {
+                    width: 38px;
+                    height: 38px;
+                }
+
+                .middle {
+                    .desc {
+                        font-weight: 500;
+                        font-size: 14px;
+                        color: #3B3B3B;
+                        line-height: 20px;
+                    }
 
 
-        .list_item {
-            padding: 12px 6px;
-            display: flex;
+                }
 
-            .icon {
-                width: 38px;
-                height: 38px;
-            }
-
-            .middle {
-                .desc {
+                .status_complete {
+                    color: #D367FE;
                     font-weight: 500;
-                    font-size: 14px;
-                    color: #3B3B3B;
-                    line-height: 20px;
+                    font-size: 13px;
                 }
 
-                .progress {
-                    font-weight: 400;
-                    font-size: 12px;
-                    color: #737373;
-                    line-height: 17px;
-                }
             }
 
         }
 
-    }
-    .tips{
-        width: 100%;
-        text-align: center;
-        font-size: 13px;
-        color: #737373;
-    }
+        .tips {
+            width: 100%;
+            text-align: center;
+            font-size: 13px;
+            color: #737373;
+        }
     }
 }
 </style>
