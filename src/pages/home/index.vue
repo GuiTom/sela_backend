@@ -27,7 +27,7 @@ const weekData = ref(null)
 const activityList =ref(null)
 
 var currentPage = 0
-const pageSize = 20
+const pageSize = 30
 
 onMounted(() => {
 
@@ -89,7 +89,7 @@ function requestData() {
     .then(function (response) {
       if (currentPage == 0) {
         weekData.value = response.data
-        // console.log('weekData1',weekData.value.data)
+      
         refreshing.value = false
       } else {
         weekData.value.data = [...weekData.value.data, ...response.data.data]

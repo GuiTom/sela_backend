@@ -28,9 +28,10 @@ console.log(props.images)
               <div>{{multiLan('Activity square')}}</div>
             </div>
             <div class="second_row">
-              <div v-if="item.status==1&&item.recordStatus!=3" class="running">{{multiLan('Is Running')}}</div>
-              <div v-if="item.recordStatus==4" class="received">{{multiLan('Received')}}</div>
-              <div v-if="item.recordStatus==5" class="ended">{{multiLan('Ended')}}</div>
+              <div v-if="item.status==3" class="will">{{multiLan('WillStart')}}</div>
+              <div v-else-if="item.status==1&&item.recordStatus!=3" class="running">{{multiLan('Is Running')}}</div>
+              <div v-else-if="item.recordStatus==4" class="received">{{multiLan('Received')}}</div>
+              <div v-else-if="item.recordStatus==5" class="ended">{{multiLan('Ended')}}</div>
               <div class="title">{{item.activityName}}</div>
             </div>
 
@@ -91,7 +92,7 @@ console.log(props.images)
           display: flex;
           flex-direction: row;
           align-items: center;
-          .running{
+          .running,.will{
             background-color: #10D582;
             border-radius: 16px;
             padding: 1px 4px;

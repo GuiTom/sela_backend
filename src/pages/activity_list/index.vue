@@ -49,10 +49,11 @@ function requestData(id) {
                     console.log(`load more ${loadingMore.value}`)
                 }
                 noMoreData.value = !response.data.data.hasNextPage
-                currentPage++
+                
 
                 // console.log('activityData:', listData.value, guildData.value.countryCode);
                 if (response.data.data.list) {
+                    currentPage++
                     for (let i = 0; i < response.data.data.list.length; i++) {
                         let item = response.data.data.list[i];
                         let scope = JSON.parse(item.scope)
@@ -103,7 +104,7 @@ function onClickItem(item) {
                         <div v-if="item.status == 1" class="button running">{{ multiLan('Is Running') }}</div>
                         <div v-if="item.status == 0" class="button">{{ multiLan('Closed') }}</div>
                         <div v-if="item.status == 2" class="button">{{ multiLan('Ended') }}</div>
-                        <div v-if="item.status == 3" class="button">{{ multiLan('Unopen') }}</div>
+                        <div v-if="item.status == 3" class="button">{{ multiLan('WillStart') }}</div>
                     </div>
                 </div>
             </template>
@@ -116,14 +117,14 @@ function onClickItem(item) {
     position: fixed;
     top: 0;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     background-image: url('@/assets/anchor_bg.webp');
     background-size: 100% 100%;
 
 }
 
 .container {
-    height: 100%;
+    height: 100vh;
     width: 100%;
     position: absolute;
     overflow: hidden;

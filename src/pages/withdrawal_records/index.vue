@@ -50,6 +50,7 @@ function requestData() {
     .then(function (response) {
       if (currentPage == 0) {
         data.value = response.data
+        // data.value.data = [...data.value.data, ...response.data.data]
         refreshing.value = false
       } else {
         data.value.data.list = [...data.value.data.list, ...response.data.data.list]

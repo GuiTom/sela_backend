@@ -114,5 +114,6 @@
     "People count":"xx人",
     "People fulfilled count":"xx人已完成",
     "Activity square":"活动广场",
-    "Unopen":"未开启"
+    "WillStart":"即将开始",
+    "Will start in xx days":"距离活动开始:xx天"
 }

@@ -9,15 +9,14 @@ import router from '@/router/index'
 const data = ref(JSON.parse(localStorage.getItem('param')))
 const progressData = ref(JSON.parse(localStorage.getItem('param')))
 const leftSeconds = ref(Math.floor((parseInt(data.value.endAt)- Date.now())/1000))
-
+const activityDurationInseconds = ref(Math.floor((parseInt(data.value.endAt)- parseInt(data.value.startAt))/1000))
 onMounted(()=>{
+ 
     setInterval(()=>(
         leftSeconds.value = Math.floor((parseInt(data.value.endAt)- Date.now())/1000)
     
     ),1000);
-    // progressData.value.conditionRecords = [...progressData.value.conditionRecords,...progressData.value.conditionRecords]
-    // leftSeconds.value = 7500
-    // console.log(leftSeconds.value)
+    console.log('activityDurationInseconds',activityDurationInseconds.value,leftSeconds.value)
 })
 
 function onClickConditionRecord(item){
@@ -29,7 +28,18 @@ function onClickConditionRecord(item){
 <template>
     <div class="container">
         <AppBarVue :title="multiLan('Activity progress')" />
-        <div class="header" v-if="leftSeconds>0">
+        <div class="header" v-if="leftSeconds>activityDurationInseconds">
+         
+            <div class="title" v-html="multiLan('Will start in xx days',`<span style='color:#763DF0;font-size: 20px'>${Math.floor((leftSeconds-activityDurationInseconds)/(3600*24))}</span>`)"></div>
+            <div class="time_count">
+                <div class="number">{{Math.floor(((leftSeconds-activityDurationInseconds)%(3600*24))/36000)}}</div>
+                <div class="number">{{Math.floor((leftSeconds-activityDurationInseconds)%(3600*24)/3600)%10}}</div>
+                <div class="comma">:</div>
+                <div class="number">{{Math.floor(Math.floor((leftSeconds-activityDurationInseconds)/60)%60/10)}}</div>
+                <div class="number">{{Math.floor((leftSeconds-activityDurationInseconds)/60)%10}}</div>
+            </div>
+        </div>
+        <div class="header" v-else-if="leftSeconds>0">
          
             <div class="title" v-html="multiLan('Time left', `<span style='color:#763DF0;font-size: 20px'>${Math.floor(leftSeconds/(3600*24))}</span>`)"></div>
             <div class="time_count">
@@ -39,7 +49,6 @@ function onClickConditionRecord(item){
                 <div class="number">{{Math.floor(Math.floor(leftSeconds/60)%60/10)}}</div>
                 <div class="number">{{Math.floor(leftSeconds/60)%10}}</div>
             </div>
-
         </div>
         <div class="param_list">
             <div v-for="(item,index) in progressData.conditionRecords" @click="onClickConditionRecord(item)">

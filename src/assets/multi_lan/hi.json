@@ -114,5 +114,7 @@
     "Duration": "xx1 घंटा xx2 मिनट xx3 सेकंड",
     "Activity need New anchor online time in minute": "",
     "Activity square": "",
-    "People fulfilled count": ""
+    "People fulfilled count": "",
+    "WillStart":"Akan segera dimulai",
+    "Will start in xx days":"Waktu yang tersisa hingga acara dimulai: xx hari"
 }

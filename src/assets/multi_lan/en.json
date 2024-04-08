@@ -115,5 +115,7 @@
     "Duration": "xx1 hours xx2 minutes xx3 seconds",
     "Activity need New anchor online time in minute": "The online duration of newly registered hosts reaches xx minutes during the event",
     "Activity square": "",
-    "People fulfilled count": "xx people completed"
+    "People fulfilled count": "xx people completed",
+    "WillStart":"About to begin",
+    "Will start in xx days":"Time left until the event starts: xx days"
 }

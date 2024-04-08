@@ -1,10 +1,10 @@
 <script setup>
 import { onMounted, ref } from 'vue'
 const imgLoaded = ref(false)
-defineProps({
+const props = defineProps({
   src: {
     type: String,
-    required: true
+    required: false,
   },
 
 })
@@ -13,7 +13,7 @@ defineProps({
 <template>
   <div class="container">
     <img v-if="!imgLoaded" src="@/assets/placeholder.jpg" />
-    <img :src="src" @load="imgLoaded = true" />
+    <img v-if="src" :src="src" @load="imgLoaded = true" />
     <slot name="content"></slot>
   </div>
 </template>

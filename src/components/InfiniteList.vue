@@ -21,7 +21,7 @@ var lastScrollY = 0;
 var lock = false
 function onScroll(event){
         
-        console.log(lastScrollY,listContainer.value.scrollTop,listContainer.value.scrollHeight,listContainer.value.clientHeight)
+        // console.log(lastScrollY,listContainer.value.scrollTop,listContainer.value.scrollHeight,listContainer.value.clientHeight)
         if (lastScrollY<listContainer.value.scrollTop&&(listContainer.value.clientHeight + listContainer.value.scrollTop) >= (listContainer.value.scrollHeight)) {  
            
               emit('loadMore');  
@@ -55,7 +55,7 @@ function onScroll(event){
   overflow-y: scroll;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content:flex-start;
 }
 .loadMoreIndicator,.noreMoreIndicator,.refreshIndicator{
     font-size: 12px;

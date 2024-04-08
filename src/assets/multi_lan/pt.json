@@ -114,5 +114,8 @@
     "Duration": "xx1 horas xx2 minutos xx3 segundos",
     "Activity need New anchor online time in minute": "Durante o evento, o novo âncora da guilda ficará online por xx minutos",
     "Activity square": "",
-    "People fulfilled count": "xx pessoas completaram"
+    "People fulfilled count": "xx pessoas completaram",
+    "WillStart":"Prestes a começar",
+    "Will start in xx days":"Tempo restante até o início do evento: xx dias."
+
 }

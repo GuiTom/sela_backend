@@ -114,5 +114,7 @@
     "Duration": "xx1 ชั่วโมง xx2 นาที xx3 วินาที",
     "Activity need New anchor online time in minute": "ในช่วงกิจกรรม วีเจใหม่ของสังกัดจะออนไลน์เป็นเวลา xx นาที",
     "Activity square": "",
-    "People fulfilled count": "xx คนทำเสร็จแล้ว"
+    "People fulfilled count": "xx คนทำเสร็จแล้ว",
+    "WillStart":"กำลังจะเริ่ม",
+    "Will start in xx days":"Prestes a começar"
 }

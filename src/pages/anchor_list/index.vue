@@ -69,6 +69,7 @@ function requestData() {
     .then(function (response) {
       if (currentPage == 0) {
         data.value = response.data
+       
         refreshing.value = false
       } else {
         data.value.data = [...data.value.data, ...response.data.data]
