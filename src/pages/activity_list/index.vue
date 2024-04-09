@@ -23,7 +23,9 @@ function refresh() {
     requestData()
 }
 function requestData(id) {
-
+    if(noMoreData.value){
+        return;
+    }
     let path = '/manager/guild/activity/page'
 
     if (currentPage > 0) loadingMore.value = true
@@ -51,9 +53,9 @@ function requestData(id) {
                 noMoreData.value = !response.data.data.hasNextPage
                 
 
-                // console.log('activityData:', listData.value, guildData.value.countryCode);
+                currentPage++
                 if (response.data.data.list) {
-                    currentPage++
+                   
                     for (let i = 0; i < response.data.data.list.length; i++) {
                         let item = response.data.data.list[i];
                         let scope = JSON.parse(item.scope)

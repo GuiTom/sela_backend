@@ -29,9 +29,8 @@ console.log(props.images)
             </div>
             <div class="second_row">
               <div v-if="item.status==3" class="will">{{multiLan('WillStart')}}</div>
-              <div v-else-if="item.status==1&&item.recordStatus!=3" class="running">{{multiLan('Is Running')}}</div>
-              <div v-else-if="item.recordStatus==4" class="received">{{multiLan('Received')}}</div>
-              <div v-else-if="item.recordStatus==5" class="ended">{{multiLan('Ended')}}</div>
+              <div v-else-if="item.status==1" class="running">{{multiLan('Is Running')}}</div>
+              <div v-else-if="item.status==2" class="ended">{{multiLan('Ended')}}</div>
               <div class="title">{{item.activityName}}</div>
             </div>
 
