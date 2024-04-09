@@ -51,7 +51,7 @@ function onClickItem(item) {
             <span>{{ multiLan('Anchor manage') }}</span>
             <!-- <span class="count">{{onlineCount}}/{{responseData.data.length}}</span> -->
             <span style="flex: auto;"></span>
-            <span @click="$router.push('/anchor_list')">
+            <span class="more_box" @click="$router.push('/anchor_list')">
                 <span class="more">{{ multiLan('More') }}</span>
                 <AutoRTLImg class="right_arror" :src="rightArrorImg"></AutoRTLImg>
             </span>
@@ -98,11 +98,15 @@ function onClickItem(item) {
             height: 14px;
             margin-left: 6px;
         }
-
-        .more {
-            color: #999999;
-            font-size: 12px;
+        .more_box{
+            display: flex;
+            align-items: center;
+            .more {
+                color: #999999;
+                font-size: 12px;
+            }
         }
+   
 
     }
 

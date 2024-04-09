@@ -27,8 +27,13 @@ onMounted(()=>{
 .app_bar {
     padding-top: 20px;
     position: relative;
+    display: flex;
+    height: 45px;
+    padding-left: 15px;
+    padding-right: 15px;
+    justify-content: space-between;
   .left_arror {
-    position: absolute;
+    
     width: 23px;
     height: 22px;
   }
@@ -40,8 +45,8 @@ onMounted(()=>{
     line-height: 25px;
   }
   .actions{
-    position: absolute;
-    right:15px;
+
+    
     display: inline-block;
   }
 }

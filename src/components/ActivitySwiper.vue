@@ -35,7 +35,7 @@ console.log(props.images)
             </div>
 
           </div>
-          <div class="view_button">查看</div>
+          <div class="view_button">{{multiLan('View')}}</div>
 
         </div>
       </van-swipe-item>
@@ -94,10 +94,14 @@ console.log(props.images)
           .running,.will,.ended{
             background-color: #10D582;
             border-radius: 16px;
-            padding: 1px 4px;
+            padding: 3px 8px;
             color:#F8F8F8;
             line-height: 18px;
+            text-wrap: nowrap;
             text-align: center;
+            width: 80px;
+            text-overflow: ellipsis;
+            overflow: hidden;
           }
           .ended{
             background-color: #A7A2A7;

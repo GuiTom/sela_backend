@@ -117,7 +117,7 @@ function requestData() {
     <div class="divider"></div>
     <!-- 注册时间这几行 -->
     <div class="register_and_more_info" v-if="userData != null">
-      <div>
+      <div v-if="userData.authTime">
         {{multiLan('Registration date')}}：<span>{{ $timeToFormatedDateTime(parseInt(userData.authTime)) }}</span>
       </div>
       <div v-if="userData.violateCount">
