@@ -114,8 +114,14 @@
     "People count": "xx kişi",
     "Duration": "xx1 saat xx2 dakika xx3 saniye",
     "Activity need New anchor online time in minute": "Etkinlik sırasında loncanın yeni yayıncısı xx dakika boyunca çevrimiçi olacak",
-    "Activity square": "",
+    "Activity square": "Etkinlik Alanı",
     "People fulfilled count": "xx kişi tamamladı",
-    "WillStart":"กำลังจะเริ่ม",
-    "Will start in xx days":"เวลาที่เหลือจนกว่ากิจกรรมจะเริ่ม: xx วัน."
+    "WillStart": "Yakında başlayacak",
+    "Will start in xx days": "Etkinlik başlamasına xx gün kaldı.",
+    "My specical invite link": "Kendi davetiye bağlantım",
+    "Share": "Paylaşmak",
+    "Invite rewarded": "Davet bonusu",
+    "Withdraw tips": "İpucu: Nakit görevleri tamamladıktan sonra lütfen platformun ödeme yapmasını sabırla bekleyin.",
+    "Link has been copied": "Bağlantı panoya kopyalandı.\n",
+    "Dollar reward": "$xx ödül"
 }

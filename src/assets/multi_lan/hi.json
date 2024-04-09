@@ -113,8 +113,14 @@
     "People count": "xx लोग",
     "Duration": "xx1 घंटा xx2 मिनट xx3 सेकंड",
     "Activity need New anchor online time in minute": "",
-    "Activity square": "",
+    "Activity square": "गतिविधि मैदान (Gatividhi Maidan)",
     "People fulfilled count": "",
-    "WillStart":"Akan segera dimulai",
-    "Will start in xx days":"Waktu yang tersisa hingga acara dimulai: xx hari"
+    "WillStart": "जल्द ही शुरू होने वाला है (Jald hī śurū hone vālā hai)",
+    "Will start in xx days": "आयोजन शुरू होने में xx दिन। (Āyojana śurū hone mẽ xx din)",
+    "My specical invite link": "मेरा अपना आमंत्रण लिंक",
+    "Share": "शेयर (Share)",
+    "Invite rewarded": "आमंत्रण बोनस",
+    "Withdraw tips": "टिप्स: कृपया नकदी कार्यों को पूरा करने के बाद प्लेटफ़ॉर्म के भुगतान का इंतजार करें। (Tips: Kripaya nakadī kāryoṁ ko pūrā karanē ke bāda plēṭapharṃ kē bhugatāna kā inṭajāra karaṇa.)",
+    "Link has been copied": "लिंक को क्लिपबोर्ड पर कॉपी कर दिया गया है। (Liṅk ko klipabōrḍ par kāpī kar diyā gayā hai.)",
+    "Dollar reward": "$xx का इनाम "
 }

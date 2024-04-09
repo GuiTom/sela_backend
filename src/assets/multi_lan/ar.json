@@ -112,7 +112,13 @@
     "Duration": "xx1ساعة واحدة xx2 دقيقة xx3 ثواني",
     "People count": "xx أشخاص",
     "People fulfilled count": "أكمل xx شخصا",
-    "Activity square": "",
-    "WillStart":"على وشك البدء",
-    "Will start in xx days":"الوقت المتبقي حتى بدء النشاط: xx يومًا"
+    "Activity square": "ساحة الفعاليات",
+    "WillStart": "على وشك البدء (Alá wushk albad')",
+    "Will start in xx days": "أيام حتى يبدأ الحدث: xx.",
+    "My specical invite link": "رابط دعوة خاصة بي",
+    "Share": "مشاركة (Mushāraka)",
+    "Invite rewarded": "مكافآت الدعوة",
+    "Withdraw tips": "نصيحة: يرجى الانتظار بصبر لمنصة للقيام بالدفع بعد إكمال المهام النقدية.",
+    "Link has been copied": "تم نسخ الرابط إلى الحافظة.",
+    "Dollar reward": "مكافأة قدرها xx دولار"
 }

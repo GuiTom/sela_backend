@@ -4,6 +4,7 @@ import { multiLan } from '@/utils/lan';
 import Avatar from '@/components/Avatar.vue';
 import AppBarVue from '@/components/AppBar.vue'
 import {formatDuration2} from '@/utils/time_utils'
+import money_amount from '@/utils/mony_amount'
 const data = JSON.parse(localStorage.getItem('currentCondition'))
 </script>
 <template>
@@ -13,7 +14,8 @@ const data = JSON.parse(localStorage.getItem('currentCondition'))
             <div class="param_item">
                 <img src="@/assets/activity_icon2.webp" />
                 <div class="content" v-if="data!=null">
-                    <div class="ratio" v-if="data.conditionType!=3"><span>{{data.completeNum}}</span>/<span>{{data.val}}</span></div>
+                    <div class="ratio" v-if="data.conditionType==4"><span>{{money_amount(data.completeNum)}}</span><span>/{{data.val}}</span></div>
+                    <div class="ratio" v-else-if="data.conditionType!=3"><span>{{data.completeNum}}</span>/<span>{{data.val}}</span></div>
                     <div class="ratio" v-else><span>{{multiLan('People fulfilled count',data.completeNum)}}</span></div>
                     <div class="field_name">
                         <span v-if="data.conditionType==1">{{ multiLan('Activity need New anchor count',data.val) }}</span>
@@ -34,9 +36,9 @@ const data = JSON.parse(localStorage.getItem('currentCondition'))
                   <div class="nickname">{{item.nickname}}</div>
                   <div style="flex: auto;"></div>
                   <div class="count" v-if="data.conditionType==1">{{multiLan('People count',item.val)}}</div>
-                  <div class="money" v-if="data.conditionType==2">{{item.val}}<img class="coin" src="@/assets/gold_coin.webp" /></div>
+                  <div class="money" v-if="data.conditionType==2">{{money_amount(item.val)}}<img class="coin" src="@/assets/gold_coin.webp" /></div>
                   <div class="count" v-if="data.conditionType==3">{{formatDuration2(item.val)}}</div>
-                  <div class="money" v-if="data.conditionType==4">{{item.val}}<img class="coin" src="@/assets/gold_coin.webp" /></div>
+                  <div class="money" v-if="data.conditionType==4">{{money_amount(item.val)}}<img class="coin" src="@/assets/gold_coin.webp" /></div>
                   <div style="flex: auto;"></div>
                   <div v-if="item.status==1" class="completed">{{multiLan('Completed')}}</div>
                   <div v-else class="uncompleted">{{multiLan('Not completed')}}</div>

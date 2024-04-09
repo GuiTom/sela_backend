@@ -114,8 +114,14 @@
     "People count": "xx people",
     "Duration": "xx1 hours xx2 minutes xx3 seconds",
     "Activity need New anchor online time in minute": "The online duration of newly registered hosts reaches xx minutes during the event",
-    "Activity square": "",
+    "Activity square": "Activity Square",
     "People fulfilled count": "xx people completed",
-    "WillStart":"About to begin",
-    "Will start in xx days":"Time left until the event starts: xx days"
+    "WillStart": "About to start",
+    "Will start in xx days": "Days until the event starts: xx.",
+    "My specical invite link": "My own invitation link",
+    "Share": "Share",
+    "Invite rewarded": "Invitation bonus",
+    "Withdraw tips": "Tip: Please patiently wait for the platform to make the payment after completing cash tasks.",
+    "Link has been copied": "The link has been copied to the clipboard.",
+    "Dollar reward": "Reward of $xx"
 }

@@ -91,13 +91,16 @@ console.log(props.images)
           display: flex;
           flex-direction: row;
           align-items: center;
-          .running,.will{
+          .running,.will,.ended{
             background-color: #10D582;
             border-radius: 16px;
             padding: 1px 4px;
             color:#F8F8F8;
             line-height: 18px;
             text-align: center;
+          }
+          .ended{
+            background-color: #A7A2A7;
           }
           .title{
             margin-left: 4px;

@@ -113,8 +113,13 @@
     "People count": "xx người",
     "Duration": "xx1 giờ xx2 phút xx3 giây",
     "Activity need New anchor online time in minute": "Trong thời gian sự kiện, thời gian trực tuyến của Chủ phòng mới của Công hội đạt xx phút",
-    "Activity square": "",
+    "Activity square": "Quảng trường hoạt động",
     "People fulfilled count": "xx người đã hoàn thành",
-    "WillStart":"Sắp bắt đầu",
-    "Will start in xx days":"Thời gian còn lại cho sự kiện bắt đầu: xx ngày."
+    "WillStart": "Sắp bắt đầu",
+    "Will start in xx days": "Ngày còn lại cho sự kiện bắt đầu: xx.",
+    "My specical invite link": "Liên kết lời mời độc quyền của tôi",
+    "Share": "Chia sẻ",
+    "Invite rewarded": "Phần thưởng mời",
+    "Withdraw tips": "Mẹo: Xin vui lòng kiên nhẫn chờ đợi nền tảng thực hiện thanh toán sau khi hoàn thành nhiệm vụ tiền mặt.",
+    "Dollar reward": "Phần thưởng $xx"
 }

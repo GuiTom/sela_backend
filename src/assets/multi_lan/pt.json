@@ -113,9 +113,14 @@
     "People count": "xx pessoas",
     "Duration": "xx1 horas xx2 minutos xx3 segundos",
     "Activity need New anchor online time in minute": "Durante o evento, o novo âncora da guilda ficará online por xx minutos",
-    "Activity square": "",
+    "Activity square": "Praça de atividades",
     "People fulfilled count": "xx pessoas completaram",
-    "WillStart":"Prestes a começar",
-    "Will start in xx days":"Tempo restante até o início do evento: xx dias."
-
+    "WillStart": "Prestes a começar",
+    "Will start in xx days": "Dias até o início do evento: xx.",
+    "My specical invite link": "Link do meu convite exclusivo",
+    "Share": "Partilhar",
+    "Invite rewarded": "Recompensas de convite",
+    "Withdraw tips": "Dica: Por favor, aguarde pacientemente o pagamento da plataforma após concluir as tarefas em dinheiro.",
+    "Link has been copied": "El enlace se ha copiado al portapapeles.",
+    "Dollar reward": "Recompensa de $xx"
 }

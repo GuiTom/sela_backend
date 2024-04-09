@@ -1,6 +1,5 @@
 <script setup>
 import { onMounted, ref } from 'vue'
-import defalutPlaceHoder from "@/assets/placeholder.jpg"
 const imgLoaded = ref(false)
 const props = defineProps({
   src: {
@@ -13,18 +12,16 @@ const props = defineProps({
   placeHolder: {
     type: String,
     required: false,
-    default:null,
   },
+
 },
 )
 
-onMounted(() => {
-  console.log('placeHolder',props.placeHolder)
-})
+
 </script>
 <template>
   <div class="container">
-    <img v-if="!imgLoaded" :src="props.placeHolder??defalutPlaceHoder" />
+    <img v-if="!imgLoaded" src="@/assets/placeholder.jpg" />
     <img v-if="src" :src="src" @load="imgLoaded = true" />
     <slot name="content"></slot>
   </div>

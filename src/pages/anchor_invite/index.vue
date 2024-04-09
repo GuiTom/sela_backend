@@ -3,13 +3,16 @@ import AppBarVue from '@/components/AppBar.vue'
 import { multiLan } from '@/utils/lan';
 import { onMounted, ref } from 'vue';
 import { useRoute } from 'vue-router';
-import {guildData} from '@/global'
+import { guildData } from '@/global'
+import toast from '@/utils/toast'
 import api from '../../controller/request'
 onMounted(() => {
     requestData()
 }
 )
 const data = ref(null)
+const shareLink = `https://testguild.selalive.com/?code=${guildData.value.guildCode}`
+
 function requestData() {
     let activityId = useRoute().query.activity_id;
     let path = '/manager/guildh5/page/taskList?lang=' + navigator.language.split('-')[1]
@@ -20,12 +23,20 @@ function requestData() {
                 data.value = response.data.data
                 console.log(data.value)
             }
-
         })
         .catch(function (error) {
             // 请求失败处理
             console.log(error)
         })
+}
+async function onClickShare() {
+    try {
+        await navigator.clipboard.writeText(shareLink);
+
+    } catch (err) {
+
+    }
+    toast(multiLan('Link has been copied'))
 }
 </script>
 <template>
@@ -34,8 +45,8 @@ function requestData() {
         <div style="height: 27px;"></div>
         <div class="header">
             <div>{{ multiLan('My specical invite link') }}</div>
-            <div class="link">https://djdwhdjshdsh?code={{guildData.guildCode}}</div>
-            <div class="share_button">{{ multiLan('Share') }}</div>
+            <div class="link">{{ shareLink }}</div>
+            <div class="share_button" @click="onClickShare">{{ multiLan('Share') }}</div>
         </div>
         <div style="height:12px;"></div>
         <div class="reward_card">
@@ -51,6 +62,7 @@ function requestData() {
                         </div>
                         <div style="flex:auto;"></div>
                         <div class="status_complete" v-if="item.taskStatus != -1">{{ multiLan('Completed') }}</div>
+                        <div class="raward" v-if="item.taskStatus == -1">+{{ item.rewardVo.dollarNum }}$</div>
                     </div>
                     <div style="height: 1px;background-color:#EAEAEA;"></div>
                 </div>
@@ -88,13 +100,13 @@ function requestData() {
         }
 
         .link {
-           
+
             margin-top: 11px;
             font-weight: 600;
             font-size: 16px;
             color: #FFFFFF;
             background: #FFFFFF2F;
-           
+
             border-radius: 22px;
             width: calc(100% - 40px);
             padding: 0 20px;
@@ -106,8 +118,8 @@ function requestData() {
             padding: 11px 40px;
             margin-top: 10px;
             color: #360E62;
-            background-image: url('@/assets/share_button_bg.webp');
-            background-size: 100% 100%;
+            border-radius: 50px;
+            background-color: white;
             margin-bottom: 20px;
         }
 
@@ -156,6 +168,12 @@ function requestData() {
                     color: #D367FE;
                     font-weight: 500;
                     font-size: 13px;
+                }
+
+                .reward {
+                    font-weight: 500;
+                    font-size: 13px;
+                    color: #999999;
                 }
 
             }

@@ -113,8 +113,14 @@
     "People count": "xx personas",
     "Duration": "xx1 horas xx2 minutos xx3 segundos",
     "Activity need New anchor online time in minute": "Durante el evento, el nuevo host del agencia estará en línea durante xx minutos.",
-    "Activity square": "",
+    "Activity square": "Plaza de actividades",
     "People fulfilled count": "xx personas han completado",
-    "WillStart":"A punto de comenzar",
-    "Will start in xx days":"Tiempo restante hasta que comience el evento: xx días."
+    "WillStart": "A punto de comenzar",
+    "Will start in xx days": "Días hasta que comience el evento: xx.",
+    "My specical invite link": "Mi enlace de invitación exclusivo.",
+    "Share": "Compartir",
+    "Invite rewarded": "Recompensas por invitación",
+    "Withdraw tips": "Consejo: Por favor, espera pacientemente a que la plataforma realice el pago después de completar las tareas en efectivo.",
+    "Link has been copied": "Liên kết đã được sao chép vào bảng ghi tạm.",
+    "Dollar reward": "Recompensa de $xx"
 }

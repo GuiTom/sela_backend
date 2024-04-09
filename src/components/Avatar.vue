@@ -12,9 +12,7 @@ const props = defineProps({
 
 )
 
-onMounted(() => {
-  console.log('placeHolder',props.placeHolder)
-})
+
 </script>
 <template>
   <div class="container">

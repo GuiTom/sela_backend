@@ -1,8 +1,9 @@
 <script setup>
 import AnchorAvatar from '@/components/AnchorAvatar.vue';
 import AppBarVue from '@/components/AppBar.vue'
-import PlaceHolderImage from '@/components/PlaceHolderImage.vue';
+
 import { multiLan } from '@/utils/lan';
+import money_amount from '@/utils/mony_amount'
 import { onMounted, ref } from 'vue';
 // import api from '../../controller/request'
 import router from '@/router/index'
@@ -16,11 +17,11 @@ onMounted(()=>{
         leftSeconds.value = Math.floor((parseInt(data.value.endAt)- Date.now())/1000)
     
     ),1000);
-    console.log('activityDurationInseconds',activityDurationInseconds.value,leftSeconds.value)
+    
 })
 
 function onClickConditionRecord(item){
-    console.log(item)
+    
     localStorage.setItem('currentCondition',JSON.stringify(item))
     router.push('/activity_progress_detail');
 }
@@ -55,7 +56,8 @@ function onClickConditionRecord(item){
                 <div class="param_item">
                     <img src="@/assets/reward_icon.webp" />
                     <div class="content" v-if="item!=null">
-                        <div class="ratio" v-if="item.conditionType!=3"><span>{{item.completeNum}}</span><span>/{{item.val}}</span></div>
+                        <div class="ratio" v-if="item.conditionType==4"><span>{{money_amount(item.completeNum)}}</span><span>/{{item.val}}</span></div>
+                        <div class="ratio" v-else-if="item.conditionType!=3"><span>{{item.completeNum}}</span><span>/{{item.val}}</span></div>
                         <div class="ratio" v-else><span>{{multiLan('People fulfilled count',item.completeNum)}}</span></div>
                         
                         <div class="field_name">

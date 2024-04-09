@@ -114,8 +114,14 @@
     "People count": "",
     "Duration": "xx1 jam xx2 menit xx3 detik",
     "Activity need New anchor online time in minute": "Selama acara, waktu online host yang baru didaftarkan mencapai xx menit",
-    "Activity square": "",
+    "Activity square": "Lapangan Kegiatan",
     "People fulfilled count": "xx orang telah selesai",
-    "WillStart":"Akan segera dimulai",
-    "Will start in xx days":"Waktu yang tersisa hingga acara dimulai: xx hari."
+    "WillStart": "Akan segera dimulai",
+    "Will start in xx days": "Hari-hari hingga dimulainya acara: xx.",
+    "My specical invite link": "Tautan undangan eksklusif saya",
+    "Share": "Berbagi",
+    "Invite rewarded": "Hadiah undangan",
+    "Withdraw tips": "Tips: Setelah menyelesaikan tugas tunai, harap bersabar menunggu platform melakukan pembayaran.",
+    "Link has been copied": "Tautan telah disalin ke papan klip.",
+    "Dollar reward": "Hadiah $xx"
 }
