@@ -1,7 +1,7 @@
 <script setup>
 
 import { multiLan } from '@/utils/lan';
-import PlaceHolderImage from './PlaceHolderImage.vue';
+import Avatar from './Avatar.vue';
 import AutoSizedText from './AutoSizedText.vue';
 const props = defineProps({
   img: {
@@ -39,14 +39,14 @@ function statusImg() {
 }
 </script>
 <template>
-  <PlaceHolderImage class="avatar" :src="img" :style="'width:'+size+'px;height:'+size+'px;'">
+  <Avatar class="avatar" :src="img" :style="'width:'+size+'px;height:'+size+'px;'">
     <template #content>
       <div class="bg" v-if="isForbidden || violated"></div>
       <AutoSizedText class="userStatus" v-if="violated" :text="multiLan('Violation')"></AutoSizedText>
       <AutoSizedText class="status" v-if="isForbidden" :text="multiLan('In ban')"></AutoSizedText>
       <img class="online_status" :src="statusImg()" />
     </template>
-  </PlaceHolderImage>
+  </Avatar>
 </template>
 <style scoped lang="less">
 .avatar {

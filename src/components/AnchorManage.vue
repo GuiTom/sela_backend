@@ -20,7 +20,7 @@ function requestData() {
     api
         .post(path, {
             pageNum: 1,
-            pageSize: 10,
+            pageSize: 5,
             order: 1
         })
         .then(function (response) {

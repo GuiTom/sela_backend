@@ -1,7 +1,7 @@
 <script setup>
 import { onMounted } from 'vue';
 import { multiLan } from '@/utils/lan';
-import PlaceHolderImage from '@/components/PlaceHolderImage.vue';
+import Avatar from '@/components/Avatar.vue';
 import AppBarVue from '@/components/AppBar.vue'
 import {formatDuration2} from '@/utils/time_utils'
 const data = JSON.parse(localStorage.getItem('currentCondition'))
@@ -28,8 +28,8 @@ const data = JSON.parse(localStorage.getItem('currentCondition'))
             </div>
             <div style="margin:0 12px;height: 1px;background-color:#eaeaea;"></div>
             <div class="record" v-for="item in data.records">
-                <PlaceHolderImage class="avatar" :src="item.portrait">
-                  </PlaceHolderImage>
+                <Avatar class="avatar" :src="item.portrait">
+                  </Avatar>
                   <div style="width: 12px;"></div>
                   <div class="nickname">{{item.nickname}}</div>
                   <div style="flex: auto;"></div>
