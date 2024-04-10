@@ -15,14 +15,14 @@ const props = defineProps({
 
 </script>
 <template>
-  <div class="container">
+  <div class="avatar_container">
     <img v-if="!imgLoaded" :src="defalutPlaceHoder" />
     <img v-if="src" :src="src" @load="imgLoaded = true" />
     <slot name="content"></slot>
   </div>
 </template>
 <style scoped lang="less">
-.container {
+.avatar_container {
   position: relative;
   border-radius: 50%;
 

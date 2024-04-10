@@ -43,7 +43,7 @@ function statusImg() {
     <template #content>
       <div class="bg" v-if="isForbidden || violated"></div>
       <AutoSizedText class="userStatus" v-if="violated" :text="multiLan('Violation')"></AutoSizedText>
-      <AutoSizedText class="status" v-if="isForbidden||true" :text="multiLan('In ban')"></AutoSizedText>
+      <AutoSizedText class="status" v-if="isForbidden" :text="multiLan('In ban')"></AutoSizedText>
       <img class="online_status" :src="statusImg()" />
     </template>
   </Avatar>

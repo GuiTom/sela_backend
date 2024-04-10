@@ -59,8 +59,8 @@ const multiLan = function(str,...args){
 //    var primaryLanguage = navigator.language || navigator.userLanguage
 //   let lan = primaryLanguage.split('-')[0];
    let value = lans[currentLanguage()][str];
-   if(value==null){
-      console.log('value null');
+   if(value==null||value==''){
+      console.log(`${str} miss in ${currentLanguage()}`);
       return '';
    }
    if(args.length==1){
@@ -70,7 +70,10 @@ const multiLan = function(str,...args){
          value = value.replace('xx'+(i+1),args[i]);
       }
    }
-   if(value==''||value==null) value = '未翻译';
+   if(value==''||value==null) {
+      console.log(`str: ${str} miss`)
+      value = '未翻译'
+   };
   return value;
 }
 export{ multiLan,currentLanguage,lanKeys,lanValues};

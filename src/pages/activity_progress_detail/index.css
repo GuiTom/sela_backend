@@ -1,5 +1,7 @@
 .container {
     height: 100vh;
+    position: fixed;
+    width: 100%;
     background-image: url('@/assets/anchor_bg.webp');
     background-size: 100% 100%;
     display: flex;
@@ -7,6 +9,11 @@
 }
 
 .list {
+    position: fixed;
+    top:45px;
+    overflow-y: scroll;
+    bottom: 0;
+    left:0;right:0;
     background-color: white;
     border-radius: 12px;
     margin: 20px 12px 0 12px;
@@ -65,16 +72,17 @@
 
 .record {
     padding: 10px 14px;
-    display: flex;
+    display:flex;
     flex-direction: row;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     align-items: center;
-    .avatar {
+    .left_avatar {
         width: 36px;
         height: 36px;
+        display: block;
     }
     .nickname{
-        width: 100px;
+        min-width: 70px;
         text-overflow: ellipsis;
         overflow: hidden;
     }
@@ -89,6 +97,7 @@
         font-size: 13px;
         color: #A5A5A5;
     }
+
 
     .money {
         display: flex;

@@ -106,7 +106,7 @@ function requestData() {
           <span>
             {{ userData.nickname }}
           </span>
-          <LevelIcon :level="userData.level"></LevelIcon>
+          <LevelIcon v-if="userData.level" :level="userData.level"></LevelIcon>
         </div>
         <div class="id_and_lateast_call">
           <span>ID:{{ userData.anchorId }}</span>

@@ -30,7 +30,7 @@ const data = JSON.parse(localStorage.getItem('currentCondition'))
             </div>
             <div style="margin:0 12px;height: 1px;background-color:#eaeaea;"></div>
             <div class="record" v-for="item in data.records">
-                <Avatar class="avatar" :src="item.portrait">
+                <Avatar class="left_avatar" :src="item.portrait">
                   </Avatar>
                   <div style="width: 12px;"></div>
                   <div class="nickname">{{item.nickname}}</div>
@@ -44,7 +44,7 @@ const data = JSON.parse(localStorage.getItem('currentCondition'))
                   <div v-else class="uncompleted">{{multiLan('Not completed')}}</div>
        
 
-                
+        
             </div>
         </div>
         

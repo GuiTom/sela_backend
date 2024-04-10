@@ -130,7 +130,7 @@ function requestData() {
         <span class="right_info_container">
           <div style="color:#333333">
             {{ item.nickname }}
-            <LevelIcon :level="item.level==null?0:item.level"></LevelIcon>
+            <LevelIcon v-if="item.level" :level="item.level"></LevelIcon>
           </div>
           <div>
             <span style="color:#999999">ID：{{ item.anchorId }}</span

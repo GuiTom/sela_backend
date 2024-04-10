@@ -19,21 +19,21 @@ console.log(props.images)
   <!-- 主播管理 -->
   <div class="root_container">
 
-    <van-swipe class="swiper" :autoplay="2000" style="height: 16vw;width:93.6vw;margin:3.2vw;" vertical>
+    <van-swipe class="swiper" :autoplay="200000" style="height: 98px;width:93.6vw;margin:12px;" vertical>
       <van-swipe-item v-for="(item, index) in data" :key="index">
         <div class="item">
           <div class="first_column">
             <div class="first_row">
               <img src="@/assets/activity_icon.png" />
-              <div>{{multiLan('Activity square')}}</div>
+              <div>{{ multiLan('Activity square') }}</div>
             </div>
-            <div class="second_row">
-              <div v-if="item.status==3" class="will">{{multiLan('WillStart')}}</div>
-              <div v-else-if="item.status==1" class="running">{{multiLan('Is Running')}}</div>
-              <div v-else-if="item.status==2" class="ended">{{multiLan('Ended')}}</div>
-              <div class="title">{{item.activityName}}</div>
+            <div class="second_row">{{ item.activityName }}</div>
+            <div class="third_row">
+              
+              <div v-if="item.status == 3" class="will">{{multiLan('WillStart')}}</div>
+              <div v-else-if="item.status == 1" class="running">{{ multiLan('Is Running') }}</div>
+              <div v-else-if="item.status == 2" class="ended">{{ multiLan('Ended') }}</div>
             </div>
-
           </div>
           <div class="view_button">{{multiLan('View')}}</div>
 
@@ -50,17 +50,16 @@ console.log(props.images)
 </template>
 <style scoped lang="less">
 .root_container {
-  position: relative;
 
+  position: relative;
+  
   .swiper {
 
     border-radius: 12px;
-
-
-
     .item {
-      padding: 9px 12px;
+      padding: 0 12px;
       height: 100%;
+      width: calc(100vw - 24px);
       background-color: #FFF3D7;
       display: flex;
       flex-direction: row;
@@ -68,10 +67,12 @@ console.log(props.images)
       align-items: center;
 
       .first_column {
+        width: calc(100vw - 24px - 80px);
         display: flex;
         flex-direction: column;
-
+        flex: auto;
         .first_row {
+          
           display: flex;
           flex-direction: row;
           align-items: center;
@@ -87,26 +88,45 @@ console.log(props.images)
         }
 
         .second_row {
-          margin-top: 5px;
+          margin-top: 4px;
+          font-weight: 500;
+          font-size: 14px;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          color: #333333;
+          white-space: nowrap;
+          
+        }
+
+        .third_row {
+          max-width: calc(100% - 34px);
+          margin-top: 7px;
           display: flex;
+          text-overflow: ellipsis;
+          overflow: hidden;
           flex-direction: row;
           align-items: center;
-          .running,.will,.ended{
+          
+          .running,
+          .will,
+          .ended {
             background-color: #10D582;
             border-radius: 16px;
-            padding: 3px 8px;
-            color:#F8F8F8;
+            padding: 3px 15px;
+            color: #F8F8F8;
             line-height: 18px;
             text-wrap: nowrap;
             text-align: center;
-            width: 80px;
-            text-overflow: ellipsis;
             overflow: hidden;
+            text-overflow: ellipsis;
+         
           }
-          .ended{
+
+          .ended {
             background-color: #A7A2A7;
           }
-          .title{
+
+          .title {
             margin-left: 4px;
             color: #737373;
             font-size: 13px;
@@ -114,12 +134,19 @@ console.log(props.images)
           }
         }
       }
-      .view_button{
+
+      .view_button {
+
         background-color: #FF8F16;
         color: #F8F8F8;
         padding: 5px 15px;
         font-size: 12px;
         border-radius: 18.5px;
+        width: 60px;
+        max-height: 30px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        
       }
     }
   }

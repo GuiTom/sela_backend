@@ -111,7 +111,7 @@
     "Joined": "Sudah berpartisipasi",
     "Closed": "Tertutup",
     "Under join limit": "Tidak memenuhi syarat untuk berpartisipasi",
-    "People count": "",
+    "People count": "xx orang",
     "Duration": "xx1 jam xx2 menit xx3 detik",
     "Activity need New anchor online time in minute": "Selama acara, waktu online host yang baru didaftarkan mencapai xx menit",
     "Activity square": "Lapangan Kegiatan",
@@ -124,5 +124,6 @@
     "Withdraw tips": "Tips: Setelah menyelesaikan tugas tunai, harap bersabar menunggu platform melakukan pembayaran.",
     "Link has been copied": "Tautan telah disalin ke papan klip.",
     "Dollar reward": "Hadiah $xx",
-    "View": "Lihat"
+    "View": "Lihat",
+    "UnOpen": "Tutup"
 }

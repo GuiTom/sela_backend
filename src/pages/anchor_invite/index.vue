@@ -15,7 +15,7 @@ const shareLink = `https://testguild.selalive.com/?code=${guildData.value.guildC
 
 function requestData() {
     let activityId = useRoute().query.activity_id;
-    let path = '/manager/guildh5/page/taskList?lang=' + navigator.language.split('-')[1]
+    let path = '/manager/guildh5/page/taskList?lang=' + navigator.language.split('-')[0]
     api
         .get(path)
         .then(function (response) {
