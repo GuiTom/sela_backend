@@ -156,7 +156,7 @@ function onLanguageSelected(index) {
     <div class="setting"> <img src="@/assets/setting.webp" @click="onClickSetting"/> </div>
     <div style="flex: auto;"></div>
     <div class="lan_button" @click="showSwitchLanguageMenu = true;$event.stopPropagation()">
-      <span>{{ lanValues[currentLanguageIndex] }}</span
+      <span style="color:#080909;">{{ lanValues[currentLanguageIndex] }}</span
       ><img src="@/assets/login/arror_down.webp" />
     </div>
     <div style="width: 12px;"></div>
@@ -224,6 +224,7 @@ function onLanguageSelected(index) {
     </div>
 
     <ActivitySwiper v-if="activityList&&activityList.length>0" :data="activityList" @click="$router.push('/activity_list')"></ActivitySwiper>
+    <div v-else style="height: 98px;width:93.6vw;margin:12px;border-radius:12px;background-color:#efefef;"></div>
     <AnchorManage></AnchorManage>
     <div class="divider"></div>
     <!-- 余额和结算收益 -->

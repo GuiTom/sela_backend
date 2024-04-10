@@ -19,7 +19,7 @@ console.log(props.images)
   <!-- 主播管理 -->
   <div class="root_container">
 
-    <van-swipe class="swiper" :autoplay="200000" style="height: 98px;width:93.6vw;margin:12px;" vertical>
+    <van-swipe class="swiper" :autoplay="2000" style="height: 98px;width:93.6vw;margin:12px;" vertical>
       <van-swipe-item v-for="(item, index) in data" :key="index">
         <div class="item">
           <div class="first_column">
@@ -54,7 +54,8 @@ console.log(props.images)
   position: relative;
   
   .swiper {
-
+    background: linear-gradient(to bottom, #F4F6EE 0%, #FDEED9 100%);
+    border: 1px solid #FFDFA8;
     border-radius: 12px;
     .item {
       padding: 0 12px;

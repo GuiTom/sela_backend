@@ -20,7 +20,7 @@ function requestData() {
     api
         .post(path, {
             pageNum: 1,
-            pageSize: 5,
+            pageSize: 4,
             order: 1
         })
         .then(function (response) {
@@ -70,6 +70,7 @@ function onClickItem(item) {
             </div>
         </div>
     </div>
+    <div v-else style="height: 115px;width:93.6vw;margin:12px;border-radius:12px;background-color:#efefef;"></div>
 </template>
 <style scoped lang="less">
 .root_container {

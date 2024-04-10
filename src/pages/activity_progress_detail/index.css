@@ -85,6 +85,9 @@
         min-width: 70px;
         text-overflow: ellipsis;
         overflow: hidden;
+        font-weight: 500;
+        font-size: 14px;
+        color: #A5A5A5;
     }
     .completed {
         font-weight: 500;

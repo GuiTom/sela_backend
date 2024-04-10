@@ -4,6 +4,7 @@ import { multiLan } from '@/utils/lan';
 import { onMounted, ref } from 'vue';
 import { useRoute } from 'vue-router';
 import { guildData } from '@/global'
+import money_amount from '@/utils/mony_amount'
 import toast from '@/utils/toast'
 import api from '../../controller/request'
 onMounted(() => {
@@ -58,11 +59,10 @@ async function onClickShare() {
                         <div style="width:10px;"></div>
                         <div class="middle">
                             <div class="desc">{{ item.title }}</div>
-
                         </div>
                         <div style="flex:auto;"></div>
                         <div class="status_complete" v-if="item.taskStatus != -1">{{ multiLan('Completed') }}</div>
-                        <div class="raward" v-if="item.taskStatus == -1">+{{ item.rewardVo.dollarNum }}$</div>
+                        <div class="reward" v-if="item.taskStatus == -1">+{{ money_amount(item.rewardVo.dollarNum) }}$</div>
                     </div>
                     <div style="height: 1px;background-color:#EAEAEA;"></div>
                 </div>
