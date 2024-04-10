@@ -10,10 +10,11 @@
 
 .list {
     position: fixed;
-    top:45px;
+    top: 45px;
     overflow-y: scroll;
     bottom: 0;
-    left:0;right:0;
+    left: 0;
+    right: 0;
     background-color: white;
     border-radius: 12px;
     margin: 20px 12px 0 12px;
@@ -33,6 +34,7 @@
         height: 42px;
 
     }
+
     .content {
         margin-left: 11px;
 
@@ -72,16 +74,20 @@
 
 .record {
     padding: 10px 14px;
-    display:flex;
+    display: flex;
     flex-direction: row;
     /* justify-content: space-between; */
     align-items: center;
+
     .left_avatar {
         width: 36px;
         height: 36px;
+        min-width: 36px;
+        min-height: 36px;
         display: block;
     }
-    .nickname{
+
+    .nickname {
         min-width: 70px;
         text-overflow: ellipsis;
         overflow: hidden;
@@ -89,6 +95,7 @@
         font-size: 14px;
         color: #A5A5A5;
     }
+
     .completed {
         font-weight: 500;
         font-size: 13px;
@@ -101,6 +108,11 @@
         color: #A5A5A5;
     }
 
+    .count {
+        font-weight: 500;
+        font-size: 14px;
+        color: #333333;
+    }
 
     .money {
         display: flex;
