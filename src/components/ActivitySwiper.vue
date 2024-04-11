@@ -143,6 +143,7 @@ console.log(props.images)
         padding: 5px 15px;
         font-size: 12px;
         border-radius: 18.5px;
+        text-align: center;
         width: 60px;
         max-height: 30px;
         text-overflow: ellipsis;

@@ -7,6 +7,7 @@ import { guildData } from '@/global'
 import money_amount from '@/utils/mony_amount'
 import toast from '@/utils/toast'
 import api from '../../controller/request'
+import { currentLanguage } from '@/utils/lan'
 onMounted(() => {
     requestData()
 }
@@ -16,7 +17,7 @@ const shareLink = `https://testguild.selalive.com/?code=${guildData.value.guildC
 
 function requestData() {
     let activityId = useRoute().query.activity_id;
-    let path = '/manager/guildh5/page/taskList?lang=' + navigator.language.split('-')[0]
+    let path = '/manager/guildh5/page/taskList?lang=' + currentLanguage()
     api
         .get(path)
         .then(function (response) {

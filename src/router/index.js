@@ -17,6 +17,12 @@ const router = createRouter({
       name: 'login',
       component: () => import('@/pages/login/index.vue')
     },
+    // 自动登录(app内部)
+    {
+      path: '/auto_login',
+      name: 'auto_login',
+      component: () => import('@/pages/auto_login/index.vue')
+    },
     // 个人中心
     {
       path: '/profile',

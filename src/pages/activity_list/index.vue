@@ -60,7 +60,7 @@ function requestData(id) {
                         let item = response.data.data.list[i];
                         let scope = JSON.parse(item.scope)
                         for (let j = 0; j < scope.length; j++) {
-                            if (guildData.value.countryCode + '' == scope[j].country) {
+                            if (guildData.value.countryCode + '' == scope[j].country||scope[j].country=='all') {
                                 item.icon = scope[j].icon;
                                 console.log(i, scope[j].icon)
                             }

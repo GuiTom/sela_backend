@@ -131,7 +131,7 @@ function onViewDetail() {
             <div class="join_button join_status_1" v-if="data.recordStatus==4">{{multiLan('Received')}}</div>
             <div class="join_button join_status_2" v-if="data.recordStatus==5">{{multiLan('Ended')}}</div>
             <div class="join_button join_status_2" v-if="data.recordStatus==6">{{multiLan('Closed')}}</div>
-            <div class="join_button join_status_2" v-if="data.recordStatus==7">{{multiLan('UnOpen')}}</div>
+            <div class="join_button join_status_2" v-if="data.recordStatus==7">{{multiLan('WillStart')}}</div>
             <div class="view_button" @click="onViewDetail">{{multiLan('View progress')}}</div>
         </div>
         <div v-else style="width:100%;height:100%;position:fixed;">

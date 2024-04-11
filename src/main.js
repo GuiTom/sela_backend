@@ -6,6 +6,7 @@ import router from './router'
 
 import {timeToFormatedDateTime,timeToFormatedTime,timeToFormatedDateHour,timeToFormatedDate,timeZoneOfffsetHours} from './utils/time_utils'
 import { currentLanguage } from '@/utils/lan'
+
 const app = createApp(App)
 
 app.config.globalProperties.$timeToFormatedDate = timeToFormatedDate;
