@@ -88,7 +88,7 @@ function requestData() {
         <div class="row_left_part">
           <div>
             {{ $timeToFormatedDate(parseInt(item.endTime))
-            }}<span
+            }}<span v-if="!(item.settleStatus == 0&&item.canSettle == 0)"
               :style="
                 'background-color:' +
                 (item.settleStatus == 0
@@ -106,7 +106,7 @@ function requestData() {
           <div>
             {{
               item.settleStatus == 0
-                ? multiLan('Processing, please wait patiently')
+                ? (item.canSettle == 0 ? multiLan('Cannot Withdrawal') : multiLan('Processing, please wait patiently'))
                 : item.settleStatus == 1
                   ? multiLan('Already withdrawn into your bank account')
                   : multiLan('Withdrawal request has expired')
@@ -126,7 +126,7 @@ function requestData() {
       style="width:81px;height:50px;position:absolute;left:50%;top:50%;transform:translate(-50%, -50%)"
     ></AutoRTLImg>
   </div>
-  
+
 </template>
 <style scoped lang="less">
 @import 'index.less';
