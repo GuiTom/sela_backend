@@ -5,7 +5,7 @@ import router from '@/router/index'
 onMounted(() => {
    let token = Android.getToken();
    localStorage.setItem('authorization',token)
-   router.push('/home')
+   router.replace('/home')
 
 })
 
