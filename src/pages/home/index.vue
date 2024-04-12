@@ -2,6 +2,7 @@
 import { ref } from 'vue'
 import showDialog from '../../utils/dialog.js'
 import { onMounted } from 'vue'
+import AppBarVue from '@/components/AppBar.vue'
 import router from '../../router/index'
 import api from '../../controller/request'
 import loadingImg from '@/assets/loading.webp'
@@ -21,7 +22,7 @@ const currentLanguageIndex = ref(0)
 const loadingMore = ref(false)
 const refreshing = ref(false)
 const noMoreData = ref(false)
-
+const isInNativeApp = localStorage.getItem('isInNativeApp')
 
 const weekData = ref(null)
 const activityList =ref(null)
@@ -169,6 +170,7 @@ function onLanguageSelected(index) {
   ></LanguageSwitchMenu>
  
   <div :key="currentLanguageIndex" v-if="guildData != null" class="container">
+    <AppBarVue v-if="isInNativeApp" class="appBar" title="Sela Backend"></AppBarVue>
     <div class="header">
       <img src="@/assets/logo.png" />
       <div style="width: 12px;"></div>

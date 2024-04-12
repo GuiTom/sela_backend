@@ -4,6 +4,7 @@ import { onMounted } from 'vue';
 import router from '@/router/index'
 onMounted(() => {
    let token = Android.getToken();
+    localStorage.setItem('isInNativeApp','1')
    localStorage.setItem('authorization',token)
    router.replace('/home')
 

@@ -3,7 +3,11 @@ import router from '../router/index'
 import toast  from '@/utils/toast'
 // 设置 Axios 的默认 URL（如果有的话）  
 const api = axios.create({
+  //生产环境
+  // baseURL:'https://api.selalive.com',
+  //测试环境
   baseURL:'https://testapi.selalive.com',
+
   }
 )
 // 请求拦截器（可选）  

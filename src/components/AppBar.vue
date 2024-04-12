@@ -25,7 +25,7 @@ onMounted(()=>{
 </template>
 <style scoped lang="less">
 .app_bar {
-    padding-top: 20px;
+    padding-top: 12px;
     position: relative;
     display: flex;
     height: 45px;

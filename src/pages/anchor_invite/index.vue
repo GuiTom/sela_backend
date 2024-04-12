@@ -13,7 +13,7 @@ onMounted(() => {
 }
 )
 const data = ref(null)
-const shareLink = `https://testguild.selalive.com/?code=${guildData.value.guildCode}`
+const shareLink = `https://testanchor.selalive.com/?code=${guildData.value.guildCode}`
 
 function requestData() {
     let activityId = useRoute().query.activity_id;
