@@ -1,7 +1,7 @@
 <script setup>
 import { onMounted } from 'vue';
 import { multiLan } from '@/utils/lan'
-import api from '../../controller/request'
+import axios from 'axios'; 
 import { useRoute } from 'vue-router';
 
 let downloadUrl = '';
@@ -20,6 +20,7 @@ onMounted(() => {
     document.querySelector('#invicode').textContent = invitationCode;
 
     var url2 = `https://testapi.selalive.com/manager/guildh5/anchor/downloadUrl`
+    const api = axios.create()
     api.get(url2).then(response => {
 
         let data = response.data
@@ -32,16 +33,16 @@ onMounted(() => {
 })
 function onDownload() {
     location.href = downloadUrl;
-    
+
 }
 async function onCopy() {
-  try {
-    await navigator.clipboard.writeText(document.querySelector('#invicode').textContent);
+    try {
+        await navigator.clipboard.writeText(document.querySelector('#invicode').textContent);
 
-  } catch (err) {
-    console.log(err)
-  }
-  alert(multiLan('Invitation code coppied'))
+    } catch (err) {
+        console.log(err)
+    }
+    alert(multiLan('Invitation code coppied'))
 
 }
 </script>
@@ -176,7 +177,7 @@ body {
 #white_box {
     width: 305px;
     /* 因为加上了左右各20px的margin和padding，所以减去40px */
-  
+
     border-radius: 20px;
     background-color: #FFF;
     margin: 0 auto;

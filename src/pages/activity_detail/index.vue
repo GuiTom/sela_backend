@@ -88,7 +88,7 @@ function onViewDetail() {
                        
                         <span v-if="item!=null&&item.conditionType==1">{{ index+1 }}.{{ multiLan('Activity need New anchor count',item.val) }}</span>
                         <span v-if="item!=null&&item.conditionType==2">{{ index+1 }}.{{multiLan('Activity need New anchor count meet settlement',item.val)}}</span>
-                        <span v-if="item!=null&&item.conditionType==3"> {{ index+1 }}.{{ multiLan('Activity need New anchor online time in minute',item.val) }}({{ multiLan('Activity need guild total income') }})</span>
+                        <span v-if="item!=null&&item.conditionType==3"> {{ index+1 }}.{{ multiLan('Activity need New anchor online time in minute',item.val) }}({{ multiLan('New anchor online time tips') }})</span>
                         <span v-if="item!=null&&item.conditionType==4">{{ index+1 }}.{{multiLan('Activity need guild total income',item.val) }}</span>
                     </div>
                 </div>
@@ -132,7 +132,7 @@ function onViewDetail() {
             <div class="join_button join_status_2" v-if="data.recordStatus==5">{{multiLan('Ended')}}</div>
             <div class="join_button join_status_2" v-if="data.recordStatus==6">{{multiLan('Closed')}}</div>
             <div class="join_button join_status_2" v-if="data.recordStatus==7">{{multiLan('WillStart')}}</div>
-            <div class="view_button" v-if="data.recordStatus!=1" @click="onViewDetail">{{multiLan('View progress')}}</div>
+            <div class="view_button" v-if="data.recordStatus!=1&&data.recordStatus!=5&&data.recordStatus!=6&&data.recordStatus!=7" @click="onViewDetail">{{multiLan('View progress')}}</div>
         </div>
         <div v-else style="width:100%;height:100%;position:fixed;">
             <AutoRTLImg

@@ -13,7 +13,7 @@ const api = axios.create({
 )
 // 请求拦截器（可选）  
 api.interceptors.request.use((config) => {  
-  // 在发送请求之前做些什么，例如添加请求头、身份验证等  
+  // 在发送请求\之前做些什么，例如添加请求头、身份验证等  
   config.headers.setAuthorization(localStorage.getItem('authorization'))
   return config;  
 }, (error) => {  
