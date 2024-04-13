@@ -43,7 +43,7 @@ async function onClickShare() {
 </script>
 <template>
     <div class="container">
-        <AppBarVue :title="multiLan('Invite anchor')" />
+        <AppBarVue class="appBar" :title="multiLan('Invite anchor')" />
         
         <div class="header appHeader">
             <div>{{ multiLan('My specical invite link') }}</div>
@@ -81,8 +81,10 @@ async function onClickShare() {
     background-size: 100% 100%;
     display: flex;
     flex-direction: column;
-
-    >.header {
+    .appBar{
+        position: fixed;
+    }
+    >.header {  
 
         height: 46.4vw;
         margin: 20px 12px;
