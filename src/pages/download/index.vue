@@ -41,7 +41,7 @@ async function onCopy() {
   } catch (err) {
     console.log(err)
   }
-  alert('Invitation code copied to the clipboard')
+  alert(multiLan('Invitation code coppied'))
 
 }
 </script>
