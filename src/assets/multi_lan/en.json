@@ -135,5 +135,7 @@
     "App name": "Sela Guild Backstage",
     "Invitation code coppied": "The invitation code has been copied to the clipboard",
     "New anchor online time tips": "At least 4 days online in the last 7 days, and 3 hours online each day",
-    "All guild can join": "All guilds can participate"
+    "All guild can join": "All guilds can participate",
+    "Or": "or",
+    "And": "and"
 }

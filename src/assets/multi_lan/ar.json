@@ -11,10 +11,6 @@
     "Date of creation": "وقت الانشاء",
     "Number of hosts": "عدد المضيفة",
     "Newly registered hosts yesterday": "مضيفات جدد أمس",
-    "Withdrawal requirements":"طلب لسحب مبلغ:",
-    "Withdrawal requirements 1":"1: لا يقل عن（xx2） مضيفات اللتين يبلغ ارباح الي 【xx1كوينزات】",
-    "Withdrawal requirements 2":"2:سحب ارباح لتسوية  لعمولة يبلغ الي 【$xx】,هكاذا يمكن تفعيل وظيفة السحب التلقائي",
-    "Withdrawal requirements tip":"الملاحظة:بعد استيفاء الشروط، سيتم سحب الدخل القابل للتسوية تلقائيًا خلال ثلاثة أيام في الأسبوع  المقدم",
     "Withdrawal history": "سجل اسحب أموال",
     "Host management": "اشراف على المضيفة",
     "Weekly earnings(coins)": "دخل الاسبوع(كونز)",
@@ -132,6 +128,7 @@
     "Download": "تحميل",
     "Copy": "نسخ",
     "Invitation code coppied": "تم نسخ رمز الدعوة إلى الحافظة. ",
-    "All guild can join": "يمكن لجميع النقابات المشاركة."
-
+    "All guild can join": "يمكن لجميع النقابات المشاركة.",
+    "Or": "أو ",
+    "And": "و"
 }

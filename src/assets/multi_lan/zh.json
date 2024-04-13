@@ -58,7 +58,6 @@
     "Loading":"正在加载",
     "No more data":"没有更多数据了",
     "In ban":"封禁中",
-
     "Sort":"排序",
     "Change password":"修改密码",
     "Log out":"退出登录",
@@ -133,5 +132,7 @@
     "Download":"下载",
     "Copy":"复制",
     "Invitation code coppied":"邀请码已经复制到剪贴板",
-    "All guild can join":"所有公会可参与"
+    "All guild can join":"所有公会可参与",
+    "Or":"或者",
+    "And":"并且"
 }
