@@ -23,7 +23,7 @@ function requestData() {
         .then(function (response) {
             if (response.data.code == 0) {
                 data.value = response.data.data
-                console.log(data.value)
+                // console.log(data.value)
             }
         })
         .catch(function (error) {

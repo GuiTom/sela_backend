@@ -47,6 +47,7 @@ function changeHideValue(){
           :placeholder="multiLan('Enter password')"
           name="password"
           required
+          autocomplete="off"
         
           @input="showEyeIcon=password.value.length>0"
         />

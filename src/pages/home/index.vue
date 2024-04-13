@@ -168,7 +168,7 @@ function onLanguageSelected(index) {
     v-if="showSwitchLanguageMenu"
     @item_selected="onLanguageSelected"
   ></LanguageSwitchMenu>
- 
+  
   <div :key="currentLanguageIndex" v-if="guildData != null" class="container">
     <AppBarVue v-if="isInNativeApp" class="appBar" title="Sela Backend"></AppBarVue>
     <div class="header">

@@ -73,7 +73,7 @@ function onViewDetail() {
 </script>
 <template>
     <div class="container">
-        <AppBarVue :title="multiLan('Activity center')" />
+        <AppBarVue class="appBar" :title="multiLan('Activity center')" />
         <div class="logo">ANCHORS <br /> ADVANCE QUICKLY</div>
         <div v-if="data" class="info_list">
             <div class="header">

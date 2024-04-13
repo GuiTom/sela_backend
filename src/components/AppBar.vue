@@ -1,5 +1,6 @@
 <script setup>
 import { onMounted,ref } from 'vue';
+import router from '@/router/index';
 const arror = ref(null)
 defineProps({
   title: {
@@ -15,10 +16,17 @@ onMounted(()=>{
     arror.value.style.left = '15px'
   }
 })
+function onClickBack(){
+  if(router.currentRoute.value.path == '/home'){
+    Android.back()
+  }else {
+    router.go(-1)
+  }
+}
 </script>
 <template>
     <div class="app_bar">
-        <img class="left_arror" ref="arror" @click="$router.go(-1)" src="@/assets/left_arror.webp" />
+        <img class="left_arror" ref="arror" @click="onClickBack" src="@/assets/left_arror.webp" />
         <span class="title">{{title}}</span>
         <span class="actions"><slot name="right_icon"></slot></span>
       </div>
@@ -37,12 +45,13 @@ onMounted(()=>{
     width: 23px;
     height: 22px;
   }
-  text-align: center;
+  
   .title {
     font-size: 18px;
     font-weight: 600;
     color: #333333;
     line-height: 25px;
+
   }
   .actions{
 
