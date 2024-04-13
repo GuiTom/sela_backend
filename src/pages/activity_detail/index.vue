@@ -88,7 +88,7 @@ function onViewDetail() {
                        
                         <span v-if="item!=null&&item.conditionType==1">{{ index+1 }}.{{ multiLan('Activity need New anchor count',item.val) }}</span>
                         <span v-if="item!=null&&item.conditionType==2">{{ index+1 }}.{{multiLan('Activity need New anchor count meet settlement',item.val)}}</span>
-                        <span v-if="item!=null&&item.conditionType==3"> {{ index+1 }}.{{ multiLan('Activity need New anchor online time in minute',item.val) }}</span>
+                        <span v-if="item!=null&&item.conditionType==3"> {{ index+1 }}.{{ multiLan('Activity need New anchor online time in minute',item.val) }}({{ multiLan('Activity need guild total income') }})</span>
                         <span v-if="item!=null&&item.conditionType==4">{{ index+1 }}.{{multiLan('Activity need guild total income',item.val) }}</span>
                     </div>
                 </div>

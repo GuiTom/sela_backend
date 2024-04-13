@@ -32,6 +32,17 @@ onMounted(() => {
 })
 function onDownload() {
     location.href = downloadUrl;
+    
+}
+async function onCopy() {
+  try {
+    await navigator.clipboard.writeText(document.querySelector('#invicode').textContent);
+
+  } catch (err) {
+    console.log(err)
+  }
+  alert('Invitation code copied to the clipboard')
+
 }
 </script>
 <template>
@@ -57,7 +68,7 @@ function onDownload() {
                             <div id="invicode"></div>
                         </div>
 
-                        <div id="text_copy">{{ multiLan('Copy') }}</div>
+                        <div id="text_copy" @click="onCopy">{{ multiLan('Copy') }}</div>
 
                     </div>
                 </div>

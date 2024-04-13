@@ -128,9 +128,11 @@
     "View": "Lihat",
     "UnOpen": "Tutup",
     "Session expired tip": "Informasi login Anda telah kedaluwarsa. Silakan masuk kembali",
-    "Download announce": "Tidak diperlukan pengalaman, Mendapatkan uang dengan mengobrol, Pekerjaan di rumah, Keseimbangan gaji mingguan, Unduh sekarang",
+    "Download announce": "Tanpa pengalaman, dapatkan uang dengan chatting, pekerjaan di rumah, pembayaran gaji mingguan, unduh sekarang",
     "My invitation code": "Kode undangan saya",
     "Download": "Unduh",
     "Copy": "Salin",
-    "App name": "Belakang Panggung Sela Guild"
+    "App name": "Belakang Panggung Sela Guild",
+    "Invitation code coppied": "Kode undangan telah disalin ke papan klip",
+    "New anchor online time tips": "Setidaknya 4 hari online dalam 7 hari terakhir, dan 3 jam online setiap harinya"
 }

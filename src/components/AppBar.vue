@@ -40,7 +40,7 @@ function onClickBack(){
 .app_bar {
     width: 100%;
     padding-top: 12px;
-    position: fixed;
+    position: relative;
     top: 0;
     left: 0;
     display: flex;

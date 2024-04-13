@@ -122,7 +122,7 @@
     "Share": "शेयर ",
     "Invite rewarded": "आमंत्रण बोनस",
     "Withdraw tips": "टिप्स: कृपया नकदी कार्यों को पूरा करने के बाद प्लेटफ़ॉर्म के भुगतान का इंतजार करें। (Tips: Kripaya nakadī kāryoṁ ko pūrā karanē ke bāda plēṭapharṃ kē bhugatāna kā inṭajāra karaṇa.)",
-    "Link has been copied": "लिंक को क्लिपबोर्ड पर कॉपी कर दिया गया है। (Liṅk ko klipabōrḍ par kāpī kar diyā gayā hai.)",
+    "Link has been copied": "लिंक को क्लिपबोर्ड पर कॉपी कर दिया गया है।",
     "Dollar reward": "$xx का इनाम ",
     "View": "देखें ",
     "UnOpen": "ऑफ",
@@ -131,5 +131,7 @@
     "My invitation code": "मेरा निमंत्रण कोड",
     "Download": "डाउनलोड",
     "Copy": "कॉपी करें",
-    "App name": "सेला गिल्ड बैकस्टेज"
+    "App name": "सेला गिल्ड बैकस्टेज",
+    "Invitation code coppied": "निमंत्रण कोड क्लिपबोर्ड पर कॉपी किया गया है।",
+    "New anchor online time tips": "पिछले 7 दिनों में कम से कम 4 दिन ऑनलाइन और प्रतिदिन 3 घंटे ऑनलाइन।"
 }

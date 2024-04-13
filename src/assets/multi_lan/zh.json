@@ -104,6 +104,7 @@
     "Activity need New anchor count":"活动期间,公会新主播数量达到xx人",
     "Activity need New anchor count meet settlement":"活动期间,公会结算达标新主播数量达到xx人",
     "Activity need New anchor online time":"活动期间,公会新主播在线时长达到xx小时",
+    "New anchor online time tips":"最近7天至少4天在线且每天在线3小时",
     "Activity need New anchor online time in minute":"活动期间,公会每个新主播在线时长达到xx分钟",
     "Activity need guild total income":"活动期间,公会主播总收入达到xx金币",
     "Coin":"金币",
@@ -130,5 +131,6 @@
     "Download announce":"无需经验，通过聊天赚钱，家庭工作，每周工资结算，立即下载" ,
     "My invitation code":"我的邀请码",
     "Download":"下载",
-    "Copy":"复制"
+    "Copy":"复制",
+    "Invitation code coppied":"邀请码已经复制到剪贴板"
 }
