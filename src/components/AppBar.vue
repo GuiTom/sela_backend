@@ -2,11 +2,16 @@
 import { onMounted,ref } from 'vue';
 import router from '@/router/index';
 const arror = ref(null)
+const emit = defineEmits(['back'])
 defineProps({
   title: {
     type: String,
     required: true
   },
+  onBack: {
+    type: Function,
+    required:false
+  }
 })
 onMounted(()=>{
   if(document.documentElement.getAttribute('dir')=='rtl'){
