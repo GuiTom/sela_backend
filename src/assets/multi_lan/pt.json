@@ -41,7 +41,7 @@
     "Earnings": "Receitas",
     "Host nickname": "Apelido de host",
     "Your earnings": "Suas receitas",
-    "Cannot Withdrawal":"O padrão de liquidação ainda não foi cumprido",
+    "Cannot Withdrawal": "O padrão de liquidação ainda não foi cumprido",
     "Processing, please wait patiently": "Processando, aguarde pacientemente",
     "Already withdrawn into your bank account": "Retirado para sua conta bancária",
     "Online status": "Status online",
@@ -113,7 +113,7 @@
     "Under join limit": "Não elegível para participar",
     "People count": "xx pessoas",
     "Duration": "xx1 horas xx2 minutos xx3 segundos",
-    "Activity need New anchor online time in minute": "Durante o evento, o novo âncora da guilda ficará online por xx minutos",
+    "Activity need New anchor online time in minute": "Durante o evento, cada novo âncora da guilda alcança xx minutos de tempo online",
     "Activity square": "Praça de atividades",
     "People fulfilled count": "xx pessoas completaram",
     "WillStart": "Prestes a começar",
@@ -125,5 +125,10 @@
     "Link has been copied": "O link foi copiado para a área de transferência.",
     "Dollar reward": "Recompensa de $xx",
     "View": "Ver",
-    "UnOpen": "Fechado"
+    "UnOpen": "Fechado",
+    "Session expired tip": "Suas informações de login expiraram. Por favor, faça login novamente",
+    "Download announce": "Não é necessária experiência, Ganhe dinheiro conversando, Trabalho em casa, Salário semanal equilibrado, Baixe agora",
+    "My invitation code": "Meu código de convite",
+    "Download": "Baixar",
+    "Copy": "Copiar"
 }

@@ -38,8 +38,11 @@ function onClickBack(){
 </template>
 <style scoped lang="less">
 .app_bar {
+    width: 100%;
     padding-top: 12px;
-    position: relative;
+    position: fixed;
+    top: 0;
+    left: 0;
     display: flex;
     height: 45px;
     padding-left: 15px;

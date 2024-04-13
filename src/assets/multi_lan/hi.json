@@ -41,7 +41,7 @@
     "Earnings": "आय",
     "Host nickname": "होस्ट उपनाम",
     "Your earnings": "आपकी कमाई",
-    "Cannot Withdrawal":"暂未达到结算标准",
+    "Cannot Withdrawal": "निकासी के लिये पर्याप्त नहीं",
     "Processing, please wait patiently": "प्रोसेस हो रहा है, कृपया धैर्यपूर्वक प्रतीक्षा करें",
     "Already withdrawn into your bank account": "आपके बैंक खाते से पहले ही निकाल लिया गया है",
     "Online status": "ऑनलाइन स्थिति",
@@ -113,7 +113,7 @@
     "Under join limit": "भाग लेने की शर्तों को पूरा नहीं किया",
     "People count": "xx लोग",
     "Duration": "xx1 घंटा xx2 मिनट xx3 सेकंड",
-    "Activity need New anchor online time in minute": "",
+    "Activity need New anchor online time in minute": "इवेंट के दौरान, प्रत्येक नए गिल्ड एंकर xx मिनट की ऑनलाइन समय तक पहुंचता है",
     "Activity square": "गतिविधि मैदान (Gatividhi Maidan)",
     "People fulfilled count": "",
     "WillStart": "जल्द ही शुरू होने वाला है",
@@ -125,5 +125,10 @@
     "Link has been copied": "लिंक को क्लिपबोर्ड पर कॉपी कर दिया गया है। (Liṅk ko klipabōrḍ par kāpī kar diyā gayā hai.)",
     "Dollar reward": "$xx का इनाम ",
     "View": "देखें ",
-    "UnOpen": "ऑफ"
+    "UnOpen": "ऑफ",
+    "Session expired tip": "लॉगिन जानकारी समाप्त हो गई है, कृपया पुनः लॉगिन करें।",
+    "Download announce": "कोई अनुभव आवश्यक नहीं, चैट करके पैसे कमाएं, घर का काम, साप्ताहिक वेतन संतुलन, अभी डाउनलोड करें",
+    "My invitation code": "मेरा निमंत्रण कोड",
+    "Download": "डाउनलोड",
+    "Copy": "कॉपी करें"
 }

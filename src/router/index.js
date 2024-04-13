@@ -140,8 +140,14 @@ const router = createRouter({
       name: 'withdraw records',
       component: () => import('../pages/withdrawal_records/index.vue'),
       meta: { requiresAuth: true },
+    },
+    //下载App页面
+    {
+      path: '/download',
+      name: 'download',
+      component: () => import('../pages/download/index.vue'),
+      meta: { requiresAuth: false },
     }
-
   ]
 })
 // 全局前置守卫  

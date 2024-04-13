@@ -41,7 +41,7 @@
     "Earnings": "มูลค่ารวมการ",
     "Host nickname": "ชื่อเล่นของวีเจ",
     "Your earnings": "รายได้ของคุณ",
-    "Cannot Withdrawal":"ยังไม่เถึงยอด",
+    "Cannot Withdrawal": "ยังไม่เถึงยอด",
     "Processing, please wait patiently": "กำลังจัดการ โปรดรอสักครู่",
     "Already withdrawn into your bank account": "ถอนเข้าบัญชีธนาคารของคุณแล้ว",
     "Online status": "สถานะออนไลน์",
@@ -113,7 +113,7 @@
     "Under join limit": "ไม่ตรงตามเงื่อนไขในการเข้าร่วม",
     "People count": "xx คน",
     "Duration": "xx1 ชั่วโมง xx2 นาที xx3 วินาที",
-    "Activity need New anchor online time in minute": "ในช่วงกิจกรรม วีเจใหม่ของสังกัดจะออนไลน์เป็นเวลา xx นาที",
+    "Activity need New anchor online time in minute": "ระหว่างกิจกรรมนี้ ทุกคนสมาชิกใหม่ของสมาคมจะเสร็จสิ้น xx นาทีของเวลาออนไลน์",
     "Activity square": "สนามกิจกรรม",
     "People fulfilled count": "xx คนทำเสร็จแล้ว",
     "WillStart": "กำลังจะเริ่ม",
@@ -125,5 +125,10 @@
     "Link has been copied": "ลิงก์ถูกคัดลอกไปยังคลิปบอร์ดแล้ว",
     "Dollar reward": "รางวัล $xx",
     "View": "ดู",
-    "UnOpen": "ปิด"
+    "UnOpen": "ปิด",
+    "Session expired tip": "ข้อมูลการเข้าสู่ระบบของคุณหมดอายุแล้ว กรุณาเข้าสู่ระบบอีกครั้ง",
+    "Download announce": "ไม่จำเป็นต้องมีประสบการณ์ รับรายได้จากการสนทนา งานที่บ้าน สมดุลเงินเดือนสัปดาห์ละ ดาวน์โหลดเดี๋ยวนี้",
+    "My invitation code": "รหัสเชิญของฉัน",
+    "Download": "ดาวน์โหลด",
+    "Copy": "สำเนา"
 }

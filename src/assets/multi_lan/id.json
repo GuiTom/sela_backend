@@ -41,7 +41,7 @@
     "Earnings": "Pendapatan",
     "Host nickname": "Nikname host",
     "Your earnings": "Pendapatan Anda",
-    "Cannot Withdrawal":"Standar reset belum capai",
+    "Cannot Withdrawal": "Standar reset belum capai",
     "Processing, please wait patiently": "Sedang diproses, harap menunggu dengan sabar",
     "Already withdrawn into your bank account": "Sudah ditarik ke rekening bank Anda",
     "Online status": "Status daring",
@@ -114,7 +114,7 @@
     "Under join limit": "Tidak memenuhi syarat untuk berpartisipasi",
     "People count": "xx orang",
     "Duration": "xx1 jam xx2 menit xx3 detik",
-    "Activity need New anchor online time in minute": "Selama acara, waktu online host yang baru didaftarkan mencapai xx menit",
+    "Activity need New anchor online time in minute": "Selama acara tersebut, setiap anchor guild baru mencapai xx menit waktu online",
     "Activity square": "Lapangan Kegiatan",
     "People fulfilled count": "xx orang telah selesai",
     "WillStart": "Akan memulai",
@@ -126,5 +126,10 @@
     "Link has been copied": "Tautan telah disalin ke papan klip.",
     "Dollar reward": "Hadiah $xx",
     "View": "Lihat",
-    "UnOpen": "Tutup"
+    "UnOpen": "Tutup",
+    "Session expired tip": "Informasi login Anda telah kedaluwarsa. Silakan masuk kembali",
+    "Download announce": "Tidak diperlukan pengalaman, Mendapatkan uang dengan mengobrol, Pekerjaan di rumah, Keseimbangan gaji mingguan, Unduh sekarang",
+    "My invitation code": "Kode undangan saya",
+    "Download": "Unduh",
+    "Copy": "Salin"
 }

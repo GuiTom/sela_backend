@@ -41,7 +41,7 @@
     "Earnings": "Ganancias",
     "Host nickname": "Apodo de host",
     "Your earnings": "tus ingresos",
-    "Cannot Withdrawal":"El estándar de liquidación aún no se ha cumplido",
+    "Cannot Withdrawal": "El estándar de liquidación aún no se ha cumplido",
     "Processing, please wait patiently": "Procesando, espere pacientemente",
     "Already withdrawn into your bank account": "Retirado a su cuenta bancaria",
     "Online status": "Estado en línea",
@@ -113,7 +113,7 @@
     "Under join limit": "No elegible para participar",
     "People count": "xx personas",
     "Duration": "xx1 horas xx2 minutos xx3 segundos",
-    "Activity need New anchor online time in minute": "Durante el evento, el nuevo host del agencia estará en línea durante xx minutos.",
+    "Activity need New anchor online time in minute": "Durante el evento, cada nuevo ancla de gremio alcanza xx minutos de tiempo en línea",
     "Activity square": "Plaza de actividades",
     "People fulfilled count": "xx personas han completado",
     "WillStart": "A punto de comenzar",
@@ -125,5 +125,10 @@
     "Link has been copied": "El enlace se ha copiado al portapapeles.",
     "Dollar reward": "Recompensa de $xx",
     "View": "Ver",
-    "UnOpen": "Cerrado"
+    "UnOpen": "Cerrado",
+    "Session expired tip": "La información de inicio de sesión ha caducado. Por favor, vuelva a iniciar sesión",
+    "Download announce": "No se requiere experiencia, Gana dinero chateando, Trabajo desde casa, Balance salarial semanal, Descárgalo ahora",
+    "My invitation code": "Mi código de invitación",
+    "Download": "Descargar",
+    "Copy": "Copiar"
 }

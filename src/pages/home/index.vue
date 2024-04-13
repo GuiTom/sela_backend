@@ -170,7 +170,7 @@ function onLanguageSelected(index) {
   ></LanguageSwitchMenu>
   
   <div :key="currentLanguageIndex" v-if="guildData != null" class="container">
-    <AppBarVue v-if="isInNativeApp" class="appBar" title="Sela Backend"></AppBarVue>
+    <AppBarVue v-if="isInNativeApp" class="appBar" :title="multiLan('App name')"></AppBarVue>
     <div class="header">
       <img src="@/assets/logo.png" />
       <div style="width: 12px;"></div>
@@ -301,7 +301,7 @@ function onLanguageSelected(index) {
     </div>
     <div class="divider"></div>
     <div class="weekly_data_title">
-      <span>{{multiLan('Weekly statistics')}}</span><span style="font-size: 12px; font-weight: 400; color: #999999"
+      <span>{{multiLan('Daily statistics')}}</span><span style="font-size: 12px; font-weight: 400; color: #999999"
         >-{{multiLan('Statistics update at xx:00 every day',24 - (8 - $timeZoneOfffsetHours()))}}</span
       >
       <div style="flex:auto;"></div>

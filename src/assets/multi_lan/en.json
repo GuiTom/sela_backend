@@ -41,7 +41,7 @@
     "Earnings": "Earnings",
     "Host nickname": "Host nickname",
     "Your earnings": "Your earnings",
-    "Cannot Withdrawal":"Not enough for withdrawal yet",
+    "Cannot Withdrawal": "Not enough for withdrawal yet",
     "Processing, please wait patiently": "Processing, please wait patiently",
     "Already withdrawn into your bank account": "Already withdrawn into your bank account",
     "Online status": "Online status",
@@ -114,7 +114,7 @@
     "Under join limit": "Not eligible to participate",
     "People count": "xx people",
     "Duration": "xx1 hours xx2 minutes xx3 seconds",
-    "Activity need New anchor online time in minute": "The online duration of newly registered hosts reaches xx minutes during the event",
+    "Activity need New anchor online time in minute": "During the event, each new guild anchor reaches xx minutes of online time",
     "Activity square": "Event Square",
     "People fulfilled count": "xx people completed",
     "WillStart": "Start soon",
@@ -126,5 +126,10 @@
     "Link has been copied": "The link has been copied to the clipboard.",
     "Dollar reward": "Reward of $xx",
     "View": "View",
-    "UnOpen": "Off"
+    "UnOpen": "Off",
+    "Session expired tip": "Your login information has expired. Please log in again",
+    "Download announce": "No experience requiredMake money by chatting home work Weekly salary balance Download it now",
+    "My invitation code": "My invitation code",
+    "Download": "Download",
+    "Copy": "Copy"
 }

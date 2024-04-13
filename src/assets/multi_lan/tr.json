@@ -41,7 +41,7 @@
     "Earnings": "Kazanç",
     "Host nickname": "Ana makine takma adı",
     "Your earnings": "Kazançlarınız",
-    "Cannot Withdrawal":"暂未达到结算标准",
+    "Cannot Withdrawal": "暂未达到结算标准",
     "Processing, please wait patiently": "İşleniyor, lütfen sabırla bekleyin",
     "Already withdrawn into your bank account": "Zaten banka hesabınıza çekilmiş",
     "Online status": "Çevrimiçi durum",
@@ -114,7 +114,7 @@
     "Under join limit": "Katılmaya uygun değil",
     "People count": "xx kişi",
     "Duration": "xx1 saat xx2 dakika xx3 saniye",
-    "Activity need New anchor online time in minute": "Etkinlik sırasında loncanın yeni yayıncısı xx dakika boyunca çevrimiçi olacak",
+    "Activity need New anchor online time in minute": "Etkinlik sırasında, her yeni lonca yayıncısı xx dakikalık çevrimiçi süreye ulaşır",
     "Activity square": "Etkinlik Alanı",
     "People fulfilled count": "xx kişi tamamladı",
     "WillStart": "Başlamak üzere",
@@ -126,5 +126,10 @@
     "Link has been copied": "Bağlantı panoya kopyalandı.\n",
     "Dollar reward": "$xx ödül",
     "View": "Kontrol edin",
-    "UnOpen": "Açılmamış"
+    "UnOpen": "Açılmamış",
+    "Session expired tip": "Giriş bilgilerinizin süresi doldu. Lütfen yeniden giriş yapın",
+    "Download announce": "Deneyim gerekli değil, Sohbet ederek para kazanın, Evde iş, Haftalık maaş dengesi, Şimdi indirin",
+    "My invitation code": "Benim davet kodum",
+    "Download": "İndir",
+    "Copy": "Kopyala"
 }

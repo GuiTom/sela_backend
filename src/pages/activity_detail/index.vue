@@ -3,7 +3,7 @@ import AppBarVue from '@/components/AppBar.vue'
 import { multiLan } from '@/utils/lan';
 import { onMounted, ref } from 'vue';
 import { timeToFormatedDate } from '@/utils/time_utils'
-import { guildData, activityNeeds, joinLimits } from '@/global'
+import { guildData } from '@/global'
 import api from '../../controller/request'
 import toast from '@/utils/toast';
 import { useRoute } from 'vue-router'
@@ -11,8 +11,8 @@ import router from '@/router/index'
 import loadingImg from '@/assets/loading.webp'
 import AutoRTLImg from '@/components/AutoRTLImg.vue'
 const data = ref(null)
-const importedNeeds = activityNeeds;
-const importedJoinLimits = joinLimits;
+
+
 onMounted(()=>{
     
     requestData()
@@ -86,10 +86,10 @@ function onViewDetail() {
                     <div class="requirement">{{multiLan('Activity needs')}}</div>
                     <div v-if="data.conditionRecords" class="content" v-for="(item, index) in data.conditionRecords" :key="index">
                        
-                        <span v-if="item!=null&&item.conditionType==1"> {{ multiLan('Activity need New anchor count',item.val) }}</span>
-                        <span v-if="item!=null&&item.conditionType==2"> {{multiLan('Activity need New anchor count meet settlement',item.val)}}</span>
-                        <span v-if="item!=null&&item.conditionType==3"> {{ multiLan('Activity need New anchor online time in minute',item.val) }}</span>
-                        <span v-if="item!=null&&item.conditionType==4"> {{multiLan('Activity need guild total income',item.val) }}</span>
+                        <span v-if="item!=null&&item.conditionType==1">{{ index+1 }}.{{ multiLan('Activity need New anchor count',item.val) }}</span>
+                        <span v-if="item!=null&&item.conditionType==2">{{ index+1 }}.{{multiLan('Activity need New anchor count meet settlement',item.val)}}</span>
+                        <span v-if="item!=null&&item.conditionType==3"> {{ index+1 }}.{{ multiLan('Activity need New anchor online time in minute',item.val) }}</span>
+                        <span v-if="item!=null&&item.conditionType==4">{{ index+1 }}.{{multiLan('Activity need guild total income',item.val) }}</span>
                     </div>
                 </div>
             </div>
@@ -132,7 +132,7 @@ function onViewDetail() {
             <div class="join_button join_status_2" v-if="data.recordStatus==5">{{multiLan('Ended')}}</div>
             <div class="join_button join_status_2" v-if="data.recordStatus==6">{{multiLan('Closed')}}</div>
             <div class="join_button join_status_2" v-if="data.recordStatus==7">{{multiLan('WillStart')}}</div>
-            <div class="view_button" @click="onViewDetail">{{multiLan('View progress')}}</div>
+            <div class="view_button" v-if="data.recordStatus!=1" @click="onViewDetail">{{multiLan('View progress')}}</div>
         </div>
         <div v-else style="width:100%;height:100%;position:fixed;">
             <AutoRTLImg

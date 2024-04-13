@@ -41,7 +41,7 @@
     "Earnings": "أرباح",
     "Host nickname": "اسم المضيفة",
     "Your earnings": "ارباحك",
-    "Cannot Withdrawal":"لا يبلغ كوينزات أدني حاليا",
+    "Cannot Withdrawal": "لا يبلغ كوينزات أدني حاليا",
     "Processing, please wait patiently": "قيد المعالجة, يرجى انتظر بصبر",
     "Already withdrawn into your bank account": "تم وصل راتبك  الي حسابك البنك",
     "Online status": "حالة أونيلان",
@@ -103,8 +103,7 @@
     "Activity need New anchor count": "يصل عدد المضيفة الجديدة للوكالةإلى xxخلال النشاط",
     "Activity need New anchor count meet settlement": "يصل عدد  المضيفة الجديدة التي تستوفي متطلبات التسوية الخاصة إلى (X)خلال االنشاط",
     "Activity need New anchor online time": "يصل مدة أونلاين للمضيفة الجديدة  للوكالة إلى xx ساعة خلال النشاط",
-    "Activity need New anchor online time in minute": "خلال  النشاط ، سيكون ان وقت أونلاين لمضيفة جديدة للوكالة تبلغ الي xx دقيقة",
-    "Activity need guild total income": "سيصل إجمالي دخل للوكالة  إلى xx كوينزات خلال النشاط",
+    "Activity need New anchor online time in minute": "خلال الحدث، يصل كل مراسل جديد للنقابة إلى xx دقيقة من الوقت على الإنترنت",
     "Coin": "كوينزات",
     "More": "المزيد",
     "Claimed": "تم الحصول",
@@ -123,5 +122,10 @@
     "Link has been copied": "تم نسخ الرابط إلى الحافظة.",
     "Dollar reward": "مكافأة xx دولار",
     "View": "عرض ",
-    "UnOpen": "غير شغال"
+    "UnOpen": "غير شغال",
+    "Session expired tip": "تم انتهاء صلاحية معلومات تسجيل الدخول الخاصة بك. يرجى تسجيل الدخول مرة أخرى",
+    "Download announce": "لا تجربة مطلوبة كسب المال من خلال الدردشة عمل منزلي رصيد أسبوعي للراتب قم بتنزيله الآن",
+    "My invitation code": "رمز دعوتي",
+    "Download": "تحميل",
+    "Copy": "نسخ"
 }

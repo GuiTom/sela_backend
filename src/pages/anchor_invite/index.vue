@@ -13,8 +13,8 @@ onMounted(() => {
 }
 )
 const data = ref(null)
-const shareLink = `https://testanchor.selalive.com/?code=${guildData.value.guildCode}`
-
+const shareLinkStart = `${location.protocol}//${location.host}/#/`
+const shareLinkEnd = `download/?code=${guildData.value.guildCode}`
 function requestData() {
     let activityId = useRoute().query.activity_id;
     let path = '/manager/guildh5/page/taskList?lang=' + currentLanguage()
@@ -33,7 +33,7 @@ function requestData() {
 }
 async function onClickShare() {
     try {
-        await navigator.clipboard.writeText(shareLink);
+        await navigator.clipboard.writeText(shareLinkStart+shareLinkEnd);
 
     } catch (err) {
 
@@ -44,10 +44,10 @@ async function onClickShare() {
 <template>
     <div class="container">
         <AppBarVue :title="multiLan('Invite anchor')" />
-        <div style="height: 27px;"></div>
-        <div class="header">
+        
+        <div class="header appHeader">
             <div>{{ multiLan('My specical invite link') }}</div>
-            <div class="link">{{ shareLink }}</div>
+            <div class="link">{{ shareLinkStart }}<br/>{{ shareLinkEnd }}</div>
             <div class="share_button" @click="onClickShare">{{ multiLan('Share') }}</div>
         </div>
         <div style="height:12px;"></div>
@@ -83,8 +83,9 @@ async function onClickShare() {
     flex-direction: column;
 
     >.header {
+
         height: 46.4vw;
-        margin: 0 12px;
+        margin: 20px 12px;
         padding-left: 20px;
         padding-right: 20px;
         background-image: url('@/assets/invite_anchor_header_bg.webp');
@@ -107,7 +108,7 @@ async function onClickShare() {
             font-size: 16px;
             color: #FFFFFF;
             background: #FFFFFF2F;
-
+            text-align: center;
             border-radius: 22px;
             width: calc(100% - 40px);
             padding: 0 20px;
@@ -125,7 +126,9 @@ async function onClickShare() {
         }
 
     }
-
+    >.appHeader{
+        margin-top: 65px;
+    }
     .reward_card {
         display: flex;
         flex-direction: column;

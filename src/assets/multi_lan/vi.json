@@ -41,7 +41,7 @@
     "Earnings": "Doanh thu",
     "Host nickname": "Biệt danh Chủ phòng",
     "Your earnings": "Thu nhập của bạn",
-    "Cannot Withdrawal":"Tạm thời chưa đạt tiêu chuẩn kết toán",
+    "Cannot Withdrawal": "Tạm thời chưa đạt tiêu chuẩn kết toán",
     "Processing, please wait patiently": "Đang xử lý, vui lòng kiên nhẫn chờ đợi",
     "Already withdrawn into your bank account": "Đã rút về tài khoản ngân hàng của bạn",
     "Online status": "Trạng thái trực tuyến",
@@ -113,7 +113,7 @@
     "Under join limit": "Không đủ điều kiện để tham gia",
     "People count": "xx người",
     "Duration": "xx1 giờ xx2 phút xx3 giây",
-    "Activity need New anchor online time in minute": "Trong thời gian sự kiện, thời gian trực tuyến của Chủ phòng mới của Công hội đạt xx phút",
+    "Activity need New anchor online time in minute": "Trong suốt sự kiện, mỗi nhà phát thanh viên mới của hội đạt được xx phút thời gian trực tuyến",
     "Activity square": "Quảng trường hoạt động",
     "People fulfilled count": "xx người đã hoàn thành",
     "WillStart": "Sắp bắt đầu",
@@ -125,5 +125,10 @@
     "Dollar reward": "Phần thưởng xx đô la Mỹ",
     "Link has been copied": "Liên kết đã được sao chép vào clipboard",
     "View": "Kiểm tra",
-    "UnOpen": "Chưa mở"
+    "UnOpen": "Chưa mở",
+    "Session expired tip": "Thông tin đăng nhập của bạn đã hết hạn. Vui lòng đăng nhập lại",
+    "Download announce": "Không cần kinh nghiệm, Kiếm tiền bằng cách trò chuyện, Công việc tại nhà, Cân đối lương hàng tuần, Tải xuống ngay",
+    "My invitation code": "Mã mời của tôi",
+    "Download": "Tải xuống",
+    "Copy": "Sao chép"
 }

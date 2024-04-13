@@ -1,6 +1,7 @@
 import axios from 'axios';  
 import router from '../router/index'
 import toast  from '@/utils/toast'
+import { multiLan } from '@/utils/lan';
 // 设置 Axios 的默认 URL（如果有的话）  
 const api = axios.create({
   //生产环境
@@ -25,7 +26,7 @@ api.interceptors.request.use((config) => {
 api.interceptors.response.use((response) => {  
   if(response.data.code==1002){
     router.push('/')
-    toast('登录信息过期，请重新登录')
+    toast(multiLan('Session expired tip'))
     return Promise.reject();  
   }else if(response.data.code!=0){
     toast(response.data.message)
