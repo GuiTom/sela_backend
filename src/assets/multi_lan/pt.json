@@ -96,10 +96,10 @@
     "Joint limit Guild level": "O nível da agência atingiu o nível xx",
     "Joint limit Guild population": "O número total de hosts na agência atingiu xx pessoas",
     "Joint limit Activie anchor portion": "A proporção de hosts ativas atingiu xx%",
-    "Activity need New anchor count": "Durante o evento, o número de novos hosts na agência atingiu xx pessoas",
-    "Activity need New anchor count meet settlement": "Durante o evento, o número de novas hosts que atendem ao padrão de liquidação da agência atingiu xx pessoas",
+    "Activity need New anchor count": "O número de novos apresentadores no guilda atinge xx pessoas",
+    "Activity need New anchor count meet settlement": "La cantidad de nuevos artistas que cumplen con los estándares de pago de la gremio alcanza xx personas",
     "Activity need New anchor online time": "Durante o evento, o tempo online da nova host da agência atingiu xx horas",
-    "Activity need guild total income": "Durante o evento, a renda total da agência atingiu xx moedas",
+    "Activity need guild total income": "A receita total dos âncoras da guilda atinge xx moedas de ouro",
     "Joint limit xx level Anchor portion": "A proporção de hosts de nível xx1 atinge xx2%",
     "Joint limit Last xx day score": "O desempenho da agência nos últimos xx1 dias atingiu xx2 moedas",
     "Coin": "Moeda",
@@ -136,5 +136,8 @@
     "New anchor online time tips": "Pelo menos 4 dias online nos últimos 7 dias e 3 horas online por dia",
     "All guild can join": "Todos os gremios podem participar",
     "Or": "ou",
-    "And": "e"
+    "And": "e",
+    "Duration activity": "Durante o período do evento",
+    "Not running": "Não em andamento",
+    "Activity need New anchor online time in hour and minute": "Cada novo âncora da guilda alcança um tempo online de xx1 horas xx2 minutos"
 }

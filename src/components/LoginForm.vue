@@ -35,6 +35,7 @@ function changeHideValue(){
         type="text"
         :placeholder="multiLan('Enter account')"
         name="username"
+        autocomplete="off"
         required
       />
       <label for="password"

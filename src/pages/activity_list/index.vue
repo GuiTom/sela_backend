@@ -62,7 +62,8 @@ function requestData(id) {
                         for (let j = 0; j < scope.length; j++) {
                             if (guildData.value.countryCode + '' == scope[j].country||scope[j].country=='all') {
                                 item.icon = scope[j].icon;
-                                console.log(i, scope[j].icon)
+                                item.localName = scope[j].title
+                                // console.log(i, scope[j].icon)
                             }
                         }
                     }
@@ -98,7 +99,7 @@ function onClickItem(item) {
                     <img class="headimg" :src="item.icon" />
                     <div class="footer">
                         <div>
-                            <div>{{ item.activityName }}</div>
+                            <div>{{ item.localName }}</div>
                             <div>{{ multiLan('Event time') }}:{{ timeToFormatedDate(parseInt(item.startAt)) }} -
                                 {{ timeToFormatedDate(parseInt(item.endAt)) }}</div>
                         </div>
@@ -106,7 +107,7 @@ function onClickItem(item) {
                         <div v-if="item.status == 1" class="button running">{{ multiLan('Is Running') }}</div>
                         <div v-if="item.status == 0" class="button">{{ multiLan('Closed') }}</div>
                         <div v-if="item.status == 2" class="button">{{ multiLan('Ended') }}</div>
-                        <div v-if="item.status == 3" class="button">{{ multiLan('WillStart') }}</div>
+                        <div v-if="item.status == 3" class="button">{{ multiLan('Not running') }}</div>
                     </div>
                 </div>
             </template>

@@ -96,10 +96,10 @@
     "Joint limit Guild level": "Công hội đạt cấp xx",
     "Joint limit Guild population": "Tổng thành viên công hội có xx người.",
     "Joint limit Activie anchor portion": "Tỷ lệ chủ phòng hoạt động đạt (X)%",
-    "Activity need New anchor count": "Thời gian sự kiện, số lượng chủ phòng mới trong công hội đã lên tới (X) người",
-    "Activity need New anchor count meet settlement": "Thời gian sự kiện, số lượng chủ phòng mới đạt tiêu chuẩn kết toán của công hội đạt xx",
+    "Activity need New anchor count": "Số lượng người mới tham gia trong hội đạt đến xx người.",
+    "Activity need New anchor count meet settlement": "Số lượng ca sĩ mới đáp ứng tiêu chuẩn thanh toán của hiến团体 đạt đến xx người",
     "Activity need New anchor online time": "Thời gian sự kiện, thời gian trực tuyến của chủ phòng mới của công hội đạt xx giờ",
-    "Activity need guild total income": "Thời gian sự kiện, tổng thu nhập của công hội đạt xx tiền vàng",
+    "Activity need guild total income": "Tổng thu nhập của streamer bang hội đạt xx tiền vàng",
     "Joint limit xx level Anchor portion": "Chủ phòng cấp xx1 chiếm tỷ lệ xx2%",
     "Joint limit Last xx day score": "Thành tích xx1 ngày gần đây của công hội đạt xx2 tiền vàng",
     "Coin": "Xu vàng",
@@ -136,5 +136,8 @@
     "New anchor online time tips": "Ít nhất 4 ngày trực tuyến trong vòng 7 ngày gần đây, và 3 giờ trực tuyến mỗi ngày",
     "All guild can join": "Tất cả các hội có thể tham gia",
     "Or": "hoặc",
-    "And": "và"
+    "And": "và",
+    "Duration activity": "Trong thời gian diễn ra sự kiện",
+    "Not running": "No en progreso",
+    "Activity need New anchor online time in hour and minute": "Mỗi streamer mới trong bang hội có thời gian trực tuyến là xx1 giờ xx2 phút"
 }

@@ -97,10 +97,10 @@
     "Joint limit Guild level": "Ajans düzeyi xx'e ulaştı",
     "Joint limit Guild population": "Ajanstaki sunucu sayısı xx'e ulaştı",
     "Joint limit Activie anchor portion": "Aktif konakçıların oranı %xx'e ulaşıyor",
-    "Activity need New anchor count": "Yeni kayıtlı toplantı sahipleri etkinlik sırasında xx'e ulaşıyor",
-    "Activity need New anchor count meet settlement": "Etkinlik sırasında hedefi karşılayan yeni kayıtlı ev sahiplerinin sayısı xx'e ulaştı",
+    "Activity need New anchor count": "Gücün yeni ankor sayısı xx kişiye ulaşıyor",
+    "Activity need New anchor count meet settlement": "Esnafın ödeme standartlarını karşılayan yeni yayıncı sayısı xx kişiye ulaşır",
     "Activity need New anchor online time": "Etkinlik boyunca yeni kayıt olan ev sahiplerinin çevrimiçi olma süresi xx saate ulaşıyor",
-    "Activity need guild total income": "Etkinlik sırasında ajansın genel geliri xx coin'e ulaştı",
+    "Activity need guild total income": "Lonca yayıncılarının toplam geliri xx altın paraya ulaşıyor",
     "Joint limit xx level Anchor portion": "xx1 düzeyindeki ana bilgisayarların oranı %xx2'ye ulaşıyor",
     "Joint limit Last xx day score": "Ajansın genel geliri son xx1 günde xx2 coine ulaştı",
     "Coin": "Madeni Para",
@@ -137,5 +137,8 @@
     "New anchor online time tips": "Son 7 günde en az 4 gün çevrimiçi ve her gün 3 saat çevrimiçi",
     "All guild can join": "Tüm loncalar katılabilir",
     "Or": "veya",
-    "And": "ve"
+    "And": "ve",
+    "Duration activity": "Etkinlik süresince",
+    "Not running": "Devam etmiyor",
+    "Activity need New anchor online time in hour and minute": "Lonca her yeni yayıncı çevrimiçi zamanı xx1 saat xx2 dakikaya ulaşıyor"
 }

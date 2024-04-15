@@ -96,10 +96,10 @@
     "Joint limit Guild level": "ระดับสังกัดถึงระดับ xx",
     "Joint limit Guild population": "จำนวนคนทั้งหมดในสังกัดถึง xx คน",
     "Joint limit Activie anchor portion": "สัดส่วนของวีเจที่ใช้งานถึง xx%แล้ว",
-    "Activity need New anchor count": "ในช่วงกิจกรรม จำนวนวีเจใหม่ในสังกัดถึง xx คน",
-    "Activity need New anchor count meet settlement": "ในช่วงกิจกรรม จำนวนวีเจใหม่ที่สามารถตัดยอดของสังกัดถึง xxคน",
+    "Activity need New anchor count": "จำนวนของผู้นำใหม่ในกิลด์ถึง xx คน",
+    "Activity need New anchor count meet settlement": "A quantidade de novos artistas que atingem os padrões de pagamento da gilda alcança xx pessoas",
     "Activity need New anchor online time": "ในช่วงกิจกรรม เวลาออนไลน์ของวีเจใหม่ของสังกัดจะถึง xx ชั่วโมง",
-    "Activity need guild total income": "ในช่วงกิจกรรม รายได้รวมของสังกัดถึง xx เหรียญทอง",
+    "Activity need guild total income": "รายได้รวมของยุคของสมาคมพาสามารถถึง xx เหรียญทอง",
     "Joint limit xx level Anchor portion": "สัดส่วนของวีเจระดับ xx1 ถึง xx2%แล้ว",
     "Joint limit Last xx day score": "ประสิทธิภาพล่าสุดของ xx1วัน สังกัดนี้ได้ถึง xx2 เหรียญทองแล้ว",
     "Coin": "เหรียญทอง",
@@ -136,5 +136,8 @@
     "New anchor online time tips": "อย่างน้อย 4 วันออนไลน์ใน 7 วันที่ผ่านมา และออนไลน์ 3 ชั่วโมงต่อวัน",
     "All guild can join": "สหภาพทั้งหมดสามารถเข้าร่วมได้",
     "Or": "หรือ",
-    "And": "และ"
+    "And": "และ",
+    "Duration activity": "ระหว่างระยะเวลากิจกรรม",
+    "Not running": "ไม่ได้ดำเนินการ",
+    "Activity need New anchor online time in hour and minute": "สมาคมทุกยุคของอุปกรณ์ใหม่มีเวลาออนไลน์ที่ถึง xx1 ชั่วโมง xx2 นาที"
 }

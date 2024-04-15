@@ -97,10 +97,10 @@
     "Joint limit Guild level": "Level agency mencapai level xx",
     "Joint limit Guild population": "Jumlah total orang agencymencapai xx orang",
     "Joint limit Activie anchor portion": "Proporsi host aktif mencapai xx%",
-    "Activity need New anchor count": "Selama acara , jumlah host baru di agency mencapai xx orang",
-    "Activity need New anchor count meet settlement": "Selama acara, jumlah host baru yang memenuhi standar penyelesaian agency mencapai xx",
+    "Activity need New anchor count": "Jumlah anchor baru di guild mencapai xx orang",
+    "Activity need New anchor count meet settlement": "Jumlah penghibur yang memenuhi standar pembayaran gilden mencapai xx orang",
     "Activity need New anchor online time": "Selama acara, waktu online host baru di agency mencapai (X) jam",
-    "Activity need guild total income": "Selama acara, total pendapatan agency mencapai xx koin emas",
+    "Activity need guild total income": "Pendapatan total anchor guild mencapai xx koin emas",
     "Joint limit xx level Anchor portion": "Proporsi host level xx1 mencapai xx2%",
     "Joint limit Last xx day score": "Kinerja agency xx1 hari baru-baru ini mencapai xx2 koin ",
     "Coin": "Koin",
@@ -137,5 +137,8 @@
     "New anchor online time tips": "Setidaknya 4 hari online dalam 7 hari terakhir, dan 3 jam online setiap harinya",
     "All guild can join": "Semua guild dapat berpartisipasi",
     "Or": "atau",
-    "And": "dan"
+    "And": "dan",
+    "Duration activity": "Selama periode acara",
+    "Not running": "Tidak sedang berlangsung",
+    "Activity need New anchor online time in hour and minute": "Setiap waktu online anchor baru di guild mencapai xx1 jam xx2 menit"
 }

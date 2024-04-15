@@ -97,10 +97,10 @@
     "Joint limit Guild level": "Agency level reaches xx",
     "Joint limit Guild population": "The number of hosts in the agency reaches xx ",
     "Joint limit Activie anchor portion": "The proportion of active hosts reaches xx%",
-    "Activity need New anchor count": "Newly registered hosts reach xx during the event",
-    "Activity need New anchor count meet settlement": "The number of newly registered hosts who meet the target reaches xx during the event",
+    "Activity need New anchor count": "The guild’s new anchor count reaches xx people",
+    "Activity need New anchor count meet settlement": "The number of new broadcasters meeting the guild's settlement standards reaches xx people",
     "Activity need New anchor online time": "The online duration of newly registered hosts reaches xx hours during the event",
-    "Activity need guild total income": "Agency overall income reaches xx coins during the event",
+    "Activity need guild total income": "The total income of the guild anchors reaches xx gold coins",
     "Joint limit xx level Anchor portion": "The proportion of xx1 level hosts reaches xx2%",
     "Joint limit Last xx day score": "Agency overall income reaches xx2 coins over the past xx1 days",
     "Coin": "Coin",
@@ -137,5 +137,8 @@
     "New anchor online time tips": "At least 4 days online in the last 7 days, and 3 hours online each day",
     "All guild can join": "All guilds can participate",
     "Or": "or",
-    "And": "and"
+    "And": "and",
+    "Duration activity": "During the event period",
+    "Not running": "Not in progress",
+    "Activity need New anchor online time in hour and minute": "The guild each new anchor online time reaches xx1 hours xx2 minutes"
 }

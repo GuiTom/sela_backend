@@ -84,12 +84,14 @@ function onViewDetail() {
                 <img src="@/assets/reward_icon.webp" />
                 <div class="content">
                     <div class="requirement">{{multiLan('Activity needs')}}</div>
-                    <div  class="content"  >
+                    <div  class="content" >
+                        <span>{{multiLan('Duration activity')}},</span>
                         <span v-if="data.conditionRecords" v-for="(item, index) in data.conditionRecords" :key="index">
-                            <span v-if="index>0">{{item.conditionOpt=='&&'?multiLan('And'):multiLan('Or')}}</span>
+                            <span v-if="index>0">&nbsp;{{data.conditionOpt=='&&'?multiLan('And'):multiLan('Or')}}&nbsp;</span>
                             <span v-if="item!=null&&item.conditionType==1">{{ multiLan('Activity need New anchor count',item.val) }}</span>
                             <span v-if="item!=null&&item.conditionType==2">{{multiLan('Activity need New anchor count meet settlement',item.val)}}</span>
-                            <span v-if="item!=null&&item.conditionType==3">{{ multiLan('Activity need New anchor online time in minute',item.val) }}({{ multiLan('New anchor online time tips') }})</span>
+                            <span v-if="item!=null&&item.conditionType==3&&item.val>60">{{ multiLan('Activity need New anchor online time in hour and minute',Math.floor(item.val/60),item.val%60) }}</span>
+                            <span v-if="item!=null&&item.conditionType==3&&item.val<=60">{{ multiLan('Activity need New anchor online time in minute',item.val)}}</span>
                             <span v-if="item!=null&&item.conditionType==4">{{multiLan('Activity need guild total income',item.val) }}</span>
                         </span>
                     </div>
@@ -112,12 +114,11 @@ function onViewDetail() {
                         <span v-if="item.limitType==1">{{multiLan('Joint limit Guild level',item.val)}}</span>
                         <span v-if="item.limitType==2">{{multiLan('Joint limit Guild population',item.val)}}</span>
                         <span v-if="item.limitType==3">{{multiLan('Joint limit xx level Anchor portion',item.val,item.val2)}}</span>
-                        <span v-if="item.limitType==4">{{multiLan('Joint limit Activie anchor portion',item.val)}}</span>
+                        <span v-if="item.limitType==4">{{multiLan('Joint limit Activie anchor portion',item.val)}}({{ multiLan('New anchor online time tips') }})</span>
                         <span v-if="item.limitType==5">{{multiLan('Joint limit Last xx day score',item.val,item.val2)}}</span>
                     </div>
-                    <div v-else  class="content" v-for="(item, index) in data.joinLimits">
+                    <div v-else  class="content">
                         <span>{{multiLan('All guild can join')}}</span>
-                
                     </div>
                 </div>
             </div>

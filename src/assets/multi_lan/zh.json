@@ -100,12 +100,13 @@
     "Joint limit Activie anchor portion":"活跃主播占比达到xx%",
     "Joint limit xx level Anchor portion":"xx1级主播占比达到xx2%",
     "Joint limit Last xx day score":"最近xx1天公会业绩达到xx2金币",
-    "Activity need New anchor count":"活动期间,公会新主播数量达到xx人",
-    "Activity need New anchor count meet settlement":"活动期间,公会结算达标新主播数量达到xx人",
-    "Activity need New anchor online time":"活动期间,公会新主播在线时长达到xx小时",
-    "New anchor online time tips":"最近7天至少4天在线且每天在线3小时",
+    "Activity need New anchor count":"公会新主播数量达到xx人",
+    "Activity need New anchor count meet settlement":"公会结算达标新主播数量达到xx人",
     "Activity need New anchor online time in minute":"活动期间,公会每个新主播在线时长达到xx分钟",
-    "Activity need guild total income":"活动期间,公会主播总收入达到xx金币",
+    "Activity need New anchor online time in hour and minute":"公会每个新主播在线时长达到xx1小时xx2分钟",
+    "Activity need guild total income":"公会主播总收入达到xx金币",
+    "New anchor online time tips":"最近7天至少4天在线且每天在线3小时",
+    "Duration activity":"活动期间",
     "Coin":"金币",
     "More":"更多",
     "Claimed":"已领取",
@@ -134,5 +135,6 @@
     "Invitation code coppied":"邀请码已经复制到剪贴板",
     "All guild can join":"所有公会可参与",
     "Or":"或者",
-    "And":"并且"
+    "And":"并且",
+    "Not running":"不在进行中"
 }
