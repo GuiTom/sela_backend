@@ -127,7 +127,7 @@
     "View": "Ver",
     "UnOpen": "Cerrado",
     "Session expired tip": "La información de inicio de sesión ha caducado. Por favor, vuelva a iniciar sesión",
-    "Download announce": "No se requiere experiencia, Gana dinero chateando, Trabajo desde casa, Balance salarial semanal, Descárgalo ahora",
+    "Download announce": "No se requiere experiencia\nGana dinero chateando\nTrabajo desde casa\nLiquidación de salario semanal\nDescarga ahora",
     "My invitation code": "Mi código de invitación",
     "Download": "Descargar",
     "Copy": "Copiar",
@@ -139,5 +139,6 @@
     "And": "y",
     "Duration activity": "Durante el período de actividad",
     "Not running": "Não em andamento",
-    "Activity need New anchor online time in hour and minute": "Cada nuevo ancla del gremio alcanza un tiempo en línea de xx1 horas xx2 minutos"
+    "Activity need New anchor online time in hour and minute": "Cada nuevo ancla del gremio alcanza un tiempo en línea de xx1 horas xx2 minutos",
+    "Authed": "Verificado"
 }

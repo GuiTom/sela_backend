@@ -127,7 +127,7 @@
     "View": "Kiểm tra",
     "UnOpen": "Chưa mở",
     "Session expired tip": "Thông tin đăng nhập của bạn đã hết hạn. Vui lòng đăng nhập lại",
-    "Download announce": "Không cần kinh nghiệm, Kiếm tiền bằng cách trò chuyện, Công việc tại nhà, Cân đối lương hàng tuần, Tải xuống ngay",
+    "Download announce": "Không cần kinh nghiệm\nKiếm tiền bằng cách trò chuyện\nCông việc tại nhà\nThanh toán lương hàng tuần\nTải về ngay",
     "My invitation code": "Mã mời của tôi",
     "Download": "Tải xuống",
     "Copy": "Sao chép",
@@ -139,5 +139,6 @@
     "And": "và",
     "Duration activity": "Trong thời gian diễn ra sự kiện",
     "Not running": "No en progreso",
-    "Activity need New anchor online time in hour and minute": "Mỗi streamer mới trong bang hội có thời gian trực tuyến là xx1 giờ xx2 phút"
+    "Activity need New anchor online time in hour and minute": "Mỗi streamer mới trong bang hội có thời gian trực tuyến là xx1 giờ xx2 phút",
+    "Authed": "Tài liệu"
 }

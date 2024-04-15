@@ -127,7 +127,7 @@
     "View": "Ver",
     "UnOpen": "Fechado",
     "Session expired tip": "Suas informações de login expiraram. Por favor, faça login novamente",
-    "Download announce": "Não é necessária experiência, Ganhe dinheiro conversando, Trabalho em casa, Salário semanal equilibrado, Baixe agora",
+    "Download announce": "Sem experiência necessária\nGanhe dinheiro conversando\nTrabalho em casa\nLiquidação salarial semanal\nBaixe agora",
     "My invitation code": "Meu código de convite",
     "Download": "Baixar",
     "Copy": "Copiar",
@@ -139,5 +139,6 @@
     "And": "e",
     "Duration activity": "Durante o período do evento",
     "Not running": "Não em andamento",
-    "Activity need New anchor online time in hour and minute": "Cada novo âncora da guilda alcança um tempo online de xx1 horas xx2 minutos"
+    "Activity need New anchor online time in hour and minute": "Cada novo âncora da guilda alcança um tempo online de xx1 horas xx2 minutos",
+    "Authed": "Verificado"
 }

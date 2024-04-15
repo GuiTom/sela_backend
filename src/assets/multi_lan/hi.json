@@ -127,7 +127,7 @@
     "View": "देखें ",
     "UnOpen": "ऑफ",
     "Session expired tip": "लॉगिन जानकारी समाप्त हो गई है, कृपया पुनः लॉगिन करें।",
-    "Download announce": "कोई अनुभव आवश्यक नहीं, चैट करके पैसे कमाएं, घर का काम, साप्ताहिक वेतन संतुलन, अभी डाउनलोड करें",
+    "Download announce": "कोई अनुभव की आवश्यकता नहीं है\nचैट करके पैसे कमाएं\nघर से काम\nसाप्ताहिक वेतन निपटान\nअभी डाउनलोड करें",
     "My invitation code": "मेरा निमंत्रण कोड",
     "Download": "डाउनलोड",
     "Copy": "कॉपी करें",
@@ -139,5 +139,6 @@
     "And": "और",
     "Duration activity": "कार्यक्रम अवधि के दौरान।",
     "Not running": "प्रगति में नहीं",
-    "Activity need New anchor online time in hour and minute": "संघ हर नए एंकर ऑनलाइन समय xx1 घंटे xx2 मिनट तक पहुंचता है।"
+    "Activity need New anchor online time in hour and minute": "संघ हर नए एंकर ऑनलाइन समय xx1 घंटे xx2 मिनट तक पहुंचता है।",
+    "Authed": "सत्यापित"
 }

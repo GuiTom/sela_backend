@@ -128,7 +128,7 @@
     "View": "Kontrol edin",
     "UnOpen": "Açılmamış",
     "Session expired tip": "Giriş bilgilerinizin süresi doldu. Lütfen yeniden giriş yapın",
-    "Download announce": "Deneyim gerekli değil, Sohbet ederek para kazanın, Evde iş, Haftalık maaş dengesi, Şimdi indirin",
+    "Download announce": "Deneyime gerek yok\nSohbet ederek para kazanın\nEvden çalışma\nHaftalık maaş düzenleme\nŞimdi indir",
     "My invitation code": "Benim davet kodum",
     "Download": "İndir",
     "Copy": "Kopyala",
@@ -140,5 +140,6 @@
     "And": "ve",
     "Duration activity": "Etkinlik süresince",
     "Not running": "Devam etmiyor",
-    "Activity need New anchor online time in hour and minute": "Lonca her yeni yayıncı çevrimiçi zamanı xx1 saat xx2 dakikaya ulaşıyor"
+    "Activity need New anchor online time in hour and minute": "Lonca her yeni yayıncı çevrimiçi zamanı xx1 saat xx2 dakikaya ulaşıyor",
+    "Authed": "Doğrulandı"
 }

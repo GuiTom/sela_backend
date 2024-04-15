@@ -128,7 +128,7 @@
     "View": "Lihat",
     "UnOpen": "Tutup",
     "Session expired tip": "Informasi login Anda telah kedaluwarsa. Silakan masuk kembali",
-    "Download announce": "Dapatkan uang dengan chatting, pekerjaan di rumah, pembayaran mingguan, unduh sekarang",
+    "Download announce": "Tidak perlu pengalaman\nMenghasilkan uang dengan chatting\nKerja dari rumah\nPenyelesaian gaji mingguan\nUnduh sekarang",
     "My invitation code": "Kode undangan saya",
     "Download": "Unduh",
     "Copy": "Salin",
@@ -140,5 +140,6 @@
     "And": "dan",
     "Duration activity": "Selama periode acara",
     "Not running": "Tidak sedang berlangsung",
-    "Activity need New anchor online time in hour and minute": "Setiap waktu online anchor baru di guild mencapai xx1 jam xx2 menit"
+    "Activity need New anchor online time in hour and minute": "Setiap waktu online anchor baru di guild mencapai xx1 jam xx2 menit",
+    "Authed": "Terverifikasi"
 }

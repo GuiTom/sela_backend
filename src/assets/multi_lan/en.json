@@ -128,7 +128,7 @@
     "View": "View",
     "UnOpen": "Off",
     "Session expired tip": "Your login information has expired. Please log in again",
-    "Download announce": "No experience requiredMake money by chatting home work Weekly salary balance Download it now",
+    "Download announce": "No experience required\nEarn money by chatting\nHome-based work\nWeekly salary settlement\nDownload now",
     "My invitation code": "My invitation code",
     "Download": "Download",
     "Copy": "Copy",
@@ -140,5 +140,6 @@
     "And": "and",
     "Duration activity": "During the event period",
     "Not running": "Not in progress",
-    "Activity need New anchor online time in hour and minute": "The guild each new anchor online time reaches xx1 hours xx2 minutes"
+    "Activity need New anchor online time in hour and minute": "The guild each new anchor online time reaches xx1 hours xx2 minutes",
+    "Authed": "Verified"
 }

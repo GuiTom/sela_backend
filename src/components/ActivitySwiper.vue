@@ -2,7 +2,10 @@
 import banner_1 from "@/assets/activity/banner_1.webp"
 import banner_2 from "@/assets/activity/banner_2.webp"
 import banner_3 from "@/assets/activity/banner_3.webp"
+
 import { multiLan } from "@/utils/lan";
+import { onMounted } from "vue";
+import { guildData } from '@/global';
 const props = defineProps({
 
   data: {
@@ -11,8 +14,19 @@ const props = defineProps({
   },
 })
 
-// const imgs = images;
-// const imgs = [banner_1, banner_2, banner_3];
+onMounted(() => {
+  for (let i = 0; i < props.data.length; i++) {
+    let item = props.data[i];
+    let scope = JSON.parse(item.scope)
+    for (let j = 0; j < scope.length; j++) {
+      if (guildData.value.countryCode + '' == scope[j].country || scope[j].country == 'all') {
+        item.icon = scope[j].icon;
+        item.localName = scope[j].title
+        // console.log(i, scope[j].icon)
+      }
+    }
+  }
+})
 console.log(props.images)
 </script>
 <template>
@@ -27,15 +41,15 @@ console.log(props.images)
               <img src="@/assets/activity_icon.png" />
               <div>{{ multiLan('Activity square') }}</div>
             </div>
-            <div class="second_row">{{ item.activityName }}</div>
+            <div class="second_row">{{ item.localName }}</div>
             <div class="third_row">
-              
-              <div v-if="item.status == 3" class="will">{{multiLan('WillStart')}}</div>
+
+              <div v-if="item.status == 3" class="will">{{ multiLan('WillStart') }}</div>
               <div v-else-if="item.status == 1" class="running">{{ multiLan('Is Running') }}</div>
               <div v-else-if="item.status == 2" class="ended">{{ multiLan('Ended') }}</div>
             </div>
           </div>
-          <div class="view_button">{{multiLan('View')}}</div>
+          <div class="view_button">{{ multiLan('View') }}</div>
 
         </div>
       </van-swipe-item>
@@ -52,11 +66,12 @@ console.log(props.images)
 .root_container {
 
   position: relative;
-  
+
   .swiper {
     background: linear-gradient(to bottom, #F4F6EE 0%, #FDEED9 100%);
     border: 1px solid #FFDFA8;
     border-radius: 12px;
+
     .item {
       padding: 0 12px;
       height: 100%;
@@ -72,8 +87,9 @@ console.log(props.images)
         display: flex;
         flex-direction: column;
         flex: auto;
+
         .first_row {
-          
+
           display: flex;
           flex-direction: row;
           align-items: center;
@@ -96,7 +112,7 @@ console.log(props.images)
           overflow: hidden;
           color: #333333;
           white-space: nowrap;
-          
+
         }
 
         .third_row {
@@ -107,7 +123,7 @@ console.log(props.images)
           overflow: hidden;
           flex-direction: row;
           align-items: center;
-          
+
           .running,
           .will,
           .ended {
@@ -120,7 +136,7 @@ console.log(props.images)
             text-align: center;
             overflow: hidden;
             text-overflow: ellipsis;
-         
+
           }
 
           .ended {
@@ -148,7 +164,7 @@ console.log(props.images)
         max-height: 30px;
         text-overflow: ellipsis;
         overflow: hidden;
-        
+
       }
     }
   }
