@@ -91,7 +91,6 @@ function onClickItem(item) {
     <div class="bg"></div>
     <div class="container">
         <AppBarVue :title="multiLan('Activity list')" />
-        <div style="height: 20px;"></div>
         <InfiniteList class="activity_list" @loadMore="requestData" @refresh="refresh" :loadingMore="loadingMore"
             :refreshing="refreshing" :noMoreData="noMoreData" v-if="listData != null">
             <template #content>

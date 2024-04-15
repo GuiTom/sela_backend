@@ -33,7 +33,7 @@ function requestData() {
 }
 async function onClickShare() {
     try {
-        await navigator.clipboard.writeText(shareLinkStart+shareLinkEnd);
+        await navigator.clipboard.writeText(shareLinkStart + shareLinkEnd);
 
     } catch (err) {
 
@@ -42,49 +42,61 @@ async function onClickShare() {
 }
 </script>
 <template>
-    <div class="container">
+    <div class="bg">
         <AppBarVue class="appBar" :title="multiLan('Invite anchor')" />
-        
-        <div class="header appHeader">
-            <div>{{ multiLan('My specical invite link') }}</div>
-            <div class="link">{{ shareLinkStart }}<br/>{{ shareLinkEnd }}</div>
-            <div class="share_button" @click="onClickShare">{{ multiLan('Share') }}</div>
-        </div>
-        <div style="height:12px;"></div>
-        <div class="reward_card">
-            <div class="header">{{ multiLan('Invite rewarded') }}</div>
-            <div class="list" v-if="data">
-                <div v-for="(item, index) in data">
-                    <div class="list_item">
-                        <img class="icon" src="@/assets/reward_icon.webp">
-                        <div style="width:10px;"></div>
-                        <div class="middle">
-                            <div class="desc">{{ item.title }}</div>
-                        </div>
-                        <div style="flex:auto;"></div>
-                        <div class="status_complete" v-if="item.taskStatus != -1">{{ multiLan('Completed') }}</div>
-                        <div class="reward" v-if="item.taskStatus == -1">+{{ money_amount(item.rewardVo.dollarNum) }}$</div>
-                    </div>
-                    <div style="height: 1px;background-color:#EAEAEA;"></div>
-                </div>
+        <div class="container">
+            <div class="header appHeader">
+                <div>{{ multiLan('My specical invite link') }}</div>
+                <div class="link">{{ shareLinkStart }}<br />{{ shareLinkEnd }}</div>
+                <div class="share_button" @click="onClickShare">{{ multiLan('Share') }}</div>
             </div>
-            <div style="flex: auto;"></div>
-            <div class="tips">{{ multiLan('Withdraw tips') }}</div>
-            <div style="height: 60px;"></div>
+            <div style="height:12px;"></div>
+            <div class="reward_card">
+                <div>{{ multiLan('Invite rewarded') }}</div>
+                <div class="list" v-if="data">
+                    <div v-for="(item, index) in data">
+                        <div class="list_item">
+                            <img class="icon" src="@/assets/reward_icon.webp">
+                            <div style="width:10px;"></div>
+                            <div class="middle">
+                                <div class="desc">{{ item.title }}</div>
+                            </div>
+                            <div style="flex:auto;"></div>
+                            <div class="status_complete" v-if="item.taskStatus != -1">{{ multiLan('Completed') }}</div>
+                            <div class="reward" v-if="item.taskStatus == -1">+{{ money_amount(item.rewardVo.dollarNum)
+                                }}$</div>
+                        </div>
+                        <div style="height: 1px;background-color:#EAEAEA;"></div>
+                    </div>
+                </div>
+                <div style="flex: auto;"></div>
+                <div class="tips">{{ multiLan('Withdraw tips') }}</div>
+                <div style="height: 60px;"></div>
+            </div>
         </div>
     </div>
 </template>
 <style scoped lang="less">
-.container {
-    height: 100vh;
+.bg {
     background-image: url('@/assets/anchor_bg.webp');
     background-size: 100% 100%;
+    width: 100vw;
+    height: 100vh;
+    overflow-y: hidden;
+}
+
+.appBar {
+    position: fixed;
+}
+
+.container {
+    height: 100vh;
+    margin-top: 45px;
     display: flex;
     flex-direction: column;
-    .appBar{
-        position: fixed;
-    }
-    >.header {  
+    overflow-y: scroll;
+
+    >.header {
 
         height: 46.4vw;
         margin: 20px 12px;
@@ -128,16 +140,15 @@ async function onClickShare() {
         }
 
     }
-    >.appHeader{
-        margin-top: 65px;
-    }
+
     .reward_card {
         display: flex;
         flex-direction: column;
         margin: 0 12px;
         border-radius: 12px;
         background-color: white;
-        height: calc(100vh - 46.4vw - 20px - 12px);
+
+
         padding: 12px;
 
         .header {
