@@ -23,6 +23,11 @@ const props = defineProps({
     required: true,
     default: false
   },
+  authed: {
+    type: Boolean,
+    required: true,
+    default: false
+  },
   size: {
     type: Number,
     required: false,
@@ -42,8 +47,10 @@ function statusImg() {
   <Avatar class="avatar" :src="img" :style="'width:'+size+'px;height:'+size+'px;'">
     <template #content>
       <div class="bg" v-if="isForbidden || violated"></div>
-      <AutoSizedText class="userStatus" v-if="violated" :text="multiLan('Violation')"></AutoSizedText>
       <AutoSizedText class="status" v-if="isForbidden" :text="multiLan('In ban')"></AutoSizedText>
+      <AutoSizedText class="userStatus" v-else-if="violated" :text="multiLan('Violation')"></AutoSizedText>
+      <AutoSizedText class="userStatus" v-else-if="authed" :text="multiLan('Authed')"></AutoSizedText>
+      
       <img class="online_status" :src="statusImg()" />
     </template>
   </Avatar>

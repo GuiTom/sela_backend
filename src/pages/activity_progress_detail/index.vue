@@ -14,13 +14,14 @@ const data = JSON.parse(localStorage.getItem('currentCondition'))
             <div class="param_item">
                 <img src="@/assets/activity_icon2.webp" />
                 <div class="content" v-if="data!=null">
-                    <div class="ratio" v-if="data.conditionType==4"><span>{{money_amount(data.completeNum)}}</span><span>/{{data.val}}</span></div>
-                    <div class="ratio" v-else-if="data.conditionType!=3"><span>{{data.completeNum}}</span>/<span>{{data.val}}</span></div>
-                    <div class="ratio" v-else><span>{{multiLan('People fulfilled count',data.completeNum)}}</span></div>
+                    <div class="ratio" v-if="data.conditionType==4"><span>{{money_amount(data.completeNum??0)}}</span><span>/{{data.val}}</span></div>
+                    <div class="ratio" v-else-if="data.conditionType!=3"><span>{{data.completeNum??0}}</span>/<span>{{data.val}}</span></div>
+                    <div class="ratio" v-else><span>{{multiLan('People fulfilled count',data.completeNum??0)}}</span></div>
                     <div class="field_name">
                         <span v-if="data.conditionType==1">{{ multiLan('Activity need New anchor count',data.val) }}</span>
                         <span v-if="data.conditionType==2">{{multiLan('Activity need New anchor count meet settlement',data.val)}}</span>
-                        <span v-if="data.conditionType==3">{{ multiLan('Activity need New anchor online time in minute',data.val) }}</span>
+                        <span v-if="item!=null&&item.conditionType==3&&item.val>60">{{ multiLan('Activity need New anchor online time in hour and minute',Math.floor(item.val/60),item.val%60) }}</span>
+                        <span v-if="item!=null&&item.conditionType==3&&item.val<=60">{{ multiLan('Activity need New anchor online time in minute',item.val)}}</span>
                         <span v-if="data.conditionType==4">{{multiLan('Activity need guild total income',data.val) }}</span>
                     </div>
                 </div>

@@ -60,7 +60,7 @@ function onClickItem(item) {
             <div class="avatar_container" @click="onClickItem(item)" v-if="responseData != null"
                 v-for="(item, index) in responseData.data">
                 <AnchorAvatarVue class="avatar" :size="43" :key="index" :onlineStatus="item.isOnline"
-                    :isForbidden="item.userStatus == 2" :violated="item.userAuth == 4" :img="item.portrait">
+                    :isForbidden="item.userStatus == 2" :violated="item.userAuth == 4" :authed="item.authed==2" :img="item.portrait">
                 </AnchorAvatarVue>
                 <div class="nickname">{{ item.nickname }}</div>
             </div>

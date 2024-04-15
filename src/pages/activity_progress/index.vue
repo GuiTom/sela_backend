@@ -56,14 +56,15 @@ function onClickConditionRecord(item){
                 <div class="param_item">
                     <img src="@/assets/reward_icon.webp" />
                     <div class="content" v-if="item!=null">
-                        <div class="ratio" v-if="item.conditionType==4"><span>{{money_amount(item.completeNum)}}</span><span>/{{item.val}}</span></div>
-                        <div class="ratio" v-else-if="item.conditionType!=3"><span>{{item.completeNum}}</span><span>/{{item.val}}</span></div>
-                        <div class="ratio" v-else><span>{{multiLan('People fulfilled count',item.completeNum)}}</span></div>
+                        <div class="ratio" v-if="item.conditionType==4"><span>{{money_amount(item.completeNum??0)}}</span><span>/{{item.val}}</span></div>
+                        <div class="ratio" v-else-if="item.conditionType!=3"><span>{{item.completeNum??0}}</span><span>/{{item.val}}</span></div>
+                        <div class="ratio" v-else><span>{{multiLan('People fulfilled count',item.completeNum??0)}}</span></div>
                         
                         <div class="field_name">
                             <span v-if="item.conditionType==1">{{ multiLan('Activity need New anchor count',item.val) }}</span>
                             <span v-if="item.conditionType==2">{{multiLan('Activity need New anchor count meet settlement',item.val)}}</span>
-                            <span v-if="item.conditionType==3">{{ multiLan('Activity need New anchor online time in minute',item.val) }}</span>
+                            <span v-if="item!=null&&item.conditionType==3&&item.val>60">{{ multiLan('Activity need New anchor online time in hour and minute',Math.floor(item.val/60),item.val%60) }}</span>
+                            <span v-if="item!=null&&item.conditionType==3&&item.val<=60">{{ multiLan('Activity need New anchor online time in minute',item.val)}}</span>
                             <span v-if="item.conditionType==4">{{multiLan('Activity need guild total income',item.val) }}</span>
                         </div>
                     </div>

@@ -97,7 +97,7 @@ function requestData() {
       <span class="avatar"
         ><AnchorAvatarVue
           :onlineStatus="userData.isOnline"
-          :isForbidden="userData.userStatus == 2" :violated="userData.userAuth==4"
+          :isForbidden="userData.userStatus == 2" :violated="userData.userAuth==4" :authed="userData.userAuth==2"
           :img="userData.portrait"
         ></AnchorAvatarVue>
       </span>
