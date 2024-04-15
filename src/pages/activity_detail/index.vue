@@ -139,7 +139,7 @@ function onViewDetail() {
             <div class="join_button join_status_2" v-if="data.recordStatus==5">{{multiLan('Ended')}}</div>
             <div class="join_button join_status_2" v-if="data.recordStatus==6">{{multiLan('Closed')}}</div>
             <div class="join_button join_status_2" v-if="data.recordStatus==7">{{multiLan('WillStart')}}</div>
-            <div class="view_button" v-if="data.recordStatus!=1&&data.recordStatus!=5&&data.recordStatus!=6&&data.recordStatus!=7" @click="onViewDetail">{{multiLan('View progress')}}</div>
+            <div class="view_button" v-if="data.recordStatus!=0&&data.recordStatus!=1&&data.recordStatus!=5&&data.recordStatus!=6&&data.recordStatus!=7" @click="onViewDetail">{{multiLan('View progress')}}</div>
         </div>
         <div v-else style="width:100%;height:100%;position:fixed;">
             <AutoRTLImg
