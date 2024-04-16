@@ -44,13 +44,13 @@ function statusImg() {
 }
 </script>
 <template>
-  <Avatar class="avatar" :src="img" :style="'width:'+size+'px;height:'+size+'px;'">
+  <Avatar class="avatar" :src="img" :style="'width:' + size + 'px;height:' + size + 'px;'">
     <template #content>
-      <div class="bg" v-if="isForbidden || violated"></div>
+      <div class="bg" v-if="isForbidden || violated || authed"></div>
       <AutoSizedText class="status" v-if="isForbidden" :text="multiLan('In ban')"></AutoSizedText>
       <AutoSizedText class="userStatus" v-else-if="violated" :text="multiLan('Violation')"></AutoSizedText>
       <AutoSizedText class="userStatus" v-else-if="authed" :text="multiLan('Authed')"></AutoSizedText>
-      
+
       <img class="online_status" :src="statusImg()" />
     </template>
   </Avatar>

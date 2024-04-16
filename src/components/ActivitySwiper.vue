@@ -164,6 +164,7 @@ console.log(props.images)
         max-height: 30px;
         text-overflow: ellipsis;
         overflow: hidden;
+        margin-bottom: 6px
 
       }
     }
