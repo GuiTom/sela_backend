@@ -20,7 +20,7 @@ function requestData() {
     api
         .post(path, {
             pageNum: 1,
-            pageSize: 4,
+            pageSize: 5,
             order: 1
         })
         .then(function (response) {
@@ -64,10 +64,10 @@ function onClickItem(item) {
                 </AnchorAvatarVue>
                 <div class="nickname">{{ item.nickname }}</div>
             </div>
-            <div class="invite_button" @click="$router.push('/anchor_invite')">
+            <!-- <div class="invite_button" @click="$router.push('/anchor_invite')">
                 <img src="@/assets/invite_button.webp"/>
                 <div class="title">{{multiLan('Invite anchor')}}</div>
-            </div>
+            </div> -->
         </div>
     </div>
     <div v-else style="height: 115px;width:93.6vw;margin:12px;border-radius:12px;background-color:#efefef;"></div>

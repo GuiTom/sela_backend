@@ -2,12 +2,13 @@ import axios from 'axios';
 import router from '../router/index'
 import toast  from '@/utils/toast'
 import { multiLan } from '@/utils/lan';
+import { baseUrl } from '@/global';
 // 设置 Axios 的默认 URL（如果有的话）  
 const api = axios.create({
   //生产环境
   // baseURL:'https://api.selalive.com',
   //测试环境
-  baseURL:'https://testapi.selalive.com',
+  baseURL:baseUrl,
 
   }
 )

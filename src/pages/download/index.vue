@@ -3,7 +3,7 @@ import { onMounted } from 'vue';
 import { multiLan } from '@/utils/lan'
 import axios from 'axios'; 
 import { useRoute } from 'vue-router';
-
+import { baseUrl } from '@/global';
 let downloadUrl = '';
 onMounted(() => {
     const route = useRoute();
@@ -18,8 +18,8 @@ onMounted(() => {
 
     // console.log(invitationCode)
     document.querySelector('#invicode').textContent = invitationCode;
-
-    var url2 = `https://testapi.selalive.com/manager/guildh5/anchor/downloadUrl`
+    
+    var url2 = `${baseUrl}/manager/guildh5/anchor/downloadUrl`
     const api = axios.create()
     api.get(url2).then(response => {
 

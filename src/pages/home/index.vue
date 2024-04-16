@@ -225,8 +225,8 @@ function onLanguageSelected(index) {
       <div>{{ multiLan('Withdrawal requirements tip') }}</div>
     </div>
 
-    <ActivitySwiper v-if="activityList&&activityList.length>0" :data="activityList" @click="$router.push('/activity_list')"></ActivitySwiper>
-    <div v-else style="height: 98px;width:93.6vw;margin:12px;border-radius:12px;background-color:#efefef;"></div>
+    <!-- <ActivitySwiper v-if="activityList&&activityList.length>0" :data="activityList" @click="$router.push('/activity_list')"></ActivitySwiper>
+    <div v-else style="height: 98px;width:93.6vw;margin:12px;border-radius:12px;background-color:#efefef;"></div> -->
     <AnchorManage></AnchorManage>
     <div class="divider"></div>
     <!-- 余额和结算收益 -->
