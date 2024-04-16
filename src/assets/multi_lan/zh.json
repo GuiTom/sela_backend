@@ -137,5 +137,7 @@
     "Or":"或者",
     "And":"并且",
     "Not running":"不在进行中",
-    "Authed":"已认证"
+    "Authed":"已认证",
+    "Auth failed":"认证失败",
+    "Wait auth":"待认证"
 }

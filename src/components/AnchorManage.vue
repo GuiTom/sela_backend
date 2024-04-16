@@ -20,7 +20,7 @@ function requestData() {
     api
         .post(path, {
             pageNum: 1,
-            pageSize: 4,
+            pageSize: 5,
             order: 1
         })
         .then(function (response) {
@@ -63,10 +63,6 @@ function onClickItem(item) {
                     :isForbidden="item.userStatus == 2" :violated="item.userAuth == 4" :authed="item.userAuth==2" :img="item.portrait">
                 </AnchorAvatarVue>
                 <div class="nickname">{{ item.nickname }}</div>
-            </div>
-            <div class="invite_button" @click="$router.push('/anchor_invite')">
-                <img src="@/assets/invite_button.webp"/>
-                <div class="title">{{multiLan('Invite anchor')}}</div>
             </div>
         </div>
     </div>

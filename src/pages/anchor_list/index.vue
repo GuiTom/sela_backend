@@ -10,7 +10,7 @@ import ContextMenu from '@/components/ContextMenu.vue'
 import InfiniteList from '@/components/InfiniteList.vue'
 import router from '../../router/index'
 import LevelIcon from '@/components/LevelIcon.vue'
-import {multiLan}from '@/utils/lan'
+import { multiLan } from '@/utils/lan'
 import AutoRTLImg from '@/components/AutoRTLImg.vue'
 import loadingImg from '@/assets/loading.webp'
 import rightArrorImg from '@/assets/right_arror.webp'
@@ -40,8 +40,8 @@ function onmenuSelected(index) {
 }
 function onClickItem(item) {
 
-  localStorage.setItem('param',item);
-  router.push({ path: '/profile', query: { anchorId: item.anchorId,data:JSON.stringify(item) } })
+  localStorage.setItem('param', item);
+  router.push({ path: '/profile', query: { anchorId: item.anchorId, data: JSON.stringify(item) } })
 }
 function refresh() {
   currentPage = 0
@@ -67,9 +67,13 @@ function requestData() {
       order: selectedMenuIndex + 1
     })
     .then(function (response) {
+      for(var d of response.data.data){
+        // d.userStatus = 2
+        d.userAuth = 1
+      }
       if (currentPage == 0) {
         data.value = response.data
-       
+
         refreshing.value = false
       } else {
         data.value.data = [...data.value.data, ...response.data.data]
@@ -93,38 +97,22 @@ function requestData() {
         <div style="position: relative" @click="onClickShowMenu">
           <img src="@/assets/more_icon.webp" style="width: 22px; height: 22px" />
 
-          <ContextMenu
-            v-if="showMenu"
-            style="z-index: 100;"
-            @item_selected="onmenuSelected"
-            :initialIndex="selectedMenuIndex"
-            :options="[
-              multiLan('Online status'),
-              multiLan('Time of the last call'),
-              multiLan('Daily earnings')
-            ]"
-          ></ContextMenu>
+          <ContextMenu v-if="showMenu" style="z-index: 100;" @item_selected="onmenuSelected"
+            :initialIndex="selectedMenuIndex" :options="[
+      multiLan('Online status'),
+      multiLan('Time of the last call'),
+      multiLan('Daily earnings')
+    ]"></ContextMenu>
         </div>
       </template>
     </AppBarVue>
   </div>
-  <InfiniteList
-    class="list"
-    @loadMore="requestData"
-    @refresh="refresh"
-    :loadingMore="loadingMore"
-    :refreshing="refreshing"
-    :noMoreData="noMoreData"
-    v-if="data != null"
-  >
+  <InfiniteList class="list" @loadMore="requestData" @refresh="refresh" :loadingMore="loadingMore"
+    :refreshing="refreshing" :noMoreData="noMoreData" v-if="data != null">
     <template #content>
       <div v-for="item in data.data" @click="onClickItem(item)">
-        <span class="avatar_container"
-          ><AnchorAvatarVue
-            :onlineStatus="item.isOnline"
-            :isForbidden="item.userStatus == 2" :violated="item.userAuth==4" :authed="item.userAuth==2"
-            :img="item.portrait"
-          ></AnchorAvatarVue>
+        <span class="avatar_container">
+          <AnchorAvatarVue :onlineStatus="item.isOnline" :img="item.portrait"></AnchorAvatarVue>
         </span>
         <span class="spacer_10px"></span>
         <span class="right_info_container">
@@ -133,22 +121,24 @@ function requestData() {
             <LevelIcon v-if="item.level" :level="item.level"></LevelIcon>
           </div>
           <div>
-            <span style="color:#999999">ID：{{ item.anchorId }}</span
-            ><span v-if="parseInt(item.lastCallAt)>0" class="last_call"
-              >{{ multiLan('Recent call') }}:{{ $timeToFormatedDate(parseInt(item.lastCallAt)) }}</span
-            >
+            <span style="color:#999999">ID：{{ item.anchorId }}</span><span v-if="parseInt(item.lastCallAt) > 0"
+              class="last_call">{{ multiLan('Recent call') }}:{{ $timeToFormatedDate(parseInt(item.lastCallAt))
+              }}</span>
           </div>
+            <div v-if="item.userStatus==2" class="status_forbidden">{{ multiLan('In ban') }}</div>
+            <div v-else-if="item.userAuth==4" class="status_violation">{{ multiLan('Violation') }}</div>
+            <div v-else-if="item.userAuth==1" class="status_wait_auth">{{ multiLan('Wait auth') }}</div>
+            <div v-else-if="item.userAuth==3" class="status_failed">{{ multiLan('Auth failed') }}</div>
+            
         </span>
         <span class="spacer"></span>
-        <AutoRTLImg class="right_arror" :src="rightArrorImg" ></AutoRTLImg>
+        <AutoRTLImg class="right_arror" :src="rightArrorImg"></AutoRTLImg>
       </div>
     </template>
   </InfiniteList>
   <div v-else style="width:100%;height:100%;position:fixed;">
-    <AutoRTLImg
-      :src="loadingImg"
-      style="width:81px;height:50px;position:absolute;left:50%;top:50%;transform:translate(-50%, -50%)"
-    ></AutoRTLImg>
+    <AutoRTLImg :src="loadingImg"
+      style="width:81px;height:50px;position:absolute;left:50%;top:50%;transform:translate(-50%, -50%)"></AutoRTLImg>
   </div>
 </template>
 <style scoped lang="less">

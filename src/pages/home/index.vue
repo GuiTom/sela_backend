@@ -254,8 +254,10 @@ function onLanguageSelected(index) {
         <!-- 提现记录按钮 -->
     <div class="buttons">
       
-      <span class="button" @click="$router.push('/withdraw_records')">{{ multiLan('Withdrawal history') }}</span>
+      <span class="button" @click="$router.push('/withdraw_records')">{{ multiLan('Withdrawal history') }}<img src="@/assets/button_right_arror.webp"></span>
+      <span style="width: 10px;"></span>
 
+      <span class="button"  @click="$router.push('/anchor_invite')">{{ multiLan('Invite anchor') }}<img src="@/assets/button_right_arror.webp"></span>
     </div>
     <div class="divider"></div>
     <!-- 周收益 -->

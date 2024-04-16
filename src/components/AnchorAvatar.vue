@@ -13,21 +13,7 @@ const props = defineProps({
     required: true,
     default: 1 //1在线 0 不在线 2 忙线
   },
-  isForbidden: {
-    type: Boolean,
-    required: true,
-    default: false
-  },
-  violated: {
-    type: Boolean,
-    required: true,
-    default: false
-  },
-  authed: {
-    type: Boolean,
-    required: true,
-    default: false
-  },
+
   size: {
     type: Number,
     required: false,
@@ -46,10 +32,10 @@ function statusImg() {
 <template>
   <Avatar class="avatar" :src="img" :style="'width:' + size + 'px;height:' + size + 'px;'">
     <template #content>
-      <div class="bg" v-if="isForbidden || violated || authed"></div>
+      <!-- <div class="bg" v-if="isForbidden || violated || authed"></div>
       <AutoSizedText class="status" v-if="isForbidden" :text="multiLan('In ban')"></AutoSizedText>
       <AutoSizedText class="userStatus" v-else-if="violated" :text="multiLan('Violation')"></AutoSizedText>
-      <AutoSizedText class="userStatus" v-else-if="authed" :text="multiLan('Authed')"></AutoSizedText>
+      <AutoSizedText class="userStatus" v-else-if="authed" :text="multiLan('Authed')"></AutoSizedText> -->
 
       <img class="online_status" :src="statusImg()" />
     </template>
@@ -57,13 +43,7 @@ function statusImg() {
 </template>
 <style scoped lang="less">
 .avatar {
-  .bg {
-    border-radius: 50%;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-  }
+
 
   .status,
   .userStatus {
